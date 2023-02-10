@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
 class Toll {
     private String name;
     private HashMap<String, Integer> chargingScheme;

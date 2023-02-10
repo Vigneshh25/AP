@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.Scanner;
 
 
-public class FileManageMent {
+public class FileSystem {
 
     public static void fileCreation(String dir, String filename) throws IOException {
 

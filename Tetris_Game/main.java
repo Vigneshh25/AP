@@ -1,3 +1,5 @@
+package Tetris_Game;
+
 import java.util.*;
                     // Create a java file in your ide and copy paste this whole code and Play the game..!
 class S {

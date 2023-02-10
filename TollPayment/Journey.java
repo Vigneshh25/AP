@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 class Journey {
     private String start;
     private String destination;

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class TollPaymentProcessing {
     public static void main(String[] args) {
         TollGate system = new TollGate();

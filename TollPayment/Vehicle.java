@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 class Vehicle {
     private String type;
     private String number;
