@@ -71,7 +71,8 @@ public class LiftSystem {
                 for (int i = 0; i < liftPositions.length; i++) {
                     if (i != nearestLiftIndex && Math.abs(liftPositions[i] - userSourceFloor) == nearestLiftPosition) {
                         int currentLiftPosition = liftPositions[i];
-                        boolean isLiftGoingUp = currentLiftPosition < liftPositions[i];
+                       //boolean isLiftGoingUp = currentLiftPosition < liftPositions[i];
+                        boolean isLiftGoingUp = currentLiftPosition < userSourceFloor;
                         if (isUserGoingUp == isLiftGoingUp) {
                             secondLiftIndex = i;
                             secondLiftPosition = currentLiftPosition;
@@ -93,11 +94,13 @@ public class LiftSystem {
 
                 // Move the assigned lift to the user's source floor and then to the destination floor
                 int assignedLiftPosition = liftPositions[isAnotherLiftNearby ? secondLiftIndex : nearestLiftIndex];
-                System.out.printf("Lift   : L1 L2 L3 L4 L5%n");
+                System.out.printf("Lift    : L1  L2  L3  L4  L5%n");
                 for (int i = 0; i < liftPositions.length; i++) {
-                    System.out.printf("Floor: %d   ", liftPositions[i]);
+                    System.out.printf("Floor: %2d ", liftPositions[i]);
                 }
                 System.out.println();
+
+
 
                 while (assignedLiftPosition != userSourceFloor) {
                     if (assignedLiftPosition < userSourceFloor) {
