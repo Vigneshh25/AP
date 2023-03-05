@@ -1,26 +1,26 @@
-package set5;
-
-public class LargestPrime {
+public class Main {
     public static void main(String[] args) {
-        int n = 5;
-        int x = 4691;
-        int max = (int) Math.pow(10, n) - 1;
-        int largestPrime = 0;
-
-        // check each number in the range for primality
-        for (int i = max; i >= (int) Math.pow(10, n - 1); i--) {
-            if (isPrime(i) && i < x) {
-                largestPrime = i;
-                break;
-            }
+        int n = 100;
+        int largestPrime = largestPrime(n);
+        if (largestPrime == -1) {
+            System.out.println("No prime number found.");
+        } else {
+            System.out.println("The largest prime number less than or equal to " + n + " is " + largestPrime);
         }
-
-        System.out.println("Largest prime: " + largestPrime);
     }
 
-    // function to check if a number is prime
+    public static int largestPrime(int n) {
+        while (n >= 2) {
+            if (isPrime(n)) {
+                return n;
+            }
+            n--;
+        }
+        return -1; // no prime number found
+    }
+
     public static boolean isPrime(int n) {
-        if (n <= 1) {
+        if (n < 2) {
             return false;
         }
         for (int i = 2; i <= Math.sqrt(n); i++) {
