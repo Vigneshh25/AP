@@ -1,46 +1,35 @@
-package set2;
+class AlternateSort {
+    static void alternateSort(int arr[], int n) {
+        Arrays.sort(arr);
+        int i=0;
+        int j= n-1;
+        int me = arr[n-1]+1;
+        int ind =0;
 
-import java.util.Arrays;
-import java.util.Collections;
+        while(ind<n)
+        {
+            if(ind%2==0)
+            {
+                arr[ind++] += (arr[j]%me)*me;
+                j--;
+            }
+            else
+            {
+                arr[ind++] +=(arr[i]%me)*me;
+                i++;
+            }
 
-public class sorting {
-    public static int[] alternateSort(int[] arr) {
-        // Sort the array in non-ascending order
-        Arrays.sort(new int[][]{arr}, Collections.reverseOrder());
-
-        // Initialize variables to traverse the array
-        int i = 0;
-        int j = arr.length - 1;
-
-        // Initialize the result array
-        int[] result = new int[arr.length];
-
-        // Traverse the array
-        int k = 0;
-        while (i < j) {
-            result[k] = arr[i];
-            k++;
-            i++;
-            result[k] = arr[j];
-            k++;
-            j--;
         }
-
-        // If i and j are equal, append the remaining value
-        if (i == j) {
-            result[k] = arr[i];
+        System.out.println(Arrays.toString(arr));
+        for(int k:arr)
+        {
+            System.out.print(k/me +" ");
         }
-
-        return result;
     }
 
     public static void main(String[] args) {
-        // Test the function
-        int[] arr1 = {1, 2, 3, 4, 5, 6, 7};
-        int[] arr2 = {7, 6, 5, 4, 3, 2, 1};
-        int[] arr3 = {1, 3, 5, 2, 4, 6};
-        System.out.println(Arrays.toString(alternateSort(arr1)));  // should print [7, 1, 6, 2, 5, 3, 4]
-        System.out.println(Arrays.toString(alternateSort(arr2)));  // should print [7, 1, 6, 2, 5, 3, 4]
-        System.out.println(Arrays.toString(alternateSort(arr3)));  // should print [6, 1, 5, 2, 4, 3]
+       Scanner sc = new Scanner(System.in);
+       int[] arr = {1,2,3,4,5};
+       alternateSort(arr, arr.length);
     }
 }
