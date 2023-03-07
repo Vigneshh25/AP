@@ -1,33 +1,43 @@
-package set14;
+import java.util.*;
 
-public class Perumation {
+public class PermutationsAndCombinations {
+    
     public static void main(String[] args) {
-        String str = "ABC";
-        permute(str, 0, str.length()-1);
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = input.nextLine();
+        
+        // Printing all permutations of the string
+        System.out.println("All permutations:");
+        printPermutations(str, "");
 
+        // Printing all combinations of the string
+        System.out.println("All combinations:");
+        printCombinations(str, "");
     }
-
-    private static void permute(String str, int l, int r) {
-        if (l == r)
-            System.out.println(str);
-        else {
-            for (int i = l; i <= r; i++) {
-                str = swap(str, l, i);
-                permute(str, l + 1, r);
-                str = swap(str, l, i);
-            }
+    
+    // Function to print all permutations of a string
+    public static void printPermutations(String str, String permutation) {
+        if (str.length() == 0) {
+            System.out.print(permutation + " ");
+            return;
+        }
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            String newStr = str.substring(0, i) + str.substring(i+1);
+            printPermutations(newStr, permutation + ch);
         }
     }
-        public static String swap(String a, int i, int j)
-        {
-            char temp;
-            char[] charArray = a.toCharArray();
-            temp = charArray[i];
-            charArray[i] = charArray[j];
-            charArray[j] = temp;
-            return String.valueOf(charArray);
+    
+    // Function to print all combinations of a string
+    public static void printCombinations(String str, String combination) {
+        if (str.length() == 0) {
+            System.out.print(combination + " ");
+            return;
         }
+        char ch = str.charAt(0);
+        String newStr = str.substring(1);
+        printCombinations(newStr, combination + ch);
+        printCombinations(newStr, combination);
     }
-
-
-// Output: [ABC, ACB, BAC, BCA, CAB, CBA]
+}
