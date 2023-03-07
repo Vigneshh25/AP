@@ -16,6 +16,19 @@ class degree
             }
         }
     }
+     public static void horizontalVeritically(int[][] a)
+    {
+    int temp;
+        for (int i = 0; i < a.length/2; i++) 
+        {
+            for (int j = 0; j < a[i].length; j++) 
+            {
+                temp = a[i][j];
+                a[i][j] = a[a.length-1-i][j];
+                a[a.length-1-i][j] = temp;
+            }
+        }
+     }
 
     private void flipHorizontally() {
         for (int y = 0; y < totalY; y++) {
