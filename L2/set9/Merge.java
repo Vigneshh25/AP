@@ -7,40 +7,35 @@ import java.util.*;
 
 class Merge{
     // Function to merge arrays
-    static void mergeArrays(int a[], int b[], int n, int m)
+    public static void main(String[] args)
     {
-
-        // Declaring a map.
-        // using map as a inbuilt tool
-        // to store elements in sorted order.
-        Map<Integer,Boolean> mp = new TreeMap<Integer,Boolean>();
-
-        // Inserting values to a map.
-        for(int i = 0; i < n; i++)
+     int[] arr1 = {1, 2, 3, 6, 9};
+        int[] arr2 = {2, 4, 5, 10};
+        List<Integer> ans = new ArrayList<>();
+        int l=0;
+        int r=0;
+        int ind = 0;
+        while (l< arr1.length&&r< arr2.length)
         {
-            mp.put(a[i], true);
-        }
-        for(int i = 0;i < m;i++)
-        {
-            mp.put(b[i], true);
-        }
+            if(arr1[l]<arr2[r])
+            {
+                ans.add((arr1[l]));
+                l++
+                ;
+            }
+            else if(arr1[l]>arr2[r]) {
+                ans.add(arr2[r]);
+                r++;
+            }
+            else 
+            l++;
 
-        // Printing keys of the map.
-        for (Map.Entry<Integer,Boolean> me : mp.entrySet())
-        {
-            System.out.print(me.getKey() + " ");
         }
-    }
-
-    // Driver Code
-    public static void main (String[] args)
-    {
-        int a[] = {1, 2, 5, 7}, b[] = {3, 4, 6, 8};
-        int size = a.length;
-        int size1 = b.length;
-
-        // Function call
-        mergeArrays(a, b, size, size1);
+        while (l< arr1.length)
+            ans.add(arr1[l++]);
+        while (r<arr2.length)
+            ans.add(arr2[r++]);
+        System.out.println(ans);
     }
 }
 
