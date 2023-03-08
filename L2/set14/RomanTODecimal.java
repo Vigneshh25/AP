@@ -1,58 +1,26 @@
-package set14;
-
-import java.util.HashMap;
-import java.util.Map;
-
-public class RomanTODecimal {
-    private static final Map<Character,
-            Integer> roman = new HashMap<Character,
-            Integer>()
-    {{
-        put('I', 1);
-        put('V', 5);
-        put('X', 10);
-        put('L', 50);
-        put('C', 100);
-        put('D', 500);
-        put('M', 1000);
-    }};
-
-    // This function returns value
-// of a Roman symbol
-    private static int romanToInt(String s)
-    {
-        int sum = 0;
-        int n = s.length();
-
-        for(int i = 0; i < n; i++)
+class Solution {
+    public int romanToInt(String s) {
+        int prev = 0;
+        int answer = 0;
+        int number = 0;
+        for(int i=s.length()-1;i>=0;i--)
         {
-
-            // If present value is less than next value,
-            // subtract present from next value and add the
-            // resultant to the sum variable.
-            if (i != n - 1 && roman.get(s.charAt(i)) <
-                    roman.get(s.charAt(i + 1)))
+            switch(s.charAt(i))
             {
-                sum += roman.get(s.charAt(i + 1)) -
-                        roman.get(s.charAt(i));
-                i++;
+            case 'M' -> number = 1000;
+            case 'D' -> number = 500;
+            case 'C' -> number = 100;
+            case 'L' -> number = 50;
+            case 'X' -> number = 10;
+            case 'V' -> number = 5;
+            case 'I' -> number = 1;
             }
+            if(number<prev)
+                answer -=number;
             else
-            {
-                sum += roman.get(s.charAt(i));
-            }
+                answer +=number;
+            prev = number;
         }
-        return sum;
-    }
-
-    // Driver Code
-    public static void main(String[] args)
-    {
-
-        // Considering inputs given are valid
-        String input = "MCMIV";
-
-        System.out.print("Integer form of Roman Numeral is " +
-                romanToInt(input));
+        return answer;
     }
 }
