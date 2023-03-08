@@ -53,4 +53,19 @@ class Complete{
         // System.out.println();
         return ans;
     }
+    
+public static int[] findMinimumGreater(int[] arr) {
+    int[] result = new int[arr.length];
+    for (int i = 0; i < arr.length; i++) {
+        int minGreater = Integer.MAX_VALUE;
+        for (int j = 0; j < arr.length; j++) {
+            if (arr[j] > arr[i] && arr[j] < minGreater) {
+                minGreater = arr[j];
+            }
+        }
+        result[i] = minGreater == Integer.MAX_VALUE ? -1 : minGreater;
+    }
+    return result;
+}
+
 }
