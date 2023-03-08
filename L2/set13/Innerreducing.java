@@ -3,6 +3,19 @@ package set13;
 import java.util.Scanner;
 
 public class Innerreducing {
+    
+     void printSquare(int n) {
+        // code here
+        for(int i=1;i<2*n;i++)
+        {
+            for(int j=1;j<2*n;j++)
+            {
+                int nn = Math.max(Math.abs(n-i)+1,Math.abs(n-j)+1);
+                System.out.print(nn+" ");
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args) {
 
         Scanner sc= new Scanner(System.in);
