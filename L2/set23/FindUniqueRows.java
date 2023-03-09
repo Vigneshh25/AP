@@ -9,6 +9,25 @@ class FindUniqueRows{
     static int COL = 5;
     // Function that prints all
 // unique rows in a given matrix.
+    
+    
+    public static ArrayList<ArrayList<Integer>> uniqueRow(int a[][],int r, int c)
+    {
+        //add code here.
+       ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
+    for(int[] i:a)
+    {
+        ArrayList<Integer> list = new ArrayList<>();
+       for(int j : i) {
+        list.add(j);
+            }
+        if(!ans.contains(list))
+            ans.add(list);
+    }
+    return ans;
+    }
+    
+    
     static void findUniqueRows(int M[][])
     {
         // Traverse through the matrix
