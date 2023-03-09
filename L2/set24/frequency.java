@@ -8,6 +8,16 @@ public class frequency {
             int count = countOccurrences(numbers, target);
             System.out.println(count);  // Output: 2
         }
+        
+         int count(int[] arr, int n, int x) {
+        // code here
+        
+        
+     int count = (int) Arrays.stream(arr).filter(i -> i == x).count();
+
+        return count;
+        
+    }
 
         public static int countOccurrences(int[] numbers, int target) {
             int first = findFirst(numbers, target);
