@@ -10,10 +10,8 @@ public class LongestPositive {
     static int findLongestConseqSubseq(int nums[], int N)
 	{
 	   // add your code here
-	    if(nums.length==0)
-            return 0;
-        Arrays.sort(nums);
-        int count =1,    max = 1;
+	 Arrays.sort(nums);
+        int count =1, max = 1, startIndex=0, endIndex=0;
         for(int i=1;i<nums.length;i++)
         {
             if(nums[i]==nums[i-1]+1)
@@ -22,13 +20,25 @@ public class LongestPositive {
             }
             else if(nums[i]!=nums[i-1])
             {
-                max = Math.max(count,max);
+                if(count > max) {
+                    max = count;
+                    endIndex = i-1;
+                    startIndex = endIndex - count + 1;
+                }
                 count = 1;
             }
-
         }
-        max = Math.max(count,max);
-        return max;
+        if(count > max) {
+            max = count;
+            endIndex = nums.length-1;
+            startIndex = endIndex - count + 1;
+        }
+        System.out.println("Longest consecutive subsequence is:");
+        for(int i=startIndex;i<=endIndex;i++) {
+            System.out.print(nums[i] + " ");
+        }
+        System.out.println("\nStart Index: " + startIndex + "\nEnd Index: " + endIndex);
+
     
 	}
         static void getLongestSeq(int a[], int n)
