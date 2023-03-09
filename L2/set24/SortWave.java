@@ -9,6 +9,16 @@ public class                                                                    
         arr[a] = arr[b];
         arr[b] = temp;
     }
+    
+    
+    public static void convertToWave(int n, int[] arr) {
+        // code here
+        for(int i =1;i<arr.length;i+=2) {
+                 int temp =arr[i-1];
+                 arr[i-1] =arr[i];
+                 arr[i] = temp;
+        }
+    }
 
     // This function sorts arr[0..n-1] in wave form, i.e.,
     // arr[0] >= arr[1] <= arr[2] >= arr[3] <= arr[4]....
