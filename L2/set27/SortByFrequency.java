@@ -3,41 +3,15 @@ package set27;
 import java.util.Arrays;
 
 public class SortByFrequency {
-    public static int[] sortByFrequency(int[] array) {
-        // Count the frequency of each element
-        int[] frequency = new int[array.length];
-        for (int i = 0; i < array.length; i++) {
-            int count = 0;
-            for (int j = 0; j < array.length; j++) {
-                if (array[i] == array[j]) {
-                    count++;
-                }
-            }
-            frequency[i] = count;
-        }
+   public static void main(String[] args) {
+        Map<Integer, Integer> m = new HashMap<>();
 
-        // Sort the array in descending order according to the frequency of each element
-        for (int i = 0; i < array.length; i++) {
-            for (int j = i + 1; j < array.length; j++) {
-                if (frequency[i] < frequency[j] || (frequency[i] == frequency[j] && array[i] < array[j])) {
-                    // Swap the elements and their frequencies
-                    int temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
-                    temp = frequency[i];
-                    frequency[i] = frequency[j];
-                    frequency[j] = temp;
-                }
-            }
-        }
-
-        return array;
-    }
-
-    public static void main(String[] args) {
-        int[] array = {2, 2, 3, 4, 5, 12, 2, 3, 3, 3, 12};
-        int[] sortedArray = sortByFrequency(array);
-        System.out.println(Arrays.toString(sortedArray)); // Output: [3, 3, 3, 3, 2, 2, 2, 12, 12, 4, 5]
+        Integer[] arr = { 4, 4, 5, 6, 4, 2, 2, 8, 5 };
+        int n = arr.length;
+        for(int i:arr)
+            m.compute(i,(k,v)->v==null?1:v+1);
+        Arrays.sort(arr,(a,b)->m.get(b)-m.get(a));
+        System.out.println(Arrays.toString(arr));
     }
 }
 
