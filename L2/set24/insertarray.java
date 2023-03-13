@@ -3,36 +3,7 @@ package set24;
 import java.util.Arrays;
 
 public class insertarray {
-    // Java Program to Insert an element
-// at a specific position in an Array
-
-
-        // Function to insert x in arr at position pos
-        public static int[] insertX(int n, int arr[],
-                                    int x, int pos)
-        {
-            int i;
-
-            // create a new array of size n+1
-            int newarr[] = new int[n + 1];
-            System.out.println(Arrays.toString(newarr));
-
-            // insert the elements from
-            // the old array into the new array
-            // insert all elements till pos
-            // then insert x at pos
-            // then insert rest of the elements
-            for (i = 0; i < n + 1; i++) {
-                if (i < pos - 1)
-                    newarr[i] = arr[i];
-                else if (i == pos - 1)
-                    newarr[i] = x;
-                else
-                    newarr[i] = arr[i - 1];
-            }
-            return newarr;
-        }
-
+ 
         // Driver code
         public static void main(String[] args)
         {
@@ -44,26 +15,24 @@ public class insertarray {
             int arr[]
                     = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-            // print the original array
-            System.out.println("Initial Array:\n"
-                    + Arrays.toString(arr));
+            int[] arr = {1, 2, 4, 5}; // original array
+            int element = 3; // element to insert
+            int index = 2; // index where element will be inserted
 
-            // element to be inserted
-            int x = 50;
+            // shift elements to the right from the index
+            for (int i = arr.length - 1; i > index; i--) {
+                arr[i] = arr[i - 1];
+            }
 
-            // position at which element
-            // is to be inserted
-            int pos = 5;
-
-            // call the method to insert x
-            // in arr at position pos
-            arr = insertX(n, arr, x, pos);
+            // insert the new element
+            arr[index] = element;
 
             // print the updated array
-            System.out.println("\nArray with " + x
-                    + " inserted at position "
-                    + pos + ":\n"
-                    + Arrays.toString(arr));
+            for (int i = 0; i < arr.length; i++) {
+                System.out.print(arr[i] + " ");
+            }
+
+          
 
     }
 
