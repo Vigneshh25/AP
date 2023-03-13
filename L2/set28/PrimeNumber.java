@@ -1,26 +1,26 @@
 package set28;
 
-public class PrimeNumber {
-    public static void printPrimeNumbers(int n) {
-        for (int i = 2; i <= n; i++) {
-            if (isPrime(i)) {
-                System.out.println(i);
-            }
-        }
-    }
-
-    public static boolean isPrime(int n) {
-        for (int i = 2; i <= Math.sqrt(n); i++) {
-            if (n % i == 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-
+public class FirstTenPrimes {
     public static void main(String[] args) {
-        printPrimeNumbers(10); // Output: 2 3 5 7 11 13 17 19 23 29
+        int count = 0;
+        int num = 2;  // start with the first prime number
+        
+        while (count < 10) {  // print the first 10 prime numbers
+            boolean isPrime = true;
+            for (int i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                System.out.print(num + " ");
+                count++;
+            }
+            num++;
+        }
     }
 }
+
 
 
