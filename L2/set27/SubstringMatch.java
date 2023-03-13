@@ -1,24 +1,17 @@
 package set27;
 
 public class SubstringMatch {
-    public static boolean isSubstring(String s1, String s2) {
-        int i = 0;
-        int j = 0;
-        while (i < s1.length() && j < s2.length()) {
-            // Check if the current characters match
-            if (s1.charAt(i) == s2.charAt(j) || s2.charAt(j) == '*') {
-                i++;
+    public static boolean isSubstring(String A, String B) {
+         int j=0;
+        for(int i=0;i<B.length()&&j<A.length();i++)
+        {
+            if(A.charAt(j)==B.charAt(i)||B.charAt(i)=='*')
+            {
                 j++;
-            } else {
-                // If the characters don't match, go back to the last * in s2
-                while (j > 0 && s2.charAt(j - 1) != '*') {
-                    j--;
-                }
-                i++;
             }
+            
         }
-        // Return true if the end of s2 is reached, false otherwise
-        return j == s2.length();
+        return j==A.length();
     }
 
     public static void main(String[] args) {
