@@ -1,40 +1,47 @@
 package set26;
 
+import javax.swing.text.StyleContext;
+import java.util.HashMap;
+import java.util.Map;
+
 public class secondfreq {
 
-        public static void main(String[] args) {
-            // The series of numbers
-            int[] numbers = {1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4};
+    public static void main(String[] args) {
+        // The series of numbers
+        int[] numbers = { 3, 3, 4, 5, 4, 3, 1, 1, 3, 4};
 
-            // Initialize variables to store the most and second most frequent numbers
-            int max1 = 0;
-            int max2 = 0;
-            int max1Count = 0;
-            int max2Count = 0;
+        Map<Integer, Integer> countMap = new HashMap<>();
 
-            // Iterate through the series and count the frequency of each number
-            for (int number : numbers) {
-                int count = 0;
-                for (int n : numbers) {
-                    if (number == n) {
-                        count++;
-                    }
-                }
-
-                // Update max1 and max2 as needed
-                if (count > max1Count) {
-                    max2 = max1;
-                    max2Count = max1Count;
-                    max1 = number;
-                    max1Count = count;
-                } else if (count > max2Count && count < max1Count) {
-                    max2 = number;
-                    max2Count = count;
-                }
-            }
-
-            System.out.println("The second most frequent number is: " + max2);
+// Count the occurrences of each number in the series
+        for (int num : numbers) {
+            countMap.put(num, countMap.getOrDefault(num, 0) + 1);
         }
-    }
+
+        int maxCount = -1;
+        int secondMaxCount = -1;
+        int secondMaxNum = -1;
+        int max = -1;
+
+        System.out.println(countMap);
+
+// Find the second highest count
+        for (Map.Entry<Integer, Integer> entry : countMap.entrySet()) {
+            int count = entry.getValue();
+            if (count > maxCount) {
+                secondMaxCount = maxCount;
+                maxCount = count;
+                secondMaxNum = max;
+                max = entry.getKey();
+            } else if (count > secondMaxCount && count != maxCount) {
+                secondMaxCount = count;
+                secondMaxNum = entry.getKey();
+            }
+        }
+
+// Print the second most frequent number
+        System.out.println("The second most frequent number is: " + secondMaxNum);
+    }}
+
+
 
 
