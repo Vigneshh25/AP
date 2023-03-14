@@ -9,12 +9,19 @@ public class Factor {
     };
 
         public static int minFactor(int n) {
-            for (int i = 2; i <= n / i; i++) {
-                if (n % i == 0) {
-                    return i;
-                }
+                
+                int count =0;
+          for (int i=1;i<=Math.sqrt(n); i++)
+            {  
+                if (n%i==0)
+                {
+                    // If divisors are equal, print only one
+                    if (n/i == i)
+                        count++;     
+                    else // Otherwise print both
+                       count+=2;
+                } 
             }
-            return n;
         }
 
         public static void main(String[] args) {
