@@ -109,9 +109,28 @@ class LinkedList {
         }
         System.out.println();
     }
+    
+    void removeDuplicates() {
+        if (head == null) {
+            return;
+        }
+
+        Node curr = head;
+        while (curr != null) {
+            Node innerCurr = curr;
+            while (innerCurr.next != null) {
+                if (curr.data == innerCurr.next.data) {
+                    innerCurr.next = innerCurr.next.next;
+                } else {
+                    innerCurr = innerCurr.next;
+                }
+            }
+            curr = curr.next;
+        }
+    }
 
     // Remove duplicates from the list
-    void removeDuplicates() {
+    void removeDuplicatess() {
         Node current = head;
         Node previous = null;
         Node next = null;
