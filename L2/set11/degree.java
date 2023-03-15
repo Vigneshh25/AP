@@ -18,7 +18,7 @@ class degree
     }
      public static void horizontalVeritically(int[][] a)
     {
-    int temp;
+         int temp;
         for (int i = 0; i < a.length/2; i++) 
         {
             for (int j = 0; j < a[i].length; j++) 
@@ -50,6 +50,9 @@ class degree
             }
         }
     }
+
+
+
 
     // Function to rotate the matrix 90 degree clockwise
     static void rotate90Clockwise(int a[][])
