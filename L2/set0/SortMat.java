@@ -1,4 +1,4 @@
-package com.example.demo1;
+package set0;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -59,6 +59,27 @@ class SortMat {
         System.out.println("Matrix After Sorting:");
         printMat(mat, n);
 
+        System.out.println("Matrix After Sorting Odd Even:");
+        sortRow(mat, n);
+        printMat(mat, n);
+
+
+
+    }
+
+    private static void sortRow(int[][] mat, int n) {
+        for(int i=1;i<n;i+=2)
+        {
+            int l =0,r=n-1;
+            while (l<r)
+            {
+                int temp = mat[i][l];
+                mat[i][l] = mat[i][r];
+                mat[i][r] = temp;
+                l++;
+                r--;
+            }
+        }
     }
 
 }
