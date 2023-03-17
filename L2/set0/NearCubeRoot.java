@@ -5,14 +5,13 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Vector;
 
-public class NearCubeRoot {
+public class SmallNumber {
     public static int nearestCubeRoot(int n) {
         int left = 1;
         int right = n;
         int mid = (left + right) / 2;
 
         while (left <= right) {
-            mid = (left + right) / 2;
             int cube = mid * mid * mid;
             if (cube == n) {
                 return mid;
@@ -21,7 +20,7 @@ public class NearCubeRoot {
             } else {
                 right = mid - 1;
             }
-
+            mid = (left + right) / 2;
         }
 
         // The closest cube root will be either mid or mid+1
