@@ -8,15 +8,14 @@ public class Tetris{
         Function.initialFill(matrix);
         Function.printMatrix(matrix);
         int score=0;
-        int prevScore=0;
+        List<String> shape = Arrays.asList("S","L","T","SQ","Z","ML","I");
+        Random random = new Random();
+        
         while(true)
         {
-            System.out.println("Enter Shape Input : (S,L,T,SQ,Z,ML,I) : ");
-            Scanner ip = new Scanner(System.in);
-            String ch = ip.nextLine();
-
+            int n = random.nextInt(shape.size());
+            String ch = shape.get(n);
             char[][] shapeMatrix = Shape.getShape(ch);
-
             PlayTheGame play = new PlayTheGame(shapeMatrix,matrix);
             if(play.isGameEnd())
             {
