@@ -6,9 +6,16 @@ import java.util.Comparator;
 class ReverseFactors {
     public static int countFactors(int n) {
         int count = 0;
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i*i <= n; i++) {
             if (n % i == 0) {
-                count++;
+               if(n/i==i)
+               { System.out.print(" "+ i);
+                   count++;
+               }
+                else
+                {
+                   count+=2;System.out.print(n/i+" "+ i);
+                }
             }
         }
         return count;
