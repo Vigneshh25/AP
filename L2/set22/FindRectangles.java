@@ -5,17 +5,31 @@ import java.util.List;
 
 public class FindRectangles {
 
-    public static List<Point> findRectangle(int matrix[][]) {
-        List<Point> recCordinatesPoints = new ArrayList<Point>();
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[0].length; j++) {
-                if (matrix[i][j] == 0) {
-                    recCordinatesPoints.addAll(caputreCoordinates(matrix, i, j));
+    public static int countRectangles(int[][] matrix) {
+    int m = matrix.length;
+    int n = matrix[0].length;
+    int count = 0;
+
+    for (int i = 0; i < m; i++) {
+        for (int j = i + 1; j < m; j++) {
+            for (int k = 0; k < n; k++) {
+                boolean valid = true;
+                for (int l = i; l <= j; l++) {
+                    if (matrix[l][k] != 1) {
+                        valid = false;
+                        break;
+                    }
+                }
+                if (valid) {
+                    count++;
                 }
             }
         }
-        return recCordinatesPoints;
     }
+
+    return count;
+}
+
 
     public static List<Point> caputreCoordinates(int matrix[][], int i, int j) {
 
