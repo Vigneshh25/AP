@@ -2,45 +2,30 @@ package set22;
 import java.util.*;
 import java.io.*;
 
-public class MinimuSpuare {
+package org.example.QueryEngine;
 
+public class SumOfSquares {
 
+    public static int minSquares(int n) {
+        // base case: if n is already a perfect square, return 1
+        int sqrt = (int) Math.sqrt(n);
+        if (sqrt * sqrt == n) {
+            return 1;
+        }
 
-        // squares that sum to n
-        static int getMinSquares(int n)
-        {
-
-            // base cases
-            if (n <= 3)
-                return n;
-
-            // getMinSquares rest of the
-            // table using recursive
-            // formula
-            // Maximum squares required is
-            int res = n;
-            // n (1*1 + 1*1 + ..)
-
-            // Go through all smaller numbers
-            // to recursively find minimum
-            for (int x = 1; x <= n; x++)
-            {
-                int temp = x * x;
-                if (temp > n)
-                    break;
-                else
-                    res = Math.min(res, 1 +
-                            getMinSquares(n - temp));
+        // find the minimum number of squares required by trying all possible combinations
+        int min = n; // initialize to maximum possible value
+        for (int i = 1; i <= sqrt; i++) {
+            int squares = 1 + minSquares(n - i*i);
+            if (squares < min) {
+                min = squares;
             }
-            return res;
         }
-
-        // Driver code
-        public static void main(String args[])
-        {
-            System.out.println(getMinSquares(6));
-        }
+        return min;
     }
-    /* This code is contributed by Rajat Mishra */
 
-
+    public static void main(String[] args) {
+        int n = 100;
+        System.out.println("Minimum number of squares required to represent " + n + " is " + minSquares(n));
+    }
+}
