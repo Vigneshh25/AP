@@ -1,4 +1,4 @@
-package org.example.QueryEngine;
+package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -122,47 +122,51 @@ class Bomberman {
             if (row != -1 && col != -1) {
                 break;
             }
-        }    switch (input) {
+        }
+
+        int newRow = row, newCol = col;
+        switch (input) {
             case "u":
-                if (grid[row - 1][col] == ' ') {
-                    grid[row][col] = ' ';
-                    grid[row - 1][col] = 'P';
-                }
+                newRow = row - 1;
                 break;
             case "d":
-                if (grid[row + 1][col] == ' ') {
-                    grid[row][col] = ' ';
-                    grid[row + 1][col] = 'P';
-                }
+                newRow = row + 1;
                 break;
             case "l":
-                if (grid[row][col - 1] == ' ') {
-                    grid[row][col] = ' ';
-                    grid[row][col - 1] = 'P';
-                }
+                newCol = col - 1;
                 break;
             case "r":
-                if (grid[row][col + 1] == ' ') {
-                    grid[row][col] = ' ';
-                    grid[row][col + 1] = 'P';
-                }
+                newCol = col + 1;
                 break;
         }
 
-        // Check for collisions with enemies
-        for (Enemy enemy : enemies) {
-            if (!enemy.dead && row == enemy.row && col == enemy.col) {
-                lives--;
-                if (lives == 0) {
-                    gameover = true;
-                    System.out.println("Game over!");
-                } else {
-                    initializeGrid();
+        // Check if the new position is within the bounds of the grid
+        if (newRow >= 0 && newRow < ROW && newCol >= 0 && newCol < COLUMN) {
+            if (grid[newRow][newCol] == ' ') {
+                grid[row][col] = ' ';
+                grid[newRow][newCol] = 'P';
+
+                // Update player position
+                row = newRow;
+                col = newCol;
+
+                // Check for collisions with enemies
+                for (Enemy enemy : enemies) {
+                    if (!enemy.dead && row == enemy.row && col == enemy.col) {
+                        lives--;
+                        if (lives == 0) {
+                            gameover = true;
+                            System.out.println("Game over!");
+                        } else {
+                            initializeGrid();
+                        }
+                        break;
+                    }
                 }
-                break;
             }
         }
     }
+
 
     private static void moveEnemy(Enemy enemy) {
         int row = enemy.row;
@@ -172,28 +176,28 @@ class Bomberman {
 
         switch (direction) {
             case 0:
-                if (grid[row - 1][col] == ' ') {
+                if (row > 0 && grid[row - 1][col] == ' ') {
                     grid[row][col] = ' ';
                     grid[row - 1][col] = 'E';
                     enemy.row = row - 1;
                 }
                 break;
             case 1:
-                if (grid[row + 1][col] == ' ') {
+                if (row < ROW - 1 && grid[row + 1][col] == ' ') {
                     grid[row][col] = ' ';
                     grid[row + 1][col] = 'E';
                     enemy.row = row + 1;
                 }
                 break;
             case 2:
-                if (grid[row][col - 1] == ' ') {
+                if (col > 0 && grid[row][col - 1] == ' ') {
                     grid[row][col] = ' ';
                     grid[row][col - 1] = 'E';
                     enemy.col = col - 1;
                 }
                 break;
             case 3:
-                if (grid[row][col + 1] == ' ') {
+                if (col < COLUMN - 1 && grid[row][col + 1] == ' ') {
                     grid[row][col] = ' ';
                     grid[row][col + 1] = 'E';
                     enemy.col = col + 1;
@@ -213,6 +217,7 @@ class Bomberman {
         }
     }
 
+
     private static void decrementTimer() {
         if (timer > 0) {
             timer--;
@@ -230,25 +235,17 @@ class Bomberman {
     }
 
     private static void plantBomb() {
-        int row = -1, col = -1;
-        for (int i = 0; i < ROW; i++) {
-            for (int j = 0; j < COLUMN; j++) {
-                if (grid[i][j] == 'P') {
-                    row = i;
-                    col = j;
-                    break;
-                }
-            }
-            if (row != -1 && col != -1) {
-                break;
-            }
-        }
+        int row = getPlayerRow();
+        int col = getPlayerCol();
 
-        if (bombs[row][col] == 0) {
+        // Check if the current position is empty and the player has bombs available
+        if (grid[row][col] == ' ' && bombs[row][col] == 0) {
+            // Plant the bomb
             bombs[row][col] = bombTimer;
             grid[row][col] = 'B';
         }
     }
+
 
     private static void explode() {
         int row = -1, col = -1;
