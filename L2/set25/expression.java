@@ -26,23 +26,34 @@ public class expression {
             }
 
             // Apply the operator to the operands
-            switch (operator) {
-                case '+':
-                    result = operand1 + operand2;
-                    break;
-                case '-':
-                    result = operand1 - operand2;
-                    break;
-                case '*':
+            if (operator == '*' || operator == '/') {
+                // Apply the multiplication or division operator to the current and next operands
+                if (operator == '*') {
                     result = operand1 * operand2;
-                    break;
-                case '/':
+                } else {
                     result = operand1 / operand2;
-                    break;
-            }
+                }
 
-            // Set the first operand to the result
-            operand1 = result;
+                // Set the first operand to the result
+                operand1 = result;
+            } else {
+                // Apply the addition or subtraction operator to the current and previous results
+                if (operator == '+') {
+                    result = result + operand1;
+                } else {
+                    result = result - operand1;
+                }
+
+                // Set the first operand to the next operand
+                operand1 = operand2;
+            }
+        }
+
+        // Apply the final operator to the current and previous results
+        if (operator == '+') {
+            result = result + operand1;
+        } else {
+            result = result - operand1;
         }
 
         return result;
