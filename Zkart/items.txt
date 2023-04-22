@@ -1,0 +1,6 @@
+Category    Brand     Model    Price    Stock
+
+Mobile      Apple       S       60000   10
+Mobile      Nokia       N       12000   5
+Laptop      HP          M       72000    20
+Tablet      Google      L       90000   12
