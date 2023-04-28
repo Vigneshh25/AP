@@ -1,144 +1,119 @@
-import java.util.Scanner;
+package Lift;
 
-public class LiftSystem {
+import java.util.*;
+
+class LiftSystem {
+    private static final int NUM_LIFTS = 5;
+    private static final int NUM_FLOORS = 10;
+    private static final String[] LIFT_NAMES = {"L1", "L2", "L3", "L4", "L5"};
+
+    private int[] liftPositions;
+    private boolean[] liftBusy;
+    private int[] liftCapacity;
+
+    public LiftSystem(int[] liftCapacity) {
+        this.liftCapacity = liftCapacity;
+        liftPositions = new int[NUM_LIFTS];
+        liftBusy = new boolean[NUM_LIFTS];
+    }
+
+    public void displayLiftPositions() {
+        System.out.print("Lifts  : ");
+        for (String name : LIFT_NAMES) {
+            System.out.print(name + " ");
+        }
+        System.out.println();
+        System.out.print("Floors : ");
+        for (int i = 0; i < NUM_LIFTS; i++) {
+            System.out.print(liftPositions[i] + "   ");
+        }
+        System.out.println();
+    }
+
+    public void assignLift(int startFloor, int destFloor, int numPeople) {
+        int minDist = Integer.MAX_VALUE;
+        int closestLift = -1;
+        boolean sameDirection = false;
+        int minStops = Integer.MAX_VALUE;
+        for (int i = 0; i < NUM_LIFTS; i++) {
+            if (!liftBusy[i] && numPeople <= liftCapacity[i]) { // check if lift has enough capacity
+                int dist = Math.abs(liftPositions[i] - startFloor);
+                if (dist < minDist && isLiftAllowedOnFloor(i, startFloor)) {
+                    minDist = dist;
+                    closestLift = i;
+                    if (startFloor > liftPositions[i] && destFloor < startFloor) {
+                        // User wants to go down and the lift is moving down
+                        sameDirection = true;
+                    } else if (startFloor < liftPositions[i] && destFloor > startFloor) {
+                        // User wants to go up and the lift is moving up
+                        sameDirection = true;
+                    } else {
+                        sameDirection = false;
+                    }
+                }
+                if (closestLift != -1) {
+                    int numStops = 0;
+                    if (sameDirection) {
+                        numStops = Math.abs(destFloor - liftPositions[closestLift]);
+                    } else {
+                        numStops = Math.abs(startFloor - liftPositions[closestLift]) + Math.abs(destFloor - startFloor);
+                    }
+                    if (numStops < minStops) {
+                        minStops = numStops;
+                    } else if (numStops == minStops && dist < minDist) {
+                        closestLift = i;
+                    }
+                }
+            }
+        }
+        if (closestLift == -1) {
+            System.out.println("All lifts are busy, please wait");
+            return;
+        }
+        liftBusy[closestLift] = true;
+        System.out.println(LIFT_NAMES[closestLift] + " is assigned");
+        moveLift(closestLift, destFloor);
+    }
+    private boolean isLiftAllowedOnFloor(int liftIndex, int floor) {
+        if (liftIndex == 0 || liftIndex == 1) {
+            return (floor >= 0 && floor <= 5);
+        } else if (liftIndex == 2 || liftIndex == 3) {
+            return (floor >= 6 && floor <= 10);
+        } else if (liftIndex == 4) {
+            return (floor >= 0 && floor <= 10);
+        } else {
+            return false;
+        }
+    }
+
+
+    private void moveLift(int liftIndex, int destFloor) {
+        int currentFloor = liftPositions[liftIndex];
+        int direction = Integer.compare(destFloor, currentFloor);
+        while (liftPositions[liftIndex] != destFloor) {
+            liftPositions[liftIndex] += direction;
+            displayLiftPositions();
+            try {
+                Thread.sleep(1000); // simulate lift movement
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        liftBusy[liftIndex] = false;
+        
+    }
+
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-
-        int[] liftPositions = new int[]{0, 0, 0, 0, 0};
-        int userSourceFloor, userDestinationFloor, nearestLiftIndex, nearestLiftPosition;
-        boolean isUserInsideLift = false;
-
+        LiftSystem system = new LiftSystem(new int[]{10, 10, 10, 10, 10});
+        Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.print("Enter source floor (0-10): ");
-            userSourceFloor = input.nextInt();
-            if (userSourceFloor < 0 || userSourceFloor > 10) {
-                System.out.println("Invalid floor. Try again.");
-                continue;
-            }
-
-            System.out.print("Enter destination floor (0-10): ");
-            userDestinationFloor = input.nextInt();
-            if (userDestinationFloor < 0 || userDestinationFloor > 10) {
-                System.out.println("Invalid floor. Try again.");
-                continue;
-            }
-
-            // Check if the source floor is within the allowed range for each lift
-            if (userSourceFloor >= 0 && userSourceFloor <= 5) {
-                // Restrict L1 and L2 to floors 0-5
-                liftPositions[0] = Math.max(liftPositions[0], userSourceFloor);
-                liftPositions[1] = Math.max(liftPositions[1], userSourceFloor);
-            } else if (userSourceFloor >= 6 && userSourceFloor <= 10) {
-                // Restrict L3 and L4 to floors 6-10
-                liftPositions[2] = Math.max(liftPositions[2], userSourceFloor);
-                liftPositions[3] = Math.max(liftPositions[3], userSourceFloor);
-            } else {
-                // Allow L5 to go to any floor
-                liftPositions[4] = Math.max(liftPositions[4], userSourceFloor);
-            }
-
-            // Find the nearest lifts to the user's source floor
-            nearestLiftIndex = -1;
-            nearestLiftPosition = Integer.MAX_VALUE;
-            for (int i = 0; i < liftPositions.length; i++) {
-                int liftPosition = liftPositions[i];
-                int distance = Math.abs(liftPosition - userSourceFloor);
-                if (distance < nearestLiftPosition) {
-                    nearestLiftIndex = i;
-                    nearestLiftPosition = distance;
-                }
-            }
-
-            // Check if there is another lift with the same distance
-            boolean isAnotherLiftNearby = false;
-            for (int i = 0; i < liftPositions.length; i++) {
-                if (i != nearestLiftIndex && Math.abs(liftPositions[i] - userSourceFloor) == nearestLiftPosition) {
-                    isAnotherLiftNearby = true;
-                    break;
-                }
-            }
-
-            // If only one lift is nearest, assign that lift to the user
-            if (!isAnotherLiftNearby) {
-                System.out.printf("L%d is assigned.%n", nearestLiftIndex + 1);
-                liftPositions[nearestLiftIndex] = userSourceFloor;
-            } else {
-                // If two lifts are nearest, check the direction of the user's requirement
-                boolean isUserGoingUp = userDestinationFloor > userSourceFloor;
-                int firstLiftPosition = liftPositions[nearestLiftIndex];
-                int secondLiftIndex = -1;
-                int secondLiftPosition = Integer.MAX_VALUE;
-                for (int i = 0; i < liftPositions.length; i++) {
-                    if (i != nearestLiftIndex && Math.abs(liftPositions[i] - userSourceFloor) == nearestLiftPosition) {
-                        int currentLiftPosition = liftPositions[i];
-                       //boolean isLiftGoingUp = currentLiftPosition < liftPositions[i];
-                        boolean isLiftGoingUp = currentLiftPosition < userSourceFloor;
-                        if (isUserGoingUp == isLiftGoingUp) {
-                            secondLiftIndex = i;
-                            secondLiftPosition = currentLiftPosition;
-                            break;
-                        } else if (Math.abs(currentLiftPosition - userSourceFloor) < Math.abs(secondLiftPosition - userSourceFloor)) {
-                            secondLiftIndex = i;
-                            secondLiftPosition = currentLiftPosition;
-                        }
-                    }
-                }
-                // If there is no lift going in the same direction, assign the nearest lift
-                if (secondLiftIndex == -1) {
-                    System.out.printf("L%d is assigned.%n", nearestLiftIndex + 1);
-                    liftPositions[nearestLiftIndex] = userSourceFloor;
-                } else {
-                    System.out.printf("L%d is assigned.%n", secondLiftIndex + 1);
-                    liftPositions[secondLiftIndex] = userSourceFloor;
-                }
-
-                // Move the assigned lift to the user's source floor and then to the destination floor
-                int assignedLiftPosition = liftPositions[isAnotherLiftNearby ? secondLiftIndex : nearestLiftIndex];
-                System.out.printf("Lift    : L1  L2  L3  L4  L5%n");
-                for (int i = 0; i < liftPositions.length; i++) {
-                    System.out.printf("Floor: %2d ", liftPositions[i]);
-                }
-                System.out.println();
-
-
-
-                while (assignedLiftPosition != userSourceFloor) {
-                    if (assignedLiftPosition < userSourceFloor) {
-                        assignedLiftPosition++;
-                    } else {
-                        assignedLiftPosition--;
-                    }
-                    liftPositions[isAnotherLiftNearby ? secondLiftIndex : nearestLiftIndex] = assignedLiftPosition;
-                    System.out.printf("Lift   : L1 L2 L3 L4 L5%n");
-                    for (int i = 0; i < liftPositions.length; i++) {
-                        System.out.printf("Floor: %d   ", liftPositions[i]);
-                    }
-                    System.out.println();
-                }
-
-                while (assignedLiftPosition != userDestinationFloor) {
-                    if (assignedLiftPosition < userDestinationFloor) {
-                        assignedLiftPosition++;
-                    } else {
-                        assignedLiftPosition--;
-                    }
-                    liftPositions[isAnotherLiftNearby ? secondLiftIndex : nearestLiftIndex] = assignedLiftPosition;
-                    System.out.printf("Lift   : L1 L2 L3 L4 L5%n");
-                    for (int i = 0; i < liftPositions.length; i++) {
-                        System.out.printf("Floor: %d   ", liftPositions[i]);
-                    }
-                    System.out.println();
-                }
-
-                System.out.print("Do you want to exit (Y/N)? ");
-                String exitChoice = input.next();
-                if (exitChoice.equalsIgnoreCase("Y")) {
-                    break;
-                }
-                isUserInsideLift = false;
-            }
+            system.displayLiftPositions();
+            System.out.print("Enter start floor and destination floor: ");
+            int startFloor = scanner.nextInt();
+            int destFloor = scanner.nextInt();
+            System.out.print("Enter number of people traveling: ");
+            int numPeople = scanner.nextInt();
+            system.assignLift(startFloor, destFloor, numPeople);
         }
     }
 }
-
-
