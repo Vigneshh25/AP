@@ -1,6 +1,7 @@
 class PatternPrinting {
     public static void main(String[] args) {
         char[][] pattern = new char[5][5];
+        System.out.println();
         int rows = 5, columns = 5;
         int rowStart = 0, rowEnd = rows - 1;
         int colStart = 0, colEnd = columns - 1;
