@@ -1,40 +1,50 @@
-import java.util.*;
-
-public class PatternPrinting {
+class PatternPrinting {
     public static void main(String[] args) {
-        char[][] c = new char[5][5];
-        int m =5,n=5;
-        int k=0,l=0;
-        char x = 'X';
-        while(k<m&&l<n)
-        {
-            for (int i=l;i<n;i++)
-                c[k][i] = x;
-            k++;
-            for(int i=k;i<m;i++)
-                c[i][n-1] = x;
-            n--;
-            if(k<m)
-            {
-                for (int i=n-1;i>=l;i--)
-                    c[m-1][i] =x;
+        char[][] pattern = new char[5][5];
+        int rows = 5, columns = 5;
+        int rowStart = 0, rowEnd = rows - 1;
+        int colStart = 0, colEnd = columns - 1;
+        char currentChar = 'X';
+
+        while (rowStart <= rowEnd && colStart <= colEnd) {
+            // Fill the top row
+            for (int i = colStart; i <= colEnd; i++) {
+                pattern[rowStart][i] = currentChar;
             }
-            m--;
-            if(l<n)
-            {
-                for (int i=m-1;i>=k;i--)
-                    c[i][l] = x;
-                l++;
+            rowStart++;
+
+            // Fill the rightmost column
+            for (int i = rowStart; i <= rowEnd; i++) {
+                pattern[i][colEnd] = currentChar;
+            }
+            colEnd--;
+
+            // Fill the bottom row, if there are remaining rows
+            if (rowStart <= rowEnd) {
+                for (int i = colEnd; i >= colStart; i--) {
+                    pattern[rowEnd][i] = currentChar;
+                }
+                rowEnd--;
             }
 
-            x = x=='X'?'O':'X';
+            // Fill the leftmost column, if there are remaining columns
+            if (colStart <= colEnd) {
+                for (int i = rowEnd; i >= rowStart; i--) {
+                    pattern[i][colStart] = currentChar;
+                }
+                colStart++;
+            }
+
+            // Toggle the character (X to O or O to X)
+            currentChar = (currentChar == 'X') ? 'O' : 'X';
         }
-        for (int i = 0; i < 5; i++)
-        {
-            for (int j = 0; j < 5; j++)
-                System.out.print(c[i][j] + " ");
+
+        // Print the pattern
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.print(pattern[i][j] + " ");
+            }
             System.out.println();
         }
-
     }
 }
