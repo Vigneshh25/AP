@@ -4,7 +4,7 @@ class PatternPrinting {
         int rows = 5, columns = 5;
         int rowStart = 0, rowEnd = rows - 1;
         int colStart = 0, colEnd = columns - 1;
-        char currentChar = 'X';
+        char currentChar = 'x';
 
         while (rowStart <= rowEnd && colStart <= colEnd) {
             // Fill the top row
@@ -36,7 +36,7 @@ class PatternPrinting {
             }
 
             // Toggle the character (X to O or O to X)
-            currentChar = (currentChar == 'X') ? 'O' : 'X';
+            currentChar = (currentChar == 'x') ? 'o' : 'x';
         }
 
         // Print the pattern
