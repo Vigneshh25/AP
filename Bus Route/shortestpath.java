@@ -50,6 +50,12 @@ public class Main {
                 graph.put(start, new ArrayList<>());
             }
             graph.get(start).add(new Pair<>(end, distance));
+
+            // Add the reverse edge from end to start for bus travel in reverse direction
+            if (!graph.containsKey(end)) {
+                graph.put(end, new ArrayList<>());
+            }
+            graph.get(end).add(new Pair<>(start, distance));
         }
 
         // Find the shortest route between two nodes (bus stops) using Priority Queue
