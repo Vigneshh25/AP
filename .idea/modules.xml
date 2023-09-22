@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ADVPRO/ADVPRO.iml" filepath="$PROJECT_DIR$/ADVPRO/ADVPRO.iml" />
       <module fileurl="file://$PROJECT_DIR$/AdvancedProgramming.iml" filepath="$PROJECT_DIR$/AdvancedProgramming.iml" />
     </modules>
   </component>
