@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ADVPRO/ADVPRO.iml" filepath="$PROJECT_DIR$/ADVPRO/ADVPRO.iml" />
       <module fileurl="file://$PROJECT_DIR$/AdvancedProgramming.iml" filepath="$PROJECT_DIR$/AdvancedProgramming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Stiver.iml" filepath="$PROJECT_DIR$/Stiver.iml" />
     </modules>
   </component>
 </project>
