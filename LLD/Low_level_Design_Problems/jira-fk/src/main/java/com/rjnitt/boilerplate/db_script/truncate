@@ -1,2 +1,0 @@
-truncate table employee;
-truncate table address;
