@@ -13,21 +13,18 @@ public class NumberSorter {
     }
 
     public static void sortNumbers(Integer[] numbers) {
-        Arrays.sort(numbers, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                String s1 = o1.toString();
-                String s2 = o2.toString();
-                int i = 0;
-                while (i < s1.length() && i < s2.length()) {
-                    int cmp = s2.charAt(i) - s1.charAt(i);
-                    if (cmp != 0) {
-                        return s1.charAt(i)-s2.charAt(i);
-                    }
-                    i++;
+        Arrays.sort(numbers, (o1, o2) -> {
+            String s1 = o1.toString();
+            String s2 = o2.toString();
+            int i = 0;
+            while (i < s1.length() && i < s2.length()) {
+                int cmp = s2.charAt(i) - s1.charAt(i);
+                if (cmp != 0) {
+                    return s1.charAt(i)-s2.charAt(i);
                 }
-                return s1.length() - s2.length();
+                i++;
             }
+            return s1.length() - s2.length();
         });
     }
 }

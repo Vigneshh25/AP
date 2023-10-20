@@ -1,6 +1,6 @@
-public static void main(String[] args) {
-
-        int matrix[][] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+class zigzag {
+    public static void main(String[] args) {
+        int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         int numRows = matrix.length;
         int numCols = matrix[0].length;
         int row = 0, col = 0;
@@ -32,3 +32,4 @@ public static void main(String[] args) {
                 }
             }
         }
+    }
