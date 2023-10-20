@@ -56,5 +56,28 @@ public class Dayscount {
                     return 0;
             }
         }
+    static int arr[] = {31, 28, 31, 30, 31, 30,
+            31, 31, 30, 31, 30, 31};
+    static int noOfDays(int d1, int m1, int y1, int d2, int m2, int y2) {
+        // code here
+        return Math.abs(days(d2,m2,y2)-days(d1,m1,y1));
+
+    }
+    static int  days(int d1, int m1, int y1)
+    {
+        int n1 = y1*365+d1;
+        for(int i=0;i<m1-1;i++)
+            n1 +=arr[i];
+        n1+=ifleapYear(y1,m1);
+        return n1;
+    }
+    static int ifleapYear(int years,int m)
+    {
+        if (m <= 2)
+        {
+            years--;
+        }
+        return years / 4 - years / 100 + years / 400;
+    }
 
 }
