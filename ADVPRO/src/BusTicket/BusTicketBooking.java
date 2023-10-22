@@ -3,16 +3,23 @@ package BusTicket;
 import java.util.*;
 import java.util.stream.Collectors;
 
-// Bus interface to define common bus operations
 interface Bus {
     void viewSeats();
+
     boolean isSeatAvailable(int seatNumber);
+
     int[] bookTickets(int numberOfTickets);
+
     void cancelTickets(int[] bookedTickets);
+
     double calculateFare(int numberOfTickets);
+
     int[] getBookedSeats();
+
     int getTotalSeats();
+
     String getBusType();
+
     String getSeatType();
 }
 
@@ -20,8 +27,8 @@ interface Bus {
 // Concrete implementations of the Bus interface
 class AcSeaterBus implements Bus {
     private final int totalSeats = 40;
-    private Set<Integer> bookedSeats = new HashSet<>();
-    private double farePerSeat = 1000.00;
+    private final Set<Integer> bookedSeats = new HashSet<>();
+    private final double farePerSeat = 1000.00;
 
     @Override
     public void viewSeats() {
@@ -68,6 +75,7 @@ class AcSeaterBus implements Bus {
     public double calculateFare(int numberOfTickets) {
         return farePerSeat * numberOfTickets;
     }
+
     @Override
     public int[] getBookedSeats() {
         return bookedSeats.stream().mapToInt(Integer::intValue).toArray();
@@ -86,15 +94,13 @@ class AcSeaterBus implements Bus {
         return "seater";
     }
 
-
-    // Additional methods specific to AC Seater Bus, if needed
 }
 
 
 class AcSleeperBus implements Bus {
     private final int totalSeats = 20;
-    private Set<Integer> bookedSeats = new HashSet<>();
-    private double farePerSeat = 1200.00;
+    private final Set<Integer> bookedSeats = new HashSet<>();
+    private final double farePerSeat = 1200.00;
 
     @Override
     public void viewSeats() {
@@ -159,14 +165,12 @@ class AcSleeperBus implements Bus {
     public int getTotalSeats() {
         return totalSeats;
     }
-
-    // Additional methods specific to AC Sleeper Bus, if needed
 }
 
 class NonAcSeaterBus implements Bus {
     private final int totalSeats = 50;
-    private Set<Integer> bookedSeats = new HashSet<>();
-    private double farePerSeat = 800.00;
+    private final Set<Integer> bookedSeats = new HashSet<>();
+    private final double farePerSeat = 800.00;
 
     @Override
     public void viewSeats() {
@@ -221,6 +225,7 @@ class NonAcSeaterBus implements Bus {
     public String getSeatType() {
         return "seater";
     }
+
     @Override
     public int[] getBookedSeats() {
         return bookedSeats.stream().mapToInt(Integer::intValue).toArray();
@@ -232,13 +237,12 @@ class NonAcSeaterBus implements Bus {
     }
 
 
-    // Additional methods specific to Non-AC Seater Bus, if needed
 }
 
 class NonAcSleeperBus implements Bus {
     private final int totalSeats = 30;
-    private Set<Integer> bookedSeats = new HashSet<>();
-    private double farePerSeat = 900.00;
+    private final Set<Integer> bookedSeats = new HashSet<>();
+    private final double farePerSeat = 900.00;
 
     @Override
     public void viewSeats() {
@@ -304,11 +308,9 @@ class NonAcSleeperBus implements Bus {
         return totalSeats;
     }
 
-    // Additional methods specific to Non-AC Sleeper Bus, if needed
 }
 
 class BusFactory {
-    // Factory class to create different types of buses
     public Bus createBus(String busType, String seatType) {
         if ("AC".equalsIgnoreCase(busType)) {
             if ("seater".equalsIgnoreCase(seatType)) {
@@ -324,7 +326,6 @@ class BusFactory {
             }
         }
 
-        // Handle unsupported bus types
         throw new IllegalArgumentException("Unsupported bus type or seat type");
     }
 }
@@ -337,7 +338,6 @@ class Customer {
     private char gender;
     private List<Ticket> bookedTickets;
 
-    // Constructor with ID
     public Customer(int id, String name, String password, int age, char gender) {
         this.id = id;
         this.name = name;
@@ -349,7 +349,7 @@ class Customer {
 
     // Constructor without ID
     public Customer(String name, String password, int age, char gender) {
-        this.id = generateRandomId(); // Generate a random customer ID
+        this.id = generateRandomId();
         this.name = name;
         this.password = password;
         this.age = age;
@@ -414,10 +414,10 @@ class Customer {
 
 
 class Ticket {
-    private int id;
-    private List<Integer> bookedSeats;
-    private Bus bus;
-    private double fare;
+    private final int id;
+    private final List<Integer> bookedSeats;
+    private final Bus bus;
+    private final double fare;
     private boolean isCancelled;
 
     public Ticket(List<Integer> bookedSeats, Bus bus, double fare) {
@@ -447,30 +447,36 @@ class Ticket {
     public boolean isCancelled() {
         return isCancelled;
     }
+
     public void setCancelled(boolean cancelled) {
         isCancelled = cancelled;
     }
 }
 
 class BusTicketSystem {
-    private List<Customer> customers = new ArrayList<>();
-    private List<Bus> buses = new ArrayList<>();
+    public static Map<String, Bus> busMap = new HashMap<>();
+    private final List<Customer> customers = new ArrayList<>();
+    private final List<Bus> buses = new ArrayList<>();
+
+    public BusTicketSystem() {
+        busMap.put("acseater", new AcSeaterBus());
+        busMap.put("acsleeper", new AcSleeperBus());
+        busMap.put("nonacseater", new NonAcSeaterBus());
+        busMap.put("nonacsleeper", new NonAcSleeperBus());
+
+    }
 
     public void signUp(Customer customer) {
         customers.add(customer);
     }
 
     public Customer login(int customerId, String password) {
-        // Validate customer login and return the customer object
-        return customers.stream()
-                .filter(customer -> customer.getId() == customerId && customer.getPassword().equals(password))
-                .findFirst()
-                .orElse(null);
+        return customers.stream().filter(customer -> customer.getId() == customerId && customer.getPassword().equals(password)).findFirst().orElse(null);
     }
 
-    public Ticket bookTickets(Customer customer, String busType, String seatType, int numberOfTickets) {
+    public Ticket bookTickets(Customer customer, String busType, int numberOfTickets) {
         BusFactory busFactory = new BusFactory();
-        Bus bus = busFactory.createBus(busType, seatType);
+        Bus bus = BusTicketSystem.busMap.get(busType.toLowerCase());
 
         if (bus != null) {
             int[] bookedSeats = bus.bookTickets(numberOfTickets);
@@ -500,7 +506,7 @@ class BusTicketSystem {
     }
 
     public void showBusSummary() {
-        // Display a summary of available buses and their booked seats
+        Collection<Bus> buses = BusTicketSystem.busMap.values();
         for (Bus bus : buses) {
             System.out.println("Bus Type: " + bus.getBusType());
             System.out.println("Seat Type: " + bus.getSeatType());
@@ -514,18 +520,11 @@ class BusTicketSystem {
 }
 
 
- class Main {
+class Mainn {
     public static void main(String[] args) {
         BusTicketSystem ticketSystem = new BusTicketSystem();
         Scanner scanner = new Scanner(System.in);
 
-        // Initialize buses and add them to the ticket system
-        ticketSystem.addBus(new AcSeaterBus());
-        ticketSystem.addBus(new AcSleeperBus());
-        ticketSystem.addBus(new NonAcSeaterBus());
-        ticketSystem.addBus(new NonAcSleeperBus());
-
-        // Interactive menu
         while (true) {
             System.out.println("Welcome to the Bus Ticket System!");
             System.out.println("1. Sign up");
@@ -533,11 +532,10 @@ class BusTicketSystem {
             System.out.println("3. Exit");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
-                    // Sign up
                     System.out.print("Enter your name: ");
                     String name = scanner.nextLine();
                     System.out.print("Enter your password: ");
@@ -551,11 +549,10 @@ class BusTicketSystem {
                     Customer customer = new Customer(name, password, age, gender);
                     ticketSystem.signUp(customer);
 
-                    System.out.println(" Customer Id "+ customer.getId()+"sign up successful!");
+                    System.out.println(" Customer Id " + customer.getId() + "sign up successful!");
                     break;
 
                 case 2:
-                    // Log in
                     System.out.print("Enter your customer ID: ");
                     int customerId = scanner.nextInt();
                     scanner.nextLine(); // Consume newline
@@ -572,7 +569,6 @@ class BusTicketSystem {
                     break;
 
                 case 3:
-                    // Exit the program
                     System.out.println("Thank you for using the Bus Ticket System. Goodbye!");
                     scanner.close();
                     System.exit(0);
@@ -592,20 +588,16 @@ class BusTicketSystem {
             System.out.println("4. Log out");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
-                    // Book tickets
                     System.out.print("Enter bus type (AC/Non-AC): ");
                     String busType = scanner.nextLine();
-                    System.out.print("Enter seat type (seater/sleeper): ");
-                    String seatType = scanner.nextLine();
                     System.out.print("Enter the number of tickets to book: ");
                     int numberOfTickets = scanner.nextInt();
-                    scanner.nextLine(); // Consume newline
-
-                    Ticket bookedTicket = ticketSystem.bookTickets(customer, busType, seatType, numberOfTickets);
+                    scanner.nextLine();
+                    Ticket bookedTicket = ticketSystem.bookTickets(customer, busType, numberOfTickets);
                     if (bookedTicket != null) {
                         System.out.println("Booking successful!");
                         System.out.println("Ticket Details:");
@@ -618,7 +610,6 @@ class BusTicketSystem {
                     break;
 
                 case 2:
-                    // Cancel a ticket
                     System.out.print("Enter the ticket ID to cancel: ");
                     int ticketId = scanner.nextInt();
                     scanner.nextLine(); // Consume newline
@@ -633,12 +624,10 @@ class BusTicketSystem {
                     break;
 
                 case 3:
-                    // Show bus summary
                     ticketSystem.showBusSummary();
                     break;
 
                 case 4:
-                    // Log out
                     return;
 
                 default:
