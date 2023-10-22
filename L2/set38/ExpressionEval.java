@@ -1,7 +1,7 @@
 import java.util.Stack;
 
  class ArithmeticExpressionEvaluation {
-    public static int evaluateArithmeticExpression(String expression) {
+        public static int evaluateArithmeticExpression(String expression) {
         Stack<Integer> operands = new Stack<>();
         Stack<Character> operators = new Stack<>();
 
