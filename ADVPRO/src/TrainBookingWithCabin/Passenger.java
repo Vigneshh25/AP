@@ -2,43 +2,31 @@ package TrainBookingWithCabin;
 
 
 class Passenger {
-    private  String name;
-    private  Gender gender;
-    int age;
+    static int id = 0;
+    private int passengerId;
+    private int age;
+    private String name;
     private boolean confirmed;
     private boolean RAC;
     private Seat seat;
     private SeatType preferredBerth;
 
-    public Passenger(String name, int age, Gender gender, SeatType seatType) {
+    public Passenger(String name, int age, SeatType seatType) {
+        this.passengerId = ++id;
         this.name = name;
         this.age = age;
-        this.gender = gender;
         this.preferredBerth = seatType;
         this.confirmed = false;
         this.RAC = false;
         this.seat = null;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setGender(Gender gender) {
-        this.gender = gender;
-    }
-
     public String getName() {
         return name;
     }
 
-
-    public Gender getGender() {
-        return gender;
-    }
-
-    public boolean isfemale() {
-        return this.gender.equals(Gender.FEMALE);
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getAge() {
@@ -85,7 +73,7 @@ class Passenger {
     public String toString() {
         String confirmedStatus = confirmed ? "Confirmed" : "Not Confirmed";
         String racStatus = RAC ? "RAC" : "Not RAC";
-        return "Passenger [name=" + name + ", gender=" + gender + ", age=" + age + ", " + confirmedStatus + ", " + racStatus + ", " + seat + "]";
+        return "Passenger [name=" + name + ", age=" + age + ", " + confirmedStatus + ", " + racStatus + ", " + seat + "]";
     }
 
 

@@ -3,26 +3,22 @@ package TrainBookingWithCabin;
 import java.util.ArrayList;
 import java.util.List;
 
-class Cabin {
-    private final int cabinNumber;
-    private final List<Seat> seats;
+public class Cabin {
+    int cabinNumber;
+    static int LastSeat = 1;
+    List<Seat> seats;
 
     public Cabin(int cabinNumber) {
         this.cabinNumber = cabinNumber;
         this.seats = new ArrayList<>();
-        for (int i = 1; i <= 18; i++) {
-            SeatType type = SeatType.LOWER_BERTH;
-            if (i <= 4) {
-                type = SeatType.UPPER_BERTH;
-            } else if (i <= 8) {
-                type = SeatType.MIDDLE_BERTH;
-            } else if (i <= 11) {
-                type = SeatType.SIDE_UPPER_BERTH;
-            } else if (i == 18) {
-                type = SeatType.SIDE_LOWER_BERTH;
-            }
-            seats.add(new Seat(cabinNumber,i, type, true));
+        for (int i = 1; i <= 2; i++) {
+            seats.add(new Seat(cabinNumber, LastSeat++, SeatType.LOWER_BERTH, true));
+            seats.add(new Seat(cabinNumber, LastSeat++, SeatType.MIDDLE_BERTH, true));
+            seats.add(new Seat(cabinNumber, LastSeat++, SeatType.UPPER_BERTH, true));
         }
+        seats.add(new Seat(cabinNumber, LastSeat, SeatType.SIDE_LOWER_BERTH, true));
+        seats.add(new Seat(cabinNumber, LastSeat++, SeatType.SIDE_LOWER_BERTH, true));
+        seats.add(new Seat(cabinNumber, LastSeat++, SeatType.SIDE_UPPER_BERTH, true));
     }
 
     public int getCabinNumber() {
@@ -31,10 +27,6 @@ class Cabin {
 
     public List<Seat> getSeats() {
         return seats;
-    }
-
-    public void addSeat(Seat seat) {
-        seats.add(seat);
     }
 
     public Seat getAvailableSeat(SeatType seatType) {
@@ -63,20 +55,13 @@ class Cabin {
         }
         return null;
     }
-
-    public Seat getSeatByPassenger(Passenger passenger) {
+    public Seat getAvailableLowerBerthSeat() {
         for (Seat seat : seats) {
-            if (seat.getPassenger() == passenger) {
+            if (seat.isAvailable() && seat.getSeatType() == SeatType.LOWER_BERTH) {
                 return seat;
             }
         }
         return null;
-    }
-
-    public void updateAvailability() {
-        for (Seat seat : seats) {
-            seat.setAvailable(seat.getPassenger() == null);
-        }
     }
 
 

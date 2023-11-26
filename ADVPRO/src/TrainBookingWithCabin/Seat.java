@@ -7,6 +7,7 @@ public class Seat {
     private boolean available;
     private Passenger passenger;
 
+
     public Seat(int cabinNumber,int seatNumber, SeatType seatType, boolean available) {
         this.cabinNumber = cabinNumber;
         this.seatNumber = seatNumber;
@@ -58,5 +59,4 @@ public class Seat {
                 ", passenger=" + passengerInfo +
                 '}';
     }
-
 }
