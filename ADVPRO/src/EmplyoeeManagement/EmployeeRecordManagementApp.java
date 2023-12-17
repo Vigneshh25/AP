@@ -9,7 +9,17 @@ class Employee {
     private String empName;
     private int age;
     private String designation;
-    private String department;
+    private String department;n empName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getDesignation() {
+        return designation;
+    }
+
     private String reportingTo;
 
     public Employee(String empName, int age, String designation, String department, String reportingTo) {
@@ -21,17 +31,7 @@ class Employee {
     }
 
     public String getEmpName() {
-        return empName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public String getDesignation() {
-        return designation;
-    }
-
+        retur
     public String getDepartment() {
         return department;
     }
