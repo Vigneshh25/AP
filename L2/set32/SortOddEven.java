@@ -27,30 +27,27 @@ public class SortOddEven {
 
 
             // Sort the array
-            Collections.sort(arr, new Comparator<Integer>() {
-                @Override
-                public int compare(Integer a, Integer b) {
+            Collections.sort(arr, (a, b) -> {
 
-                    // If both numbers are even,
-                    // smaller number should
-                    // be placed at lower index
-                    if (a % 2 == 0 && b % 2 == 0)
-                        return (a - b);
+                // If both numbers are even,
+                // smaller number should
+                // be placed at lower index
+                if (a % 2 == 0 && b % 2 == 0)
+                    return (a - b);
 
-                    // If both numbers are odd larger number
-                    // should be placed at lower index
-                    if (a % 2 != 0 && b % 2 != 0)
-                        return (b - a);
+                // If both numbers are odd larger number
+                // should be placed at lower index
+                if (a % 2 != 0 && b % 2 != 0)
+                    return (b - a);
 
-                    // If a is odd and b is even,
-                    // a should be placed before b
-                    if (a % 2 != 0)
-                        return -1;
+                // If a is odd and b is even,
+                // a should be placed before b
+                if (a % 2 != 0)
+                    return -1;
 
-                    // If b is odd and a is even,
-                    // b should be placed before a
-                    return 0;
-                }
+                // If b is odd and a is even,
+                // b should be placed before a
+                return 0;
             });
 
             // Print the sorted array

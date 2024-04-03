@@ -30,7 +30,7 @@ class Pair<K, V> {
     }
 }
 
-public class Main {
+ class Main {
     public static void main(String[] args) {
         // List of bus routes
         List<BusRoute> busRoutes = new ArrayList<>();

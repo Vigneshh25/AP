@@ -9,9 +9,7 @@ class Employee {
     private String empName;
     private int age;
     private String designation;
-    private String department;n empName;
-    }
-
+    private String department;
     public int getAge() {
         return age;
     }
@@ -31,7 +29,8 @@ class Employee {
     }
 
     public String getEmpName() {
-        retur
+        return empName;
+    }
     public String getDepartment() {
         return department;
     }

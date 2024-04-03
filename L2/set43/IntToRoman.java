@@ -14,6 +14,8 @@ public class IntToRoman {
                 }
             }
             return res.toString();
+            3*row/3+row
+
         }
         public int romanToInt(String s) {
             int prev = 0;
