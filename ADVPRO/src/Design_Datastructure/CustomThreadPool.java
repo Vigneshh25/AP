@@ -1,7 +1,7 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
+package Design_Datastructure;
+
+import java.util.*;
+import java.util.concurrent.*;
 
 public class CustomThreadPool {
     private final int poolSize;
@@ -35,6 +35,12 @@ public class CustomThreadPool {
         }
     }
 
+    public void await() throws InterruptedException {
+        for (WorkerThread thread : threads) {
+            thread.join(); // Wait for worker threads to finish
+        }
+    }
+
     private class WorkerThread extends Thread {
         private volatile boolean running = true;
 
@@ -57,9 +63,12 @@ public class CustomThreadPool {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // Create a custom thread pool with 3 worker threads
         CustomThreadPool threadPool = new CustomThreadPool(3);
+
+        // CountDownLatch to track the completion of all tasks
+        CountDownLatch latch = new CountDownLatch(10);
 
         // Submit tasks to the thread pool
         for (int i = 0; i < 10; i++) {
@@ -70,9 +79,15 @@ public class CustomThreadPool {
                     Thread.sleep(1000); // Simulate task execution time
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
+                } finally {
+                    // Count down the latch to signal completion of task
+                    latch.countDown();
                 }
             });
         }
+
+        // Wait for all tasks to complete
+        latch.await();
 
         // Shutdown the thread pool
         threadPool.shutdown();
