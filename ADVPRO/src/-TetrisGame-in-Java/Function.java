@@ -1,5 +1,3 @@
-package TetrisGame;
-
 import java.util.Arrays;
 
 public class Function {

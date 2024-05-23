@@ -1,4 +1,4 @@
-package L2.set0;
+package set0;
 
 public class MultiplyPoly {
 

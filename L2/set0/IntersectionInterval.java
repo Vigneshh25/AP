@@ -1,4 +1,4 @@
-package L2.set0;// Java implementation of the approach
+// Java implementation of the approach
 import java.io.*;
 
 class IntersectionInterval

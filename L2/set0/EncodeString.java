@@ -1,5 +1,3 @@
-package L2.set0;
-
 public class EncodeString {
     public static String compressString(String str) {
         StringBuilder compressedString = new StringBuilder();

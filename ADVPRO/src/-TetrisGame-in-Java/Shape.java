@@ -1,5 +1,3 @@
-package TetrisGame;
-
 public class Shape {
 
     // module 2 . can be extended easily to add many more shapes..

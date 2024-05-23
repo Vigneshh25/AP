@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 class AlternateSort {
     static void alternateSort(int arr[], int n) {
         Arrays.sort(arr);

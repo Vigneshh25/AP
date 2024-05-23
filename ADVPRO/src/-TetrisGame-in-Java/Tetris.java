@@ -1,5 +1,3 @@
-package TetrisGame;
-
 import java.util.*;
 public class Tetris{
     public static void main(String[] args) {
@@ -12,7 +10,7 @@ public class Tetris{
         int score=0;
         List<String> shape = Arrays.asList("S","L","T","SQ","Z","ML","I");
         Random random = new Random();
-        int prevScore = 0;
+        
         while(true)
         {
             int n = random.nextInt(shape.size());

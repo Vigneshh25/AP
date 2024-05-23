@@ -1,5 +1,3 @@
-package TetrisGame;
-
 public class Options {
     // module 3 and 4
     static char[][] rotateLeft(char mat[][])

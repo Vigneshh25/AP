@@ -10,7 +10,7 @@ public class LongestPositive {
     static int findLongestConseqSubseq(int nums[], int N)
 	{
 	   // add your code here
-	    Arrays.sort(nums);
+	 Arrays.sort(nums);
         int count =1, max = 1, startIndex=0, endIndex=0;
         for(int i=1;i<nums.length;i++)
         {

@@ -1,4 +1,4 @@
-package L2.set0;
+package set0;
 
 import java.util.Collections;
 import java.util.Comparator;

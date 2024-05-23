@@ -10,6 +10,9 @@ public class count {
         }
         for (int i = 1; i <= n; i *= 10)
             number_of_digits += (n - i + 1);
+ 
+       
+
         System.out.println(count);
 
     }

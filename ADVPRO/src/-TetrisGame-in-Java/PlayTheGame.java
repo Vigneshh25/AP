@@ -1,8 +1,3 @@
-package TetrisGame;
-
-import TetrisGame.Function;
-import TetrisGame.Options;
-
 import java.util.*;
 public class PlayTheGame {
     char[][] shape = null;

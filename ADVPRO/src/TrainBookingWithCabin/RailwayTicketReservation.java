@@ -219,7 +219,7 @@ public class RailwayTicketReservation {
         passenger.setRAC(false);
 
         int pnr = Ticket.generatePNR();
-        ticketsMap.put(pnr, new Ticket(pnr, Arrays.asList(passenger)));
+        ticketsMap.put(pnr, new Ticket(pnr, List.of(passenger)));
         bookedTickets.add(passenger);
         CNFPpassengers.add(passenger);
         promoteWaitingListPassengerToRAC(racSeat);
