@@ -24,7 +24,7 @@ public class TicketBooker
         static Map<Integer, Passenger> passengers = new HashMap<>();//map of passenger ids to passengers
 
         //book ticket
-        public void bookTicket(Passenger p, int berthInfo,String allotedBerth)
+        public void bookTicket(Passenger p, int berthInfo, String allotedBerth)
         {
             //assign the seat number and type of berth(L,U,M)
             p.number = berthInfo;
@@ -37,7 +37,7 @@ public class TicketBooker
         }
 
         //adding to RAC
-        public void addToRAC(Passenger p,int racInfo,String allotedRAC)
+        public void addToRAC(Passenger p, int racInfo, String allotedRAC)
         {
             //assign seat number and type(RAC)
             p.number = racInfo;
@@ -55,7 +55,7 @@ public class TicketBooker
         }
 
         //adding to WL
-        public void addToWaitingList(Passenger p,int waitingListInfo,String allotedWL)
+        public void addToWaitingList(Passenger p, int waitingListInfo, String allotedWL)
         {
             //assign seat number and type(WL)
             p.number = waitingListInfo;

@@ -96,7 +96,7 @@ public class VariableSystem {
     }
 
     public static void main(String[] args) {
-        VariableSystem variableSystem = new VariableSystem();
+        VariableSystem.versions.VariableSystem variableSystem = new VariableSystem.versions.VariableSystem();
 
         // Example 1
         System.out.println(variableSystem.get("a")); // null

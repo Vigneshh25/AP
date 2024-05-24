@@ -2,85 +2,7 @@ package Lift;
 
 import java.util.Scanner;
 
-interface FloorStrategy {
-    boolean isLiftAllowedOnFloor(int liftIndex, int floor);
-}
-
-interface LiftMovementStrategy {
-    void moveLift(Lift lift, int destFloor);
-}
-
-class DefaultFloorStrategy implements FloorStrategy {
-    @Override
-    public boolean isLiftAllowedOnFloor(int liftIndex, int floor) {
-        if (liftIndex == 0 || liftIndex == 1) {
-            return (floor >= 0 && floor <= 5);
-        } else if (liftIndex == 2 || liftIndex == 3) {
-            return (floor >= 6 && floor <= 10);
-        } else if (liftIndex == 4) {
-            return (floor >= 0 && floor <= 10);
-        } else {
-            return false;
-        }
-    }
-}
-
-class DefaultLiftMovementStrategy implements LiftMovementStrategy {
-    @Override
-    public void moveLift(Lift lift, int destFloor) {
-        int currentFloor = lift.getPosition();
-        int direction = Integer.compare(destFloor, currentFloor);
-        new Thread(() -> {
-            while (lift.getPosition() != destFloor) {
-                lift.setPosition(lift.getPosition() + direction);
-//            LiftSystem.displayLiftPositions();
-                try {
-                    Thread.sleep(1000); // simulate lift movement
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-            lift.setBusy(false);}).start();
-    }
-}
-
-class Lift {
-    private final String name;
-    private int position;
-    private boolean busy;
-
-    public Lift(String name) {
-        this.name = name;
-        this.position = 0;
-        this.busy = false;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getPosition() {
-        return position;
-    }
-
-    public void setPosition(int position) {
-        this.position = position;
-    }
-
-    public boolean isBusy() {
-        return busy;
-    }
-
-    public void setBusy(boolean busy) {
-        this.busy = busy;
-    }
-
-    public void displayLiftPositions() {
-        System.out.println(name + ": " + position + "   ");
-    }
-}
-
-class LiftSystem {
+public class LiftSystem {
     private static final int NUM_LIFTS = 5;
     private static final int NUM_FLOORS = 10;
     private static final String[] LIFT_NAMES = {"L1", "L2", "L3", "L4", "L5"};
@@ -166,5 +88,3 @@ class LiftSystem {
         }
     }
 }
-
-

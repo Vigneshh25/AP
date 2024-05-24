@@ -5,14 +5,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Customer[] customer=new Customer[10];
-        Invoice[] invoice=new Invoice[20];
-        Item[] item=new Item[20];
+        Invoice.versions.Customer[] customer=new Invoice.versions.Customer[10];
+        Invoice.versions.Invoice[] invoice=new Invoice.versions.Invoice[20];
+        Invoice.versions.Item[] item=new Invoice.versions.Item[20];
 
-        item[0]=new Item(400,"HeadPhone");
-        item[1]=new Item(1000,"Speaker");
-        item[2]=new Item(500,"SD card");
-        item[3]=new Item(600,"Battery");
+        item[0]=new Invoice.versions.Item(400,"HeadPhone");
+        item[1]=new Invoice.versions.Item(1000,"Speaker");
+        item[2]=new Invoice.versions.Item(500,"SD card");
+        item[3]=new Invoice.versions.Item(600,"Battery");
 
         int cust_Id = 0;
         int invoice_Id = 0;
@@ -40,7 +40,7 @@ public class Main {
                      String address=sc.next();
                     System.out.print("Enter Mobile no:");
                     String mbileNo=sc.next();
-                    customer[cust_Id] = new Customer(naame,address,mbileNo);
+                    customer[cust_Id] = new Invoice.versions.Customer(naame,address,mbileNo);
                     System.out.println("your id is "+cust_Id);
                     cust_Id++;
 
@@ -67,7 +67,7 @@ public class Main {
                         String iaddress=sc.nextLine();
                         System.out.println("Enter Mobile no:");
                         String imbileNo=sc.nextLine();
-                        customer[cust_Id] = new Customer(iname,iaddress,imbileNo);
+                        customer[cust_Id] = new Invoice.versions.Customer(iname,iaddress,imbileNo);
                         cutomerId = cust_Id;
                         cust_Id++;
                     }
@@ -76,7 +76,7 @@ public class Main {
                         System.out.println("Enter Valid options");
                         break;
                     }
-                    invoice[invoice_Id] = new Invoice();
+                    invoice[invoice_Id] = new Invoice.versions.Invoice();
                     customer[cutomerId].addInvoice(invoice_Id);
                     int select = 1 ;
                     while (select==1)
@@ -200,7 +200,7 @@ public class Main {
         }
     }
 
-    private static void displayItem(int Invoice_id, Invoice[] invoice, Item[] item) {
+    private static void displayItem(int Invoice_id, Invoice.versions.Invoice[] invoice, Invoice.versions.Item[] item) {
         int[] items=new int[10];
         int item_id=0,j;
         items=invoice[Invoice_id].getArray();

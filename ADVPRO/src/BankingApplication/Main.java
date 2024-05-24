@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Customer customer = new Customer("John Doe", "123 Main St", "555-1234");
+        Customer customer = new Customer("John Doe", "123 BusRoute.shortestpath.Design_Datastructure.filesystem.Main St", "555-1234");
 
         CheckingAccount checkingAccount = new CheckingAccount("1001", 1000, 500, "1234");
         customer.addAccount(checkingAccount);

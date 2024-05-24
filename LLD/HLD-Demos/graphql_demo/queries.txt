@@ -13,7 +13,7 @@ mutation {
 
 -create student and associate with department : 
 mutation {
-  createStudent(id: "1", name: "John Doe", age: 20, address: "123 Main St", department: "1") {
+  createStudent(id: "1", name: "John Doe", age: 20, address: "123 BusRoute.shortestpath.Design_Datastructure.filesystem.Main St", department: "1") {
     id
     name
     age

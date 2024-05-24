@@ -8,7 +8,7 @@
 •	Module5: Delete directory and file.
 •	Module6: Restore deleted directories and files.
 
-#FileSystem 
+#Design_Datastructure.filesystem.FileSystem 
 
 
 Design an in-memory file system to simulate the following functions:
@@ -24,7 +24,7 @@ readContentFromFile: Given a file path, return its content in string format.
 Example:
 
 Input: 
-["FileSystem","ls","mkdir","addContentToFile","ls","readContentFromFile"]
+["Design_Datastructure.filesystem.FileSystem","ls","mkdir","addContentToFile","ls","readContentFromFile"]
 [[],["/"],["/a/b/c"],["/a/b/c/d","hello"],["/"],["/a/b/c/d"]]
 
 Output:

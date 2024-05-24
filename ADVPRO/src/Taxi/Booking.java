@@ -87,7 +87,7 @@ public class Booking
         return taxis;
     }
 
-    public static List<Taxi> getFreeTaxis(List<Taxi> taxis,int pickupTime,char pickupPoint)
+    public static List<Taxi> getFreeTaxis(List<Taxi> taxis, int pickupTime, char pickupPoint)
     {
         List<Taxi> freeTaxis = new ArrayList<Taxi>();
         for(Taxi t : taxis)

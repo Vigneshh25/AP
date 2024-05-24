@@ -1,3 +1,5 @@
+package Design_Datastructure;
+
 import java.util.HashMap;
 import java.util.Map;
 
