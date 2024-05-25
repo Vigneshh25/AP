@@ -1,0 +1,135 @@
+
+Create a Bus booking application, ZOBUS, which satisfies the following conditions:
+
+Task 1: initialization
+
+Initialize the data as per the details are given below to be loaded when the program starts:
+
+it can be loaded and kept in the memory. No need to maintain a File or DB.
+
+Assume that this bus is available only for a single route (Chennai to Bengaluru).
+
+And that all the passengers want to travel on the same day.
+
+One customer can book only 1 ticket.
+
+2 Sleeper buses – 1 AC and 1 Non-AC
+
+2 Seater Buses – 1 AC and 1 Non-AC.
+
+Seater Bus Has 12 Seats (1,2  3, 4 -represent row where people can seat. middle space is left because it’s walking area).
+  	A 	B 	C
+1
+2
+
+3
+4
+
+ Sleeper Bus has 12 Seats in 2 Decks(6 each)
+
+                                                                                        (Lower Deck)
+  	A 	B
+1
+2
+
+3
+
+                                                                                      (Upper Deck)
+  	A 	B
+4
+5
+
+6
+
+Initial Customers
+Id  	Name 	Password 	Age  	Gender
+1  	aaa 	111 	25 	F
+2 	bbb 	222 	61 	M
+3 	ccc 	333 	22 	M
+4 	ddd 	444 	36 	F
+
+Task 2: Customer Sign-up: The customer should have an option to sign up using a new account by providing all the basic details.
+
+Task 3: Customer Login: The customer should be able to log in using their existing account credentials (Username and password)
+
+Task 4: Booking a Ticket
+
+4.1 Bus options
+
+The customer should be asked for the number of passengers We should display all the buses with the remaining capacity.
+
+Sample Output :
+
+    AC Sleeper – 12 Seats
+    AC Seater – 9 Seats
+    Non AC Sleeper – 4 Seats
+    Non AC Seater – 10 Seats
+
+4.2 Seat Selection: Once the required bus is chosen by the customer, h should be shown the current status of the bus in which seats are occupied and which ones are vacant.
+
+And the customer can choose his seats based on the following rules :
+
+    He /She should input the number of travelers not greater than the remaining seats). Should get the name and gender of co-travelers.
+    He /She can choose the seats such that only a lady can occupy the seat beside a lady from the different ticket.
+    A lady and gent may occupy adjacent seats if they are from the same ticket.
+
+Sample Output
+  	A 	B 	C
+1
+2 	  	F
+
+3 	  	  	M
+4 	  	  	M
+
+If B2 is a lady, then seat B1 can be occupied only by another lady. Similarly for the sleeper. Whereas if 2 people are traveling. 1 Male and 1 Female. They can take seats A1 and A2.
+
+Task 5: Fare calculation: The fare should be calculated and intimated to the customer based as follows :
+
+    AC + Sleeper – Rs 700 / seat
+    AC + Seater – Rs 550 / seat
+    Non-AC + Sleeper – Rs 600/seat
+    Non-AC + Seater – Rs 450 / seat
+
+Task 6: Ticket confirmation: Once the fare is estimated, the customer must be prompted for the confirmation of the booking. Only if he confirms, the ticket should be booked.
+
+Task 7  Ticket Cancellation: The customer should be given an option to cancel their ticket based on the following workflow:
+
+    He should show the list of seats booked by him.
+    He can have the option to completely cancel(all seats) or partially cancel (selected seats)
+    Cancellation Fee of 50% for AC and 25% for Non-AC seats.
+
+Task 8: Bus Filtering: The customer can filter and view the buses based on his preference among the following :
+
+    AC or Non-Ac or Both
+    Seater or Sleeper or Both
+
+Only applicable buses which are not filled should be shown.
+
+    In the descending order of remaining capacity.
+    If the same capacity AC should come first.
+    If the same capacity Sleeper should come first.
+
+Sample Output :
+
+    AC Seater – 12 Seats
+    AC Sleeper – 11 seats
+    Non-AC Sleeper – 11 seats
+    Non-AC Seater – 11 seats
+
+Task 9: Bus summary: The admin should be able to see the summary of the buses as follows :
+
+Bus Type, Number of seats filled, Total Fare Collected, and details of each filled seat.
+
+Sample Output :
+
+    AC Sleeper
+    Number of Seats Filled: 4
+
+Total Fare Collected : 3510 (4 seats+ 1 cancellation)
+
+Seat Details :
+Seat 	Name 	Gender
+A3 	ccc 	M
+B6 	aaa 	F
+A4 	ddd 	F
+A5 	daa 	F

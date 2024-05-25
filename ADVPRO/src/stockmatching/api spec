@@ -1,0 +1,5 @@
+API Specification:
+Add Order: Add a buy or sell order.
+POST /orders with order details (symbol, type, price, quantity).
+Match Orders: Trigger order matching.
+POST /match

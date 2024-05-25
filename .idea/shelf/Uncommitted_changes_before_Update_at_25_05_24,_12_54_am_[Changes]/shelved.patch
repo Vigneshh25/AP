@@ -1,0 +1,41 @@
+Index: L2/set6/removeZero.java
+===================================================================
+diff --git a/L2/set6/removeZero.java b/L2/set6/removeZero.java
+--- a/L2/set6/removeZero.java	
++++ b/L2/set6/removeZero.java	
+@@ -3,8 +3,10 @@
+ public class GfG {
+ 	
+ 	// Function to remove zeroes
++
+ 	public static int removeZero(int n)
+ 	{
++
+ 		// Initialize result to zero holds the
+ 		// Result after removing zeroes from no
+ 		int res = 0;
+@@ -12,20 +14,20 @@
+ 		// Initialize variable d to 1 that holds
+ 		// digits of no
+ 		int d = 1;
+-	
++
+ 		// Loop while n is greater than zero
+ 		while (n > 0) {
+-	
++
+ 			// Check if n mod 10 is not equal to
+ 			// zero
+ 			if (n % 10 != 0) {
+-	
++
+ 				// store the result by removing zeroes
+ 				// And increment d by 10
+ 				res += (n % 10) * d;
+ 				d *= 10;
+ 			}
+-	
++
+ 			// Go to the next digit
+ 			n /= 10;
+ 		}
