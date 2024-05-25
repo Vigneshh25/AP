@@ -4,7 +4,82 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt" />
+    <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
+      <change afterPath="$PROJECT_DIR$/.idea/AP.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Calendar/Calendar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Calendar/CalendarAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Calendar/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Calendar/TimeSlot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/api/hackerrank/api spec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/codingplatform/CommandProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/codingplatform/Contest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/codingplatform/ContestManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/codingplatform/DifficultyLevel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/codingplatform/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/codingplatform/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/codingplatform/QuestionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/codingplatform/SortOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/codingplatform/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/codingplatform/UserManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/Coupon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/Repository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/Rule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/RuleEvaluator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/RuleFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/SimpleRuleEvaluator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/Voucher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/VoucherFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/VoucherType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/api" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/meetingroom/Booking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/meetingroom/BookingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/meetingroom/BookingFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/meetingroom/CalendarInvite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/meetingroom/EmailNotification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/meetingroom/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/meetingroom/MeetingRoom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/meetingroom/MeetingRoomFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/meetingroom/Observer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/meetingroom/Repository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/meetingroom/api" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/recommandation/Action.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/recommandation/FacebookActionHistoryFetcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/recommandation/RecommendationAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/recommandation/RecommendationEngine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/recommandation/RecommendationSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/recommandation/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/recommandation/UserActionHistoryFetcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/stockexchange/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/stockexchange/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/stockexchange/OrderBook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/stockexchange/StockExchange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/stockexchange/input" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/transactionmanagement/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/transactionmanagement/MessageResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/transactionmanagement/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/transactionmanagement/TransactionLogger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/transactionmanagement/TransactionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/transactionmanagement/TransactionProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/transactionmanagement/TransactionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/transactionmanagement/TransactionRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/transactionmanagement/api" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Coin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/CoinInsertedState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/NoCoinInsertedState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/ProductSelectedState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/VendingMachine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/VendingMachineState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,7 +133,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2WwdQRFlaDQLUncZjO6Jo9bOXUY" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -67,6 +144,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ToolWindowChatGPT.ShowToolbar": "false",
     "last_opened_file_path": "/home/vicky/AP",
     "project.structure.last.edited": "Modules",

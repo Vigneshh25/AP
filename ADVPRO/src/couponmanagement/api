@@ -1,0 +1,84 @@
+A) Create Coupon
+
+URL: /api/admin/coupons
+
+Method: POST
+
+Request Body:
+
+{
+  "description": "10% off for orders above $1000",
+  "rule": "age > 18 && cartValue > 1000",
+  "overallUsageLimit": 100,
+  "perUserUsageLimit": 1,
+  "expiryDate": "2024-12-31T23:59:59Z",
+  "isActive": true
+}
+Response:
+
+{
+  "couponId": "unique-coupon-id"
+}
+B) Activate/Deactivate Coupon
+
+URL: /api/admin/coupons/{couponId}/status
+
+Method: PATCH
+
+Request Body:{
+               "isActive": true
+             }
+Response:
+
+{
+  "couponId": "unique-coupon-id",
+  "isActive": true
+}
+C) Delete Coupon
+
+URL: /api/admin/coupons/{couponId}
+
+Method: DELETE
+
+Response:{
+           "message": "Coupon deleted successfully"
+         }
+2. User APIs
+A) View Available Coupons and Vouchers
+
+URL: /api/users/{userId}/coupons
+
+Method: GET
+
+Response:{
+           "coupons": [
+             {
+               "couponId": "unique-coupon-id",
+               "description": "10% off for orders above $1000",
+               "expiryDate": "2024-12-31T23:59:59Z"
+             }
+           ],
+           "vouchers": [
+             {
+               "voucherId": "unique-voucher-id",
+               "type": "UNASSIGNED",
+               "couponId": "unique-coupon-id",
+               "isUsed": false
+             }
+           ]
+         }
+B) Use Voucher
+
+URL: /api/users/{userId}/vouchers/{voucherId}/use
+
+Method: POST
+
+Request Body:{
+               "cartValue": 1200
+             }
+Response:
+
+{
+  "message": "Voucher used successfully",
+  "discount": 120
+}

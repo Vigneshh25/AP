@@ -1,0 +1,45 @@
+Create Transaction
+
+Endpoint: POST /transactions
+Description: Create a new transaction.
+Request Body:
+{
+    "amount": "double",
+    "description": "string"
+}
+Response:
+{
+    "message": "Transaction created successfully",
+    "transactionId": "string"
+}
+Get Transaction
+
+Endpoint: GET /transactions/{transactionId}
+Description: Get details of a specific transaction.
+Response{
+            "transactionId": "string",
+            "amount": "double",
+            "description": "string",
+            "status": "string"
+        }
+List Transactions
+
+Endpoint: GET /transactions
+Description: Get a list of all transactions.
+Response:{
+             "transactions": [
+                 {
+                     "transactionId": "string",
+                     "amount": "double",
+                     "description": "string",
+                     "status": "string"
+                 }
+             ]
+         }
+Process Transactions
+
+Endpoint: POST /transactions/process
+Description: Process all pending transactions.
+Response{
+            "message": "Transactions processed"
+        }
