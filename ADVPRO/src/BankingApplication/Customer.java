@@ -71,8 +71,8 @@ class Customer {
 
     // Verify account access with PIN
     public boolean verifyAccountAccess(Account account, String pin) {
-        if (account instanceof SecureAccount secureAccount) {
-            return secureAccount.verifyAccess(pin);
+        if (account instanceof SecureAccount) {
+            return ((SecureAccount) account).verifyAccess(pin);
         } else {
             System.out.println("Account verification not supported for this account type.");
             return false;
