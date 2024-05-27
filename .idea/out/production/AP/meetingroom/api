@@ -1,0 +1,81 @@
+1. Create Meeting Room
+Endpoint: POST /meeting-rooms
+Description: Create a new meeting room.
+Request Body:
+{
+    "roomId": "string"
+}
+Response:
+{
+    "message": "Meeting room created successfully",
+    "roomId": "string"
+}
+2. Book Meeting Room
+Endpoint: POST /bookings
+Description: Book a meeting room.
+Request Body:
+{
+    "roomId": "string",
+    "startTime": "2024-05-25T10:00:00",
+    "endTime": "2024-05-25T11:00:00",
+    "participants": ["alice@example.com", "bob@example.com"]
+}
+Response:
+{
+    "message": "Booking successful",
+    "bookingId": "string"
+}
+Error Response:
+{
+    "error": "Meeting room is already booked for the given time slot."
+}
+3. Get Available Meeting Rooms
+Endpoint: GET /meeting-rooms/available
+Description: Get available meeting rooms for a given time slot.
+Request Parameters:
+startTime (required): 2024-05-25T10:00:00
+endTime (required): 2024-05-25T11:00:00
+Response{
+            "availableRooms": [
+                {
+                    "roomId": "string"
+                },
+                {
+                    "roomId": "string"
+                }
+            ]
+        }
+4. Get Bookings
+Endpoint: GET /bookings
+Description: Get all bookings.
+Response:
+{
+    "bookings": [
+        {
+            "bookingId": "string",
+            "roomId": "string",
+            "startTime": "2024-05-25T10:00:00",
+            "endTime": "2024-05-25T11:00:00",
+            "participants": ["alice@example.com", "bob@example.com"]
+        },
+        {
+            "bookingId": "string",
+            "roomId": "string",
+            "startTime": "2024-05-25T12:00:00",
+            "endTime": "2024-05-25T13:00:00",
+            "participants": ["charlie@example.com"]
+        }
+    ]
+}
+5. Cancel Booking
+Endpoint: DELETE /bookings/{bookingId}
+Description: Cancel a booking.
+Path Parameter:
+bookingId (required): string
+Response{
+            "message": "Booking cancelled successfully"
+        }
+Error Response:
+    {
+    "error": "Booking not found"
+}

@@ -1,0 +1,38 @@
+API Specification:
+User Registration and Authentication:
+POST /register: Register a new user.
+POST /login: Login an existing user.
+Contacts Management:
+POST /contacts: Add a new contact.
+DELETE /contacts/{contactId}: Delete a contact.
+POST /contacts/{contactId}/block: Block a contact.
+POST /contacts/{contactId}/unblock: Unblock a contact.
+POST /contacts/{contactId}/reportSpam: Report a contact as spam.
+Caller Identification:
+GET /identifyCaller: Identify the caller when a call comes.
+
+
+CREATE TABLE Users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(15) UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE Contacts (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES Users(id),
+    contact_name VARCHAR(255) NOT NULL,
+    contact_number VARCHAR(15) NOT NULL,
+    is_blocked BOOLEAN DEFAULT FALSE,
+    is_spam BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE SpamReports (
+    id SERIAL PRIMARY KEY,
+    reporter_id INTEGER REFERENCES Users(id),
+    contact_id INTEGER REFERENCES Contacts(id),
+    report_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

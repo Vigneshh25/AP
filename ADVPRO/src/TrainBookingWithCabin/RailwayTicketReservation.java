@@ -316,11 +316,11 @@ public class RailwayTicketReservation {
         String preferBerth = scanner.next().toLowerCase();
         SeatType berthPreference = SeatType.ANY;
         switch (preferBerth.toLowerCase()) {
-            case "upper" -> berthPreference = SeatType.UPPER_BERTH;
-            case "lower" -> berthPreference = SeatType.LOWER_BERTH;
-            case "middle" -> berthPreference = SeatType.MIDDLE_BERTH;
-            case "sideupper" -> berthPreference = SeatType.SIDE_UPPER_BERTH;
-            default -> System.out.println("Berth Preference Defaulting to Any.");
+            case "upper" : berthPreference = SeatType.UPPER_BERTH;
+            case "lower" : berthPreference = SeatType.LOWER_BERTH;
+            case "middle" : berthPreference = SeatType.MIDDLE_BERTH;
+            case "sideupper" : berthPreference = SeatType.SIDE_UPPER_BERTH;
+            default : System.out.println("Berth Preference Defaulting to Any.");
         }
         return new Passenger(name, age, berthPreference);
     }
