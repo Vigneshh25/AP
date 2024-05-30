@@ -40,6 +40,6 @@ public class WebCrawler {
 
     public static void main(String[] args) {
         WebCrawler crawler = new WebCrawler();
-        crawler.startCrawling("http://example.com");
+        crawler.startCrawling("https://www.irctc.co.in/nget/train-search");
     }
 }

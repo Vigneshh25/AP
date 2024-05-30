@@ -1,69 +1,53 @@
 Sure, let's design a HackerRank-like platform with the following functionalities and components:
 
-### Functional Requirements
-1. **User Management**: Users can sign up, log in, and view their profiles.
-2. **Problem Management**: Users can view problems, submit solutions, and see the status of their submissions.
-3. **Contest Management**: Users can create contests, participate in contests, and view contest results.
+ Functional Requirements
+1. User Management: Users can sign up, log in, and view their profiles.
+2. Problem Management: Users can view problems, submit solutions, and see the status of their submissions.
+3. Contest Management: Users can create contests, participate in contests, and view contest results.
 
-### API Design
+ API Design
 
-#### 1. User Management
+ 1. User Management
 
-**A) Sign Up**
+A) Sign Up
 
-**URL:** `/api/users/signup`
-
-**Method:** `POST`
-
-**Request Body:**
-```json
+URL: /api/users/signup
+Method: POST
+Request Body:
 {
   "username": "user123",
   "email": "user@example.com",
   "password": "password123"
 }
-```
-
-**Response:**
-```json
+Response:
 {
   "userId": "unique-user-id",
   "username": "user123",
   "email": "user@example.com"
 }
-```
 
-**B) Log In**
 
-**URL:** `/api/users/login`
-
-**Method:** `POST`
-
-**Request Body:**
-```json
+B) Log In
+URL: /api/users/login
+Method: POST
+Request Body:
 {
   "email": "user@example.com",
   "password": "password123"
 }
-```
 
-**Response:**
-```json
+Response:
 {
   "token": "jwt-token",
   "userId": "unique-user-id",
   "username": "user123"
 }
-```
 
-**C) View Profile**
 
-**URL:** `/api/users/{userId}`
-
-**Method:** `GET`
-
-**Response:**
-```json
+C) View Profile
+URL: /api/users/{userId}
+Method: GET
+Response:
 {
   "userId": "unique-user-id",
   "username": "user123",
@@ -71,18 +55,13 @@ Sure, let's design a HackerRank-like platform with the following functionalities
   "score": 1500,
   "solvedProblems": [1, 2, 3]
 }
-```
 
-#### 2. Problem Management
 
-**A) View Problems**
-
-**URL:** `/api/problems`
-
-**Method:** `GET`
-
-**Response:**
-```json
+ 2. Problem Management
+A) View Problems
+URL: /api/problems
+Method: GET
+Response:
 [
   {
     "problemId": 1,
@@ -97,57 +76,41 @@ Sure, let's design a HackerRank-like platform with the following functionalities
     "tags": ["string", "sliding-window"]
   }
 ]
-```
 
-**B) Submit Solution**
 
-**URL:** `/api/problems/{problemId}/submit`
-
-**Method:** `POST`
-
-**Request Body:**
-```json
+B) Submit Solution
+URL: /api/problems/{problemId}/submit
+Method: POST
+Request Body:
 {
   "userId": "unique-user-id",
   "code": "public class Solution { ... }",
   "language": "Java"
 }
-```
-
-**Response:**
-```json
+Response:
 {
   "submissionId": "unique-submission-id",
   "status": "Pending"
 }
-```
 
-**C) View Submission Status**
 
-**URL:** `/api/submissions/{submissionId}`
-
-**Method:** `GET`
-
-**Response:**
-```json
+C) View Submission Status
+URL: /api/submissions/{submissionId}
+Method: GET
+Response:
 {
   "submissionId": "unique-submission-id",
   "status": "Accepted",
   "runtime": "34 ms",
   "memory": "8 MB"
 }
-```
 
-#### 3. Contest Management
 
-**A) Create Contest**
-
-**URL:** `/api/contests`
-
-**Method:** `POST`
-
-**Request Body:**
-```json
+ 3. Contest Management
+A) Create Contest
+URL: /api/contests
+Method: POST
+Request Body:
 {
   "name": "Monthly Coding Challenge",
   "description": "A contest held every month",
@@ -156,47 +119,45 @@ Sure, let's design a HackerRank-like platform with the following functionalities
   "creatorId": "unique-user-id",
   "problems": [1, 2, 3]
 }
-```
 
-**Response:**
-```json
+Response:
 {
   "contestId": "unique-contest-id",
   "name": "Monthly Coding Challenge",
   "creatorId": "unique-user-id"
 }
-```
 
-**B) Participate in Contest**
 
-**URL:** `/api/contests/{contestId}/participate`
+B) Participate in Contest
 
-**Method:** `POST`
+URL: /api/contests/{contestId}/participate
 
-**Request Body:**
-```json
+Method: POST
+
+Request Body:
+
 {
   "userId": "unique-user-id"
 }
-```
 
-**Response:**
-```json
+
+Response:
+
 {
   "contestId": "unique-contest-id",
   "userId": "unique-user-id",
   "status": "Registered"
 }
-```
 
-**C) View Contest Results**
 
-**URL:** `/api/contests/{contestId}/results`
+C) View Contest Results
 
-**Method:** `GET`
+URL: /api/contests/{contestId}/results
 
-**Response:**
-```json
+Method: GET
+
+Response:
+
 [
   {
     "userId": "unique-user-id",
@@ -211,12 +172,12 @@ Sure, let's design a HackerRank-like platform with the following functionalities
     "rank": 2
   }
 ]
-```
 
-### Class Design
 
-#### User Class
-```java
+ Class Design
+
+ User Class
+java
 public class User {
     private String userId;
     private String username;
@@ -227,10 +188,10 @@ public class User {
 
     // Getters and Setters
 }
-```
 
-#### Problem Class
-```java
+
+ Problem Class
+java
 public class Problem {
     private int problemId;
     private String title;
@@ -240,10 +201,10 @@ public class Problem {
 
     // Getters and Setters
 }
-```
 
-#### Submission Class
-```java
+
+ Submission Class
+java
 public class Submission {
     private String submissionId;
     private String userId;
@@ -256,10 +217,10 @@ public class Submission {
 
     // Getters and Setters
 }
-```
 
-#### Contest Class
-```java
+
+ Contest Class
+java
 public class Contest {
     private String contestId;
     private String name;
@@ -272,11 +233,11 @@ public class Contest {
 
     // Getters and Setters
 }
-```
 
-### Database Schema
 
-#### users Table
+ Database Schema
+
+ users Table
 | Column    | Type         | Constraints             |
 |-----------|--------------|-------------------------|
 | user_id   | VARCHAR(255) | PRIMARY KEY             |
@@ -286,7 +247,7 @@ public class Contest {
 | score     | INT          | DEFAULT 1500            |
 | solved_problems | TEXT  |                         |
 
-#### problems Table
+ problems Table
 | Column       | Type         | Constraints             |
 |--------------|--------------|-------------------------|
 | problem_id   | INT          | PRIMARY KEY             |
@@ -295,7 +256,7 @@ public class Contest {
 | difficulty   | VARCHAR(50)  | NOT NULL                |
 | tags         | TEXT         |                         |
 
-#### submissions Table
+ submissions Table
 | Column        | Type         | Constraints             |
 |---------------|--------------|-------------------------|
 | submission_id | VARCHAR(255) | PRIMARY KEY             |
@@ -307,7 +268,7 @@ public class Contest {
 | runtime       | VARCHAR(50)  |                         |
 | memory        | VARCHAR(50)  |                         |
 
-#### contests Table
+ contests Table
 | Column        | Type         | Constraints             |
 |---------------|--------------|-------------------------|
 | contest_id    | VARCHAR(255) | PRIMARY KEY             |
@@ -319,8 +280,8 @@ public class Contest {
 | problems      | TEXT         |                         |
 | participant_scores | TEXT   |                         |
 
-### Summary
-- **APIs**: Defined for user management, problem management, and contest management.
-- **Class Design**: Modular classes for User, Problem, Submission, and Contest.
-- **DB Schema**: Structured tables with appropriate relationships and constraints.
+ Summary
+- APIs: Defined for user management, problem management, and contest management.
+- Class Design: Modular classes for User, Problem, Submission, and Contest.
+- DB Schema: Structured tables with appropriate relationships and constraints.
 

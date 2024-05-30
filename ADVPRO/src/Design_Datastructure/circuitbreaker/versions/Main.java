@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        CircuitBreaker circuitBreaker = new CircuitBreaker(3, 5000, 2);
+        CircuitBreaker circuitBreaker = new CircuitBreaker(2, 5000, 3);
 
         for (int i = 0; i < 10; i++) {
             try {

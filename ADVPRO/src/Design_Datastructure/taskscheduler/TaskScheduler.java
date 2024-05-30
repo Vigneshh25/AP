@@ -1,6 +1,7 @@
 package Design_Datastructure.taskscheduler;
 
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -10,6 +11,7 @@ public class TaskScheduler {
     private final PriorityTaskQueue taskQueue = new PriorityTaskQueue();
     private final WorkerPool workerPool;
     private final ConcurrentMap<Task, List<Task>> dependencyGraph = new ConcurrentHashMap<>();
+    private final Set<Task> completedTasks = ConcurrentHashMap.newKeySet();
 
     private TaskScheduler(int poolSize) {
         this.workerPool = new WorkerPool(poolSize);
@@ -30,17 +32,20 @@ public class TaskScheduler {
     }
 
     public void start() {
-        while (!taskQueue.isEmpty()) {
+        while (!taskQueue.isEmpty() || workerPool.hasPendingTasks()) {
             Task task = taskQueue.getTask();
-            workerPool.submitTask(() -> executeTask(task));
+            if (task != null) {
+                workerPool.submitTask(() -> executeTask(task));
+            }
         }
     }
 
     private void executeTask(Task task) {
         task.run();
+        completedTasks.add(task);
         dependencyGraph.forEach((t, deps) -> {
             deps.remove(task);
-            if (deps.isEmpty()) {
+            if (!deps.isEmpty() && !completedTasks.contains(t)) {
                 taskQueue.addTask(t);
             }
         });

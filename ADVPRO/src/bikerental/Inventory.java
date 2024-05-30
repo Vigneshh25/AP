@@ -1,5 +1,10 @@
 package bikerental;
 
+import bikerental.model.Bike;
+import bikerental.model.Product;
+import bikerental.model.Scooter;
+import bikerental.model.Size;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

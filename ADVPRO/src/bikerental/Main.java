@@ -1,5 +1,7 @@
 package bikerental;
 
+import bikerental.model.*;
+
 import java.util.*;
 
 public class Main {
