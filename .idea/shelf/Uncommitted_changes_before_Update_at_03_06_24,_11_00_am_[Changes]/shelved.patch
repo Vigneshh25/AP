@@ -1,0 +1,1875 @@
+Index: ADVPRO/src/lld/amazonprime/Watchlist.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/amazonprime/Watchlist.java b/ADVPRO/src/lld/amazonprime/Watchlist.java
+new file mode 100644
+--- /dev/null	(date 1717139223003)
++++ b/ADVPRO/src/lld/amazonprime/Watchlist.java	(date 1717139223003)
+@@ -0,0 +1,21 @@
++package lld.amazonprime;
++
++import java.util.*;
++
++class Watchlist {
++    private final List<Video> videos = new ArrayList<>();
++
++    public void addVideo(Video video) {
++        videos.add(video);
++        System.out.println("Added to watchlist: " + video.getId());
++    }
++
++    public List<Video> getVideos() {
++        return new ArrayList<>(videos);
++    }
++
++    public void removeVideo(Video video) {
++        videos.remove(video);
++        System.out.println("Removed from watchlist: " + video.getId());
++    }
++}
+\ No newline at end of file
+Index: ADVPRO/src/lld/GoogleAuthenticator/version/GoogleAuthenticator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/GoogleAuthenticator/version/GoogleAuthenticator.java b/ADVPRO/src/lld/GoogleAuthenticator/version/GoogleAuthenticator.java
+new file mode 100644
+--- /dev/null	(date 1717140010273)
++++ b/ADVPRO/src/lld/GoogleAuthenticator/version/GoogleAuthenticator.java	(date 1717140010273)
+@@ -0,0 +1,46 @@
++package lld.GoogleAuthenticator.version;
++
++class GoogleAuthenticator {
++    private static GoogleAuthenticator instance;
++    private final TokenFactory tokenFactory;
++    private final TokenVerifier tokenVerifier;
++    private final UserDao userDao;
++    private final TokenOperationInvoker tokenOperationInvoker;
++
++    private GoogleAuthenticator() {
++        this.tokenFactory = new DefaultTokenFactory();
++        this.tokenVerifier = new DefaultTokenVerifier();
++        this.userDao = new InMemoryUserDao();
++        this.tokenOperationInvoker = new TokenOperationInvoker();
++    }
++
++    public static synchronized GoogleAuthenticator getInstance() {
++        if (instance == null) {
++            instance = new GoogleAuthenticator();
++        }
++        return instance;
++    }
++
++    public void generateAndExecuteTokenGenerationCommand(String userId, long currentTimeMillis) {
++        User user = userDao.getUser(userId);
++        if (user != null) {
++            String secretKey = user.getSecretKey();
++            TokenCommand generateTokenCommand = new GenerateTokenCommand(tokenFactory, secretKey, currentTimeMillis);
++            tokenOperationInvoker.setCommand(generateTokenCommand);
++            tokenOperationInvoker.executeOperation();
++        } else {
++            System.out.println("User not found!");
++        }
++    }
++
++    public void generateAndExecuteTokenVerificationCommand(String userId, String enteredCode, String generatedCode) {
++        User user = userDao.getUser(userId);
++        if (user != null) {
++            TokenCommand verifyTokenCommand = new VerifyTokenCommand(tokenVerifier, enteredCode, generatedCode);
++            tokenOperationInvoker.setCommand(verifyTokenCommand);
++            tokenOperationInvoker.executeOperation();
++        } else {
++            System.out.println("User not found!");
++        }
++    }
++}
+Index: ADVPRO/src/lld/amazonprime/TVShow.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/amazonprime/TVShow.java b/ADVPRO/src/lld/amazonprime/TVShow.java
+new file mode 100644
+--- /dev/null	(date 1717137136067)
++++ b/ADVPRO/src/lld/amazonprime/TVShow.java	(date 1717137136067)
+@@ -0,0 +1,27 @@
++package lld.amazonprime;
++
++class TVShow implements Video {
++    private String title
++
++;
++
++    public TVShow(String title) {
++        this.title = title;
++    }
++
++    public String getId() {
++        return title.replaceAll("\\s", "_");
++    }
++
++    public void play() {
++        System.out.println("Playing TV show: " + title);
++    }
++
++    public void addToWatchlist() {
++        System.out.println("Added TV show " + title + " to watchlist.");
++    }
++
++    public void removeFromWatchlist() {
++        System.out.println("Removed TV show " + title + " from watchlist.");
++    }
++}
+Index: ADVPRO/src/lld/amazonprime/AmazonPrimeVideo.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/amazonprime/AmazonPrimeVideo.java b/ADVPRO/src/lld/amazonprime/AmazonPrimeVideo.java
+new file mode 100644
+--- /dev/null	(date 1717139547286)
++++ b/ADVPRO/src/lld/amazonprime/AmazonPrimeVideo.java	(date 1717139547286)
+@@ -0,0 +1,53 @@
++package lld.amazonprime;
++
++import java.util.List;
++
++class AmazonPrimeVideo {
++    public static void main(String[] args) {
++        // Implementation details...
++        VideoCatalog videoCatalog = VideoCatalog.getInstance();
++        VideoNotifier videoNotifier = videoCatalog.getVideoNotifier();
++
++        User user1 = new User("user1", videoNotifier);
++        User user2 = new User("user2", videoNotifier);
++
++
++        Video movie = new Movie("Inception");
++        Video tvShow = new TVShow("Breaking Bad");
++
++        videoCatalog.addVideo(movie);
++        videoCatalog.addVideo(tvShow);
++
++
++        RecommendationStrategy strategy = new PopularVideosStrategy();
++        List<Video> recommendations = strategy.recommendVideos(user1);
++        System.out.println("Recommendations for user1: " + recommendations);
++
++        Watchlist watchlist = new Watchlist();
++        VideoCommand addToWatchlistCommand = new AddToWatchlistCommand(watchlist,movie);
++        addToWatchlistCommand.execute();
++
++        VideoCommand removeFromWatchlistCommand = new RemoveFromWatchlistCommand(watchlist,movie);
++        removeFromWatchlistCommand.execute();
++
++        VideoDecorator subtitledMovie = new SubtitledVideo(movie);
++        subtitledMovie.play();
++
++        VideoDecorator hdTvShow = new HDVideo(tvShow);
++        hdTvShow.play();
++
++        Playlist playlist = new BasicPlaylist();
++        playlist.addVideo(movie);
++        playlist.addVideo(tvShow);
++        playlist.play();
++
++        VideoState playingState = new PlayingState();
++        playingState.play();
++        playingState.pause();
++        playingState.stop();
++
++        Video video = new StreamingVideo("xyz123");
++        VideoProxy videoProxy = new VideoProxy(video, user1);
++        videoProxy.play();
++    }
++}
+Index: ADVPRO/src/lld/GoogleAuthenticator/version/TokenFactory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/GoogleAuthenticator/version/TokenFactory.java b/ADVPRO/src/lld/GoogleAuthenticator/version/TokenFactory.java
+new file mode 100644
+--- /dev/null	(date 1717140077375)
++++ b/ADVPRO/src/lld/GoogleAuthenticator/version/TokenFactory.java	(date 1717140077375)
+@@ -0,0 +1,16 @@
++package lld.GoogleAuthenticator.version;
++
++import java.util.Base64;
++
++interface TokenFactory {
++    String generateToken(String secretKey, long currentTimeMillis);
++}
++
++class DefaultTokenFactory implements TokenFactory {
++    @Override
++    public String generateToken(String secretKey, long currentTimeMillis) {
++        // Example token generation logic using base64 encoding
++        String tokenData = secretKey + ":" + currentTimeMillis;
++        return Base64.getEncoder().encodeToString(tokenData.getBytes());
++    }
++}
+Index: ADVPRO/src/lld/GoogleAuthenticator/version/TokenVerifier.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/GoogleAuthenticator/version/TokenVerifier.java b/ADVPRO/src/lld/GoogleAuthenticator/version/TokenVerifier.java
+new file mode 100644
+--- /dev/null	(date 1717140020458)
++++ b/ADVPRO/src/lld/GoogleAuthenticator/version/TokenVerifier.java	(date 1717140020458)
+@@ -0,0 +1,13 @@
++package lld.GoogleAuthenticator.version;
++
++interface TokenVerifier {
++    boolean verifyToken(String enteredCode, String generatedCode);
++}
++
++class DefaultTokenVerifier implements TokenVerifier {
++    @Override
++    public boolean verifyToken(String enteredCode, String generatedCode) {
++        // Simple equality check for token verification
++        return enteredCode.equals(generatedCode);
++    }
++}
+Index: ADVPRO/src/lld/GoogleAuthenticator/version/UserDao.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/GoogleAuthenticator/version/UserDao.java b/ADVPRO/src/lld/GoogleAuthenticator/version/UserDao.java
+new file mode 100644
+--- /dev/null	(date 1717140024155)
++++ b/ADVPRO/src/lld/GoogleAuthenticator/version/UserDao.java	(date 1717140024155)
+@@ -0,0 +1,59 @@
++package lld.GoogleAuthenticator.version;
++
++import java.util.HashMap;
++import java.util.Map;
++
++interface UserDao {
++    void addUser(User user);
++    User getUser(String userId);
++    void updateUser(User user);
++    void removeUser(String userId);
++}
++
++class User {
++    private final String userId;
++    private final String name;
++    private final String secretKey;
++
++    public User(String userId, String name, String secretKey) {
++        this.userId = userId;
++        this.name = name;
++        this.secretKey = secretKey;
++    }
++
++    public String getUserId() {
++        return userId;
++    }
++
++    public String getName() {
++        return name;
++    }
++
++    public String getSecretKey() {
++        return secretKey;
++    }
++}
++
++class InMemoryUserDao implements UserDao {
++    private final Map<String, User> users = new HashMap<>();
++
++    @Override
++    public void addUser(User user) {
++        users.put(user.getUserId(), user);
++    }
++
++    @Override
++    public User getUser(String userId) {
++        return users.get(userId);
++    }
++
++    @Override
++    public void updateUser(User user) {
++        users.put(user.getUserId(), user);
++    }
++
++    @Override
++    public void removeUser(String userId) {
++        users.remove(userId);
++    }
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"9d04bad3-e81d-4d75-8423-0624c37d5968\" name=\"Changes\" comment=\"ryt\">\n      <change afterPath=\"$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/version1/RateLimit.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/version1/RateLimitHelper.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/version1/RateLimiterService.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/version1/Request.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/TaskSchedulerConsole.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/version1/TaskScheduler.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/ADVPRO/src/SharedDocument/AccessControlList.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/ADVPRO/src/SharedDocument/Document.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/ADVPRO/src/SharedDocument/DocumentRepositoryService.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/ADVPRO/src/SharedDocument/Main.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/ADVPRO/src/SharedDocument/User.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/data.txt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/gradle.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/gradle.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/out/production/AP/api/hackerrank/api spec\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/out/production/AP/api/hackerrank/api spec\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/circuitbreaker/versions/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/circuitbreaker/versions/Main.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/versions/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/versions/Main.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/TaskScheduler.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/TaskScheduler.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/WorkerPool.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/WorkerPool.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/versions/ScheduledTask.java\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/versions/TaskExecutor.java\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/versions/TaskQueue.java\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/ADVPRO/src/api/hackerrank/api spec\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ADVPRO/src/api/hackerrank/api spec\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/Bike.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/model/Bike.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/BikeRentalService.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/BikeRentalService.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/Charge.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/model/Charge.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/Customer.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/model/Customer.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/Inventory.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/Inventory.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/Main.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/MotorType.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/model/MotorType.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/Product.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/model/Product.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/Rental.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/model/Rental.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/Scooter.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/model/Scooter.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/Size.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ADVPRO/src/bikerental/model/Size.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/ADVPRO/src/webcrawler/WebCrawler.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ADVPRO/src/webcrawler/WebCrawler.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ExternalProjectsData\">\n    <projectState path=\"$PROJECT_DIR$\">\n      <ProjectState />\n    </projectState>\n    <projectState path=\"$PROJECT_DIR$/Stiver\">\n      <ProjectState />\n    </projectState>\n  </component>\n  <component name=\"ExternalProjectsManager\">\n    <system id=\"GRADLE\">\n      <state>\n        <task path=\"$PROJECT_DIR$/Stiver\">\n          <activation />\n        </task>\n        <projects_view>\n          <tree_state>\n            <expand>\n              <path>\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\n                <item name=\"Stiver\" type=\"f1a62948:ProjectNode\" />\n              </path>\n              <path>\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\n                <item name=\"Stiver\" type=\"f1a62948:ProjectNode\" />\n                <item name=\"Tasks\" type=\"e4a08cd1:TasksNode\" />\n              </path>\n            </expand>\n            <select />\n          </tree_state>\n        </projects_view>\n      </state>\n    </system>\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;Vigneshh25&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/Vigneshh25/AP&quot;,\n    &quot;accountId&quot;: &quot;3a0a287d-76b5-4b35-95be-889986881835&quot;\n  }\n}</component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 8\n}</component>\n  <component name=\"ProjectId\" id=\"2WwdQRFlaDQLUncZjO6Jo9bOXUY\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"ASKED_ADD_EXTERNAL_FILES\": \"true\",\n    \"Application.AsynchronousRateLimiter.executor\": \"Run\",\n    \"Application.CalendarAPI.executor\": \"Run\",\n    \"Application.CircuitBreakerService.executor\": \"Run\",\n    \"Application.CustomThreadPool.executor\": \"Run\",\n    \"Application.ElementStore.executor\": \"Run\",\n    \"Application.Main.executor\": \"Run\",\n    \"Application.MultiThreadedCustomKafkaExample.executor\": \"Run\",\n    \"Application.RateLimiterService.executor\": \"Run\",\n    \"Application.TaskScheduler.executor\": \"Run\",\n    \"Application.TaskSchedulerConsole.executor\": \"Run\",\n    \"Application.TaskSchedulerMain.executor\": \"Run\",\n    \"Application.WebCrawler.executor\": \"Run\",\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\n    \"ToolWindowChatGPT.ShowToolbar\": \"false\",\n    \"git-widget-placeholder\": \"main\",\n    \"kotlin-language-version-configured\": \"true\",\n    \"last_opened_file_path\": \"/home/admin/Git/microscan-tx-be\",\n    \"project.structure.last.edited\": \"Modules\",\n    \"project.structure.proportion\": \"0.0\",\n    \"project.structure.side.proportion\": \"0.0\",\n    \"settings.editor.selected.configurable\": \"com.obiscr.chatgpt.settings.ChatGPT\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/ADVPRO/src\" />\n      <recent name=\"$PROJECT_DIR$/ADVPRO/src/Airtraffic\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration default=\"true\" type=\"JetRunConfigurationType\">\n      <module name=\"Stiver\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration default=\"true\" type=\"KotlinStandaloneScriptRunConfigurationType\">\n      <module name=\"Stiver\" />\n      <option name=\"filePath\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"9d04bad3-e81d-4d75-8423-0624c37d5968\" name=\"Changes\" comment=\"\" />\n      <created>1697647571331</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1697647571331</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"ryt\">\n      <created>1697649182765</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1697649182765</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"ryt\">\n      <created>1697651417971</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1697651417971</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"ryt\">\n      <created>1697823543427</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1697823543427</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"ryt\">\n      <created>1697996345183</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1697996345183</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"ryt\">\n      <created>1716664709569</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1716664709569</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"6\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <MESSAGE value=\"ryt\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"ryt\" />\n  </component>\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\n    <expand />\n    <select />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 84d5e056d848740179378b3ebd2b7f6e83dbbffd)
++++ b/.idea/workspace.xml	(date 1717151306682)
+@@ -5,41 +5,49 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
+-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/version1/RateLimit.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/version1/RateLimitHelper.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/version1/RateLimiterService.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/version1/Request.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/TaskSchedulerConsole.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/version1/TaskScheduler.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/SharedDocument/AccessControlList.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/SharedDocument/Document.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/SharedDocument/DocumentRepositoryService.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/SharedDocument/Main.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/SharedDocument/User.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/data.txt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/out/production/AP/api/hackerrank/api spec" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/out/production/AP/api/hackerrank/api spec" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/version/Batch.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/version/BatchState.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/version/Coupon.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/version/CouponManagementSystem.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/version/CouponManagementSystemApp.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/version/InvalidRequestException.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/GoogleAuthenticator/DefaultTokenFactory.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/GoogleAuthenticator/DefaultTokenVerifier.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/GoogleAuthenticator/GenerateTokenCommand.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/GoogleAuthenticator/GoogleAuthenticator.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/GoogleAuthenticator/GoogleAuthenticatorApp.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/GoogleAuthenticator/InMemoryUserDao.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/GoogleAuthenticator/TokenCommand.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/GoogleAuthenticator/TokenFactory.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/GoogleAuthenticator/TokenOperationInvoker.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/GoogleAuthenticator/TokenVerifier.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/GoogleAuthenticator/User.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/GoogleAuthenticator/UserDao.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/GoogleAuthenticator/VerifyTokenCommand.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/GoogleAuthenticator/version/GoogleAuthenticator.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/GoogleAuthenticator/version/GoogleAuthenticatorApp.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/GoogleAuthenticator/version/TokenCommand.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/GoogleAuthenticator/version/TokenFactory.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/GoogleAuthenticator/version/TokenOperationInvoker.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/GoogleAuthenticator/version/TokenVerifier.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/GoogleAuthenticator/version/UserDao.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/amazonprime/AmazonPrimeVideo.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/amazonprime/Movie.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/amazonprime/Observer.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/amazonprime/Playlist.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/amazonprime/RecommendationStrategy.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/amazonprime/TVShow.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/amazonprime/Video.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/amazonprime/VideoCatalog.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/amazonprime/VideoCommand.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/amazonprime/VideoDecorator.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/amazonprime/VideoFactory.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/amazonprime/VideoNotifier.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/amazonprime/VideoState.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/amazonprime/Watchlist.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/circuitbreaker/versions/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/circuitbreaker/versions/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/versions/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/versions/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/TaskScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/TaskScheduler.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/WorkerPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/WorkerPool.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/versions/ScheduledTask.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/versions/TaskExecutor.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/versions/TaskQueue.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/api/hackerrank/api spec" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/api/hackerrank/api spec" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Bike.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Bike.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/BikeRentalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/BikeRentalService.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Charge.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Charge.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Customer.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Inventory.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/MotorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/MotorType.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Product.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Rental.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Rental.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Scooter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Scooter.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Size.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Size.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/webcrawler/WebCrawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/webcrawler/WebCrawler.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/Main.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Main.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -87,6 +95,11 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="PREVIOUS_COMMIT_AUTHORS">
++      <list>
++        <option value="vickyV25 &lt;vigneshv@nmsworks.co.in&gt;" />
++      </list>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+     <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+@@ -113,19 +126,26 @@
+     <ConfirmationsSetting value="2" id="Add" />
+   </component>
+   <component name="ProjectViewState">
++    <option name="autoscrollFromSource" value="true" />
++    <option name="autoscrollToSource" value="true" />
+     <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="openDirectoriesWithSingleClick" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
+     "ASKED_ADD_EXTERNAL_FILES": "true",
++    "Application.AmazonPrimeVideo.executor": "Run",
+     "Application.AsynchronousRateLimiter.executor": "Run",
+     "Application.CalendarAPI.executor": "Run",
+     "Application.CircuitBreakerService.executor": "Run",
++    "Application.CouponManagementSystemApp.executor": "Run",
+     "Application.CustomThreadPool.executor": "Run",
+     "Application.ElementStore.executor": "Run",
++    "Application.GoogleAuthenticatorApp.executor": "Run",
+     "Application.Main.executor": "Run",
+     "Application.MultiThreadedCustomKafkaExample.executor": "Run",
++    "Application.OverlappingKeysDemo.executor": "Run",
+     "Application.RateLimiterService.executor": "Run",
+     "Application.TaskScheduler.executor": "Run",
+     "Application.TaskSchedulerConsole.executor": "Run",
+@@ -209,7 +229,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1716664709569</updated>
+     </task>
+-    <option name="localTasksCounter" value="6" />
++    <task id="LOCAL-00006" summary="ryt">
++      <option name="closed" value="true" />
++      <created>1717067791292</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1717067791292</updated>
++    </task>
++    <option name="localTasksCounter" value="7" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+Index: ADVPRO/src/lld/GoogleAuthenticator/version/GoogleAuthenticatorApp.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/GoogleAuthenticator/version/GoogleAuthenticatorApp.java b/ADVPRO/src/lld/GoogleAuthenticator/version/GoogleAuthenticatorApp.java
+new file mode 100644
+--- /dev/null	(date 1717140213139)
++++ b/ADVPRO/src/lld/GoogleAuthenticator/version/GoogleAuthenticatorApp.java	(date 1717140213139)
+@@ -0,0 +1,14 @@
++package lld.GoogleAuthenticator.version;
++
++public class GoogleAuthenticatorApp {
++    public static void main(String[] args) {
++        GoogleAuthenticator authenticator = GoogleAuthenticator.getInstance();
++
++        User user = new User("123", "John Doe", "secretKey123");
++        authenticator.generateAndExecuteTokenGenerationCommand(user.getUserId(), System.currentTimeMillis());
++
++        // Simulating user entering the code
++        String enteredCode = "secretKey123"; // Replace with the actual user input
++        authenticator.generateAndExecuteTokenVerificationCommand(user.getUserId(), enteredCode, "generated_token");
++    }
++}
+Index: ADVPRO/src/lld/GoogleAuthenticator/UserDao.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/GoogleAuthenticator/UserDao.java b/ADVPRO/src/lld/GoogleAuthenticator/UserDao.java
+new file mode 100644
+--- /dev/null	(date 1717139711859)
++++ b/ADVPRO/src/lld/GoogleAuthenticator/UserDao.java	(date 1717139711859)
+@@ -0,0 +1,14 @@
++package lld.GoogleAuthenticator;
++
++/**
++ * Created by Vignesh.V on 31/05/24.
++ */ // Data Access Object (DAO) Pattern
++interface UserDao {
++    void addUser(User user);
++
++    User getUser(String userId);
++
++    void updateUser(User user);
++
++    void removeUser(String userId);
++}
+Index: ADVPRO/src/lld/GoogleAuthenticator/VerifyTokenCommand.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/GoogleAuthenticator/VerifyTokenCommand.java b/ADVPRO/src/lld/GoogleAuthenticator/VerifyTokenCommand.java
+new file mode 100644
+--- /dev/null	(date 1717139711892)
++++ b/ADVPRO/src/lld/GoogleAuthenticator/VerifyTokenCommand.java	(date 1717139711892)
+@@ -0,0 +1,23 @@
++package lld.GoogleAuthenticator;
++
++/**
++ * Created by Vignesh.V on 31/05/24.
++ */ // Token Verification Command
++class VerifyTokenCommand implements TokenCommand {
++    private TokenVerifier tokenVerifier;
++    private String enteredCode;
++    private String generatedCode;
++
++    public VerifyTokenCommand(TokenVerifier tokenVerifier, String enteredCode, String generatedCode) {
++        this.tokenVerifier = tokenVerifier;
++        this.enteredCode = enteredCode;
++        this.generatedCode = generatedCode;
++    }
++
++    public void execute() {
++        // Execute token verification
++        boolean isVerified = tokenVerifier.verifyToken(enteredCode, generatedCode);
++        System.out.println("Token Verification Result: " + isVerified);
++        // Additional logic, if needed
++    }
++}
+Index: ADVPRO/src/lld/amazonprime/VideoCatalog.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/amazonprime/VideoCatalog.java b/ADVPRO/src/lld/amazonprime/VideoCatalog.java
+new file mode 100644
+--- /dev/null	(date 1717138765960)
++++ b/ADVPRO/src/lld/amazonprime/VideoCatalog.java	(date 1717138765960)
+@@ -0,0 +1,40 @@
++package lld.amazonprime;
++
++import java.util.ArrayList;
++import java.util.List;
++
++class VideoCatalog {
++    private final List<Video> videos = new ArrayList<>();
++    private final VideoNotifier videoNotifier = new VideoNotifier();
++
++    // Private constructor
++    private VideoCatalog() {}
++
++    // Static inner class for Singleton instance
++    private static class SingletonHelper {
++        private static final VideoCatalog INSTANCE = new VideoCatalog();
++    }
++
++    public static VideoCatalog getInstance() {
++        return SingletonHelper.INSTANCE;
++    }
++
++    public void addVideo(Video video) {
++        videos.add(video);
++        videoNotifier.notifyObservers("New video available: " + video.getId());
++    }
++
++    public Video getVideo(String videoId) {
++        for (Video video : videos) {
++            if (video.getId().equals(videoId)) {
++                return video;
++            }
++        }
++        return null;
++    }
++
++    public VideoNotifier getVideoNotifier() {
++        return videoNotifier;
++    }
++}
++
+Index: ADVPRO/src/lld/amazonprime/VideoFactory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/amazonprime/VideoFactory.java b/ADVPRO/src/lld/amazonprime/VideoFactory.java
+new file mode 100644
+--- /dev/null	(date 1717137228343)
++++ b/ADVPRO/src/lld/amazonprime/VideoFactory.java	(date 1717137228343)
+@@ -0,0 +1,27 @@
++package lld.amazonprime;
++
++interface VideoFactory {
++    Video createVideo(String type, String title);
++}
++
++class MovieFactory implements VideoFactory {
++    public Video createVideo(String title) {
++        return new Movie(title);
++    }
++
++    @Override
++    public Video createVideo(String type, String title) {
++        return null;
++    }
++}
++
++class TVShowFactory implements VideoFactory {
++    public Video createVideo(String title) {
++        return new TVShow(title);
++    }
++
++    @Override
++    public Video createVideo(String type, String title) {
++        return null;
++    }
++}
+Index: ADVPRO/src/lld/GoogleAuthenticator/version/TokenCommand.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/GoogleAuthenticator/version/TokenCommand.java b/ADVPRO/src/lld/GoogleAuthenticator/version/TokenCommand.java
+new file mode 100644
+--- /dev/null	(date 1717140000888)
++++ b/ADVPRO/src/lld/GoogleAuthenticator/version/TokenCommand.java	(date 1717140000888)
+@@ -0,0 +1,41 @@
++package lld.GoogleAuthenticator.version;
++
++interface TokenCommand {
++    void execute();
++}
++
++class GenerateTokenCommand implements TokenCommand {
++    private final TokenFactory tokenFactory;
++    private final String secretKey;
++    private final long currentTimeMillis;
++
++    public GenerateTokenCommand(TokenFactory tokenFactory, String secretKey, long currentTimeMillis) {
++        this.tokenFactory = tokenFactory;
++        this.secretKey = secretKey;
++        this.currentTimeMillis = currentTimeMillis;
++    }
++
++    @Override
++    public void execute() {
++        String generatedToken = tokenFactory.generateToken(secretKey, currentTimeMillis);
++        System.out.println("Generated Token: " + generatedToken);
++    }
++}
++
++class VerifyTokenCommand implements TokenCommand {
++    private final TokenVerifier tokenVerifier;
++    private final String enteredCode;
++    private final String generatedCode;
++
++    public VerifyTokenCommand(TokenVerifier tokenVerifier, String enteredCode, String generatedCode) {
++        this.tokenVerifier = tokenVerifier;
++        this.enteredCode = enteredCode;
++        this.generatedCode = generatedCode;
++    }
++
++    @Override
++    public void execute() {
++        boolean isVerified = tokenVerifier.verifyToken(enteredCode, generatedCode);
++        System.out.println("Token Verification Result: " + isVerified);
++    }
++}
+Index: ADVPRO/src/lld/amazonprime/Observer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/amazonprime/Observer.java b/ADVPRO/src/lld/amazonprime/Observer.java
+new file mode 100644
+--- /dev/null	(date 1717138804531)
++++ b/ADVPRO/src/lld/amazonprime/Observer.java	(date 1717138804531)
+@@ -0,0 +1,22 @@
++package lld.amazonprime;
++
++interface Observer {
++    void update(String message);
++}
++
++class User implements Observer {
++    private String userId;
++
++    public User(String userId, VideoNotifier videoNotifier) {
++        this.userId = userId;
++        videoNotifier.addObserver(this);
++    }
++
++    public String getId() {
++        return userId;
++    }
++
++    public void update(String message) {
++        System.out.println("User " + userId + " received update: " + message);
++    }
++}
+Index: ADVPRO/src/lld/GoogleAuthenticator/TokenFactory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/GoogleAuthenticator/TokenFactory.java b/ADVPRO/src/lld/GoogleAuthenticator/TokenFactory.java
+new file mode 100644
+--- /dev/null	(date 1717139711766)
++++ b/ADVPRO/src/lld/GoogleAuthenticator/TokenFactory.java	(date 1717139711766)
+@@ -0,0 +1,8 @@
++package lld.GoogleAuthenticator;
++
++/**
++ * Created by Vignesh.V on 31/05/24.
++ */ // Factory Method Pattern
++interface TokenFactory {
++    String generateToken(String secretKey, long currentTimeMillis);
++}
+Index: ADVPRO/src/lld/GoogleAuthenticator/TokenOperationInvoker.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/GoogleAuthenticator/TokenOperationInvoker.java b/ADVPRO/src/lld/GoogleAuthenticator/TokenOperationInvoker.java
+new file mode 100644
+--- /dev/null	(date 1717139712001)
++++ b/ADVPRO/src/lld/GoogleAuthenticator/TokenOperationInvoker.java	(date 1717139712001)
+@@ -0,0 +1,17 @@
++package lld.GoogleAuthenticator;
++
++/**
++ * Created by Vignesh.V on 31/05/24.
++ */ // Token Operation Invoker
++class TokenOperationInvoker {
++    private TokenCommand tokenCommand;
++
++    public void setCommand(TokenCommand tokenCommand) {
++        this.tokenCommand = tokenCommand;
++    }
++
++    public void executeOperation() {
++        // Execute the assigned command
++        tokenCommand.execute();
++    }
++}
+Index: ADVPRO/src/lld/GoogleAuthenticator/TokenVerifier.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/GoogleAuthenticator/TokenVerifier.java b/ADVPRO/src/lld/GoogleAuthenticator/TokenVerifier.java
+new file mode 100644
+--- /dev/null	(date 1717139711708)
++++ b/ADVPRO/src/lld/GoogleAuthenticator/TokenVerifier.java	(date 1717139711708)
+@@ -0,0 +1,8 @@
++package lld.GoogleAuthenticator;
++
++/**
++ * Created by Vignesh.V on 31/05/24.
++ */ // Strategy Pattern
++interface TokenVerifier {
++    boolean verifyToken(String enteredCode, String generatedCode);
++}
+Index: ADVPRO/src/lld/GoogleAuthenticator/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/GoogleAuthenticator/User.java b/ADVPRO/src/lld/GoogleAuthenticator/User.java
+new file mode 100644
+--- /dev/null	(date 1717139711800)
++++ b/ADVPRO/src/lld/GoogleAuthenticator/User.java	(date 1717139711800)
+@@ -0,0 +1,24 @@
++package lld.GoogleAuthenticator;
++
++/**
++ * Created by Vignesh.V on 31/05/24.
++ */
++class User {
++    private String userId;
++    private String name;
++    private String secretKey;
++
++    public User(String userId, String name, String secretKey) {
++        this.userId = userId;
++        this.name = name;
++        this.secretKey = secretKey;
++    }
++
++    public String getUserId() {
++        return userId;
++    }
++
++    public String getSecretKey() {
++        return secretKey;
++    }
++}
+Index: ADVPRO/src/lld/amazonprime/Playlist.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/amazonprime/Playlist.java b/ADVPRO/src/lld/amazonprime/Playlist.java
+new file mode 100644
+--- /dev/null	(date 1717138138820)
++++ b/ADVPRO/src/lld/amazonprime/Playlist.java	(date 1717138138820)
+@@ -0,0 +1,38 @@
++package lld.amazonprime;
++
++import java.util.ArrayList;
++import java.util.List;
++
++interface Playlist extends Video {
++    void addVideo(Video video);
++
++    void removeVideo(Video video);
++}
++
++class BasicPlaylist implements Playlist {
++    private List<Video> videos;
++
++    public BasicPlaylist() {
++        videos = new ArrayList<>();
++    }
++
++    public void addVideo(Video video) {
++        videos.add(video);
++    }
++
++    public void removeVideo(Video video) {
++        videos.remove(video);
++    }
++
++    @Override
++    public String getId() {
++        return "";
++    }
++
++    public void play() {
++        System.out.println("Playing all videos in the playlist...");
++        for (Video video : videos) {
++            video.play();
++        }
++    }
++}
+Index: ADVPRO/src/lld/amazonprime/VideoState.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/amazonprime/VideoState.java b/ADVPRO/src/lld/amazonprime/VideoState.java
+new file mode 100644
+--- /dev/null	(date 1717137115546)
++++ b/ADVPRO/src/lld/amazonprime/VideoState.java	(date 1717137115546)
+@@ -0,0 +1,51 @@
++package lld.amazonprime;
++
++interface VideoState {
++    void play();
++
++    void pause();
++
++    void stop();
++}
++
++class PlayingState implements VideoState {
++    public void play() {
++        System.out.println("Video is already playing.");
++    }
++
++    public void pause() {
++        System.out.println("Pausing video...");
++    }
++
++    public void stop() {
++        System.out.println("Stopping video...");
++    }
++}
++
++class PausedState implements VideoState {
++    public void play() {
++        System.out.println("Resuming video...");
++    }
++
++    public void pause() {
++        System.out.println("Video is already paused.");
++    }
++
++    public void stop() {
++        System.out.println("Stopping video...");
++    }
++}
++
++class StoppedState implements VideoState {
++    public void play() {
++        System.out.println("Starting to play video...");
++    }
++
++    public void pause() {
++        System.out.println("Cannot pause. Video is stopped.");
++    }
++
++    public void stop() {
++        System.out.println("Video is already stopped.");
++    }
++}
+Index: ADVPRO/src/lld/amazonprime/Video.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/amazonprime/Video.java b/ADVPRO/src/lld/amazonprime/Video.java
+new file mode 100644
+--- /dev/null	(date 1717138138771)
++++ b/ADVPRO/src/lld/amazonprime/Video.java	(date 1717138138771)
+@@ -0,0 +1,52 @@
++package lld.amazonprime;
++
++interface Video {
++    String getId();
++
++    void play();
++
++}
++
++class StreamingVideo implements Video {
++    private String videoId;
++
++    public StreamingVideo(String videoId) {
++        this.videoId = videoId;
++    }
++
++    public String getId() {
++        return videoId;
++    }
++
++    public void play() {
++        System.out.println("Playing streaming video " + videoId + "...");
++    }
++
++}
++
++class VideoProxy implements Video {
++    private Video video;
++    private User user;
++
++    public VideoProxy(Video video, User user) {
++        this.video = video;
++        this.user = user;
++    }
++
++    public String getId() {
++        return video.getId();
++    }
++
++    public void play() {
++        if (userHasSubscription()) {
++            video.play();
++        } else {
++            System.out.println("User " + user.getId() + " does not have a subscription.");
++        }
++    }
++
++    private boolean userHasSubscription() {
++        // Check user subscription status...
++        return true;
++    }
++}
+Index: ADVPRO/src/lld/amazonprime/Movie.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/amazonprime/Movie.java b/ADVPRO/src/lld/amazonprime/Movie.java
+new file mode 100644
+--- /dev/null	(date 1717137132187)
++++ b/ADVPRO/src/lld/amazonprime/Movie.java	(date 1717137132187)
+@@ -0,0 +1,25 @@
++package lld.amazonprime;
++
++class Movie implements Video {
++    private String title;
++
++    public Movie(String title) {
++        this.title = title;
++    }
++
++    public String getId() {
++        return title.replaceAll("\\s", "_");
++    }
++
++    public void play() {
++        System.out.println("Playing movie: " + title);
++    }
++
++    public void addToWatchlist() {
++        System.out.println("Added movie " + title + " to watchlist.");
++    }
++
++    public void removeFromWatchlist() {
++        System.out.println("Removed movie " + title + " from watchlist.");
++    }
++}
+Index: ADVPRO/src/lld/amazonprime/VideoNotifier.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/amazonprime/VideoNotifier.java b/ADVPRO/src/lld/amazonprime/VideoNotifier.java
+new file mode 100644
+--- /dev/null	(date 1717137255896)
++++ b/ADVPRO/src/lld/amazonprime/VideoNotifier.java	(date 1717137255896)
+@@ -0,0 +1,22 @@
++package lld.amazonprime;
++
++import java.util.ArrayList;
++import java.util.List;
++
++class VideoNotifier {
++    private List<Observer> observers;
++
++    public VideoNotifier() {
++        observers = new ArrayList<>();
++    }
++
++    public void addObserver(Observer observer) {
++        observers.add(observer);
++    }
++
++    public void notifyObservers(String message) {
++        for (Observer observer : observers) {
++            observer.update(message);
++        }
++    }
++}
+Index: ADVPRO/src/lld/GoogleAuthenticator/version/TokenOperationInvoker.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/GoogleAuthenticator/version/TokenOperationInvoker.java b/ADVPRO/src/lld/GoogleAuthenticator/version/TokenOperationInvoker.java
+new file mode 100644
+--- /dev/null	(date 1717140006127)
++++ b/ADVPRO/src/lld/GoogleAuthenticator/version/TokenOperationInvoker.java	(date 1717140006127)
+@@ -0,0 +1,15 @@
++package lld.GoogleAuthenticator.version;
++
++class TokenOperationInvoker {
++    private TokenCommand tokenCommand;
++
++    public void setCommand(TokenCommand tokenCommand) {
++        this.tokenCommand = tokenCommand;
++    }
++
++    public void executeOperation() {
++        if (tokenCommand != null) {
++            tokenCommand.execute();
++        }
++    }
++}
+Index: ADVPRO/src/lld/amazonprime/RecommendationStrategy.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/amazonprime/RecommendationStrategy.java b/ADVPRO/src/lld/amazonprime/RecommendationStrategy.java
+new file mode 100644
+--- /dev/null	(date 1717137183498)
++++ b/ADVPRO/src/lld/amazonprime/RecommendationStrategy.java	(date 1717137183498)
+@@ -0,0 +1,21 @@
++package lld.amazonprime;
++
++import java.util.List;
++
++interface RecommendationStrategy {
++    List<Video> recommendVideos(User user);
++}
++
++class PopularVideosStrategy implements RecommendationStrategy {
++    public List<Video> recommendVideos(User user) {
++        // Implementation details...
++        return null;
++    }
++}
++
++class PersonalizedVideosStrategy implements RecommendationStrategy {
++    public List<Video> recommendVideos(User user) {
++        // Implementation details...
++        return null;
++    }
++}
+Index: ADVPRO/src/lld/amazonprime/VideoCommand.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/amazonprime/VideoCommand.java b/ADVPRO/src/lld/amazonprime/VideoCommand.java
+new file mode 100644
+--- /dev/null	(date 1717139565199)
++++ b/ADVPRO/src/lld/amazonprime/VideoCommand.java	(date 1717139565199)
+@@ -0,0 +1,36 @@
++package lld.amazonprime;
++
++abstract class VideoCommand {
++    protected final Video video;
++    protected final Watchlist watchlist;
++
++    public VideoCommand(Watchlist watchlist, Video video) {
++        this.watchlist = watchlist;
++        this.video = video;
++    }
++
++    abstract void execute();
++}
++
++class AddToWatchlistCommand extends VideoCommand {
++
++    public AddToWatchlistCommand(Watchlist watchlist, Video video) {
++        super(watchlist, video);
++    }
++
++    @Override
++    public void execute() {
++        watchlist.addVideo(video);
++    }
++}
++
++class RemoveFromWatchlistCommand extends VideoCommand {
++    public RemoveFromWatchlistCommand(Watchlist watchlist, Video video) {
++        super(watchlist, video);
++    }
++
++    @Override
++    public void execute() {
++        watchlist.removeVideo(video);
++    }
++}
+Index: ADVPRO/src/lld/amazonprime/VideoDecorator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/amazonprime/VideoDecorator.java b/ADVPRO/src/lld/amazonprime/VideoDecorator.java
+new file mode 100644
+--- /dev/null	(date 1717138138742)
++++ b/ADVPRO/src/lld/amazonprime/VideoDecorator.java	(date 1717138138742)
+@@ -0,0 +1,48 @@
++package lld.amazonprime;
++
++abstract class VideoDecorator implements Video {
++    protected Video decoratedVideo;
++
++    public VideoDecorator(Video decoratedVideo) {
++        this.decoratedVideo = decoratedVideo;
++    }
++
++    public void play() {
++        decoratedVideo.play();
++    }
++}
++
++class SubtitledVideo extends VideoDecorator {
++    public SubtitledVideo(Video decoratedVideo) {
++        super(decoratedVideo);
++    }
++
++    @Override
++    public String getId() {
++        return "";
++    }
++
++    public void play() {
++        // Add subtitle logic...
++        System.out.println("Playing subtitled video...");
++        super.play();
++    }
++
++}
++
++class HDVideo extends VideoDecorator {
++    public HDVideo(Video decoratedVideo) {
++        super(decoratedVideo);
++    }
++
++    @Override
++    public String getId() {
++        return "";
++    }
++
++    public void play() {
++        // Add HD quality logic...
++        System.out.println("Playing HD video...");
++        super.play();
++    }
++}
+Index: ADVPRO/src/couponmanagement/version/BatchState.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/couponmanagement/version/BatchState.java b/ADVPRO/src/couponmanagement/version/BatchState.java
+new file mode 100644
+--- /dev/null	(date 1717149103859)
++++ b/ADVPRO/src/couponmanagement/version/BatchState.java	(date 1717149103859)
+@@ -0,0 +1,14 @@
++package couponmanagement.version;
++
++/**
++ * Created by Vignesh.V on 31/05/24.
++ */ // Enums for BatchState, BatchType, and CouponType
++enum BatchState {
++    CREATED, APPROVED, ACTIVE, EXPIRED, SUSPENDED, TERMINATED
++}
++enum BatchType {
++    OPEN, CLOSED
++}
++enum CouponType {
++    GENERIC, UNIQUE
++}
+Index: ADVPRO/src/couponmanagement/version/InvalidRequestException.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/couponmanagement/version/InvalidRequestException.java b/ADVPRO/src/couponmanagement/version/InvalidRequestException.java
+new file mode 100644
+--- /dev/null	(date 1717149049314)
++++ b/ADVPRO/src/couponmanagement/version/InvalidRequestException.java	(date 1717149049314)
+@@ -0,0 +1,37 @@
++package couponmanagement.version;
++
++class InvalidRequestException extends RuntimeException {
++    public InvalidRequestException(String message) {
++        super(message);
++    }
++}
++
++class InvalidTransitionException extends RuntimeException {
++    public InvalidTransitionException(String message) {
++        super(message);
++    }
++}
++
++class BatchNotFoundException extends RuntimeException {
++    public BatchNotFoundException(String message) {
++        super(message);
++    }
++}
++
++class CouponNotFoundException extends RuntimeException {
++    public CouponNotFoundException(String message) {
++        super(message);
++    }
++}
++
++class BatchNotActiveException extends RuntimeException {
++    public BatchNotActiveException(String message) {
++        super(message);
++    }
++}
++
++class BatchExhaustedException extends RuntimeException {
++    public BatchExhaustedException(String message) {
++        super(message);
++    }
++}
+\ No newline at end of file
+Index: ADVPRO/src/couponmanagement/version/Batch.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/couponmanagement/version/Batch.java b/ADVPRO/src/couponmanagement/version/Batch.java
+new file mode 100644
+--- /dev/null	(date 1717149049577)
++++ b/ADVPRO/src/couponmanagement/version/Batch.java	(date 1717149049577)
+@@ -0,0 +1,84 @@
++package couponmanagement.version;
++
++import java.util.Set;
++import java.util.concurrent.ConcurrentHashMap;
++import java.util.concurrent.atomic.AtomicInteger;
++
++/**
++ * Created by Vignesh.V on 31/05/24.
++ */ // Batch class
++class Batch {
++    private String batchId;
++    private BatchType batchType;
++    private BatchState batchState;
++    private long validityPeriod;
++    private String distributor;
++    private CouponType couponType;
++    private double worth;
++    private int maxAllowedGrants;
++    private Set<String> couponCodes;
++    private AtomicInteger grantedCoupons;
++
++    public Batch(String batchId, BatchType batchType, long validityPeriod, String distributor,
++                 CouponType couponType, double worth, int maxAllowedGrants) {
++        this.batchId = batchId;
++        this.batchType = batchType;
++        this.batchState = BatchState.CREATED;
++        this.validityPeriod = validityPeriod;
++        this.distributor = distributor;
++        this.couponType = couponType;
++        this.worth = worth;
++        this.maxAllowedGrants = maxAllowedGrants;
++        this.couponCodes = ConcurrentHashMap.newKeySet();
++        this.grantedCoupons = new AtomicInteger(0);
++    }
++
++    // Getters and setters
++    public String getBatchId() {
++        return batchId;
++    }
++
++    public BatchType getBatchType() {
++        return batchType;
++    }
++
++    public BatchState getBatchState() {
++        return batchState;
++    }
++
++    public void setBatchState(BatchState batchState) {
++        this.batchState = batchState;
++    }
++
++    public Set<String> getCouponCodes() {
++        return couponCodes;
++    }
++
++    public int getGrantedCoupons() {
++        return grantedCoupons.get();
++    }
++
++    public int getMaxAllowedGrants() {
++        return maxAllowedGrants;
++    }
++
++    public void incrementGrantedCoupons() {
++        this.grantedCoupons.incrementAndGet();
++    }
++
++    public long getValidityPeriod() {
++        return validityPeriod;
++    }
++
++    public String getDistributor() {
++        return distributor;
++    }
++
++    public CouponType getCouponType() {
++        return couponType;
++    }
++
++    public double getWorth() {
++        return worth;
++    }
++}
+Index: ADVPRO/src/couponmanagement/version/Coupon.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/couponmanagement/version/Coupon.java b/ADVPRO/src/couponmanagement/version/Coupon.java
+new file mode 100644
+--- /dev/null	(date 1717149049394)
++++ b/ADVPRO/src/couponmanagement/version/Coupon.java	(date 1717149049394)
+@@ -0,0 +1,29 @@
++package couponmanagement.version;
++
++/**
++ * Created by Vignesh.V on 31/05/24.
++ */ // Coupon class
++class Coupon {
++    private String couponId;
++    private String batchId;
++    private double worth;
++
++    public Coupon(String couponId, String batchId, double worth) {
++        this.couponId = couponId;
++        this.batchId = batchId;
++        this.worth = worth;
++    }
++
++    // Getters
++    public String getCouponId() {
++        return couponId;
++    }
++
++    public String getBatchId() {
++        return batchId;
++    }
++
++    public double getWorth() {
++        return worth;
++    }
++}
+Index: ADVPRO/src/couponmanagement/version/CouponManagementSystem.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/couponmanagement/version/CouponManagementSystem.java b/ADVPRO/src/couponmanagement/version/CouponManagementSystem.java
+new file mode 100644
+--- /dev/null	(date 1717149049352)
++++ b/ADVPRO/src/couponmanagement/version/CouponManagementSystem.java	(date 1717149049352)
+@@ -0,0 +1,106 @@
++package couponmanagement.version;
++
++import java.util.Map;
++import java.util.Set;
++import java.util.concurrent.ConcurrentHashMap;
++
++/**
++ * Created by Vignesh.V on 31/05/24.
++ */ // CouponManagementSystem class
++class CouponManagementSystem {
++    private Map<String, Batch> batches;
++    private Map<String, Coupon> coupons;
++
++    public CouponManagementSystem() {
++        this.batches = new ConcurrentHashMap<>();
++        this.coupons = new ConcurrentHashMap<>();
++    }
++
++    public void createBatch(Batch batch) {
++        if (batches.containsKey(batch.getBatchId())) {
++            throw new InvalidRequestException("Batch with the same ID already exists.");
++        }
++        batches.put(batch.getBatchId(), batch);
++    }
++
++    public void updateState(String batchId, BatchState newState) {
++        Batch batch = batches.get(batchId);
++        if (batch == null) {
++            throw new BatchNotFoundException("Batch not found.");
++        }
++        if (isValidTransition(batch.getBatchState(), newState)) {
++            batch.setBatchState(newState);
++        } else {
++            throw new InvalidTransitionException("Invalid state transition.");
++        }
++    }
++
++    public Batch getBatch(String batchId) {
++        Batch batch = batches.get(batchId);
++        if (batch == null) {
++            throw new BatchNotFoundException("Batch not found.");
++        }
++        return batch;
++    }
++
++    public void ingestCoupons(String batchId, Set<String> couponCodes) {
++        Batch batch = batches.get(batchId);
++        if (batch == null) {
++            throw new BatchNotFoundException("Batch not found.");
++        }
++        batch.getCouponCodes().addAll(couponCodes);
++    }
++
++    public Coupon grantCoupon(String batchId) {
++        Batch batch = batches.get(batchId);
++        if (batch == null) {
++            throw new BatchNotFoundException("Batch not found.");
++        }
++        if (batch.getBatchState() != BatchState.ACTIVE) {
++            throw new BatchNotActiveException("Batch is not active.");
++        }
++        if (batch.getGrantedCoupons() >= batch.getMaxAllowedGrants() || batch.getCouponCodes().isEmpty()) {
++            throw new BatchExhaustedException("Batch is exhausted.");
++        }
++        String couponCode = batch.getCouponCodes().iterator().next();
++        batch.getCouponCodes().remove(couponCode);
++        batch.incrementGrantedCoupons();
++        Coupon coupon = new Coupon(couponCode, batchId, batch.getWorth());
++        coupons.put(coupon.getCouponId(), coupon);
++        return coupon;
++    }
++
++    public Coupon getCoupon(String couponId) {
++        Coupon coupon = coupons.get(couponId);
++        if (coupon == null) {
++            throw new CouponNotFoundException("Coupon not found.");
++        }
++        return coupon;
++    }
++
++    public int getCouponsCount(String batchId) {
++        Batch batch = batches.get(batchId);
++        if (batch == null) {
++            throw new BatchNotFoundException("Batch not found.");
++        }
++        return batch.getCouponCodes().size();
++    }
++
++    private boolean isValidTransition(BatchState currentState, BatchState newState) {
++        switch (currentState) {
++            case CREATED:
++                return newState == BatchState.APPROVED;
++            case APPROVED:
++                return newState == BatchState.ACTIVE;
++            case ACTIVE:
++                return newState == BatchState.EXPIRED || newState == BatchState.SUSPENDED || newState == BatchState.TERMINATED;
++            case SUSPENDED:
++                return newState == BatchState.ACTIVE;
++            case EXPIRED:
++            case TERMINATED:
++                return false;
++            default:
++                return false;
++        }
++    }
++}
+Index: ADVPRO/src/lld/GoogleAuthenticator/GenerateTokenCommand.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/GoogleAuthenticator/GenerateTokenCommand.java b/ADVPRO/src/lld/GoogleAuthenticator/GenerateTokenCommand.java
+new file mode 100644
+--- /dev/null	(date 1717139712025)
++++ b/ADVPRO/src/lld/GoogleAuthenticator/GenerateTokenCommand.java	(date 1717139712025)
+@@ -0,0 +1,23 @@
++package lld.GoogleAuthenticator;
++
++/**
++ * Created by Vignesh.V on 31/05/24.
++ */ // Token Generation Command
++class GenerateTokenCommand implements TokenCommand {
++    private TokenFactory tokenFactory;
++    private String secretKey;
++    private long currentTimeMillis;
++
++    public GenerateTokenCommand(TokenFactory tokenFactory, String secretKey, long currentTimeMillis) {
++        this.tokenFactory = tokenFactory;
++        this.secretKey = secretKey;
++        this.currentTimeMillis = currentTimeMillis;
++    }
++
++    public void execute() {
++        // Execute token generation
++        String generatedToken = tokenFactory.generateToken(secretKey, currentTimeMillis);
++        System.out.println("Generated Token: " + generatedToken);
++        // Additional logic, if needed
++    }
++}
+Index: ADVPRO/src/lld/GoogleAuthenticator/GoogleAuthenticator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/GoogleAuthenticator/GoogleAuthenticator.java b/ADVPRO/src/lld/GoogleAuthenticator/GoogleAuthenticator.java
+new file mode 100644
+--- /dev/null	(date 1717139711925)
++++ b/ADVPRO/src/lld/GoogleAuthenticator/GoogleAuthenticator.java	(date 1717139711925)
+@@ -0,0 +1,55 @@
++package lld.GoogleAuthenticator;
++
++/**
++ * Created by Vignesh.V on 31/05/24.
++ */ // Singleton Pattern
++class GoogleAuthenticator {
++    private static GoogleAuthenticator instance;
++    private TokenFactory tokenFactory;
++    private TokenVerifier tokenVerifier;
++    private UserDao userDao;
++    private TokenOperationInvoker tokenOperationInvoker;
++
++    private GoogleAuthenticator() {
++        this.tokenFactory = new DefaultTokenFactory();
++        this.tokenVerifier = new DefaultTokenVerifier();
++        this.userDao = new InMemoryUserDao();
++        this.tokenOperationInvoker = new TokenOperationInvoker();
++    }
++
++    public static GoogleAuthenticator getInstance() {
++        if (instance == null) {
++            instance = new GoogleAuthenticator();
++        }
++        return instance;
++    }
++
++    // Other methods for QR code generation, user registration, etc.
++
++    public void generateAndExecuteTokenGenerationCommand(String userId, long currentTimeMillis) {
++        User user = userDao.getUser(userId);
++        if (user != null) {
++            String secretKey = user.getSecretKey();
++            // Create the token generation command
++            TokenCommand generateTokenCommand = new GenerateTokenCommand(tokenFactory, secretKey, currentTimeMillis);
++            // Set the command
++            tokenOperationInvoker.setCommand(generateTokenCommand);
++            // Execute the command
++            tokenOperationInvoker.executeOperation();
++        }
++    }
++
++    public void generateAndExecuteTokenVerificationCommand(String userId, String enteredCode, String generatedCode) {
++        User user = userDao.getUser(userId);
++        if (user != null) {
++            // Create the token verification command
++            TokenCommand verifyTokenCommand = new VerifyTokenCommand(tokenVerifier, enteredCode, generatedCode);
++            // Set the command
++            tokenOperationInvoker.setCommand(verifyTokenCommand);
++            // Execute the command
++            tokenOperationInvoker.executeOperation();
++        }
++    }
++
++    // Other methods...
++}
+Index: ADVPRO/src/lld/GoogleAuthenticator/InMemoryUserDao.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/GoogleAuthenticator/InMemoryUserDao.java b/ADVPRO/src/lld/GoogleAuthenticator/InMemoryUserDao.java
+new file mode 100644
+--- /dev/null	(date 1717139711638)
++++ b/ADVPRO/src/lld/GoogleAuthenticator/InMemoryUserDao.java	(date 1717139711638)
+@@ -0,0 +1,35 @@
++package lld.GoogleAuthenticator;
++
++import java.util.HashMap;
++import java.util.Map;
++
++/**
++ * Created by Vignesh.V on 31/05/24.
++ */
++class InMemoryUserDao implements UserDao {
++    private Map<String, User> users;
++
++    public InMemoryUserDao() {
++        this.users = new HashMap<>();
++    }
++
++    @Override
++    public void addUser(User user) {
++        users.put(user.getUserId(), user);
++    }
++
++    @Override
++    public User getUser(String userId) {
++        return users.get(userId);
++    }
++
++    @Override
++    public void updateUser(User user) {
++        users.put(user.getUserId(), user);
++    }
++
++    @Override
++    public void removeUser(String userId) {
++        users.remove(userId);
++    }
++}
+Index: ADVPRO/src/lld/GoogleAuthenticator/TokenCommand.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/GoogleAuthenticator/TokenCommand.java b/ADVPRO/src/lld/GoogleAuthenticator/TokenCommand.java
+new file mode 100644
+--- /dev/null	(date 1717139711959)
++++ b/ADVPRO/src/lld/GoogleAuthenticator/TokenCommand.java	(date 1717139711959)
+@@ -0,0 +1,8 @@
++package lld.GoogleAuthenticator;
++
++/**
++ * Created by Vignesh.V on 31/05/24.
++ */ // Command Interface
++interface TokenCommand {
++    void execute();
++}
+Index: ADVPRO/src/BookMyshow/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package BookMyshow;\n\nimport BookMyshow.entities.*;\nimport BookMyshow.gateways.PaymentGateway;\nimport BookMyshow.gateways.StripePaymentGateway;\nimport BookMyshow.repositories.*;\nimport BookMyshow.repositoriesimpl.*;\nimport BookMyshow.services.*;\nimport BookMyshow.servicesimpl.*;\n\nimport java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        // Repositories\n        UserRepository userRepository = new InMemoryUserRepository();\n        ShowRepository showRepository = new InMemoryShowRepository();\n        BookingRepository bookingRepository = new InMemoryBookingRepository();\n        PaymentRepository paymentRepository = new InMemoryPaymentRepository();\n        MovieRepository movieRepository = new InMemoryMovieRepository();\n\n        // Services\n        PaymentGateway paymentGateway = new StripePaymentGateway();\n        PaymentService paymentService = new PaymentServiceImpl(paymentGateway, paymentRepository);\n        ShowService showService = new ShowServiceImpl(showRepository);\n        BookingService bookingService = new BookingServiceImpl(bookingRepository, paymentService, showService);\n        UserService userService = new UserServiceImpl(userRepository);\n        MovieService movieService = new MovieServiceImpl(movieRepository);\n\n        // Scanner for user input\n        Scanner scanner = new Scanner(System.in);\n\n        User currentUser = null;\n\n        while (true) {\n            displayMainMenu();\n            int choice = getUserChoice(scanner);\n\n            switch (choice) {\n                case 1:\n                    currentUser = registerUser(userService, scanner);\n                    break;\n                case 2:\n                    currentUser = loginUser(userService, scanner);\n                    if (currentUser != null) {\n                        handleUserActions(currentUser, bookingService, userService, scanner);\n                    }\n                    break;\n                case 3:\n                    System.out.println(\"Exiting...\");\n                    System.exit(0);\n                default:\n                    System.out.println(\"Invalid choice. Please try again.\");\n            }\n        }\n    }\n\n    private static void displayMainMenu() {\n        System.out.println(\"1. Register\");\n        System.out.println(\"2. Login\");\n        System.out.println(\"3. Exit\");\n    }\n\n    private static int getUserChoice(Scanner scanner) {\n        return scanner.nextInt();\n    }\n\n    private static User registerUser(UserService userService, Scanner scanner) {\n        System.out.println(\"Enter name:\");\n        String name = scanner.nextLine();\n        System.out.println(\"Enter email:\");\n        String email = scanner.nextLine();\n        System.out.println(\"Enter password:\");\n        String password = scanner.nextLine();\n\n        User user = new User(UUID.randomUUID().toString(), name, email, password);\n        if (userService.register(user)) {\n            System.out.println(\"User registered successfully.\");\n            return user;\n        } else {\n            System.out.println(\"Registration failed. Email may already be in use.\");\n            return null;\n        }\n    }\n\n    private static User loginUser(UserService userService, Scanner scanner) {\n        System.out.println(\"Enter email:\");\n        String email = scanner.nextLine();\n        System.out.println(\"Enter password:\");\n        String password = scanner.nextLine();\n\n        if (userService.login(email, password)) {\n            System.out.println(\"Login successful.\");\n            return userService.getUserByEmail(email);\n        } else {\n            System.out.println(\"Login failed. Please check your email and password.\");\n            return null;\n        }\n    }\n\n    private static void handleUserActions(User currentUser, BookingService bookingService, UserService userService, Scanner scanner) {\n        while (true) {\n            displayUserMenu();\n            int choice = getUserChoice(scanner);\n\n            switch (choice) {\n                case 1:\n                    bookTickets(currentUser, bookingService, scanner);\n                    break;\n                case 2:\n                    viewBookings(currentUser, bookingService);\n                    break;\n                case 3:\n                    updateProfile(currentUser, userService, scanner);\n                    break;\n                case 4:\n                    System.out.println(\"Logging out...\");\n                    return;\n                default:\n                    System.out.println(\"Invalid choice. Please try again.\");\n            }\n        }\n    }\n\n    private static void displayUserMenu() {\n        System.out.println(\"1. Book Tickets\");\n        System.out.println(\"2. View Bookings\");\n        System.out.println(\"3. Update Profile\");\n        System.out.println(\"4. Logout\");\n    }\n\n    private static void bookTickets(User currentUser, BookingService bookingService, Scanner scanner) {\n        System.out.println(\"Enter show ID:\");\n        String showId = scanner.nextLine();\n        List<Seat> seats = new ArrayList<>(); // Add seat selection logic here\n\n        try {\n            Booking booking = bookingService.createBooking(showId, currentUser.getUserId(), seats);\n            System.out.println(\"Booking created with ID: \" + booking.getBookingId());\n        } catch (IllegalArgumentException e) {\n            System.out.println(\"Error: \" + e.getMessage());\n        }\n    }\n\n    private static void viewBookings(User currentUser, BookingService bookingService) {\n        System.out.println(\"Viewing bookings...\");\n        // Fetch and display bookings for the current user\n        // Example: bookingService.getBookingsByUserId(currentUser.getUserId());\n    }\n\n    private static void updateProfile(User currentUser, UserService userService, Scanner scanner) {\n        System.out.println(\"Enter new name:\");\n        String newName = scanner.nextLine();\n        currentUser.setName(newName);\n        userService.updateProfile(currentUser);\n        System.out.println(\"Profile updated.\");\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/BookMyshow/Main.java b/ADVPRO/src/BookMyshow/Main.java
+--- a/ADVPRO/src/BookMyshow/Main.java	(revision 84d5e056d848740179378b3ebd2b7f6e83dbbffd)
++++ b/ADVPRO/src/BookMyshow/Main.java	(date 1717133072727)
+@@ -67,11 +67,11 @@
+ 
+     private static User registerUser(UserService userService, Scanner scanner) {
+         System.out.println("Enter name:");
+-        String name = scanner.nextLine();
++        String name = scanner.next();
+         System.out.println("Enter email:");
+-        String email = scanner.nextLine();
++        String email = scanner.next();
+         System.out.println("Enter password:");
+-        String password = scanner.nextLine();
++        String password = scanner.next();
+ 
+         User user = new User(UUID.randomUUID().toString(), name, email, password);
+         if (userService.register(user)) {
+@@ -85,9 +85,9 @@
+ 
+     private static User loginUser(UserService userService, Scanner scanner) {
+         System.out.println("Enter email:");
+-        String email = scanner.nextLine();
++        String email = scanner.next();
+         System.out.println("Enter password:");
+-        String password = scanner.nextLine();
++        String password = scanner.next();
+ 
+         if (userService.login(email, password)) {
+             System.out.println("Login successful.");
+@@ -131,7 +131,7 @@
+ 
+     private static void bookTickets(User currentUser, BookingService bookingService, Scanner scanner) {
+         System.out.println("Enter show ID:");
+-        String showId = scanner.nextLine();
++        String showId = scanner.next();
+         List<Seat> seats = new ArrayList<>(); // Add seat selection logic here
+ 
+         try {
+@@ -150,7 +150,7 @@
+ 
+     private static void updateProfile(User currentUser, UserService userService, Scanner scanner) {
+         System.out.println("Enter new name:");
+-        String newName = scanner.nextLine();
++        String newName = scanner.next();
+         currentUser.setName(newName);
+         userService.updateProfile(currentUser);
+         System.out.println("Profile updated.");
+Index: ADVPRO/src/lld/GoogleAuthenticator/GoogleAuthenticatorApp.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/GoogleAuthenticator/GoogleAuthenticatorApp.java b/ADVPRO/src/lld/GoogleAuthenticator/GoogleAuthenticatorApp.java
+new file mode 100644
+--- /dev/null	(date 1717139711741)
++++ b/ADVPRO/src/lld/GoogleAuthenticator/GoogleAuthenticatorApp.java	(date 1717139711741)
+@@ -0,0 +1,15 @@
++package lld.GoogleAuthenticator;
++
++
++public class GoogleAuthenticatorApp {
++    public static void main(String[] args) {
++        GoogleAuthenticator authenticator = GoogleAuthenticator.getInstance();
++
++        User user = new User("123", "John Doe", "secretKey123");
++        authenticator.generateAndExecuteTokenGenerationCommand(user.getUserId(), System.currentTimeMillis());
++
++        // Simulating user entering the code
++        String enteredCode = "generated_token"; // Replace with the actual user input
++        authenticator.generateAndExecuteTokenVerificationCommand(user.getUserId(), enteredCode, "generated_token");
++    }
++}
+Index: ADVPRO/src/lld/GoogleAuthenticator/DefaultTokenFactory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/GoogleAuthenticator/DefaultTokenFactory.java b/ADVPRO/src/lld/GoogleAuthenticator/DefaultTokenFactory.java
+new file mode 100644
+--- /dev/null	(date 1717139711674)
++++ b/ADVPRO/src/lld/GoogleAuthenticator/DefaultTokenFactory.java	(date 1717139711674)
+@@ -0,0 +1,12 @@
++package lld.GoogleAuthenticator;
++
++/**
++ * Created by Vignesh.V on 31/05/24.
++ */
++class DefaultTokenFactory implements TokenFactory {
++    @Override
++    public String generateToken(String secretKey, long currentTimeMillis) {
++        // Implementation details...
++        return "generated_token";
++    }
++}
+Index: ADVPRO/src/lld/GoogleAuthenticator/DefaultTokenVerifier.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/lld/GoogleAuthenticator/DefaultTokenVerifier.java b/ADVPRO/src/lld/GoogleAuthenticator/DefaultTokenVerifier.java
+new file mode 100644
+--- /dev/null	(date 1717139711825)
++++ b/ADVPRO/src/lld/GoogleAuthenticator/DefaultTokenVerifier.java	(date 1717139711825)
+@@ -0,0 +1,12 @@
++package lld.GoogleAuthenticator;
++
++/**
++ * Created by Vignesh.V on 31/05/24.
++ */
++class DefaultTokenVerifier implements TokenVerifier {
++    @Override
++    public boolean verifyToken(String enteredCode, String generatedCode) {
++        // Implementation details...
++        return enteredCode.equals(generatedCode);
++    }
++}
+Index: ADVPRO/src/Design_Datastructure/kafka/version/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Design_Datastructure.kafka.version;\n\npublic class Main {\n    public static void main(String[] args) {\n        Broker broker = new Broker();\n        broker.createTopic(\"testTopic\", 3, 2);\n\n        Thread producer1 = new Thread(new Producer(broker, \"testTopic\", \"Producer1\"));\n        Thread producer2 = new Thread(new Producer(broker, \"testTopic\", \"Producer2\"));\n        Thread consumer1 = new Thread(new Consumer(broker, \"testTopic\", 0, 0, \"Consumer1\"));\n        Thread consumer2 = new Thread(new Consumer(broker, \"testTopic\", 1, 1, \"Consumer2\"));\n\n        producer1.start();\n        producer2.start();\n        consumer1.start();\n        consumer2.start();\n\n        try {\n            producer1.join();\n            producer2.join();\n        } catch (InterruptedException e) {\n            Thread.currentThread().interrupt();\n        }\n\n        consumer1.interrupt();\n        consumer2.interrupt();\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/Design_Datastructure/kafka/version/Main.java b/ADVPRO/src/Design_Datastructure/kafka/version/Main.java
+--- a/ADVPRO/src/Design_Datastructure/kafka/version/Main.java	(revision 84d5e056d848740179378b3ebd2b7f6e83dbbffd)
++++ b/ADVPRO/src/Design_Datastructure/kafka/version/Main.java	(date 1717069317475)
+@@ -7,8 +7,8 @@
+ 
+         Thread producer1 = new Thread(new Producer(broker, "testTopic", "Producer1"));
+         Thread producer2 = new Thread(new Producer(broker, "testTopic", "Producer2"));
+-        Thread consumer1 = new Thread(new Consumer(broker, "testTopic", 0, 0, "Consumer1"));
+-        Thread consumer2 = new Thread(new Consumer(broker, "testTopic", 1, 1, "Consumer2"));
++        Thread consumer1 = new Thread(new Consumer(broker, "testTopic", 2, 0, "Consumer1"));
++        Thread consumer2 = new Thread(new Consumer(broker, "testTopic", 2, 1, "Consumer2"));
+ 
+         producer1.start();
+         producer2.start();
+Index: ADVPRO/src/couponmanagement/version/CouponManagementSystemApp.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ADVPRO/src/couponmanagement/version/CouponManagementSystemApp.java b/ADVPRO/src/couponmanagement/version/CouponManagementSystemApp.java
+new file mode 100644
+--- /dev/null	(date 1717149049549)
++++ b/ADVPRO/src/couponmanagement/version/CouponManagementSystemApp.java	(date 1717149049549)
+@@ -0,0 +1,36 @@
++package couponmanagement.version;
++
++import java.util.*;
++
++// Custom exceptions
++
++
++// Main class for demonstration
++public class CouponManagementSystemApp {
++    public static void main(String[] args) {
++        CouponManagementSystem cms = new CouponManagementSystem();
++
++        // Create a batch
++        Batch batch = new Batch("batch1", BatchType.OPEN, System.currentTimeMillis() + 1000000, 
++                                "Distributor1", CouponType.GENERIC, 10.0, 100);
++        cms.createBatch(batch);
++
++        // Update batch state to APPROVED
++        cms.updateState(batch.getBatchId(), BatchState.APPROVED);
++
++        // Update batch state to ACTIVE
++        cms.updateState(batch.getBatchId(), BatchState.ACTIVE);
++
++        // Ingest coupons
++        Set<String> coupons = new HashSet<>(Arrays.asList("coupon1", "coupon2", "coupon3"));
++        cms.ingestCoupons(batch.getBatchId(), coupons);
++
++        // Grant a coupon
++        Coupon grantedCoupon = cms.grantCoupon(batch.getBatchId());
++        System.out.println("Granted Coupon: " + grantedCoupon.getCouponId());
++
++        // Get coupon count
++        int couponCount = cms.getCouponsCount(batch.getBatchId());
++        System.out.println("Remaining Coupons Count: " + couponCount);
++    }
++}
