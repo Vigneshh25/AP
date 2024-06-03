@@ -67,11 +67,11 @@ public class Main {
 
     private static User registerUser(UserService userService, Scanner scanner) {
         System.out.println("Enter name:");
-        String name = scanner.nextLine();
+        String name = scanner.next();
         System.out.println("Enter email:");
-        String email = scanner.nextLine();
+        String email = scanner.next();
         System.out.println("Enter password:");
-        String password = scanner.nextLine();
+        String password = scanner.next();
 
         User user = new User(UUID.randomUUID().toString(), name, email, password);
         if (userService.register(user)) {
@@ -85,9 +85,9 @@ public class Main {
 
     private static User loginUser(UserService userService, Scanner scanner) {
         System.out.println("Enter email:");
-        String email = scanner.nextLine();
+        String email = scanner.next();
         System.out.println("Enter password:");
-        String password = scanner.nextLine();
+        String password = scanner.next();
 
         if (userService.login(email, password)) {
             System.out.println("Login successful.");
@@ -131,7 +131,7 @@ public class Main {
 
     private static void bookTickets(User currentUser, BookingService bookingService, Scanner scanner) {
         System.out.println("Enter show ID:");
-        String showId = scanner.nextLine();
+        String showId = scanner.next();
         List<Seat> seats = new ArrayList<>(); // Add seat selection logic here
 
         try {
@@ -150,7 +150,7 @@ public class Main {
 
     private static void updateProfile(User currentUser, UserService userService, Scanner scanner) {
         System.out.println("Enter new name:");
-        String newName = scanner.nextLine();
+        String newName = scanner.next();
         currentUser.setName(newName);
         userService.updateProfile(currentUser);
         System.out.println("Profile updated.");

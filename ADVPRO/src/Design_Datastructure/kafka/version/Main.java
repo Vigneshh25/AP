@@ -7,8 +7,8 @@ public class Main {
 
         Thread producer1 = new Thread(new Producer(broker, "testTopic", "Producer1"));
         Thread producer2 = new Thread(new Producer(broker, "testTopic", "Producer2"));
-        Thread consumer1 = new Thread(new Consumer(broker, "testTopic", 0, 0, "Consumer1"));
-        Thread consumer2 = new Thread(new Consumer(broker, "testTopic", 1, 1, "Consumer2"));
+        Thread consumer1 = new Thread(new Consumer(broker, "testTopic", 2, 0, "Consumer1"));
+        Thread consumer2 = new Thread(new Consumer(broker, "testTopic", 2, 1, "Consumer2"));
 
         producer1.start();
         producer2.start();

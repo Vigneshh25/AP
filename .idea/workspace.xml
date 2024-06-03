@@ -4,23 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94278240-cc8d-4649-a603-f0ae359eeded" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/combined/AsynchronousTokenBucketRateLimit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/combined/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/combined/RateLimitStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/combined/RateLimiterFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/combined/RateLimiterQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/combined/Request.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/combined/SlidingWindowRateLimit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/combined/TokenBucket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/combined/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/combined/PriorityTaskQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/combined/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/combined/TaskFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/combined/TaskScheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/combined/TaskWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/combined/WorkerPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/circuitbreaker/versions/Command.java" beforeDir="false" />
+    <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/version1/RateLimit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/version1/RateLimitHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/version1/RateLimiterService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/version1/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/TaskSchedulerConsole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/version1/TaskScheduler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/SharedDocument/AccessControlList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/SharedDocument/Document.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/SharedDocument/DocumentRepositoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/SharedDocument/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/SharedDocument/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/out/production/AP/api/hackerrank/api spec" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/out/production/AP/api/hackerrank/api spec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/circuitbreaker/versions/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/circuitbreaker/versions/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/versions/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/versions/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/TaskScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/TaskScheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/WorkerPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/WorkerPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/versions/ScheduledTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/versions/TaskExecutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/versions/TaskQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/api/hackerrank/api spec" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/api/hackerrank/api spec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Bike.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Bike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/BikeRentalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/BikeRentalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Charge.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Charge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/MotorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/MotorType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Rental.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Rental.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Scooter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Scooter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Size.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Size.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/webcrawler/WebCrawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/webcrawler/WebCrawler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +54,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="vickyV25 &lt;vigneshv@nmsworks.co.in&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
@@ -55,16 +79,26 @@
 }]]></component>
   <component name="ProjectId" id="2hH5W8m2ydFXZyIHVfR4gcz8KJ0" />
   <component name="ProjectViewState">
-    <option name="autoscrollFromSource" value="true" />
-    <option name="autoscrollToSource" value="true" />
-    <option name="flattenModules" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.AsynchronousRateLimiter.executor": "Run",
+    "Application.CalendarAPI.executor": "Run",
+    "Application.CircuitBreakerService.executor": "Run",
+    "Application.CustomThreadPool.executor": "Run",
+    "Application.ElementStore.executor": "Run",
     "Application.Main.executor": "Run",
+    "Application.MultiThreadedCustomKafkaExample.executor": "Run",
+    "Application.RateLimiterService.executor": "Run",
+    "Application.TaskScheduler.executor": "Run",
+    "Application.TaskSchedulerConsole.executor": "Run",
+    "Application.TaskSchedulerMain.executor": "Run",
+    "Application.WebCrawler.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
@@ -85,6 +119,35 @@
       <option name="presentableId" value="Default" />
       <updated>1717238205648</updated>
     </task>
+    <task id="LOCAL-00002" summary="ryt">
+      <created>1697651417971</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697651417971</updated>
+    </task>
+    <task id="LOCAL-00003" summary="ryt">
+      <created>1697823543427</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697823543427</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ryt">
+      <created>1697996345183</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697996345183</updated>
+    </task>
+    <task id="LOCAL-00005" summary="ryt">
+      <created>1716664709569</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716664709569</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
 </project>
