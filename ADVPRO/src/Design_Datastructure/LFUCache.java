@@ -1,9 +1,7 @@
 package Design_Datastructure;
 
+import java.util.*;
 import java.util.HashMap;
-import java.util.LinkedHashSet;
-import java.util.Map;
-import java.util.Set;
 
 public class LFUCache<K, V> {
     private final int capacity;
@@ -59,10 +57,10 @@ public class LFUCache<K, V> {
     private void updateFrequency(CacheNode<K, V> node) {
         int frequency = node.frequency;
         LinkedHashSet<K> freqSet = frequencyMap.get(frequency);
-        freqSet.remove(node.key);
+        freqSet.remove(node.key); // Remove the key from the current frequency set
 
         if (frequency == minFrequency && freqSet.isEmpty()) {
-            minFrequency++;
+            minFrequency++; // Increment minFrequency if the current set is empty
         }
 
         node.frequency++;
