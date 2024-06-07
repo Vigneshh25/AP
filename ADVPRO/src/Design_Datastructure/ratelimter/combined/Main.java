@@ -5,7 +5,7 @@ import java.time.Instant;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         RateLimitStrategy slidingRateLimiter = RateLimiterFactory.createRateLimiter("sliding", 2, 1, 1000);
-        RateLimitStrategy tokenRateLimiter = RateLimiterFactory.createRateLimiter("token", 5, 5, 2000);
+        RateLimitStrategy tokenRateLimiter = RateLimiterFactory.createRateLimiter("token", 1, 5, 2000);
 
         for (int i = 0; i < 10; i++) {
             int finalI = i;
