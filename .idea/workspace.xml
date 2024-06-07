@@ -5,33 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/assetmanagement/AssetManagementSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/assetmanagement/Device.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/assetmanagement/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/assetmanagement/License.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/assetmanagement/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/assetmanagement/Software.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/assetmanagement/Vendor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/crypto/BalanceObserver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/crypto/BalanceTracker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/crypto/CryptoExchangePlatform.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/crypto/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/crypto/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/crypto/UserFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/crypto/Wallet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/torrent/BitTorrentLikeSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/torrent/Chunk.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/torrent/File.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/torrent/Peer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/torrent/PeerFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/torrent/PieceSelectionStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/torrent/RandomFirstStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/torrent/RarestFirstStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/torrent/Tracker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/apigateway/ClientRequestInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/PriorityQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/meeting/AuditLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/meeting/AuditLogManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/meeting/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/meeting/Meeting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/meeting/Room.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/meeting/Scheduler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/LFUCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/LFUCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/RateLimiter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/apigateway/ApiGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/apigateway/ApiGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/apigateway/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/apigateway/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/apigateway/RateLimiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/apigateway/RateLimiter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,22 +79,28 @@
     "Application.LoadBalancerApp.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.MultiThreadedCustomKafkaExample.executor": "Run",
+    "Application.MyPriorityQueue.executor": "Run",
     "Application.PaymentGatewaySystem.executor": "Run",
+    "Application.PriorityQueue.executor": "Run",
+    "Application.Queue.executor": "Run",
+    "Application.QueueUsingSingleStack.executor": "Run",
     "Application.RateLimiterService.executor": "Run",
     "Application.TaskScheduler.executor": "Run",
     "Application.TaskSchedulerConsole.executor": "Run",
     "Application.TaskSchedulerMain.executor": "Run",
+    "Application.Test.executor": "Run",
     "Application.WebCrawler.executor": "Run",
     "Application.WhatsAppMessenger.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/vicky/Documents/AdvancedProgramming/AP/ADVPRO/src/Design_Datastructure/ratelimter/combined"
+    "last_opened_file_path": "/home/admin/a/vicky/AP/ADVPRO/src/Design_Datastructure/circuitbreaker"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/circuitbreaker" />
       <recent name="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/combined" />
     </key>
   </component>
@@ -157,7 +149,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717392901896</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1717587640990</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717587640990</updated>
+    </task>
+    <task id="LOCAL-00008" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1717590664464</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717590664464</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -17,13 +17,13 @@ public class Main {
             "http://service3.local"
         );
 
-        LoadBalancer loadBalancer = new LoadBalancer(serviceUrls);
-        ApiGateway apiGateway = new ApiGateway(routes, loadBalancer, 100, 1);
+        ApiGateway apiGateway = new ApiGateway(routes, 10, 60);
 
         // Simulate client requests
-        apiGateway.handleRequest("/api/service1", "valid-token", "client1", "admin");
-        apiGateway.handleRequest("/api/service2", "invalid-token", "client1", "admin");
-        apiGateway.handleRequest("/api/service3", "valid-token", "client2", "user");
+        for(int i=1;i<=400;i++)
+            apiGateway.handleRequest("/api/service1", "valid-token", "client1", "admin");
+//        apiGateway.handleRequest("/api/service2", "invalid-token", "client1", "admin");
+//        apiGateway.handleRequest("/api/service3", "valid-token", "client2", "user");
 
         apiGateway.shutdown();
     }

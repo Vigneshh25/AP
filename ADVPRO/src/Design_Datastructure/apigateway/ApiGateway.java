@@ -9,14 +9,12 @@ public class ApiGateway {
     private final RequestHandler requestHandler;
     private final AuthMiddleware authMiddleware;
     private final RateLimiter rateLimiter;
-    private final LoadBalancer loadBalancer;
     private final ExecutorService executorService;
 
-    public ApiGateway(List<Route> routes, LoadBalancer loadBalancer, long rateLimit, long timeFrame) {
+    public ApiGateway(List<Route> routes, long rateLimit, long timeFrame) {
         this.requestHandler = new RequestHandler(routes);
         this.authMiddleware = new AuthMiddleware();
-        this.rateLimiter = new RateLimiter(rateLimit, timeFrame, TimeUnit.MINUTES);
-        this.loadBalancer = loadBalancer;
+        this.rateLimiter = new RateLimiter(rateLimit, timeFrame, TimeUnit.SECONDS);
         this.executorService = Executors.newCachedThreadPool();
     }
 
@@ -33,12 +31,11 @@ public class ApiGateway {
             }
 
             if (!rateLimiter.isAllowed(clientId)) {
-                System.out.println("Rate limit exceeded for client: " + clientId);
+//                System.out.println("Rate limit exceeded for client: " + clientId);
                 return;
             }
 
-            String serviceUrl = loadBalancer.getNextServiceUrl();
-            requestHandler.handleRequest(path.replace("/api", serviceUrl));
+            requestHandler.handleRequest(path);
         });
     }
 
