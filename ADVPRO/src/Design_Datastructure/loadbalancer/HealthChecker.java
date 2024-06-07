@@ -3,25 +3,26 @@ package Design_Datastructure.loadbalancer;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class HealthChecker {
     private final List<BackendServer> servers;
 
     public HealthChecker(List<BackendServer> servers) {
         this.servers = servers;
+        scheduleHealthCheck();
     }
 
-    public void start() {
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                for (BackendServer server : servers) {
-                    boolean isHealthy = pingServer(server);
-                    server.setHealthy(isHealthy);
-                }
+    private void scheduleHealthCheck() {
+        Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(() -> {
+            for (BackendServer server : servers) {
+                boolean isHealthy = pingServer(server);
+                System.out.println(isHealthy);
+                server.setHealthy(isHealthy);
             }
-        }, 0, 5000); // Run every 5 seconds
+        }, 0, 2, TimeUnit.SECONDS);
     }
 
     private boolean pingServer(BackendServer server) {

@@ -24,19 +24,18 @@ public class RateLimiter {
             return true;
         }
 
-        synchronized (clientInfo) {
-            if ((currentTime - clientInfo.lastRequestTime) >= timeFrameMillis) {
-                clientInfo.lastRequestTime = currentTime;
-                clientInfo.requestCount = 1;
+        if ((currentTime - clientInfo.lastRequestTime) >= timeFrameMillis) {
+            clientInfo.lastRequestTime = currentTime;
+            clientInfo.requestCount = 1;
+            return true;
+        } else {
+            if (clientInfo.requestCount < limit) {
+                clientInfo.requestCount++;
                 return true;
             } else {
-                if (clientInfo.requestCount < limit) {
-                    clientInfo.requestCount++;
-                    return true;
-                } else {
-                    return false;
-                }
+                return false;
             }
         }
+
     }
 }

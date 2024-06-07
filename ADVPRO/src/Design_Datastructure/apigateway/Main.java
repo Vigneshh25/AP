@@ -11,12 +11,6 @@ public class Main {
             new Route("/api/service3", "http://service3.local")
         );
 
-        List<String> serviceUrls = Arrays.asList(
-            "http://service1.local",
-            "http://service2.local",
-            "http://service3.local"
-        );
-
         ApiGateway apiGateway = new ApiGateway(routes, 10, 60);
 
         // Simulate client requests

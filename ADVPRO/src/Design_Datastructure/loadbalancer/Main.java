@@ -15,7 +15,6 @@ public class Main {
         servers.forEach(loadBalancer::addServer);
 
         HealthChecker healthChecker = new HealthChecker(servers);
-        healthChecker.start();
 
         Client client = new Client(loadBalancer, 10);
 
