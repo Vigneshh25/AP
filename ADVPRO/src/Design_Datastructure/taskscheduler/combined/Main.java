@@ -22,7 +22,7 @@ class Main
             scheduler.addTask(task2, new ArrayList<>());
             scheduler.addTask(task3, dependenciesForTask3);
 
-            scheduler.scheduleTask(() -> System.out.println("Scheduled Task 1 completed"));
+//            scheduler.scheduleTask(() -> System.out.println("Scheduled Task 1 completed"));
             scheduler.schedule(() -> System.out.println("Scheduled Task 2 completed after 2 seconds"), 2, TimeUnit.SECONDS);
 
             scheduler.start();
