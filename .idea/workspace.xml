@@ -5,11 +5,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/PriorityCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/Authentication/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/Authentication/AuthStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/Authentication/SimpleAuthStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/ChatRoomManagement/ChatRoom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/ChatRoomManagement/ChatRoomRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/ChatRoomManagement/ChatRoomService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/ChatRoomManagement/InMemoryChatRoomRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/MessagingSystem/EncryptionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/MessagingSystem/InMemoryMessageRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/MessagingSystem/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/MessagingSystem/MessageNotifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/MessagingSystem/MessageObserver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/MessagingSystem/MessageRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/MessagingSystem/MessageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/RealTimeChatSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/UserManagement/InMemoryUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/UserManagement/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/UserManagement/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/UserManagement/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/cricbuzz/cricbuzz.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/CacheNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/ConsistentHashing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/Coordinator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/DistributedCacheSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/EvictionPolicy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/HashFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/LRU.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/MD5HashFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/ChatRoom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/ChatServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/ChatServerProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/LoadBalancer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/PresenceManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/PresenceObserver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/ConfigurationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/EmailNotificationStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/JobScheduler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/NotificationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/NotificationStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/NotificationStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/NotificationStrategyFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/NotificationType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/SmsNotificationStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/apigateway/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/apigateway/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/apigateway/RateLimiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/apigateway/RateLimiter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/loadbalancer/HealthChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/loadbalancer/HealthChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/loadbalancer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/loadbalancer/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Calendar/Calendar.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Calendar/Calendar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Calendar/CalendarAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Calendar/CalendarAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Calendar/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Calendar/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Calendar/TimeSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Calendar/TimeSlot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Broker.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Broker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Producer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/PriorityQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/lld/RealTimeChatSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/RealTimeChatSystem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +85,7 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -64,19 +120,23 @@
     "Application.CalendarAPI.executor": "Run",
     "Application.CircuitBreakerService.executor": "Run",
     "Application.CustomThreadPool.executor": "Run",
+    "Application.DistributedCacheSystem.executor": "Run",
     "Application.ElementStore.executor": "Run",
     "Application.EventCalendarApp.executor": "Run",
+    "Application.FileSys.executor": "Run",
     "Application.LFU.executor": "Run",
     "Application.LFUCache.executor": "Run",
     "Application.LoadBalancerApp.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.MultiThreadedCustomKafkaExample.executor": "Run",
     "Application.MyPriorityQueue.executor": "Run",
+    "Application.ParkingLotSystem.executor": "Run",
     "Application.PaymentGatewaySystem.executor": "Run",
     "Application.PriorityQueue.executor": "Run",
     "Application.Queue.executor": "Run",
     "Application.QueueUsingSingleStack.executor": "Run",
     "Application.RateLimiterService.executor": "Run",
+    "Application.RealTimeChatSystem.executor": "Run",
     "Application.TaskScheduler.executor": "Run",
     "Application.TaskSchedulerConsole.executor": "Run",
     "Application.TaskSchedulerMain.executor": "Run",
@@ -85,13 +145,15 @@
     "Application.WhatsAppMessenger.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/admin/a/vicky/AP/ADVPRO/src/Design_Datastructure/circuitbreaker"
+    "last_opened_file_path": "/home/admin/a/vicky/AP/ADVPRO/src"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ADVPRO/src" />
       <recent name="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/circuitbreaker" />
       <recent name="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/combined" />
     </key>
@@ -165,7 +227,31 @@
       <option name="project" value="LOCAL" />
       <updated>1717755190873</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1717756583387</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1717756583387</updated>
+    </task>
+    <task id="LOCAL-00011" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1717758945843</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1717758945843</updated>
+    </task>
+    <task id="LOCAL-00012" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1718022423217</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1718022423217</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

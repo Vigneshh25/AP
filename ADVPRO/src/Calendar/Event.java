@@ -1,6 +1,7 @@
 package Calendar;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -89,6 +90,13 @@ public class Event {
         if (responses.containsKey(userId)) {
             responses.put(userId, responseStatus);
         }
+    }
+
+    @Override
+    public String toString() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        return "start=" + start.format(formatter) +
+                ", end=" + end.format(formatter);
     }
 }
 

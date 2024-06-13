@@ -9,6 +9,7 @@ public class Producer implements Runnable {
         this.broker = broker;
         this.topicName = topicName;
         this.producerId = producerId;
+        broker.createTopic(topicName, 3, 2);
     }
 
     @Override

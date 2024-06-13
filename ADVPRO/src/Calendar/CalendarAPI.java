@@ -46,8 +46,8 @@ public class CalendarAPI {
     public static void main(String[] args) {
         CalendarAPI api = new CalendarAPI();
 
-        Event event1 = new Event("1", LocalDateTime.of(2023, 6, 1, 10, 0), LocalDateTime.of(2023, 6, 1, 11, 0), "Room 101", "Alice", Arrays.asList("Alice", "Bob"), "Team Meeting");
-        Event event2 = new Event("2", LocalDateTime.of(2023, 6, 2, 15, 0), LocalDateTime.of(2023, 6, 2, 16, 0), "Room 102", "Bob", Arrays.asList("Alice", "Bob", "Charlie"), "Project Update");
+        Event event1 = new Event("1", LocalDateTime.of(2024, 6, 11, 10, 0), LocalDateTime.of(2024, 6, 11, 11, 0), "Room 101", "Alice", Arrays.asList("Alice", "Charlie"), "Team Meeting");
+        Event event2 = new Event("2", LocalDateTime.of(2024, 6, 11, 15, 0), LocalDateTime.of(2024, 6, 11, 16, 0), "Room 102", "Bob", Arrays.asList("Alice", "Bob", "Charlie"), "Project Update");
 
         api.createEvent(event1);
         api.createEvent(event2);
@@ -62,7 +62,7 @@ public class CalendarAPI {
         System.out.println("Event 1 Details: " + api.getEventDetails("1"));
         System.out.println("Event 2 Details: " + api.getEventDetails("2"));
 
-        List<TimeSlot> commonSlots = api.findCommonFreeSlot(Arrays.asList("Alice", "Bob"), 60);
+        List<TimeSlot> commonSlots = api.findCommonFreeSlot(Arrays.asList("Alice", "Charlie"), 260);
         System.out.println("Common Free Slots for Alice and Bob: " + commonSlots);
     }
 }

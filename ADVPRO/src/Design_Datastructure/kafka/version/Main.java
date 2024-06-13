@@ -3,7 +3,6 @@ package Design_Datastructure.kafka.version;
 public class Main {
     public static void main(String[] args) {
         Broker broker = new Broker();
-        broker.createTopic("testTopic", 3, 2);
 
         Thread producer1 = new Thread(new Producer(broker, "testTopic", "Producer1"));
         Thread producer2 = new Thread(new Producer(broker, "testTopic", "Producer2"));
