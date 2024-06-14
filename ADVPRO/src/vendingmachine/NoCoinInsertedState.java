@@ -14,7 +14,7 @@ public class NoCoinInsertedState implements VendingMachineState {
     }
 
     @Override
-    public void selectProduct(String productCode) {
+    public void selectProduct(String productCode, int quantity) {
         System.out.println("Insert coin first.");
     }
 
@@ -28,4 +28,6 @@ public class NoCoinInsertedState implements VendingMachineState {
         System.out.println("No transaction to cancel.");
     }
 }
+
+
 

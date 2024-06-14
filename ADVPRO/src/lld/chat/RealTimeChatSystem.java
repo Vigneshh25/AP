@@ -31,12 +31,7 @@ public class RealTimeChatSystem {
         presenceManager.setPresence(user2, true);
 
         // Create presence observer
-        PresenceObserver observer = new PresenceObserver() {
-            @Override
-            public void onPresenceChange(User user, boolean online) {
-                System.out.println(user.getUsername() + " is " + (online ? "online" : "offline"));
-            }
-        };
+        PresenceObserver observer = (user, online) -> System.out.println(user.getUsername() + " is " + (online ? "online" : "offline"));
 
         // Subscribe presence observer to presence manager
         presenceManager.addObserver(observer);

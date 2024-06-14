@@ -1,12 +1,12 @@
 package vendingmachine;
 
-public class Product {
+public abstract class Product {
     private final String productCode;
-    private final String name;
+    private final ProductType name;
     private final int price;
     private int quantity;
 
-    public Product(String productCode, String name, int price, int quantity) {
+    public Product(String productCode, ProductType name, int price, int quantity) {
         this.productCode = productCode;
         this.name = name;
         this.price = price;
@@ -17,7 +17,7 @@ public class Product {
         return productCode;
     }
 
-    public String getName() {
+    public ProductType getName() {
         return name;
     }
 
@@ -29,9 +29,7 @@ public class Product {
         return quantity;
     }
 
-    public void decrementQuantity() {
-        if (quantity > 0) {
-            quantity--;
-        }
+    public void decrementQuantity(int quantity) {
+        this.quantity -= quantity;
     }
 }

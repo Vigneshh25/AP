@@ -13,12 +13,13 @@ public class CoinInsertedState implements VendingMachineState {
     }
 
     @Override
-    public void selectProduct(String productCode) {
+    public void selectProduct(String productCode, int quantity) {
         Product product = vendingMachine.getProduct(productCode);
         if (product != null) {
-            if (product.getQuantity() > 0 && vendingMachine.getBalance() >= product.getPrice()) {
-                vendingMachine.setSelectedProduct(product);
+            if (product.getQuantity() >= quantity && vendingMachine.getBalance() >= product.getPrice() * quantity) {
                 vendingMachine.setState(vendingMachine.getProductSelectedState());
+                vendingMachine.selectProduct(productCode,quantity);
+                vendingMachine.dispenseProduct();
             } else if (product.getQuantity() == 0) {
                 System.out.println("Product out of stock.");
             } else {
@@ -31,7 +32,7 @@ public class CoinInsertedState implements VendingMachineState {
 
     @Override
     public void dispenseProduct() {
-        System.out.println("Select a product first.");
+        System.out.println("Select a product and quantity first.");
     }
 
     @Override

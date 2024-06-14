@@ -36,9 +36,7 @@ public class RealTimeChatSystem {
         MessageNotifier messageNotifier = new MessageNotifier();
 
         // Adding observers to print each message
-        messageNotifier.addObserver(message -> {
-            System.out.println("[" + message.getTimestamp() + "] " + message.getSender().getUsername() + ": " + message.getContent());
-        });
+        messageNotifier.addObserver(message -> System.out.println("[" + message.getTimestamp() + "] " + message.getSender().getUsername() + ": " + message.getContent()));
 
         // Sample user registration
         User user1 = new User();

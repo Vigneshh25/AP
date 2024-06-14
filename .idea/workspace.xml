@@ -5,66 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/PriorityCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/Authentication/AuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/Authentication/AuthStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/Authentication/SimpleAuthStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/ChatRoomManagement/ChatRoom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/ChatRoomManagement/ChatRoomRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/ChatRoomManagement/ChatRoomService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/ChatRoomManagement/InMemoryChatRoomRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/MessagingSystem/EncryptionUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/MessagingSystem/InMemoryMessageRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/MessagingSystem/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/MessagingSystem/MessageNotifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/MessagingSystem/MessageObserver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/MessagingSystem/MessageRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/MessagingSystem/MessageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/RealTimeChatSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/UserManagement/InMemoryUserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/UserManagement/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/UserManagement/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/UserManagement/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/cricbuzz/cricbuzz.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/CacheNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/ConsistentHashing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/Coordinator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/DistributedCacheSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/EvictionPolicy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/HashFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/LRU.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/MD5HashFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/ChatRoom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/ChatServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/ChatServerProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/LoadBalancer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/PresenceManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/PresenceObserver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/ConfigurationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/EmailNotificationStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/JobScheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/NotificationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/NotificationStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/NotificationStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/NotificationStrategyFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/NotificationType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/SmsNotificationStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/notificationsystem/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Chips.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/ProductFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/ProductInventory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/ProductType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/VendingMachineObserver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Calendar/Calendar.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Calendar/Calendar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Calendar/CalendarAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Calendar/CalendarAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Calendar/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Calendar/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Calendar/TimeSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Calendar/TimeSlot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Broker.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Broker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Producer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/PriorityQueue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/lld/RealTimeChatSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/RealTimeChatSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/chatsystem/RealTimeChatSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/RealTimeChatSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/lld/chat/RealTimeChatSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/RealTimeChatSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/CoinInsertedState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/CoinInsertedState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/NoCoinInsertedState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/NoCoinInsertedState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/ProductSelectedState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/ProductSelectedState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/VendingMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/VendingMachineState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/VendingMachineState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +80,7 @@
     "Application.ElementStore.executor": "Run",
     "Application.EventCalendarApp.executor": "Run",
     "Application.FileSys.executor": "Run",
+    "Application.GoogleAuthenticatorApp.executor": "Run",
     "Application.LFU.executor": "Run",
     "Application.LFUCache.executor": "Run",
     "Application.LoadBalancerApp.executor": "Run",
@@ -251,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718022423217</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1718261544770</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1718261544770</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
