@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Chips.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/ProductFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/ProductInventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/ProductType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/VendingMachineObserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/chatsystem/RealTimeChatSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/chatsystem/RealTimeChatSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/lld/chat/RealTimeChatSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/RealTimeChatSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/CoinInsertedState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/CoinInsertedState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/NoCoinInsertedState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/NoCoinInsertedState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/ProductSelectedState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/ProductSelectedState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/VendingMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/VendingMachineState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/VendingMachineState.java" afterDir="false" />
-    </list>
+    <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +20,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="vicky &lt;vigneshv@nmsworks.co.in&gt;" />
         <option value="vickyV25 &lt;vigneshv@nmsworks.co.in&gt;" />
       </list>
     </option>
@@ -216,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718261544770</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1718358818210</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1718358818210</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
