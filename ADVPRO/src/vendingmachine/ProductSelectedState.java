@@ -20,19 +20,15 @@ public class ProductSelectedState implements VendingMachineState {
     @Override
     public void selectProduct(String productCode, int quantity) {
         Product product = vendingMachine.getProduct(productCode);
-        if (product != null && product.getQuantity() >= quantity) {
-            if (selectedProducts.containsKey(product)) {
-                // If product already selected, add to existing quantity
-                int currentQuantity = selectedProducts.get(product);
-                selectedProducts.put(product, currentQuantity + quantity);
-            } else {
-                // Otherwise, add new entry for the product with quantity
-                selectedProducts.put(product, quantity);
-            }
-            System.out.println("Product selected: " + product.getName() + " - Quantity: " + quantity);
+        if (selectedProducts.containsKey(product)) {
+            // If product already selected, add to existing quantity
+            int currentQuantity = selectedProducts.get(product);
+            selectedProducts.put(product, currentQuantity + quantity);
         } else {
-            System.out.println("Invalid product code or insufficient quantity.");
+            // Otherwise, add new entry for the product with quantity
+            selectedProducts.put(product, quantity);
         }
+        System.out.println("Product selected: " + product.getName() + " - Quantity: " + quantity);
     }
 
     @Override
@@ -49,7 +45,6 @@ public class ProductSelectedState implements VendingMachineState {
             }
         }
         selectedProducts.clear(); // Clear selected products after dispensing
-        vendingMachine.setState(vendingMachine.getNoCoinInsertedState()); // Return to no coin inserted state
     }
 
     @Override

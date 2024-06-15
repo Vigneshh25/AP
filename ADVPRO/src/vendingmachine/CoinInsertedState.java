@@ -18,6 +18,7 @@ public class CoinInsertedState implements VendingMachineState {
         if (product != null) {
             if (product.getQuantity() >= quantity && vendingMachine.getBalance() >= product.getPrice() * quantity) {
                 vendingMachine.setState(vendingMachine.getProductSelectedState());
+                vendingMachine.setSelectedProduct(product);
                 vendingMachine.selectProduct(productCode,quantity);
                 vendingMachine.dispenseProduct();
             } else if (product.getQuantity() == 0) {

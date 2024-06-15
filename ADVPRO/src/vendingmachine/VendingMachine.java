@@ -13,6 +13,10 @@ public class VendingMachine {
     private static volatile VendingMachine instance;
     private ProductInventory productInventory;
     private List<VendingMachineObserver> observers;
+    private PaymentHandler paymentHandler;
+    private int totalSales;
+
+
 
     private VendingMachine() {
         this.noCoinInsertedState = new NoCoinInsertedState(this);
@@ -30,6 +34,22 @@ public class VendingMachine {
         return instance;
     }
 
+    public void setPaymentHandler(PaymentHandler paymentHandler) {
+        this.paymentHandler = paymentHandler;
+    }
+
+    public int getTotalSales() {
+        return totalSales;
+    }
+
+    public void addSale(int amount) {
+        totalSales += amount;
+    }
+
+    public void setSelectedProduct(Product selectedProduct) {
+        this.selectedProduct = selectedProduct;
+    }
+
     public void setProductInventory(ProductInventory inventory) {
         this.productInventory = inventory;
     }
@@ -39,13 +59,7 @@ public class VendingMachine {
     }
 
     public void selectProduct(String productCode, int quantity) {
-        Product product = getProduct(productCode);
-        if (product != null && product.getQuantity() >= quantity) {
-            selectedProduct = product; // Set the selected product
-            currentState.selectProduct(productCode, quantity);
-        } else {
-            System.out.println("Invalid product code or insufficient quantity.");
-        }
+        currentState.selectProduct(productCode, quantity);
     }
     public void dispenseProduct() {
         currentState.dispenseProduct();
@@ -78,16 +92,8 @@ public class VendingMachine {
         balance += value;
     }
 
-    public void setSelectedProduct(Product selectedProduct) {
-        this.selectedProduct = selectedProduct;
-    }
-
     public VendingMachineState getCurrentState() {
         return currentState;
-    }
-
-    public Product getSelectedProduct() {
-        return selectedProduct;
     }
 
     public Product getProduct(String productCode) {
@@ -95,12 +101,11 @@ public class VendingMachine {
     }
 
     public void dispenseProduct(Product product, int quantity) {
-        if (product.getQuantity() > 0 && balance >= product.getPrice() * quantity) {
-            // Check if enough quantity is available
-            if (product.getQuantity() >= quantity) {
-                product.decrementQuantity(quantity); // Decrease quantity in product
+        if (product.getQuantity() >= quantity && balance >= product.getPrice() * quantity) {
+            if (paymentHandler != null && paymentHandler.processPayment(product.getPrice() * quantity)) {
+                product.decrementQuantity(quantity);
                 balance -= product.getPrice() * quantity; // Deduct balance
-
+                addSale(product.getPrice() * quantity);
                 System.out.println("Dispensing product: " + product.getName() + " - Quantity: " + quantity);
 
                 // Notify observers (Admin) if product quantity is zero after dispensing

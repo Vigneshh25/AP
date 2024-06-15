@@ -43,4 +43,12 @@ public class ProductInventory {
         }
         return stock;
     }
+    public void setDiscount(String productCode, int discount) {
+        Product product = products.get(productCode);
+        if (product != null) {
+            product.setDiscount(discount);
+        } else {
+            throw new IllegalArgumentException("Invalid product code.");
+        }
+    }
 }
