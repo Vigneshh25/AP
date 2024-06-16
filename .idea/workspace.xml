@@ -5,15 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/PaymentHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/URLShortener/Base62Encoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/URLShortener/Base62Strategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/URLShortener/Cache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/URLShortener/Encoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/URLShortener/MD5Strategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/URLShortener/ShorteningStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/URLShortener/ShorteningStrategyFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/URLShortener/URLRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/URLShortener/URLRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/URLShortener/URLShortenerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/URLShortener/URLShortenerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/URLShortener/URLShortenerServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Coin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/CoinInsertedState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/CoinInsertedState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/ProductInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/ProductInventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/ProductSelectedState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/ProductSelectedState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/VendingMachine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
