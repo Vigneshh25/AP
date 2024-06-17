@@ -13,6 +13,7 @@ public class ParkingLotSystem {
 
         CarRegistrationModule carRegistrationModule = new CarRegistrationModule();
         carRegistrationModule.registerCar("ABC123", "Red", VehicleType.CAR);
+        carRegistrationModule.registerCar("qwe12a", "Red", VehicleType.CAR);
         carRegistrationModule.registerCar("XYZ456", "Blue", VehicleType.BIKE);
 
         Scanner scanner = new Scanner(System.in);

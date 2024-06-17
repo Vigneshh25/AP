@@ -67,6 +67,11 @@ public class LRUCache<K, V> {
         removeNode(toRemove);
     }
 
+    public void remove(K number) {
+        removeNode(cache.get(number));
+        System.out.println(cache);
+    }
+
     private static class Node<K, V> {
         K key;
         V value;

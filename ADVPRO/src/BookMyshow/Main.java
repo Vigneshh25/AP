@@ -27,7 +27,7 @@ public class Main {
         UserService userService = new UserServiceImpl(userRepository);
         MovieService movieService = new MovieServiceImpl(movieRepository);
 
-        // Scanner for user input
+        // Scanner for user input.txt
         Scanner scanner = new Scanner(System.in);
 
         User currentUser = null;

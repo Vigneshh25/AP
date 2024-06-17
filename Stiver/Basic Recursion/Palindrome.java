@@ -2,11 +2,11 @@
    for more Solution: Leetcode: https://leetcode.com/problems/valid-palindrome/submissions/ (125)
  * Q. Write a program to check whether a given string is palindrome or not.
  * Example:
- * input: str = "malylam"
+ * input.txt: str = "malylam"
  * output: true
  * 
  * Example:
- * input: str = "manish"
+ * input.txt: str = "manish"
  * output: false
  */
 

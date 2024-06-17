@@ -9,7 +9,7 @@ public class GoogleAuthenticatorApp {
         authenticator.generateAndExecuteTokenGenerationCommand(user.getUserId(), System.currentTimeMillis());
 
         // Simulating user entering the code
-        String enteredCode = "generated_token"; // Replace with the actual user input
+        String enteredCode = "generated_token"; // Replace with the actual user input.txt
         authenticator.generateAndExecuteTokenVerificationCommand(user.getUserId(), enteredCode, "generated_token");
     }
 }

@@ -34,7 +34,7 @@
      
     
     Your Task:
-    You do not need to read input or print anything. Your task is to complete the function countWays() which takes N and S as input parameters and returns number of possible ways modulo 1003.
+    You do not need to read input.txt or print anything. Your task is to complete the function countWays() which takes N and S as input.txt parameters and returns number of possible ways modulo 1003.
 */
 
 // import java.util.*;

@@ -8,12 +8,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        if (args.length != 1) {
-            System.err.println("Usage: java Main <input_file>");
-            return;
-        }
 
-        String inputFile = args[0];
+        String inputFile = "/home/admin/a/vicky/AP/ADVPRO/src/stockexchange/input.txt";
         StockExchange stockExchange = new StockExchange();
 
         try (BufferedReader br = new BufferedReader(new FileReader(inputFile))) {

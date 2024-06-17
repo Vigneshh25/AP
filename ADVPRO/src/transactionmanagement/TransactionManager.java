@@ -8,10 +8,10 @@ public class TransactionManager {
     private TransactionLogger transactionLogger;
     private TransactionProcessor transactionProcessor;
 
-    public TransactionManager(TransactionRepository transactionRepository, TransactionLogger transactionLogger, TransactionProcessor transactionProcessor) {
-        this.transactionRepository = transactionRepository;
-        this.transactionLogger = transactionLogger;
-        this.transactionProcessor = transactionProcessor;
+    public TransactionManager() {
+        this.transactionRepository = TransactionRepository.getInstance();
+        this.transactionLogger = TransactionLogger.getInstance();
+        this.transactionProcessor = TransactionProcessor.getInstance();
     }
 
     public String createTransaction(double amount, String description) {

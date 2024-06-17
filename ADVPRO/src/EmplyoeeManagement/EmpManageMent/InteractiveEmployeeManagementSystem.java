@@ -58,8 +58,8 @@ public class InteractiveEmployeeManagementSystem {
 
     private static int getUserChoice() {
         while (!scanner.hasNextInt()) {
-            System.out.print("Invalid input. Please enter a number: ");
-            scanner.next(); // consume the invalid input
+            System.out.print("Invalid input.txt. Please enter a number: ");
+            scanner.next(); // consume the invalid input.txt
         }
         return scanner.nextInt();
     }

@@ -3,7 +3,7 @@ package Problems.set24;
 public class IPAddressValidator {
 
     public boolean isValid(String ipAddress) {
-        // Check for empty or null input
+        // Check for empty or null input.txt
         if (ipAddress == null || ipAddress.isEmpty()) {
             return false;
         }
@@ -13,7 +13,7 @@ public class IPAddressValidator {
             return false;
         }
         
-        // Split the input into parts
+        // Split the input.txt into parts
         String[] parts = ipAddress.split("\\.");
         
         // Check for four parts
@@ -33,7 +33,7 @@ public class IPAddressValidator {
     }
     
     private boolean validate(String part) {
-        // Check for empty input
+        // Check for empty input.txt
         if (part == null || part.isEmpty()) {
             return false;
         }
@@ -43,7 +43,7 @@ public class IPAddressValidator {
             return false;
         }
         
-        // Attempt to parse the input as an integer
+        // Attempt to parse the input.txt as an integer
         int value;
         try {
             value = Integer.parseInt(part);

@@ -2,7 +2,7 @@ package Problems.set36;
 
 class Solution {
     int wildCard(String p, String s) {
-        int slen = s.length(); // length of input string s
+        int slen = s.length(); // length of input.txt string s
         int plen = p.length(); // length of pattern string p
         int i = 0; // current index in s
         int j = 0; // current index in p

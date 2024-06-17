@@ -13,9 +13,9 @@ public static void main(String[] args) {
     
     // Loop through the n arrays
     for (int i = 0; i < n; i++) {
-        int[] array = new int[scanner.nextInt()]; // input the size of the array
+        int[] array = new int[scanner.nextInt()]; // input.txt the size of the array
         for (int j = 0; j < array.length; j++) {
-            array[j] = scanner.nextInt(); // input the elements of the array
+            array[j] = scanner.nextInt(); // input.txt the elements of the array
         }
         sum += Arrays.stream(array).sum(); // add the sum of the array to the total sum
     }

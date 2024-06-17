@@ -79,7 +79,7 @@ import java.util.*;
                     newCol = player.getCol() + 1;
                     break;
                 default:
-                    continue; // invalid input, try again
+                    continue; // invalid input.txt, try again
             }
             if (grid[newRow][newCol] == ' ') { // empty space
                 grid[player.getRow()][player.getCol()] = ' '; // clear old position

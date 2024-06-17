@@ -3,7 +3,7 @@ package Problems.set3;
 public class WordReverser {
     public static String reverseWords(String str) {
         System.out.println(str);
-        // Base case: if the input string is empty or has only one word, return it as is
+        // Base case: if the input.txt string is empty or has only one word, return it as is
         if (str == null || str.isEmpty() || !str.contains(" ")) {
             return str;
 

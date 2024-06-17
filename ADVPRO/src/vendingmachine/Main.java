@@ -22,7 +22,7 @@ public class Main {
         Admin admin = new Admin();
         vendingMachine.registerObserver(admin);
 
-        // Using Scanner for user input
+        // Using Scanner for user input.txt
         Scanner scanner = new Scanner(System.in);
 
         // Main loop to interact with vending machine

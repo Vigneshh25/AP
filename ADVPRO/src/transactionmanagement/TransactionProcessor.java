@@ -8,11 +8,25 @@ public class TransactionProcessor {
     private TransactionRepository transactionRepository;
     private TransactionLogger transactionLogger;
     private ExecutorService executorService;
+    private static volatile TransactionProcessor instance;
 
-    public TransactionProcessor(TransactionRepository transactionRepository, TransactionLogger transactionLogger) {
-        this.transactionRepository = transactionRepository;
-        this.transactionLogger = transactionLogger;
+    private TransactionProcessor() {
+        this.transactionRepository = TransactionRepository.getInstance();
+        this.transactionLogger = TransactionLogger.getInstance();
         this.executorService = Executors.newFixedThreadPool(10); // For asynchronous processing
+    }
+
+    public static TransactionProcessor getInstance()
+    {
+        if(instance == null)
+        {
+            synchronized (TransactionProcessor.class)
+            {
+                if(instance == null)
+                    instance = new TransactionProcessor();
+            }
+        }
+        return instance;
     }
 
     public void processTransactions() {

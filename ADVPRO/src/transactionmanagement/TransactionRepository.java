@@ -4,6 +4,17 @@ import java.util.*;
 
 public class TransactionRepository {
     private Map<String, Transaction> transactionMap = new HashMap<>();
+    public static TransactionRepository instance ;
+
+    private TransactionRepository() {
+    }
+
+    public static synchronized TransactionRepository getInstance()
+    {
+        if(instance == null)
+            instance = new TransactionRepository();
+        return instance;
+    }
 
     public void addTransaction(Transaction transaction) {
         transactionMap.put(transaction.getTransactionId(), transaction);

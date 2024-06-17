@@ -4,7 +4,7 @@ public class MagicNumber {
    public static void main(String[] args) 
 {
       
-    // Accepting sample input
+    // Accepting sample input.txt
     int x = 1234;
   
     // Condition to check Magic number

@@ -1,4 +1,4 @@
-package rideshare;
+package rideshare.models;
 
 public class Location {
     private double latitude;
