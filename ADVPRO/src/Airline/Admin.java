@@ -7,8 +7,8 @@ class Admin {
         this.notificationService = notificationService;
     }
 
-    public Flight createFlight(String flightNumber, Aircraft aircraft, Schedule schedule, FlightFactory flightFactory) {
-        return flightFactory.createFlight(flightNumber, aircraft, schedule);
+    public Flight createFlight(String flightNumber, Aircraft aircraft, Schedule schedule, FlightFactory flightFactory, PricingStrategy pricingStrategy) {
+        return flightFactory.createFlight(flightNumber, aircraft, schedule, pricingStrategy);
     }
 
     public void cancelFlight(Flight flight) {

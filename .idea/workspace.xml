@@ -5,27 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Aircraft.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Flight.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/FlightFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Itinerary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/ItineraryBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Observer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Passenger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/PaymentStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/ReservationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Schedule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Ecommerce/version/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Ecommerce/version/Observer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Ecommerce/version/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Ecommerce/version/PaymentStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Ecommerce/version/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Ecommerce/version/ShoppingCart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Ecommerce/version/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Baggage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/PricingStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Seat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/SeatMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Ticket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Flight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/FlightFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/FlightFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Passenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/ReservationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718359485224</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1718703174215</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1718703174215</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

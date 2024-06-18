@@ -50,6 +50,10 @@ class Passenger {
         this.ticketNumber = ticketNumber;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public String getTicketNumber() {
         return ticketNumber;
     }
@@ -60,24 +64,6 @@ class Passenger {
     }
 }
 
-class Ticket {
-    private static int ticketCounter = 0;
-    private String ticketNumber;
-    private Flight flight;
-    private Passenger passenger;
-
-    public Ticket(Flight flight, Passenger passenger) {
-        this.ticketNumber = "T" + (++ticketCounter);
-        this.flight = flight;
-        this.passenger = passenger;
-        passenger.assignTicket(ticketNumber);
-    }
-
-    @Override
-    public String toString() {
-        return "Ticket: " + ticketNumber + ", Flight: " + flight.getFlightNumber() + ", Passenger: " + passenger;
-    }
-}
 
 
 

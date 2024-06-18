@@ -1,10 +1,6 @@
 package Airline;
 
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.Map;
-
+import java.util.Date;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.ConcurrentHashMap;
@@ -18,30 +14,30 @@ class ReservationService {
         flights.put(flight.getFlightNumber(), flight);
     }
 
-    public Ticket reserveSeat(String flightNumber, Passenger passenger) {
+    public Ticket reserveSeat(String flightNumber, Passenger passenger, SeatType seatType, Date bookingDate) {
         lock.lock();
         try {
             Flight flight = flights.get(flightNumber);
             if (flight != null) {
-                flight.addPassenger(passenger);
-                return new Ticket(flight, passenger);
+                return flight.bookSeat(passenger, seatType, bookingDate);
             }
-            return null;
+            throw new RuntimeException("Flight not found: " + flightNumber);
         } finally {
             lock.unlock();
         }
     }
 
-    public void cancelReservation(String flightNumber, Passenger passenger) {
+    public void cancelReservation(String flightNumber, Passenger passenger, String seatNumber) {
         lock.lock();
         try {
             Flight flight = flights.get(flightNumber);
             if (flight != null) {
-                flight.getPassengers().remove(passenger);
+                flight.cancelSeat(passenger, seatNumber);
+            } else {
+                throw new RuntimeException("Flight not found: " + flightNumber);
             }
         } finally {
             lock.unlock();
         }
     }
 }
-
