@@ -5,24 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/BookStore/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/BookStore/BasicBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/BookStore/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/BookStore/BookDecorator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/BookStore/CreditCardPayment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/BookStore/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/BookStore/DatabaseConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/BookStore/DiscountedBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/BookStore/InMemoryBookRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/BookStore/InMemoryUserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/BookStore/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/BookStore/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/BookStore/OrderObserver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/BookStore/PayPalPayment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/BookStore/PaymentStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/BookStore/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/BookStore/UserFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/BookStore/UserObserver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Aircraft.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Database.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Flight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/FlightFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Itinerary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/ItineraryBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Observer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Passenger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/PaymentStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/ReservationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Schedule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Ecommerce/version/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Ecommerce/version/Observer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Ecommerce/version/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Ecommerce/version/PaymentStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Ecommerce/version/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Ecommerce/version/ShoppingCart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Ecommerce/version/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +35,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -80,6 +81,7 @@
     &quot;Application.AsynchronousRateLimiter.executor&quot;: &quot;Run&quot;,
     &quot;Application.BitTorrentLikeSystem.executor&quot;: &quot;Run&quot;,
     &quot;Application.CalendarAPI.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Car_Parking.executor&quot;: &quot;Run&quot;,
     &quot;Application.CircuitBreakerService.executor&quot;: &quot;Run&quot;,
     &quot;Application.CustomThreadPool.executor&quot;: &quot;Run&quot;,
     &quot;Application.DistributedCacheSystem.executor&quot;: &quot;Run&quot;,
@@ -93,13 +95,15 @@
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.MultiThreadedCustomKafkaExample.executor&quot;: &quot;Run&quot;,
     &quot;Application.MyPriorityQueue.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ParkingLotSystem.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ParkingLotSystem.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.ParkingSystem.executor&quot;: &quot;Run&quot;,
     &quot;Application.PaymentGatewaySystem.executor&quot;: &quot;Run&quot;,
     &quot;Application.PriorityQueue.executor&quot;: &quot;Run&quot;,
     &quot;Application.Queue.executor&quot;: &quot;Run&quot;,
     &quot;Application.QueueUsingSingleStack.executor&quot;: &quot;Run&quot;,
     &quot;Application.RateLimiterService.executor&quot;: &quot;Run&quot;,
     &quot;Application.RealTimeChatSystem.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RecommendationSystem.executor&quot;: &quot;Run&quot;,
     &quot;Application.TaskScheduler.executor&quot;: &quot;Run&quot;,
     &quot;Application.TaskSchedulerConsole.executor&quot;: &quot;Run&quot;,
     &quot;Application.TaskSchedulerMain.executor&quot;: &quot;Run&quot;,
@@ -119,6 +123,10 @@
       <recent name="$PROJECT_DIR$/ADVPRO/src" />
       <recent name="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/circuitbreaker" />
       <recent name="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/combined" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="rideshare.version.services" />
+      <recent name="rideshare.version.models" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -238,15 +246,7 @@
       <option name="project" value="LOCAL" />
       <updated>1718359485224</updated>
     </task>
-    <task id="LOCAL-00016" summary="ryt">
-      <option name="closed" value="true" />
-      <created>1718452664071</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1718452664071</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
