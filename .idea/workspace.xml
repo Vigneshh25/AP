@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Baggage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/PricingStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Seat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/SeatMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Ticket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/EntryGate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Flight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/FlightFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/FlightFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Passenger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/ReservationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/ParkingFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/ParkingFloor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/ParkingLot.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/ParkingLot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/ParkingLotSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/ParkingLotSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/ParkingSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/ParkingSlot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/ParkingTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/ParkingTicket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/UserRegistrationModule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/Vehicle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +23,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -72,7 +70,6 @@
     &quot;Application.AsynchronousRateLimiter.executor&quot;: &quot;Run&quot;,
     &quot;Application.BitTorrentLikeSystem.executor&quot;: &quot;Run&quot;,
     &quot;Application.CalendarAPI.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Car_Parking.executor&quot;: &quot;Run&quot;,
     &quot;Application.CircuitBreakerService.executor&quot;: &quot;Run&quot;,
     &quot;Application.CustomThreadPool.executor&quot;: &quot;Run&quot;,
     &quot;Application.DistributedCacheSystem.executor&quot;: &quot;Run&quot;,
@@ -86,15 +83,13 @@
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.MultiThreadedCustomKafkaExample.executor&quot;: &quot;Run&quot;,
     &quot;Application.MyPriorityQueue.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ParkingLotSystem.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.ParkingSystem.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ParkingLotSystem.executor&quot;: &quot;Run&quot;,
     &quot;Application.PaymentGatewaySystem.executor&quot;: &quot;Run&quot;,
     &quot;Application.PriorityQueue.executor&quot;: &quot;Run&quot;,
     &quot;Application.Queue.executor&quot;: &quot;Run&quot;,
     &quot;Application.QueueUsingSingleStack.executor&quot;: &quot;Run&quot;,
     &quot;Application.RateLimiterService.executor&quot;: &quot;Run&quot;,
     &quot;Application.RealTimeChatSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RecommendationSystem.executor&quot;: &quot;Run&quot;,
     &quot;Application.TaskScheduler.executor&quot;: &quot;Run&quot;,
     &quot;Application.TaskSchedulerConsole.executor&quot;: &quot;Run&quot;,
     &quot;Application.TaskSchedulerMain.executor&quot;: &quot;Run&quot;,
@@ -114,10 +109,6 @@
       <recent name="$PROJECT_DIR$/ADVPRO/src" />
       <recent name="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/circuitbreaker" />
       <recent name="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/combined" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="rideshare.version.services" />
-      <recent name="rideshare.version.models" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -239,11 +230,11 @@
     </task>
     <task id="LOCAL-00016" summary="ryt">
       <option name="closed" value="true" />
-      <created>1718703174215</created>
+      <created>1718452664071</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1718703174215</updated>
+      <updated>1718452664071</updated>
     </task>
     <option name="localTasksCounter" value="17" />
     <servers />
@@ -262,5 +253,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ryt" />
     <option name="LAST_COMMIT_MESSAGE" value="ryt" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

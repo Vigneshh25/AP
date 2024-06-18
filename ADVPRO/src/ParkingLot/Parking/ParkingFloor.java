@@ -7,12 +7,10 @@ public class ParkingFloor {
 
     public static int floorNumber;
 
-    private int floor;
     private  Map<Integer, ParkingSlot> slots;
 
     public ParkingFloor() {
         floorNumber++;
-        this.floor = floorNumber;
         Map<Integer, ParkingSlot> slotMap = new TreeMap<>();
         for (int i = 1; i <= 5; i++) {
             if (i <= 2) slotMap.put(i, new ParkingSlot(i, VehicleType.BIKE));
