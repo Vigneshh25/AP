@@ -1,6 +1,8 @@
 package Lift;
 
 import java.util.Scanner;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 interface FloorStrategy {
     boolean isLiftAllowedOnFloor(int liftIndex, int floor);
@@ -10,15 +12,17 @@ interface LiftMovementStrategy {
     void moveLift(Lift lift, int destFloor);
 }
 
-public class Lift {
+class Lift {
     private final String name;
     private int position;
     private boolean busy;
+    private final Lock lock;
 
     public Lift(String name) {
         this.name = name;
         this.position = 0;
         this.busy = false;
+        this.lock = new ReentrantLock();
     }
 
     public String getName() {
@@ -41,8 +45,8 @@ public class Lift {
         this.busy = busy;
     }
 
-    public void displayLiftPositions() {
-        System.out.println(name + ": " + position + "   ");
+    public Lock getLock() {
+        return lock;
     }
 }
 

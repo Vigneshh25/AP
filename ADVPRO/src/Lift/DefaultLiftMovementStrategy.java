@@ -1,20 +1,20 @@
 package Lift;
 
-public class DefaultLiftMovementStrategy implements LiftMovementStrategy {
+class DefaultLiftMovementStrategy implements LiftMovementStrategy {
     @Override
     public void moveLift(Lift lift, int destFloor) {
-        int currentFloor = lift.getPosition();
-        int direction = Integer.compare(destFloor, currentFloor);
         new Thread(() -> {
+            int direction = Integer.compare(destFloor, lift.getPosition());
             while (lift.getPosition() != destFloor) {
                 lift.setPosition(lift.getPosition() + direction);
-//            LiftSystem.displayLiftPositions();
+                LiftSystem.displayLiftPositions();
                 try {
-                    Thread.sleep(1000); // simulate lift movement
+                    Thread.sleep(1000); // Simulate lift movement
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    Thread.currentThread().interrupt();
                 }
             }
-            lift.setBusy(false);}).start();
+            lift.setBusy(false);
+        }).start();
     }
 }

@@ -4,81 +4,82 @@ import java.util.Scanner;
 
 public class LiftSystem {
     private static final int NUM_LIFTS = 5;
-    private static final int NUM_FLOORS = 10;
     private static final String[] LIFT_NAMES = {"L1", "L2", "L3", "L4", "L5"};
 
-    private static int[] liftCapacity;
+    private int[] liftCapacity;
     private static Lift[] lifts;
     private final FloorStrategy floorStrategy;
     private final LiftMovementStrategy movementStrategy;
 
     public LiftSystem(int[] liftCapacity, FloorStrategy floorStrategy, LiftMovementStrategy movementStrategy) {
-        LiftSystem.liftCapacity = liftCapacity;
+        this.liftCapacity = liftCapacity;
         this.floorStrategy = floorStrategy;
         this.movementStrategy = movementStrategy;
+        this.lifts = new Lift[NUM_LIFTS];
         initializeLifts();
     }
 
-    public static void displayLiftPositions() {
-        System.out.print("Lifts  : ");
-        for (String name : LIFT_NAMES) {
-            System.out.print(name + " ");
-        }
-        System.out.println();
-        System.out.print("Floors : ");
-        for (int i = 0; i < NUM_LIFTS; i++) {
-            System.out.print(lifts[i].getPosition() + "   ");
-        }
-        System.out.println();
-    }
-
     private void initializeLifts() {
-        lifts = new Lift[NUM_LIFTS];
         for (int i = 0; i < NUM_LIFTS; i++) {
             lifts[i] = new Lift(LIFT_NAMES[i]);
         }
     }
 
+    public static void displayLiftPositions() {
+        System.out.print("Lifts  : ");
+        for (Lift lift : lifts) {
+            System.out.print(lift.getName() + " ");
+        }
+        System.out.println();
+        System.out.print("Floors : ");
+        for (Lift lift : lifts) {
+            System.out.print(lift.getPosition() + "   ");
+        }
+        System.out.println();
+    }
+
     public void assignLift(int startFloor, int destFloor, int numPeople) {
+        int closestLiftIndex = -1;
         int minDist = Integer.MAX_VALUE;
-        int closestLift = -1;
-        boolean sameDirection = false;
-        int minStops = Integer.MAX_VALUE;
 
         for (int i = 0; i < NUM_LIFTS; i++) {
-            if (!lifts[i].isBusy() && numPeople <= liftCapacity[i] && floorStrategy.isLiftAllowedOnFloor(i, startFloor)) {
-                int dist = Math.abs(lifts[i].getPosition() - startFloor);
-                if (dist < minDist) {
-                    minDist = dist;
-                    closestLift = i;
-                    sameDirection = (startFloor > lifts[i].getPosition() && destFloor < startFloor) || (startFloor < lifts[i].getPosition() && destFloor > startFloor);
-                }
-
-                if (closestLift != -1) {
-                    int numStops = (sameDirection) ? Math.abs(destFloor - lifts[closestLift].getPosition()) : Math.abs(startFloor - lifts[closestLift].getPosition()) + Math.abs(destFloor - startFloor);
-
-                    if (numStops < minStops || (numStops == minStops && dist < minDist)) {
-                        minStops = numStops;
+            Lift lift = lifts[i];
+            lift.getLock().lock();
+            try {
+                if (!lift.isBusy() && numPeople <= liftCapacity[i] && floorStrategy.isLiftAllowedOnFloor(i, startFloor)) {
+                    int dist = Math.abs(lift.getPosition() - startFloor);
+                    if (dist < minDist) {
+                        minDist = dist;
+                        closestLiftIndex = i;
                     }
                 }
+            } finally {
+                lift.getLock().unlock();
             }
         }
 
-        if (closestLift == -1) {
+        if (closestLiftIndex == -1) {
             System.out.println("All lifts are busy, please wait");
             return;
         }
 
-        lifts[closestLift].setBusy(true);
-        System.out.println(LIFT_NAMES[closestLift] + " is assigned");
-        movementStrategy.moveLift(lifts[closestLift], destFloor);
+        Lift assignedLift = lifts[closestLiftIndex];
+        assignedLift.setBusy(true);
+        System.out.println(assignedLift.getName() + " is assigned");
+        movementStrategy.moveLift(assignedLift, destFloor);
     }
+
     public static void main(String[] args) {
-        LiftSystem system = new LiftSystem(new int[]{10, 10, 10, 10, 10}, new DefaultFloorStrategy(), new DefaultLiftMovementStrategy());
+        LiftSystem system = new LiftSystem(
+                new int[]{10, 10, 10, 10, 10},
+                new DefaultFloorStrategy(),
+                new DefaultLiftMovementStrategy()
+        );
+
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            LiftSystem.displayLiftPositions();
+            system.displayLiftPositions();
             System.out.print("Enter start floor and destination floor: ");
             int startFloor = scanner.nextInt();
             int destFloor = scanner.nextInt();
