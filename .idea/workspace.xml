@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/EntryGate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Lift/DefaultLiftMovementStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Lift/DefaultLiftMovementStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/ParkingFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/ParkingFloor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/ParkingLot.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/ParkingLot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/ParkingLotSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/ParkingLotSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/ParkingSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/ParkingSlot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/ParkingTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/ParkingTicket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/UserRegistrationModule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/Vehicle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,47 +64,46 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.AsynchronousRateLimiter.executor": "Run",
-    "Application.BitTorrentLikeSystem.executor": "Run",
-    "Application.CalendarAPI.executor": "Run",
-    "Application.CircuitBreakerService.executor": "Run",
-    "Application.CustomThreadPool.executor": "Run",
-    "Application.DistributedCacheSystem.executor": "Run",
-    "Application.ElementStore.executor": "Run",
-    "Application.EventCalendarApp.executor": "Run",
-    "Application.FileSys.executor": "Run",
-    "Application.GoogleAuthenticatorApp.executor": "Run",
-    "Application.LFU.executor": "Run",
-    "Application.LFUCache.executor": "Run",
-    "Application.LiftSystem.executor": "Run",
-    "Application.LoadBalancerApp.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.MultiThreadedCustomKafkaExample.executor": "Run",
-    "Application.MyPriorityQueue.executor": "Run",
-    "Application.ParkingLotSystem.executor": "Run",
-    "Application.PaymentGatewaySystem.executor": "Run",
-    "Application.PriorityQueue.executor": "Run",
-    "Application.Queue.executor": "Run",
-    "Application.QueueUsingSingleStack.executor": "Run",
-    "Application.RateLimiterService.executor": "Run",
-    "Application.RealTimeChatSystem.executor": "Run",
-    "Application.TaskScheduler.executor": "Run",
-    "Application.TaskSchedulerConsole.executor": "Run",
-    "Application.TaskSchedulerMain.executor": "Run",
-    "Application.Test.executor": "Run",
-    "Application.WebCrawler.executor": "Run",
-    "Application.WhatsAppMessenger.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/admin/a/vicky/AP/ADVPRO/src"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.AsynchronousRateLimiter.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BitTorrentLikeSystem.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CalendarAPI.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CircuitBreakerService.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CustomThreadPool.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DistributedCacheSystem.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ElementStore.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EventCalendarApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FileSys.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GoogleAuthenticatorApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LFU.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LFUCache.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoadBalancerApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MultiThreadedCustomKafkaExample.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MyPriorityQueue.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ParkingLotSystem.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PaymentGatewaySystem.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PriorityQueue.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Queue.executor&quot;: &quot;Run&quot;,
+    &quot;Application.QueueUsingSingleStack.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RateLimiterService.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RealTimeChatSystem.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TaskScheduler.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TaskSchedulerConsole.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TaskSchedulerMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Application.WebCrawler.executor&quot;: &quot;Run&quot;,
+    &quot;Application.WhatsAppMessenger.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/admin/a/vicky/AP/ADVPRO/src&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ADVPRO/src" />
