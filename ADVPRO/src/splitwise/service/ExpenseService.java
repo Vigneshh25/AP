@@ -1,16 +1,17 @@
 package splitwise.service;
 
 import splitwise.Repositories.ExpenseRepository;
+import splitwise.Repositories.ExpenseRepositoryImpl;
 import splitwise.entities.Expense;
 
 import java.util.List;
 
 // ExpenseService.java
 public class ExpenseService {
-    private ExpenseRepository expenseRepository;
+    private final ExpenseRepository expenseRepository;
 
-    public ExpenseService(ExpenseRepository expenseRepository) {
-        this.expenseRepository = expenseRepository;
+    public ExpenseService() {
+        expenseRepository = new ExpenseRepositoryImpl();
     }
 
     public void addExpense(Expense expense) {

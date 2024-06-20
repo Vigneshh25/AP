@@ -209,7 +209,7 @@ class FileProxy {
     }
 }
 
-// Main Class
+// WebCrawlerWithSameHostnameMain Class
 public class FileSharingSystem {
     public static void main(String[] args) {
         // Create users

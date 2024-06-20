@@ -1,6 +1,6 @@
 package lld.chat;
 
-// Main Class
+// WebCrawlerWithSameHostnameMain Class
 public class RealTimeChatSystem {
     public static void main(String[] args) {
         // Create users

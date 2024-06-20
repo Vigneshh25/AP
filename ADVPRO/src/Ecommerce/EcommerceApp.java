@@ -107,7 +107,7 @@ class Admin {
     }
 }
 
-// BusRoute.shortestpath.Design_Datastructure.filesystem.Main class to run the e-commerce application
+// BusRoute.shortestpath.Design_Datastructure.filesystem.WebCrawlerWithSameHostnameMain class to run the e-commerce application
 public class EcommerceApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -124,7 +124,7 @@ public class EcommerceApp {
         admin.addItem(item2);
         admin.addItem(item3);
 
-        // BusRoute.shortestpath.Design_Datastructure.filesystem.Main menu
+        // BusRoute.shortestpath.Design_Datastructure.filesystem.WebCrawlerWithSameHostnameMain menu
         while (true) {
             System.out.println("Welcome to the e-commerce store!");
             System.out.println("1. Admin");

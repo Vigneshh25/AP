@@ -9,10 +9,10 @@ import java.util.List;
 
 // UserService.java
 public class UserService {
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public UserService() {
+        userRepository = new UserRepositoryImpl();
     }
 
     public void createUser(User user) {

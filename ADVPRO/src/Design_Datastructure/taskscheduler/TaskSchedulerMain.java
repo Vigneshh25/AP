@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-// BusRoute.shortestpath.Design_Datastructure.filesystem.Main class demonstrating the usage of TaskScheduler
+// BusRoute.shortestpath.Design_Datastructure.filesystem.WebCrawlerWithSameHostnameMain class demonstrating the usage of TaskScheduler
 public class TaskSchedulerMain {
     public static void main(String[] args) {
         TaskScheduler scheduler = TaskScheduler.getInstance();

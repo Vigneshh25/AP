@@ -412,7 +412,7 @@ enum ParkingSpotType {
     COMPACT, LARGE, HANDICAPPED, MOTORCYCLE, ELECTRIC
 }
 
-// Main method for testing
+// WebCrawlerWithSameHostnameMain method for testing
 public class ParkingSystem {
     public static void main(String[] args) {
         // Setup ParkingLot

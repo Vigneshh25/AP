@@ -25,7 +25,7 @@ public class Main {
         // Using Scanner for user input.txt
         Scanner scanner = new Scanner(System.in);
 
-        // Main loop to interact with vending machine
+        // WebCrawlerWithSameHostnameMain loop to interact with vending machine
         while (true) {
             System.out.println("\nAvailable Products:");
             for (Product product : productInventory.getProducts()) {

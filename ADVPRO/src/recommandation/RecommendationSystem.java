@@ -3,7 +3,7 @@ package recommandation;
 import java.util.*;
 import java.util.stream.Collectors;
 
-// Main class to demonstrate the functionality
+// WebCrawlerWithSameHostnameMain class to demonstrate the functionality
 public class RecommendationSystem {
     public static void main(String[] args) {
         UserActionHistoryFetcher fetcher = new FacebookActionHistoryFetcher();

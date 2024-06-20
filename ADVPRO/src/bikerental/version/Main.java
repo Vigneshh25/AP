@@ -3,7 +3,7 @@ package bikerental.version;
 import java.time.LocalDate;
 import java.util.*;
 
-// Main class demonstrating usage
+// WebCrawlerWithSameHostnameMain class demonstrating usage
 public class Main {
     public static void main(String[] args) {
         Inventory inventory = Inventory.getInstance();

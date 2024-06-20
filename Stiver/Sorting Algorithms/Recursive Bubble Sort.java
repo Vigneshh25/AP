@@ -36,7 +36,7 @@ public class BubbleSortUsingDepthOfRecursion {
         bubbleSort(arr, i + 1, 0);
     }
   
-    // Main Method
+    // WebCrawlerWithSameHostnameMain Method
     public static void main(String[] args) {
         int[] arr = {5, 3, 6, 1, 8, 2, 4};
         bubbleSort(arr, 0, 0);

@@ -287,7 +287,7 @@ class MessageStateContext {
     }
 }
 
-// Main Class
+// WebCrawlerWithSameHostnameMain Class
 public class WhatsAppMessenger {
     public static void main(String[] args) {
         // Create users

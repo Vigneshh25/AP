@@ -200,7 +200,7 @@ class UserSession {
     // Other methods for managing code sessions and collaborators
 }
 
-// Main class to demonstrate the functionality
+// WebCrawlerWithSameHostnameMain class to demonstrate the functionality
 public class Main {
     public static void main(String[] args) {
         User user1 = new User("1", "Alice");

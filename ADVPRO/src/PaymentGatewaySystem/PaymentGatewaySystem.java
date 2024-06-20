@@ -3,7 +3,7 @@ package PaymentGatewaySystem;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-// Main Class for Testing
+// WebCrawlerWithSameHostnameMain Class for Testing
 public class PaymentGatewaySystem {
     public static void main(String[] args) {
         PaymentGateway pg = PaymentGateway.getInstance();

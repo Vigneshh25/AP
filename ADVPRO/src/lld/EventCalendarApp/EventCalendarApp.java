@@ -348,7 +348,7 @@ class EventStateContext {
     }
 }
 
-// Main Class
+// WebCrawlerWithSameHostnameMain Class
 public class EventCalendarApp {
     public static void main(String[] args) {
         // Create users

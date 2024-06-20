@@ -1,6 +1,6 @@
 package Ecommerce.version;
 
-// Main.java
+// WebCrawlerWithSameHostnameMain.java
 public class Main {
     public static void main(String[] args) {
         // User Management

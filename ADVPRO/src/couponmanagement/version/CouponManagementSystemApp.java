@@ -5,7 +5,7 @@ import java.util.*;
 // Custom exceptions
 
 
-// Main class for demonstration
+// WebCrawlerWithSameHostnameMain class for demonstration
 public class CouponManagementSystemApp {
     public static void main(String[] args) {
         CouponManagementSystem cms = new CouponManagementSystem();

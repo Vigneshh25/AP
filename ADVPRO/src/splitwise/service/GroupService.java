@@ -1,16 +1,17 @@
 package splitwise.service;
 
 import splitwise.Repositories.GroupRepository;
+import splitwise.Repositories.GroupRepositoryImpl;
 import splitwise.entities.Group;
 
 import java.util.List;
 
 // GroupService.java
 public class GroupService {
-    private GroupRepository groupRepository;
+    private final GroupRepository groupRepository;
 
-    public GroupService(GroupRepository groupRepository) {
-        this.groupRepository = groupRepository;
+    public GroupService() {
+        groupRepository = new GroupRepositoryImpl();
     }
 
     public void createGroup(Group group) {

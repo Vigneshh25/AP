@@ -13,14 +13,11 @@ public class Main {
 
     public static void main(String[] args) {
         // Initialize repositories (Mock implementation for demo)
-        UserRepository userRepository = new UserRepositoryImpl();
-        GroupRepository groupRepository = new GroupRepositoryImpl();
-        ExpenseRepository expenseRepository = new ExpenseRepositoryImpl();
 
         // Initialize services
-        UserService userService = new UserService(userRepository);
-        GroupService groupService = new GroupService(groupRepository);
-        ExpenseService expenseService = new ExpenseService(expenseRepository);
+        UserService userService = new UserService();
+        GroupService groupService = new GroupService();
+        ExpenseService expenseService = new ExpenseService();
 
         // Initialize controller
         SplitwiseController splitwiseController = new SplitwiseController(userService, groupService, expenseService);
