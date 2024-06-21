@@ -39,15 +39,8 @@ public class Main {
             Ticket ticket1 = reservationService.reserveSeat("AI123", passenger1, SeatType.ECONOMY, new Date());
             Ticket ticket2 = reservationService.reserveSeat("AI123", passenger2, SeatType.BUSINESS, new Date());
 
-            // Assign Passengers to Seats
-            Seat seat1 = flight.getSeatMap().getSeat("Q1");
-            Seat seat2 = flight.getSeatMap().getSeat("B5");
-            seat1.assignPassenger(passenger1);
-            seat2.assignPassenger(passenger2);
-
             // Print Flight Details and Passenger Information
             System.out.println("Flight Details:");
-            System.out.println(flight);
             System.out.println("Passengers on flight:");
             for (Seat seat : flight.getSeatMap().getAllSeats()) {
                 if (!seat.isAvailable()) {

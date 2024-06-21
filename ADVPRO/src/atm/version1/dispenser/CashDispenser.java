@@ -1,4 +1,4 @@
-package atm.version2.dispenser;
+package atm.version1.dispenser;
 
 public abstract class CashDispenser {
     protected CashDispenser nextDispenser;

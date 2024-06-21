@@ -3,6 +3,7 @@ package Airline;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 class Flight {
     private String flightNumber;
@@ -19,7 +20,7 @@ class Flight {
         this.flightNumber = flightNumber;
         this.aircraft = aircraft;
         this.schedule = schedule;
-        this.seatMap = new SeatMap(120, 30, 10);
+        this.seatMap = new SeatMap(10, 5, 3);
         this.passengers = new ArrayList<>();
         this.baggageList = new ArrayList<>();
         this.crew = new ArrayList<>();
@@ -33,6 +34,8 @@ class Flight {
         }
         Seat seat = availableSeats.get(0);
         double price = pricingStrategy.calculatePrice(seatType, bookingDate, availableSeats.size());
+        passenger.setSeat(seat);
+        seat.assignPassenger(passenger);
         Ticket ticket = new Ticket(this, passenger, seat, price);
         passengers.add(passenger);
         return ticket;
@@ -43,6 +46,8 @@ class Flight {
         if (seat == null || seat.isAvailable()) {
             throw new RuntimeException("Invalid seat cancellation request.");
         }
+        passenger.setSeat(null);
+        seat.assignPassenger(null);
         passengers.remove(passenger);
     }
 

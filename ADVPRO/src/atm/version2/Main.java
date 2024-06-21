@@ -3,10 +3,10 @@ package atm.version2;
 import atm.version1.devices.*;
 import atm.version1.repository.Account;
 import atm.version1.repository.InMemoryAccountRepository;
-import atm.version2.dispenser.CashDispenser;
-import atm.version2.dispenser.FiveHundredNotesDispenser;
-import atm.version2.dispenser.OneHundredNotesDispenser;
-import atm.version2.dispenser.TwoHundredNotesDispenser;
+import atm.version1.dispenser.CashDispenser;
+import atm.version1.dispenser.FiveHundredNotesDispenser;
+import atm.version1.dispenser.OneHundredNotesDispenser;
+import atm.version1.dispenser.TwoHundredNotesDispenser;
 import atm.version2.hardware.ATM;
 import atm.version2.hardware.NetworkInfrastructure;
 import atm.version2.hardware.NetworkInfrastructureImpl;
@@ -38,8 +38,8 @@ public class Main {
         NetworkInfrastructure networkInfrastructure = new NetworkInfrastructureImpl();
 
         // Setup cash dispenser chain
-        atm.version2.dispenser.CashDispenser fiveHundredDispenser = new FiveHundredNotesDispenser();
-        atm.version2.dispenser.CashDispenser twoHundredDispenser = new TwoHundredNotesDispenser();
+        atm.version1.dispenser.CashDispenser fiveHundredDispenser = new FiveHundredNotesDispenser();
+        atm.version1.dispenser.CashDispenser twoHundredDispenser = new TwoHundredNotesDispenser();
         CashDispenser oneHundredDispenser = new OneHundredNotesDispenser();
 
         fiveHundredDispenser.setNextDispenser(twoHundredDispenser);

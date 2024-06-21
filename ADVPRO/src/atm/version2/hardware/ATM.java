@@ -1,6 +1,6 @@
 package atm.version2.hardware;
 
-import atm.version2.dispenser.CashDispenser;
+import atm.version1.dispenser.CashDispenser;
 import atm.version1.devices.CardReader;
 import atm.version1.devices.DepositSlot;
 import atm.version1.devices.Keypad;

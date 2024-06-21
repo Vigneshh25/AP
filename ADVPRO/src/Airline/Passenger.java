@@ -41,6 +41,7 @@ class Airport {
 class Passenger {
     private String name;
     private String ticketNumber;
+    private Seat seat;
 
     public Passenger(String name) {
         this.name = name;
@@ -52,6 +53,14 @@ class Passenger {
 
     public String getName() {
         return name;
+    }
+
+    public Seat getSeat() {
+        return seat;
+    }
+
+    public void setSeat(Seat seat) {
+        this.seat = seat;
     }
 
     public String getTicketNumber() {

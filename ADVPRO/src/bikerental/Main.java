@@ -1,57 +1,57 @@
 package bikerental;
 
-import bikerental.model.*;
+import java.util.Date;
+import java.util.List;
 
-import java.util.*;
-
+/**
+ * Created by Vignesh.V on 21/06/24.
+ */ // Main Class for Testing
 public class Main {
     public static void main(String[] args) {
-        BikeRentalService bikeRentalService = new BikeRentalService();
+        RentalController rentalController = new RentalController();
 
-        // Adding products to inventory
-        bikeRentalService.addProduct(new Bike("1", "Mountain Bike", Size.SMALL));
-        bikeRentalService.addProduct(new Bike("2", "Road Bike", Size.MEDIUM));
-        bikeRentalService.addProduct(new Scooter("3", "Electric Scooter", MotorType.ELECTRIC));
-        bikeRentalService.addProduct(new Scooter("4", "Gas Scooter", MotorType.GAS));
+        // Create Customers
+        Customer customer1 = new Customer("C001", "John Doe");
+        Customer customer2 = new Customer("C002", "Jane Doe");
+        rentalController.addCustomer(customer1);
+        rentalController.addCustomer(customer2);
 
-        // Adding customers
-        bikeRentalService.addCustomer(new Customer("c1", "John Doe"));
-        bikeRentalService.addCustomer(new Customer("c2", "Jane Smith"));
+        // Create Products
+        Bike bike1 = BikeFactory.createBike("B001", "Mountain Bike", Size.MEDIUM);
+        Scooter scooter1 = ScooterFactory.createScooter("S001", "Electric Scooter", MotorType.ELECTRIC);
 
-        // Renting a product
-        bikeRentalService.rentProduct("1", "c1", new Date(), getFutureDate(7));
-        bikeRentalService.rentProduct("3", "c2", new Date(), getFutureDate(3));
+        ProductRepository productRepository = ProductRepository.getInstance();
+        productRepository.addProduct(bike1);
+        productRepository.addProduct(scooter1);
 
-        // Creating a charge for a customer
-        bikeRentalService.createCharge("c1", 100.0, new Date());
-        bikeRentalService.createCharge("c2", 50.0, new Date());
+        // Rent Products
+        rentalController.rentProduct(bike1.getId(), customer1.getId(), new Date(), new Date(System.currentTimeMillis() + 86400000L));
+        rentalController.rentProduct(scooter1.getId(), customer2.getId(), new Date(), new Date(System.currentTimeMillis() + 86400000L));
 
-        // Displaying customer balances
-        System.out.println("Customer c1 balance: " + bikeRentalService.getCustomerBalance("c1"));
-        System.out.println("Customer c2 balance: " + bikeRentalService.getCustomerBalance("c2"));
+        // Create Charges
+        rentalController.createCharge(customer1.getId(), 15.0, new Date());
+        rentalController.createCharge(customer2.getId(), 20.0, new Date());
 
-        // Displaying available products
-        System.out.println("Available products:");
-        for (Product product : bikeRentalService.getAvailableProducts()) {
-            System.out.println(product.name);
+        // Return Products
+        Rental rental = productRepository.getRentalsByCustomer(customer1.getId()).get(0);
+        rentalController.returnProduct(rental.getRentalId(), new Date());
+
+        // Print Available Products
+        System.out.println("Available Products:");
+        for (Product product : rentalController.getAvailableProducts()) {
+            System.out.println(product.getName());
         }
 
-        // Displaying overdue rentals
-        System.out.println("Overdue rentals:");
-        for (Rental rental : bikeRentalService.getOverdueRentals(new Date())) {
-            System.out.println("Rental ID: " + rental.rentalId + ", Product ID: " + rental.productId + ", Customer ID: " + rental.customerId);
-        }
+        // Print Customer Balances
+        System.out.println("Customer Balances:");
+        System.out.println(customer1.getName() + ": $" + rentalController.getCustomerBalance(customer1.getId()));
+        System.out.println(customer2.getName() + ": $" + rentalController.getCustomerBalance(customer2.getId()));
 
-        // Displaying rentals by customer
-        System.out.println("Rentals by customer c1:");
-        for (Rental rental : bikeRentalService.getRentalsByCustomer("c1")) {
-            System.out.println("Rental ID: " + rental.rentalId + ", Product ID: " + rental.productId);
+        // Get and Print Overdue Rentals
+        List<Rental> overdueRentals = rentalController.getOverdueRentals(new Date(System.currentTimeMillis() + 172800000L));
+        System.out.println("Overdue Rentals:");
+        for (Rental overdueRental : overdueRentals) {
+            System.out.println("Rental ID: " + overdueRental.getRentalId() + ", Customer ID: " + overdueRental.getCustomerId());
         }
-    }
-
-    private static Date getFutureDate(int days) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.DAY_OF_YEAR, days);
-        return calendar.getTime();
     }
 }
