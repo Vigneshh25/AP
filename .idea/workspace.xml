@@ -5,45 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/CircularDeque.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/CircularQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/AutocompleteSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/BrowserHistory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/ConstantTimeDSMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/FileSharingSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/HitCounter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/Leaderboard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/Logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/TokenManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/Twitter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/VotingMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/WebCrawlerMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/WebCrawlerWithSameHostnameMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/game/blackjack/Card.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/game/blackjack/Deck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/game/blackjack/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/snake/SnakeGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BankingApplication/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BankingApplication/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/TaskSchedulerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/taskscheduler/TaskSchedulerMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Ecommerce/EcommerceApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Ecommerce/EcommerceApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Ecommerce/version/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Ecommerce/version/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/version/ParkingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/version/ParkingSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/PaymentGatewaySystem/PaymentGatewaySystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/PaymentGatewaySystem/PaymentGatewaySystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/version/CouponManagementSystemApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/couponmanagement/version/CouponManagementSystemApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/lld/EventCalendarApp/EventCalendarApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/lld/EventCalendarApp/EventCalendarApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/lld/chat/RealTimeChatSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/lld/chat/RealTimeChatSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/lld/dropbox/FileSharingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/lld/dropbox/FileSharingSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/lld/leetcode/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/lld/leetcode/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/lld/messagesystem/WhatsAppMessenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/lld/messagesystem/WhatsAppMessenger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/recommandation/RecommendationSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/recommandation/RecommendationSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/splitwise/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/splitwise/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/splitwise/service/ExpenseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/splitwise/service/ExpenseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/splitwise/service/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/splitwise/service/GroupService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/splitwise/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/splitwise/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/vendingmachine/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stiver/Sorting Algorithms/Recursive Bubble Sort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stiver/Sorting Algorithms/Recursive Bubble Sort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,6 +86,7 @@
     "Application.QueueUsingSingleStack.executor": "Run",
     "Application.RateLimiterService.executor": "Run",
     "Application.RealTimeChatSystem.executor": "Run",
+    "Application.SnakeGame.executor": "Run",
     "Application.TaskScheduler.executor": "Run",
     "Application.TaskSchedulerConsole.executor": "Run",
     "Application.TaskSchedulerMain.executor": "Run",
@@ -271,7 +235,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718452664071</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1718886344410</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1718886344410</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
