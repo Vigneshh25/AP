@@ -5,73 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Bike.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/BikeFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Charge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/MotorType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/ProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Rental.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/RentalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Scooter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/ScooterFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Size.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/out/production/AP/bikerental/API" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/ChargeException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Database.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Flight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Passenger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version1/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version1/devices/ATM.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version1/devices/ATM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version1/devices/CashDispenser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version1/devices/CashDispenserImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version1/repository/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version1/repository/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version2/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/dispenser/CashDispenser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version1/dispenser/CashDispenser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/dispenser/FiveHundredNotesDispenser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version1/dispenser/FiveHundredNotesDispenser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/dispenser/OneHundredNotesDispenser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version1/dispenser/OneHundredNotesDispenser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/dispenser/TwoHundredNotesDispenser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version1/dispenser/TwoHundredNotesDispenser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/hardware/ATM.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version2/hardware/ATM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/API" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/BikeRentalService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Inventory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Problems/HitCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/HitCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Bike.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Bike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/BikeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/BikeFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Bike.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Charge.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Customer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/MotorType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Rental.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Scooter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/model/Size.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/BarcodeReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/Car.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/DefaultLateFeeStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/Equipment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/Insurance.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/Inventory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/LateFeeStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/Member.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/MemberNotificationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/Motorcycle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/NotificationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/Observer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/Rental.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/Reservation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/ReservationOption.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/SUV.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/Service.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/Truck.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/Van.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/Vehicle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/VehicleFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/version/VehicleLog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/MotorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/MotorType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Rental.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Rental.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/RentalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/RentalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Scooter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Scooter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Size.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Size.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,53 +71,57 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.AsynchronousRateLimiter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.AutocompleteSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BitTorrentLikeSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BrowserHistory.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CalendarAPI.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CircuitBreakerService.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CustomThreadPool.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DistributedCacheSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ElementStore.executor&quot;: &quot;Run&quot;,
-    &quot;Application.EventCalendarApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.FileSys.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GoogleAuthenticatorApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LFU.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LFUCache.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoadBalancerApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Logger.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MultiThreadedCustomKafkaExample.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MyPriorityQueue.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ParkingLotSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.PaymentGatewaySystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.PriorityQueue.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Queue.executor&quot;: &quot;Run&quot;,
-    &quot;Application.QueueUsingSingleStack.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RateLimiterService.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RealTimeChatSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SnakeGame.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TaskScheduler.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TaskSchedulerConsole.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TaskSchedulerMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TokenManager.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Twitter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.WebCrawler.executor&quot;: &quot;Run&quot;,
-    &quot;Application.WhatsAppMessenger.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/admin/a/vicky/AP/ADVPRO/src&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.AsynchronousRateLimiter.executor": "Run",
+    "Application.AutocompleteSystem.executor": "Run",
+    "Application.BitTorrentLikeSystem.executor": "Run",
+    "Application.BrowserHistory.executor": "Run",
+    "Application.CalendarAPI.executor": "Run",
+    "Application.CircuitBreakerService.executor": "Run",
+    "Application.CustomThreadPool.executor": "Run",
+    "Application.DistributedCacheSystem.executor": "Run",
+    "Application.ElementStore.executor": "Run",
+    "Application.EventCalendarApp.executor": "Run",
+    "Application.FileSys.executor": "Run",
+    "Application.GoogleAuthenticatorApp.executor": "Run",
+    "Application.HitCounter.executor": "Run",
+    "Application.LFU.executor": "Run",
+    "Application.LFUCache.executor": "Run",
+    "Application.LoadBalancerApp.executor": "Run",
+    "Application.Logger.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.MultiThreadedCustomKafkaExample.executor": "Run",
+    "Application.MyPriorityQueue.executor": "Run",
+    "Application.ParkingLotSystem.executor": "Run",
+    "Application.PaymentGatewaySystem.executor": "Run",
+    "Application.PriorityQueue.executor": "Run",
+    "Application.Queue.executor": "Run",
+    "Application.QueueUsingSingleStack.executor": "Run",
+    "Application.RateLimiterService.executor": "Run",
+    "Application.RealTimeChatSystem.executor": "Run",
+    "Application.SnakeGame.executor": "Run",
+    "Application.TaskScheduler.executor": "Run",
+    "Application.TaskSchedulerConsole.executor": "Run",
+    "Application.TaskSchedulerMain.executor": "Run",
+    "Application.Test.executor": "Run",
+    "Application.TokenManager.executor": "Run",
+    "Application.Twitter.executor": "Run",
+    "Application.WebCrawler.executor": "Run",
+    "Application.WhatsAppMessenger.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/admin/a/vicky/AP/ADVPRO/src"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="bikerental" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ADVPRO/src" />
       <recent name="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/circuitbreaker" />
@@ -316,7 +269,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718963600155</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1718971699958</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1718971699958</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

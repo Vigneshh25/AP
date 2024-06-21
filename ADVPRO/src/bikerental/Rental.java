@@ -2,7 +2,9 @@ package bikerental;
 
 import java.util.Date;
 
-/** * Created by Vignesh.V on 21/06/24. */ // Rental Class
+/**
+ * Created by Vignesh.V on 21/06/24.
+ */ // Rental Class
 public class Rental {
     private String rentalId;
     private String productId;

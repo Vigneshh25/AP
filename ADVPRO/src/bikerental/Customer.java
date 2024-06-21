@@ -1,6 +1,8 @@
 package bikerental;
 
-/** * Created by Vignesh.V on 21/06/24. */ // Customer Class
+/**
+ * Created by Vignesh.V on 21/06/24.
+ */ // Customer Class
 public class Customer {
     private String id;
     private String name;

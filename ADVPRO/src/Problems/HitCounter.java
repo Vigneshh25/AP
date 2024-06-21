@@ -2,6 +2,8 @@ package Problems;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class HitCounter {
     private Queue<Integer> hits;
@@ -48,3 +50,35 @@ public class HitCounter {
         System.out.println(counter.getHits(301)); // get hits at timestamp 301, should return 3
     }
 }
+// Simplified example of Event Counting Service using rolling window counters
+
+
+class EventCountingService {
+    // Rolling window counters (per second)
+    private ConcurrentHashMap<Long, AtomicLong> eventCounts;
+
+    public EventCountingService() {
+        eventCounts = new ConcurrentHashMap<>();
+    }
+
+    public void recordEvent(long timestamp) {
+        long second = timestamp / 1000; // Assuming timestamp is in milliseconds
+        eventCounts.computeIfAbsent(second, k -> new AtomicLong()).incrementAndGet();
+    }
+
+    public long getEventCount(long startTime, long endTime) {
+        long startSecond = startTime / 1000;
+        long endSecond = endTime / 1000;
+        long count = 0;
+
+        for (long second = startSecond; second <= endSecond; second++) {
+            AtomicLong counter = eventCounts.get(second);
+            if (counter != null) {
+                count += counter.get();
+            }
+        }
+
+        return count;
+    }
+}
+

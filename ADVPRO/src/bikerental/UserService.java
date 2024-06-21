@@ -1,6 +1,8 @@
 package bikerental;
 
-/** * Created by Vignesh.V on 21/06/24. */ // UserService Class
+/**
+ * Created by Vignesh.V on 21/06/24.
+ */ // UserService Class
 public class UserService {
     private final UserRepository userRepository = UserRepository.getInstance();
 

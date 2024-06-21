@@ -1,6 +1,8 @@
 package bikerental;
 
-/** * Created by Vignesh.V on 21/06/24. */ // Bike Class
+/**
+ * Created by Vignesh.V on 21/06/24.
+ */ // Bike Class
 public class Bike extends Product {
     private Size size;
 
