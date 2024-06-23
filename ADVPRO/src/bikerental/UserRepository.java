@@ -20,7 +20,6 @@ class UserRepository {
         return userRepository;
     }
 
-    // UserRepository Class (continued)
     public void addCustomer(Customer customer) {
         customers.put(customer.getId(), customer);
     }

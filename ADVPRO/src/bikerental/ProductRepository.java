@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 /**
  * Created by Vignesh.V on 21/06/24.
  */ // ProductRepository Singleton Class
-class ProductRepository {
+public class ProductRepository {
     private static ProductRepository productRepository;
     private Map<String, Product> products = new HashMap<>();
     private Map<String, Rental> rentals = new HashMap<>();

@@ -1,15 +1,16 @@
 package BookMyshow.entities;
 
-public class SeatType {
-    private String type;
-    private double price;
+public enum SeatType {
+    REGULAR(10.0),
+    PREMIUM(15.0),
+    VIP(20.0);
 
-    public SeatType(String type, double price) {
-        this.type = type;
+    private final double price;
+
+    SeatType(double price) {
         this.price = price;
     }
 
-    // Getters and setters
     public double getPrice() {
         return price;
     }

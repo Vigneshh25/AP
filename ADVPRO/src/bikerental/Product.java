@@ -4,14 +4,16 @@ package bikerental;
  * Created by Vignesh.V on 21/06/24.
  */ // Product Abstract Class
 public abstract class Product {
-    protected String id;
-    protected String name;
-    protected boolean available;
+    private String productId;
+    private String name;
+    private boolean available;
+    private double dailyRate;
 
-    public Product(String id, String name) {
-        this.id = id;
+    public Product(String id, String name,double dailyRate) {
+        this.productId = id;
         this.name = name;
         this.available = true;
+        this.dailyRate = dailyRate;
     }
 
     public void rent() {
@@ -23,7 +25,7 @@ public abstract class Product {
     }
 
     public String getId() {
-        return id;
+        return productId;
     }
 
     public String getName() {
@@ -32,5 +34,13 @@ public abstract class Product {
 
     public boolean isAvailable() {
         return available;
+    }
+
+    public double getDailyRate() {
+        return dailyRate;
+    }
+
+    public void setDailyRate(double dailyRate) {
+        this.dailyRate = dailyRate;
     }
 }

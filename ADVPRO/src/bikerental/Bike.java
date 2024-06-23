@@ -6,8 +6,8 @@ package bikerental;
 public class Bike extends Product {
     private Size size;
 
-    public Bike(String id, String name, Size size) {
-        super(id, name);
+    public Bike(String id, String name, Size size,double dailyRate) {
+        super(id, name,dailyRate);
         this.size = size;
     }
 

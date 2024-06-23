@@ -10,8 +10,8 @@ public class Rental {
     private String productId;
     private String customerId;
     private Date rentalDate;
-    private Date returnDate;
     private Date dueDate;
+    private Date returnDate;
 
     public Rental(String rentalId, String productId, String customerId, Date rentalDate, Date dueDate) {
         this.rentalId = rentalId;
@@ -48,5 +48,9 @@ public class Rental {
 
     public Date getDueDate() {
         return dueDate;
+    }
+
+    public void setReturnDate(Date returnDate) {
+        this.returnDate = returnDate;
     }
 }

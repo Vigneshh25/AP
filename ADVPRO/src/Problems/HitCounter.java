@@ -5,11 +5,17 @@ import java.util.Queue;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeSet;
+
+import java.util.TreeMap;
+
 public class HitCounter {
-    private Queue<Integer> hits;
+    private final TreeMap<Integer, Integer> hitsMap;
 
     public HitCounter() {
-        hits = new LinkedList<>();
+        hitsMap = new TreeMap<>();
     }
 
     /**
@@ -17,11 +23,7 @@ public class HitCounter {
      * @param timestamp - The current timestamp (in seconds granularity).
      */
     public void hit(int timestamp) {
-        hits.add(timestamp);
-        // Clean up old hits outside the 5-minute window
-        while (!hits.isEmpty() && hits.peek() <= timestamp - 300) {
-            hits.poll();
-        }
+        hitsMap.put(timestamp, hitsMap.getOrDefault(timestamp, 0) + 1);
     }
 
     /**
@@ -30,24 +32,45 @@ public class HitCounter {
      * @return The number of hits in the past 5 minutes.
      */
     public int getHits(int timestamp) {
-        // Clean up old hits outside the 5-minute window
-        while (!hits.isEmpty() && hits.peek() <= timestamp - 300) {
-            hits.poll();
+        int count = 0;
+        // Iterate over the tail map of hits within the last 5 minutes
+        for (int ts : hitsMap.tailMap(timestamp - 300).keySet()) {
+            count += hitsMap.get(ts);
         }
-        return hits.size();
+        return count;
+    }
+
+    /**
+     * Return the number of hits between two timestamps (inclusive).
+     * @param startTime - The starting timestamp (in seconds granularity).
+     * @param endTime - The ending timestamp (in seconds granularity).
+     * @return The number of hits between startTime and endTime (inclusive).
+     */
+    public int getHitsInRange(int startTime, int endTime) {
+        int count = 0;
+        // Iterate over the sub map of hits between startTime and endTime (inclusive)
+        for (int ts : hitsMap.subMap(startTime, true, endTime, true).keySet()) {
+            count += hitsMap.get(ts);
+        }
+        return count;
     }
 
     public static void main(String[] args) {
         HitCounter counter = new HitCounter();
-        
+
         counter.hit(1);     // hit at timestamp 1
         counter.hit(2);     // hit at timestamp 2
         counter.hit(3);     // hit at timestamp 3
         System.out.println(counter.getHits(4));   // get hits at timestamp 4, should return 3
-        
+
         counter.hit(300);   // hit at timestamp 300
         System.out.println(counter.getHits(300)); // get hits at timestamp 300, should return 4
         System.out.println(counter.getHits(301)); // get hits at timestamp 301, should return 3
+        System.out.println(counter.getHits(305)); // get hits at timestamp 305, should return 1
+
+        // Example of counting hits between two timestamps
+        System.out.println(counter.getHitsInRange(1, 3)); // should return 3
+        System.out.println(counter.getHitsInRange(299, 301)); // should return 4
     }
 }
 // Simplified example of Event Counting Service using rolling window counters

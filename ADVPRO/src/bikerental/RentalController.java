@@ -1,22 +1,48 @@
 package bikerental;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
 /** * Created by Vignesh.V on 21/06/24. */ // RentalController Class
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 public class RentalController {
     private final ProductService productService = new ProductService();
     private final UserService userService = new UserService();
     private final Scanner scanner = new Scanner(System.in);
 
-    public void rentProduct(String productId, String customerId, Date rentalDate, Date dueDate) {
+    public void rentProduct(String productId, String customerId, Date rentalDate, int rentalDurationDays) {
         try {
+            Date dueDate = new Date(rentalDate.getTime() + TimeUnit.DAYS.toMillis(rentalDurationDays));
             productService.rentProduct(productId, customerId, rentalDate, dueDate);
+            double chargeAmount = productService.calculateCharge(productId, rentalDurationDays);
+            createCharge(customerId, chargeAmount, rentalDate);
             System.out.println("Successfully rented product.");
         } catch (RentalException e) {
             System.out.println("Failed to rent product: " + e.getMessage());
         }
+    }
+    public List<Rental> viewRentalsByCustomer(String customerId) {
+        List<Rental> rentals = productService.getRentalsByCustomer(customerId);
+        if (rentals.isEmpty()) {
+            System.out.println("No rentals found for customer with ID: " + customerId);
+        } else {
+            System.out.println("Rentals for customer with ID " + customerId + ":");
+            for (Rental rental : rentals) {
+                System.out.println("Rental ID: " + rental.getRentalId() +
+                        ", Product ID: " + rental.getProductId() +
+                        ", Rental Date: " + rental.getRentalDate() +
+                        ", Due Date: " + rental.getDueDate() +
+                        ", Return Date: " + rental.getReturnDate());
+            }
+        }
+        return rentals;
     }
 
     public void returnProduct(String rentalId, Date returnDate) {
@@ -57,6 +83,20 @@ public class RentalController {
         userService.addCustomer(customer);
     }
 
+    public void viewAvailableProducts() {
+        List<Product> products = productService.getAvailableProducts();
+        if (products.isEmpty()) {
+            System.out.println("No products available for rent.");
+        } else {
+            System.out.println("Available Products:");
+            for (Product product : products) {
+                System.out.println("Product ID: " + product.getId() +
+                        ", Name: " + product.getName() +
+                        ", Daily Rate: $" + product.getDailyRate());
+            }
+        }
+    }
+
     public void simulateUserInteraction() {
         System.out.println("Welcome to the Rental Management System!");
         while (true) {
@@ -66,7 +106,9 @@ public class RentalController {
             System.out.println("3. Create a charge");
             System.out.println("4. Check overdue rentals");
             System.out.println("5. Check customer balance");
-            System.out.println("6. Exit");
+            System.out.println("6. View rentals by customer");
+            System.out.println("7. View available products");
+            System.out.println("8. Exit");
 
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline character
@@ -77,9 +119,11 @@ public class RentalController {
                     String productId = scanner.nextLine();
                     System.out.println("Enter Customer ID:");
                     String customerId = scanner.nextLine();
+                    System.out.println("Enter Rental Duration (days):");
+                    int rentalDurationDays = scanner.nextInt();
+                    scanner.nextLine(); // Consume newline character
                     Date rentalDate = new Date();
-                    Date dueDate = new Date(System.currentTimeMillis() + 86400000L); // Default due date: tomorrow
-                    rentProduct(productId, customerId, rentalDate, dueDate);
+                    rentProduct(productId, customerId, rentalDate, rentalDurationDays);
                     break;
                 case 2:
                     System.out.println("Enter Rental ID:");
@@ -131,6 +175,14 @@ public class RentalController {
                     System.out.println("Customer Balance: $" + balance);
                     break;
                 case 6:
+                    System.out.println("Enter Customer ID:");
+                    customerId = scanner.nextLine();
+                    viewRentalsByCustomer(customerId);
+                    break;
+                case 7:
+                    viewAvailableProducts();
+                    break;
+                case 8:
                     System.out.println("Exiting...");
                     return;
                 default:

@@ -7,6 +7,7 @@ import BookMyshow.services.BookingService;
 import BookMyshow.services.PaymentService;
 import BookMyshow.services.ShowService;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
@@ -47,6 +48,16 @@ public class BookingServiceImpl implements BookingService {
     @Override
     public Booking getBookingDetails(String bookingId) {
         return bookingRepository.findById(bookingId);
+    }
+
+    @Override
+    public List<Booking> getBookingsByUserId(String userId) {
+        return Collections.emptyList();
+    }
+
+    public List<Booking> getUserBookings(String userId) {
+//        return bookingRepository.findByUserId(userId);
+        return Collections.emptyList();
     }
 
     private double calculateTotalAmount(List<Seat> seats) {

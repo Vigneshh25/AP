@@ -12,8 +12,8 @@ public class Main {
         rentalController.addCustomer(customer2);
 
         // Create Products
-        Bike bike1 = BikeFactory.createBike("B001", "Mountain Bike", Size.MEDIUM);
-        Scooter scooter1 = ScooterFactory.createScooter("S001", "Electric Scooter", MotorType.ELECTRIC);
+        Bike bike1 = BikeFactory.createBike("B001", "Mountain Bike", Size.MEDIUM,1000);
+        Scooter scooter1 = ScooterFactory.createScooter("S001", "Electric Scooter", MotorType.ELECTRIC,1200);
 
         ProductRepository productRepository = ProductRepository.getInstance();
         productRepository.addProduct(bike1);

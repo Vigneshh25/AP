@@ -13,7 +13,7 @@ public class ProductService {
     public void rentProduct(String productId, String customerId, Date rentalDate, Date dueDate) throws RentalException {
         Product product = productRepository.getProduct(productId);
         if (product == null || !product.isAvailable()) {
-            throw new RentalException("Product not available for rental.");
+            throw new RentalException("Product not available for rent.");
         }
         Date currentDate = new Date();
         if (rentalDate.after(currentDate)) {
@@ -22,26 +22,17 @@ public class ProductService {
         if (dueDate.before(rentalDate)) {
             throw new RentalException("Due date must be after rental date.");
         }
-
         product.rent();
-        String rentalId = UUID.randomUUID().toString();
-        Rental rental = new Rental(rentalId, productId, customerId, rentalDate, dueDate);
+        Rental rental = new Rental(UUID.randomUUID().toString(), productId, customerId, rentalDate, dueDate);
         productRepository.addRental(rental);
     }
 
     public void returnProduct(String rentalId, Date returnDate) throws RentalException {
         Rental rental = productRepository.getRental(rentalId);
         if (rental == null) {
-            throw new RentalException("Rental not found.");
+            throw new RentalException("Rental does not exist.");
         }
-        if (rental.getReturnDate() != null) {
-            throw new RentalException("Product already returned.");
-        }
-        if (returnDate.before(rental.getDueDate())) {
-            throw new RentalException("Return date is before due date.");
-        }
-
-        rental.returnProduct(returnDate);
+        rental.setReturnDate(returnDate);
         Product product = productRepository.getProduct(rental.getProductId());
         if (product != null) {
             product.returnProduct();
@@ -82,5 +73,12 @@ public class ProductService {
 
     public List<Rental> getRentalsByCustomer(String customerId) {
         return productRepository.getRentalsByCustomer(customerId);
+    }
+    public double calculateCharge(String productId, int rentalDurationDays) throws RentalException {
+        Product product = productRepository.getProduct(productId);
+        if (product == null) {
+            throw new RentalException("Product not found.");
+        }
+        return product.getDailyRate() * rentalDurationDays;
     }
 }

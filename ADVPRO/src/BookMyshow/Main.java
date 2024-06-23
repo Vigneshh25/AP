@@ -1,36 +1,17 @@
 package BookMyshow;
 
 import BookMyshow.entities.*;
-import BookMyshow.gateways.PaymentGateway;
-import BookMyshow.gateways.StripePaymentGateway;
-import BookMyshow.repositories.*;
-import BookMyshow.repositoriesimpl.*;
 import BookMyshow.services.*;
-import BookMyshow.servicesimpl.*;
 
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        // Repositories
-        UserRepository userRepository = new InMemoryUserRepository();
-        ShowRepository showRepository = new InMemoryShowRepository();
-        BookingRepository bookingRepository = new InMemoryBookingRepository();
-        PaymentRepository paymentRepository = new InMemoryPaymentRepository();
-        MovieRepository movieRepository = new InMemoryMovieRepository();
-
-        // Services
-        PaymentGateway paymentGateway = new StripePaymentGateway();
-        PaymentService paymentService = new PaymentServiceImpl(paymentGateway, paymentRepository);
-        ShowService showService = new ShowServiceImpl(showRepository);
-        BookingService bookingService = new BookingServiceImpl(bookingRepository, paymentService, showService);
-        UserService userService = new UserServiceImpl(userRepository);
-        MovieService movieService = new MovieServiceImpl(movieRepository);
-
         // Scanner for user input.txt
         Scanner scanner = new Scanner(System.in);
 
         User currentUser = null;
+        BookingController bookingController = new BookingController();
 
         while (true) {
             displayMainMenu();
@@ -38,12 +19,12 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    currentUser = registerUser(userService, scanner);
+                    currentUser = registerUser(bookingController, scanner);
                     break;
                 case 2:
-                    currentUser = loginUser(userService, scanner);
+                    currentUser = loginUser(bookingController, scanner);
                     if (currentUser != null) {
-                        handleUserActions(currentUser, bookingService, userService, scanner);
+                        handleUserActions(currentUser, bookingController, scanner);
                     }
                     break;
                 case 3:
@@ -65,7 +46,7 @@ public class Main {
         return scanner.nextInt();
     }
 
-    private static User registerUser(UserService userService, Scanner scanner) {
+    private static User registerUser(BookingController bookingController, Scanner scanner) {
         System.out.println("Enter name:");
         String name = scanner.next();
         System.out.println("Enter email:");
@@ -74,7 +55,7 @@ public class Main {
         String password = scanner.next();
 
         User user = new User(UUID.randomUUID().toString(), name, email, password);
-        if (userService.register(user)) {
+        if (bookingController.registerUser(user)) {
             System.out.println("User registered successfully.");
             return user;
         } else {
@@ -83,35 +64,35 @@ public class Main {
         }
     }
 
-    private static User loginUser(UserService userService, Scanner scanner) {
+    private static User loginUser(BookingController bookingController, Scanner scanner) {
         System.out.println("Enter email:");
         String email = scanner.next();
         System.out.println("Enter password:");
         String password = scanner.next();
 
-        if (userService.login(email, password)) {
+        if (bookingController.loginUser(email, password)) {
             System.out.println("Login successful.");
-            return userService.getUserByEmail(email);
+            return bookingController.getUserByEmail(email);
         } else {
             System.out.println("Login failed. Please check your email and password.");
             return null;
         }
     }
 
-    private static void handleUserActions(User currentUser, BookingService bookingService, UserService userService, Scanner scanner) {
+    private static void handleUserActions(User currentUser,BookingController bookingController, Scanner scanner) {
         while (true) {
             displayUserMenu();
             int choice = getUserChoice(scanner);
 
             switch (choice) {
                 case 1:
-                    bookTickets(currentUser, bookingService, scanner);
+                    bookTickets(currentUser, bookingController, scanner);
                     break;
                 case 2:
-                    viewBookings(currentUser, bookingService);
+                    viewBookings(currentUser, bookingController);
                     break;
                 case 3:
-                    updateProfile(currentUser, userService, scanner);
+                    updateProfile(currentUser, bookingController, scanner);
                     break;
                 case 4:
                     System.out.println("Logging out...");
@@ -129,30 +110,32 @@ public class Main {
         System.out.println("4. Logout");
     }
 
-    private static void bookTickets(User currentUser, BookingService bookingService, Scanner scanner) {
+    private static void bookTickets(User currentUser, BookingController bookingController, Scanner scanner) {
         System.out.println("Enter show ID:");
         String showId = scanner.next();
         List<Seat> seats = new ArrayList<>(); // Add seat selection logic here
 
         try {
-            Booking booking = bookingService.createBooking(showId, currentUser.getUserId(), seats);
+            Booking booking = bookingController.createBooking(showId, currentUser.getUserId(), seats);
             System.out.println("Booking created with ID: " + booking.getBookingId());
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
 
-    private static void viewBookings(User currentUser, BookingService bookingService) {
-        System.out.println("Viewing bookings...");
-        // Fetch and display bookings for the current user
-        // Example: bookingService.getBookingsByUserId(currentUser.getUserId());
+    private static void viewBookings(User currentUser, BookingController bookingController) {
+        System.out.println("Viewing bookings for user: " + currentUser.getName());
+        List<Booking> bookings = bookingController.getUserBookings(currentUser.getUserId());
+        for (Booking booking : bookings) {
+            System.out.println(booking);
+        }
     }
 
-    private static void updateProfile(User currentUser, UserService userService, Scanner scanner) {
+    private static void updateProfile(User currentUser, BookingController bookingController, Scanner scanner) {
         System.out.println("Enter new name:");
         String newName = scanner.next();
         currentUser.setName(newName);
-        userService.updateProfile(currentUser);
+        bookingController.updateUserProfile(currentUser);
         System.out.println("Profile updated.");
     }
 }

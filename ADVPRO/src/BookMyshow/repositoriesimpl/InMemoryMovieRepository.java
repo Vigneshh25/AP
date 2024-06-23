@@ -22,4 +22,9 @@ public class InMemoryMovieRepository implements MovieRepository {
                 .filter(movie -> movie.getTitle().toLowerCase().contains(query.toLowerCase()))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public void save(Movie movie) {
+        movies.put(movie.getMovieId(),movie);
+    }
 }

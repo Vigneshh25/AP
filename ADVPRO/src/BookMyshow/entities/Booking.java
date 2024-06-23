@@ -1,6 +1,7 @@
 package BookMyshow.entities;
 
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class Booking {
@@ -8,6 +9,7 @@ public class Booking {
     private String showId;
     private String userId;
     private List<Seat> seats;
+    private LocalDateTime bookingTime;
     private double totalAmount;
 
     public Booking(String bookingId, String showId, String userId, List<Seat> seats, double totalAmount) {
@@ -15,6 +17,7 @@ public class Booking {
         this.showId = showId;
         this.userId = userId;
         this.seats = seats;
+        this.bookingTime = LocalDateTime.now();
         this.totalAmount = totalAmount;
     }
 

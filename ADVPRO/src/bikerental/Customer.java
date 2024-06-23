@@ -29,4 +29,8 @@ public class Customer {
     public double getBalance() {
         return balance;
     }
+
+    public String getCustomerId() {
+        return  id;
+    }
 }

@@ -17,7 +17,7 @@ public class ShowServiceImpl implements ShowService {
 
     @Override
     public boolean checkAvailability(String showId, List<Seat> seats) {
-        Show show = showRepository.findById(showId);
+        Show show = showRepository.getShowById(showId);
         if (show == null) {
             throw new IllegalArgumentException("Show not found");
         }

@@ -37,8 +37,7 @@ public class FileSharingSystem {
      * @param chunkId The ID of the chunk to share.
      */
     public void share(int userId, int chunkId) {
-        chunkOwnership.putIfAbsent(chunkId, new HashSet<>());
-        chunkOwnership.get(chunkId).add(userId);
+        chunkOwnership.computeIfAbsent(chunkId, v -> new HashSet<>()).add(userId);
     }
 
     /**

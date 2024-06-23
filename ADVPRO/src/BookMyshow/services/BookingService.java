@@ -10,4 +10,6 @@ public interface BookingService {
     Booking createBooking(String showId, String userId, List<Seat> seats);
     boolean cancelBooking(String bookingId);
     Booking getBookingDetails(String bookingId);
+
+    List<Booking> getBookingsByUserId(String userId);
 }
