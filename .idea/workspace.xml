@@ -5,68 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/BookingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/multilevelcache/Cache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/multilevelcache/CacheSystemDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/multilevelcache/EvictionPolicy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/multilevelcache/LRUCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/multilevelcache/MultiLevelCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/votingsystem/AuthenticationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/votingsystem/Candidate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/votingsystem/Election.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/votingsystem/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/votingsystem/Vote.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/votingsystem/VotingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/votingsystem/VotingSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/JavaHashFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/LFU.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/entities/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/entities/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/entities/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/entities/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/entities/Seat.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/entities/Seat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/entities/SeatType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/entities/SeatType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/entities/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/entities/Show.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/entities/Theater.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositories/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositories/BookingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositories/MovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositories/MovieRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositories/ShowRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositories/ShowRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositoriesimpl/InMemoryBookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositoriesimpl/InMemoryBookingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositoriesimpl/InMemoryMovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositoriesimpl/InMemoryMovieRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositoriesimpl/InMemoryShowRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositoriesimpl/InMemoryShowRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/services/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/services/BookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/servicesimpl/BookingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/servicesimpl/BookingServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/servicesimpl/ShowServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/servicesimpl/ShowServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Problems/FileSharingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/FileSharingSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Problems/HitCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/HitCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Bike.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Bike.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/BikeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/BikeFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Rental.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Rental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/RentalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/RentalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/RentalException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/RentalException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/Scooter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/Scooter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/ScooterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/ScooterFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/bikerental/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/VariableSystem/VariableSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/VariableSystem/VariableSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/VariableSystem/versions/VariableSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/VariableSystem/versions/VariableSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/distributedcache/CacheNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/CacheNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/distributedcache/ConsistentHashing.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/ConsistentHashing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/distributedcache/Coordinator.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/Coordinator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/distributedcache/DistributedCacheSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/DistributedCacheSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/distributedcache/MD5HashFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/MD5HashFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <projects_view>
-          <tree_state>
-            <expand />
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -119,10 +73,10 @@
     "Application.AutocompleteSystem.executor": "Run",
     "Application.BitTorrentLikeSystem.executor": "Run",
     "Application.BrowserHistory.executor": "Run",
-    "Application.CacheSystemDemo.executor": "Run",
     "Application.CalendarAPI.executor": "Run",
+    "Application.Chess.executor": "Debug",
     "Application.CircuitBreakerService.executor": "Run",
-    "Application.ConstantTimeDSMain.executor": "Run",
+    "Application.CouponManagementSystemApp.executor": "Run",
     "Application.CustomThreadPool.executor": "Run",
     "Application.DistributedCacheSystem.executor": "Run",
     "Application.ElementStore.executor": "Run",
@@ -144,6 +98,7 @@
     "Application.QueueUsingSingleStack.executor": "Run",
     "Application.RateLimiterService.executor": "Run",
     "Application.RealTimeChatSystem.executor": "Run",
+    "Application.SnakeGame.executor": "Run",
     "Application.TaskScheduler.executor": "Run",
     "Application.TaskSchedulerConsole.executor": "Run",
     "Application.TaskSchedulerMain.executor": "Run",
@@ -152,17 +107,21 @@
     "Application.Twitter.executor": "Run",
     "Application.VotingSystem.executor": "Run",
     "Application.WebCrawler.executor": "Run",
+    "Application.WebCrawlerMain.executor": "Run",
+    "Application.WebCrawlerWithSameHostnameMain.executor": "Run",
     "Application.WhatsAppMessenger.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ToolWindowRun.ShowToolbar": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/admin/a/vicky/AP/ADVPRO/src"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="bikerental" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ADVPRO/src" />
       <recent name="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/circuitbreaker" />
@@ -294,7 +253,31 @@
       <option name="project" value="LOCAL" />
       <updated>1718452664071</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1718886344410</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1718886344410</updated>
+    </task>
+    <task id="LOCAL-00018" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1718963600155</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1718963600155</updated>
+    </task>
+    <task id="LOCAL-00019" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1718971699958</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1718971699958</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

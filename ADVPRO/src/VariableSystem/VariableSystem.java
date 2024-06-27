@@ -11,15 +11,15 @@ public class VariableSystem {
     private Stack<HashMap<String, String>> transactionStack;
 
     public VariableSystem() {
-        this.map = new HashMap<String, String>();
-        this.transactionStack = new Stack<HashMap<String, String>>();
+        this.map = new HashMap<>();
+        this.transactionStack = new Stack<>();
     }
 
     // SET a variable
     public void set(String key, String value) {
         // create a new transaction if one is not already open
         if (transactionStack.empty()) {
-            transactionStack.push(new HashMap<String, String>());
+            transactionStack.push(new HashMap<>());
         }
         transactionStack.peek().put(key, value);
     }
@@ -40,7 +40,7 @@ public class VariableSystem {
     public void unset(String key) {
         // create a new transaction if one is not already open
         if (transactionStack.empty()) {
-            transactionStack.push(new HashMap<String, String>());
+            transactionStack.push(new HashMap<>());
         }
         transactionStack.peek().put(key, null);
     }
@@ -68,7 +68,7 @@ public class VariableSystem {
 
     // BEGIN a new transaction
     public void begin() {
-        transactionStack.push(new HashMap<String, String>());
+        transactionStack.push(new HashMap<>());
     }
 
     // ROLLBACK all the commands in the open transaction

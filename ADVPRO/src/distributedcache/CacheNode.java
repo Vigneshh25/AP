@@ -18,6 +18,10 @@ public class CacheNode {
         return id;
     }
 
+    public Map<String, String> getDataStore() {
+        return dataStore;
+    }
+
     public void put(String key, String value) {
         if (dataStore.size() >= evictionPolicy.getMaxSize()) {
             String evictedKey = evictionPolicy.evict(dataStore);

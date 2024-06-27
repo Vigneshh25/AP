@@ -23,7 +23,9 @@ public class VariableSystem {
 
     public void unsetVariable(String name) {
         variables.remove(name);
-    }public int countVariable(int value) {
+    }
+
+    public int countVariable(int value) {
         int count = 0;
         for (Map.Entry<String, Integer> entry : variables.entrySet()) {
             if (entry.getValue() == value) {

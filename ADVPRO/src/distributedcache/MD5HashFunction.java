@@ -15,3 +15,4 @@ public class MD5HashFunction implements HashFunction {
         }
     }
 }
+
