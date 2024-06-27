@@ -1,5 +1,12 @@
 package PaymentGatewaySystem;
 
+import PaymentGatewaySystem.bank.Bank;
+import PaymentGatewaySystem.bank.PaymentMode;
+import PaymentGatewaySystem.entity.Client;
+import PaymentGatewaySystem.entity.PaymentDetails;
+import PaymentGatewaySystem.paymentprocessor.PaymentProcessor;
+import PaymentGatewaySystem.paymentprocessor.PaymentProcessorFactory;
+
 import java.util.*;
 
 // Payment Gateway Class
@@ -68,7 +75,7 @@ class PaymentGateway {
         router.showDistribution();
     }
 
-    public boolean makePayment(Client client, PaymentMode mode, double amount, Map<String, String> details) {
+    public boolean makePayment(Client client, PaymentMode mode, double amount, PaymentDetails details) {
         if (!hasClient(client)) {
             System.out.println("Client not found");
             return false;

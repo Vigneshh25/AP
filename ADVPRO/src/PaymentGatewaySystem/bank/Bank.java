@@ -1,6 +1,6 @@
-package PaymentGatewaySystem;
+package PaymentGatewaySystem.bank;
 
 // Bank Interface
-interface Bank {
+public interface Bank {
     boolean processPayment(double amount);
 }

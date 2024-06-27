@@ -1,7 +1,11 @@
 package PaymentGatewaySystem;
 
+import PaymentGatewaySystem.bank.*;
+import PaymentGatewaySystem.entity.CardDetails;
+import PaymentGatewaySystem.entity.Client;
+import PaymentGatewaySystem.paymentprocessor.PaymentProcessorFactory;
+
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
 
 // WebCrawlerWithSameHostnameMain Class for Testing
 public class PaymentGatewaySystem {
@@ -36,10 +40,7 @@ public class PaymentGatewaySystem {
         pg.addSupportForPaymode(flipkart, PaymentMode.UPI);
 
         // Making a Payment
-        Map<String, String> cardDetails = new HashMap<>();
-        cardDetails.put("cardNumber", "1234567890123456");
-        cardDetails.put("expiry", "12/25");
-        cardDetails.put("cvv", "123");
+        CardDetails cardDetails = new CardDetails("1234567890123456","12/25","123");
 
         boolean paymentStatus = pg.makePayment(flipkart, PaymentMode.CREDIT_CARD, 1000.00, cardDetails);
         System.out.println("Payment status: " + (paymentStatus ? "Success" : "Failure"));

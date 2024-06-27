@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/JavaHashFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/LFU.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/VariableSystem/VariableSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/VariableSystem/VariableSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/VariableSystem/versions/VariableSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/VariableSystem/versions/VariableSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/distributedcache/CacheNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/CacheNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/distributedcache/ConsistentHashing.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/ConsistentHashing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/distributedcache/Coordinator.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/Coordinator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/distributedcache/DistributedCacheSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/DistributedCacheSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/distributedcache/MD5HashFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/distributedcache/MD5HashFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/transactionmanagement/TransactionProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/transactionmanagement/TransactionProcessor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +83,7 @@
     "Application.Main.executor": "Run",
     "Application.MultiThreadedCustomKafkaExample.executor": "Run",
     "Application.MyPriorityQueue.executor": "Run",
+    "Application.Node.executor": "Run",
     "Application.ParkingLotSystem.executor": "Run",
     "Application.PaymentGatewaySystem.executor": "Run",
     "Application.PriorityQueue.executor": "Run",
@@ -104,7 +97,9 @@
     "Application.TaskSchedulerMain.executor": "Run",
     "Application.Test.executor": "Run",
     "Application.TokenManager.executor": "Run",
+    "Application.TollPaymentProcessing.executor": "Run",
     "Application.Twitter.executor": "Run",
+    "Application.VotingMain.executor": "Run",
     "Application.VotingSystem.executor": "Run",
     "Application.WebCrawler.executor": "Run",
     "Application.WebCrawlerMain.executor": "Run",
@@ -277,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718971699958</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1719471348435</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1719471348435</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

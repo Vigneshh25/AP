@@ -1,5 +1,8 @@
 package PaymentGatewaySystem;
 
+import PaymentGatewaySystem.bank.Bank;
+import PaymentGatewaySystem.bank.PaymentMode;
+
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 

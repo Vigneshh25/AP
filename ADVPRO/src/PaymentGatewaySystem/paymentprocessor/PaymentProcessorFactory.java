@@ -1,9 +1,12 @@
-package PaymentGatewaySystem;
+package PaymentGatewaySystem.paymentprocessor;
+
+import PaymentGatewaySystem.bank.Bank;
+import PaymentGatewaySystem.bank.PaymentMode;
 
 import java.util.Map;
 
 // Payment Processor Factory
-class PaymentProcessorFactory {
+public class PaymentProcessorFactory {
     private Map<PaymentMode, Bank> bankMap;
 
     public PaymentProcessorFactory(Map<PaymentMode, Bank> bankMap) {

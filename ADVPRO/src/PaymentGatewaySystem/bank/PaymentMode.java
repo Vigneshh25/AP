@@ -1,6 +1,6 @@
-package PaymentGatewaySystem;
+package PaymentGatewaySystem.bank;
 
 // Enum for Payment Modes
-enum PaymentMode {
+public enum PaymentMode {
     UPI, CREDIT_CARD, NET_BANKING
 }

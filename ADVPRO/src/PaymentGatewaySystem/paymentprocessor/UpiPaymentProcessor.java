@@ -1,9 +1,11 @@
-package PaymentGatewaySystem;
+package PaymentGatewaySystem.paymentprocessor;
+
+import PaymentGatewaySystem.bank.Bank;
 
 import java.util.Map;
 
 // UPI Payment Processor
-class UpiPaymentProcessor implements PaymentProcessor {
+public class UpiPaymentProcessor implements PaymentProcessor {
     private Bank bank;
 
     public UpiPaymentProcessor(Bank bank) {
@@ -11,7 +13,7 @@ class UpiPaymentProcessor implements PaymentProcessor {
     }
 
     @Override
-    public boolean process(double amount, Map<String, String> details) {
+    public boolean process(double amount, Ca details) {
         String vpa = details.get("vpa");
         if (vpa != null && !vpa.isEmpty()) {
             return bank.processPayment(amount);

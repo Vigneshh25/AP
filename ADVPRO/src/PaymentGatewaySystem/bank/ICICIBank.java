@@ -1,8 +1,8 @@
-package PaymentGatewaySystem;
+package PaymentGatewaySystem.bank;
 
 import java.util.Random;
 
-class SBIBank implements Bank {
+public class ICICIBank implements Bank {
     @Override
     public boolean processPayment(double amount) {
         return new Random().nextBoolean();

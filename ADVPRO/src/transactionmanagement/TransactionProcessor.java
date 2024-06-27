@@ -33,7 +33,7 @@ public class TransactionProcessor {
         List<Transaction> transactions = transactionRepository.getAllTransactions();
         for (Transaction transaction : transactions) {
             if ("PENDING".equals(transaction.getStatus())) {
-                executorService.submit(() -> processTransaction(transaction));
+                executorService.execute(() -> processTransaction(transaction));
             }
         }
     }

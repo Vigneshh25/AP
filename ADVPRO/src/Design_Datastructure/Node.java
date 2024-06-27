@@ -83,7 +83,7 @@ class Node {
         child3.addChild(grandChild1);
         child3.addChild(grandChild2);
 
-        child1.startCounting();
+        root.startCounting();
     }
 }
 

@@ -1,10 +1,12 @@
-package PaymentGatewaySystem;
+package PaymentGatewaySystem.entity;
+
+import PaymentGatewaySystem.bank.PaymentMode;
 
 import java.util.HashSet;
 import java.util.Set;
 
 // Client Class
-class Client {
+public class Client {
     private String name;
     private Set<PaymentMode> supportedPaymentModes;
 
