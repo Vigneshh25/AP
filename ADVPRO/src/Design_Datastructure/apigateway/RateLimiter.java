@@ -11,7 +11,7 @@ public class RateLimiter {
     public RateLimiter(long limit, long timeFrame, TimeUnit timeUnit) {
         this.requestCounts = new ConcurrentHashMap<>();
         this.limit = limit;
-        this.timeFrameMillis = timeUnit.toMillis(timeFrame)/10000;
+        this.timeFrameMillis = timeUnit.toMillis(timeFrame);
     }
 
     public synchronized boolean isAllowed(String clientId) {
