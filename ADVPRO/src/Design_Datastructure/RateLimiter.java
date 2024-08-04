@@ -66,7 +66,7 @@ public class RateLimiter {
     }
 
     public static void main(String[] args) {
-        RateLimiter rateLimiter = new RateLimiter(10, 5);
+        RateLimiter rateLimiter = new RateLimiter(1, 1);
 
         // Simulate requests
         for (int i = 0; i < 15; i++) {

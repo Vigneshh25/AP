@@ -9,14 +9,13 @@ public class Producer implements Runnable {
         this.broker = broker;
         this.topicName = topicName;
         this.producerId = producerId;
-        broker.createTopic(topicName, 3, 2);
     }
 
     @Override
     public void run() {
         try {
-            for (int i = 0; i < 10; i++) {
-                Message message = new Message(producerId, "Message " + i);
+            for (int i = 0; i < 5; i++) {
+                Message message = new Message(producerId + "-" + i, "Message " + i);
                 broker.produce(topicName, message);
                 System.out.println(producerId + " produced: " + message.getValue());
                 Thread.sleep(100);  // Simulate time taken to produce message

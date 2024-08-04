@@ -5,12 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/consistenthashingwithzookeeper/CollaborativeEditingSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/consistenthashingwithzookeeper/ConsistentHashing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/consistenthashingwithzookeeper/DocumentManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/consistenthashingwithzookeeper/InstanceManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/consistenthashingwithzookeeper/ZookeeperSimulator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/MainApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/model/Consumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/model/ConsumerGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/model/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/model/MessageMetadata.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/model/Partition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/model/Producer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/model/Topic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/repository/TopicRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/service/ConsumerGroupService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/service/ConsumerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/service/TopicService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/service/impl/ConsumerGroupServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/service/impl/ConsumerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/service/impl/TopicServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/service/routing/strategy/RoutingStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/service/routing/strategy/impl/RoundRobinRoutingStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/worker/ConsumerWorker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/worker/ProducerWorker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/RateLimiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/RateLimiter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Broker.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Broker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Partition.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Partition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Producer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Topic.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Topic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +69,9 @@
     &quot;accountId&quot;: &quot;3a0a287d-76b5-4b35-95be-889986881835&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/concurrent/CompletableFuture.class" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 8
@@ -87,14 +111,17 @@
     &quot;Application.LoadBalancerApp.executor&quot;: &quot;Run&quot;,
     &quot;Application.Logger.executor&quot;: &quot;Run&quot;,
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.MultiThreadedCustomKafkaExample.executor&quot;: &quot;Run&quot;,
     &quot;Application.MyPriorityQueue.executor&quot;: &quot;Run&quot;,
     &quot;Application.Node.executor&quot;: &quot;Run&quot;,
     &quot;Application.ParkingLotSystem.executor&quot;: &quot;Run&quot;,
     &quot;Application.PaymentGatewaySystem.executor&quot;: &quot;Run&quot;,
     &quot;Application.PriorityQueue.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProducerConsumerMain.executor&quot;: &quot;Run&quot;,
     &quot;Application.Queue.executor&quot;: &quot;Run&quot;,
     &quot;Application.QueueUsingSingleStack.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RateLimiter.executor&quot;: &quot;Run&quot;,
     &quot;Application.RateLimiterService.executor&quot;: &quot;Run&quot;,
     &quot;Application.RealTimeChatSystem.executor&quot;: &quot;Run&quot;,
     &quot;Application.SnakeGame.executor&quot;: &quot;Run&quot;,
@@ -319,7 +346,23 @@
       <option name="project" value="LOCAL" />
       <updated>1720970728782</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1722362911905</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1722362911906</updated>
+    </task>
+    <task id="LOCAL-00026" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1722706497226</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1722706497226</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

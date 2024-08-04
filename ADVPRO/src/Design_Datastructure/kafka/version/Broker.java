@@ -14,12 +14,11 @@ public class Broker {
 
     public void produce(String topicName, Message message) throws InterruptedException {
         Topic topic = topics.get(topicName);
-        int partitionId = nextPartition.getAndIncrement() % topic.getPartition(0).getNumberOfQueues();
-        topic.getPartition(partitionId).getQueue(partitionId).produce(message);
+        topic.getPartition().getQueue().produce(message);
     }
 
     public Message consume(String topicName, int partitionId, int queueId) throws InterruptedException {
         Topic topic = topics.get(topicName);
-        return topic.getPartition(partitionId).getQueue(queueId).consume();
+        return topic.getPartition().getQueue().consume();
     }
 }

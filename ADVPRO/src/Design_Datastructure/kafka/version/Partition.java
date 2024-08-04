@@ -1,22 +1,14 @@
 package Design_Datastructure.kafka.version;
 
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-
 public class Partition {
-    private final List<MessageQueue> queues = new CopyOnWriteArrayList<>();
+    private final MessageQueue queue;
 
-    public Partition(int numberOfQueues) {
-        for (int i = 0; i < numberOfQueues; i++) {
-            queues.add(new MessageQueue());
-        }
+    public Partition() {
+        this.queue = new MessageQueue();
     }
 
-    public MessageQueue getQueue(int index) {
-        return queues.get(index);
+    public MessageQueue getQueue() {
+        return queue;
     }
 
-    public int getNumberOfQueues() {
-        return queues.size();
-    }
 }
