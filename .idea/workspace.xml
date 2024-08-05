@@ -5,33 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/MainApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/model/Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/model/ConsumerGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/model/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/model/MessageMetadata.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/model/Partition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/model/Producer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/model/Topic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/repository/TopicRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/service/ConsumerGroupService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/service/ConsumerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/service/TopicService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/service/impl/ConsumerGroupServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/service/impl/ConsumerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/service/impl/TopicServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/service/routing/strategy/RoutingStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/service/routing/strategy/impl/RoundRobinRoutingStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/worker/ConsumerWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/worker/ProducerWorker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/UserRegistrationModule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/messagequeue/Consumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/messagequeue/EventQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/messagequeue/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/messagequeue/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/messagequeue/Producer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/ratelimiter/ClientRequestInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/ratelimiter/FixedWindowRateLimiter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/ratelimiter/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/ratelimiter/RateLimiter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/ratelimiter/RateLimiterFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/ratelimiter/SlidingWindowRateLimiter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/ratelimiter/TokenBucketRateLimiter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/RateLimiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/RateLimiter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Broker.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Broker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Partition.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Partition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Producer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Topic.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/version/Topic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/Topic.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/Topic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/MainApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +60,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/concurrent/CompletableFuture.class" root0="SKIP_INSPECTION" />
+    <setting file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/concurrent/atomic/AtomicInteger.class" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -155,6 +145,9 @@
       <recent name="$PROJECT_DIR$/ADVPRO/src" />
       <recent name="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/circuitbreaker" />
       <recent name="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/combined" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="messagequeue" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -362,7 +355,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722706497226</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1722759973306</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1722759973306</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
