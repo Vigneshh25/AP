@@ -5,22 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/ParkingLot/Parking/UserRegistrationModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/messagequeue/Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/messagequeue/EventQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/messagequeue/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/messagequeue/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/messagequeue/Producer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/ratelimiter/ClientRequestInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/ratelimiter/FixedWindowRateLimiter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/ratelimiter/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/ratelimiter/RateLimiter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/ratelimiter/RateLimiterFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/ratelimiter/SlidingWindowRateLimiter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/ratelimiter/TokenBucketRateLimiter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/automics/AtomicIntegerDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/automics/UsingAtomics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/collections/BlockingQueueExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/collections/ConcurrentCollectionsDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/collections/ConcurrentHashMapExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/collections/CopyOnWriteArrayListExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/future/AdvancedFutureDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/future/CompletableAsPromise.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/future/CompletableFutureASync.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/future/FutureAndCallableExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/future/FutureCancelExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/future/FutureIsDoneExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/future/InvokeAllExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/issues/MemoryConsistencyErrorExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/issues/RaceConditionExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/issues/SynchronizedBlockExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/issues/SynchronizedMethodExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/issues/VolatileKeywordExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/patterns/BackgroundTaskExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/patterns/CoinTransfer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/patterns/ControlledInitialization.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/patterns/FixedLockOrdering.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/patterns/ResourcePool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/patterns/ResourcePoolUsage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/synchronizers/BarrierExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/synchronizers/SemaphoreExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/thread_runnable/RunnableExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/thread_runnable/RunnableExampleAnonymousClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/concurrency/thread_runnable/RunnableExampleLambdaExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/enums/AdvancedOperation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/optional/AdvancedOptionalExamples.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/java8/optional/OptionalExamples.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/Topic.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/kafka/Topic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Problems/kafka/MainApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,67 +92,72 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Application.executor&quot;: &quot;Run&quot;,
-    &quot;Application.AsynchronousRateLimiter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.AutocompleteSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BitTorrentLikeSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BrowserHistory.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CalendarAPI.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Chess.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.CircuitBreakerService.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CollaborativeEditingSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CouponManagementSystemApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CustomThreadPool.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DistributedCacheSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ElementStore.executor&quot;: &quot;Run&quot;,
-    &quot;Application.EventCalendarApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ExamHallApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.FileSys.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GoogleAuthenticatorApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HitCounter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LFU.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LFUCache.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoadBalancerApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Logger.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MultiThreadedCustomKafkaExample.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MyPriorityQueue.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Node.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ParkingLotSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.PaymentGatewaySystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.PriorityQueue.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ProducerConsumerMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Queue.executor&quot;: &quot;Run&quot;,
-    &quot;Application.QueueUsingSingleStack.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RateLimiter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RateLimiterService.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RealTimeChatSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SnakeGame.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TaskScheduler.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TaskSchedulerConsole.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TaskSchedulerMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TokenManager.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TollPaymentProcessing.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Twitter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.VotingMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.VotingSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.WebCrawler.executor&quot;: &quot;Run&quot;,
-    &quot;Application.WebCrawlerMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.WebCrawlerWithSameHostnameMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.WhatsAppMessenger.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/admin/a/vicky/AP/ADVPRO/src&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Application.executor": "Run",
+    "Application.AsynchronousRateLimiter.executor": "Run",
+    "Application.AutocompleteSystem.executor": "Run",
+    "Application.BitTorrentLikeSystem.executor": "Run",
+    "Application.BlockingQueueExample.executor": "Run",
+    "Application.BrowserHistory.executor": "Run",
+    "Application.CalendarAPI.executor": "Run",
+    "Application.Chess.executor": "Debug",
+    "Application.CircuitBreakerService.executor": "Run",
+    "Application.CollaborativeEditingSystem.executor": "Run",
+    "Application.CompletableAsPromise.executor": "Run",
+    "Application.ConcurrentCollectionsDemo.executor": "Run",
+    "Application.CouponManagementSystemApp.executor": "Run",
+    "Application.CustomThreadPool.executor": "Run",
+    "Application.DistributedCacheSystem.executor": "Run",
+    "Application.ElementStore.executor": "Run",
+    "Application.EventCalendarApp.executor": "Run",
+    "Application.ExamHallApplication.executor": "Run",
+    "Application.FileSys.executor": "Run",
+    "Application.GoogleAuthenticatorApp.executor": "Run",
+    "Application.HitCounter.executor": "Run",
+    "Application.LFU.executor": "Run",
+    "Application.LFUCache.executor": "Run",
+    "Application.LoadBalancerApp.executor": "Run",
+    "Application.Logger.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.MainApplication.executor": "Run",
+    "Application.MultiThreadedCustomKafkaExample.executor": "Run",
+    "Application.MyPriorityQueue.executor": "Run",
+    "Application.Node.executor": "Run",
+    "Application.OptionalExamples.executor": "Run",
+    "Application.ParkingLotSystem.executor": "Run",
+    "Application.PaymentGatewaySystem.executor": "Run",
+    "Application.PriorityQueue.executor": "Run",
+    "Application.ProducerConsumerMain.executor": "Run",
+    "Application.Queue.executor": "Run",
+    "Application.QueueUsingSingleStack.executor": "Run",
+    "Application.RateLimiter.executor": "Run",
+    "Application.RateLimiterService.executor": "Run",
+    "Application.RealTimeChatSystem.executor": "Run",
+    "Application.SnakeGame.executor": "Run",
+    "Application.TaskScheduler.executor": "Run",
+    "Application.TaskSchedulerConsole.executor": "Run",
+    "Application.TaskSchedulerMain.executor": "Run",
+    "Application.Test.executor": "Run",
+    "Application.TokenManager.executor": "Run",
+    "Application.TollPaymentProcessing.executor": "Run",
+    "Application.Twitter.executor": "Run",
+    "Application.UsingAtomics.executor": "Run",
+    "Application.VotingMain.executor": "Run",
+    "Application.VotingSystem.executor": "Run",
+    "Application.WebCrawler.executor": "Run",
+    "Application.WebCrawlerMain.executor": "Run",
+    "Application.WebCrawlerWithSameHostnameMain.executor": "Run",
+    "Application.WhatsAppMessenger.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/admin/a/vicky/AP/ADVPRO/src"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="roomallotment.model" />
