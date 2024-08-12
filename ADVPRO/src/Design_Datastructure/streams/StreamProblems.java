@@ -1,8 +1,6 @@
 package Design_Datastructure.streams;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.OptionalDouble;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -21,10 +19,52 @@ public class StreamProblems {
         System.out.println(findMaxProductOfTwoNum(numbers));
 
 
+        List<String> words = Arrays.asList("listen", "silent", "hello", "world", "night", "thing");
+        System.out.println(findAnagram(words));
+
+        List<Integer> number = Arrays.asList(2, 4, 6, 8, 10);
+        int target = 12;
+
+        System.out.println(twoSum(number, target));
+
+        List<Integer> list = Arrays.asList(1, 2, 3, 2, 4, 5, 6, 4, 7, 8, 9, 9);
+        System.out.println(findNonDuplicateNum(list));
+
+
+
+    }
+
+    private static List<Integer> findNonDuplicateNum(List<Integer> list) {
+        return list.stream()
+                .collect(Collectors.groupingBy(n -> n, Collectors.counting())) // Group by number and count occurrences
+                .entrySet()
+                .stream()
+                .filter(entry -> entry.getValue() == 1) // Keep only entries with a count of 1
+                .map(Map.Entry::getKey) // Extract the number
+                .collect(Collectors.toList()); // Collect the result into a list
+    }
+
+    private static Set<String> twoSum(List<Integer> number, int target) {
+        return number.stream().
+                flatMap(num1 ->
+                        number.stream()
+                                .map(num2 -> num1 + num2 == target ? "(" + num1 + "," + num2 + ")" : ""))
+                                .filter(s -> !s.isEmpty())
+                                .collect(Collectors.toSet());
+    }
+
+    private static Collection<List<String>> findAnagram(List<String> words) {
+        return words.stream().collect(Collectors.groupingBy(word -> {
+            char[] charArray = word.toCharArray();
+            Arrays.sort(charArray);
+            return new String(charArray);
+        })).values();
     }
 
     private static int findMaxProductOfTwoNum(List<Integer> numbers) {
-        return numbers.stream().flatMapToInt(i -> numbers.stream().filter(k -> k != i).mapToInt(b -> b * i)).max().orElse(-1);
+        return numbers.stream().
+                flatMapToInt(i -> numbers.stream().filter(k -> k != i).
+                        mapToInt(b -> b * i)).max().orElse(-1);
     }
 
     private static String findLongestCommonPrefix(List<String> strings) {
