@@ -44,7 +44,7 @@ public class AdvancedOptionalExamples {
 
     // Custom Optional utility: Handling a nullable list and returning the first non-empty value
     public static <T> Optional<T> getFirstNonEmptyValue(Optional<T>... optionals) {
-        return Stream.of(optionals).flatMap(o -> o.map(Stream::of).orElseGet(Stream::empty)).findFirst(); // Returns the first non-empty Optional in the array
+        return Stream.of(optionals).filter(Optional::isPresent).findFirst().orElseThrow(() -> new RuntimeException());
     }
 
     // Nested Optionals: Handling nested Optionals safely

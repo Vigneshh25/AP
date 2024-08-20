@@ -18,7 +18,7 @@ public class SemaphoreExample {
 
     public static void main(String[] args) {
         ExecutorService executor = Executors.newCachedThreadPool();
-        Semaphore semaphore = new Semaphore(3);
+        Semaphore semaphore = new Semaphore(1);
 
         Runnable r = () -> {
             try {

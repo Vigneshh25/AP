@@ -1,6 +1,7 @@
 package Design_Datastructure.streams;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -30,27 +31,40 @@ public class StreamProblems {
         List<Integer> list = Arrays.asList(1, 2, 3, 2, 4, 5, 6, 4, 7, 8, 9, 9);
         System.out.println(findNonDuplicateNum(list));
 
+        List<String> languages = Arrays.asList("Java", "Python", "C++", "Go");
+        System.out.println(concatWords(languages));
+
+        List<String> animals = Arrays.asList("elephant", "cat", "dinosaur", "giraffe");
+        System.out.println(longestString(animals));
+
+        List<Integer> num = Arrays.asList(2, 3, 4, 5);
+        System.out.println(productOfNumUsingReduce(num));
+
 
 
     }
 
+    private static int productOfNumUsingReduce(List<Integer> num) {
+        return num.stream().reduce(1,(a,b) -> a*b);
+    }
+
+    private static String longestString(List<String> animals) {
+        return animals.stream().reduce((str1, str2) -> str1.length() >= str2.length() ? str1 : str2).orElse("");
+    }
+
+    private static String concatWords(List<String> languages) {
+        return languages.stream().reduce((a, b) -> a + "," + b).orElse("");
+    }
+
     private static List<Integer> findNonDuplicateNum(List<Integer> list) {
-        return list.stream()
-                .collect(Collectors.groupingBy(n -> n, Collectors.counting())) // Group by number and count occurrences
-                .entrySet()
-                .stream()
-                .filter(entry -> entry.getValue() == 1) // Keep only entries with a count of 1
+        return list.stream().collect(Collectors.groupingBy( Function.identity(), Collectors.counting())) // Group by number and count occurrences
+                .entrySet().stream().filter(entry -> entry.getValue() == 1) // Keep only entries with a count of 1
                 .map(Map.Entry::getKey) // Extract the number
                 .collect(Collectors.toList()); // Collect the result into a list
     }
 
     private static Set<String> twoSum(List<Integer> number, int target) {
-        return number.stream().
-                flatMap(num1 ->
-                        number.stream()
-                                .map(num2 -> num1 + num2 == target ? "(" + num1 + "," + num2 + ")" : ""))
-                                .filter(s -> !s.isEmpty())
-                                .collect(Collectors.toSet());
+        return number.stream().flatMap(num1 -> number.stream().map(num2 -> num1 + num2 == target ? "(" + num1 + "," + num2 + ")" : "")).filter(s -> !s.isEmpty()).collect(Collectors.toSet());
     }
 
     private static Collection<List<String>> findAnagram(List<String> words) {
@@ -62,9 +76,7 @@ public class StreamProblems {
     }
 
     private static int findMaxProductOfTwoNum(List<Integer> numbers) {
-        return numbers.stream().
-                flatMapToInt(i -> numbers.stream().filter(k -> k != i).
-                        mapToInt(b -> b * i)).max().orElse(-1);
+        return numbers.stream().flatMapToInt(i -> numbers.stream().filter(k -> k != i).mapToInt(b -> b * i)).max().orElse(-1);
     }
 
     private static String findLongestCommonPrefix(List<String> strings) {
