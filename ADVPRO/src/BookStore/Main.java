@@ -1,83 +1,51 @@
 package BookStore;
 
-import java.util.HashMap;
-import java.util.Map;
+import BookStore.controller.BookStoreController;
+import BookStore.factory.UserFactory;
+import BookStore.model.Order;
+import BookStore.model.User;
+import BookStore.repository.BookRepository;
+import BookStore.repository.UserRepository;
 
 public class Main {
     public static void main(String[] args) {
-        // Initialize repositories
-        InMemoryUserRepository userRepository = new InMemoryUserRepository();
-        InMemoryBookRepository bookRepository = new InMemoryBookRepository();
+
+        UserRepository userRepository = new UserRepository();
+        BookRepository bookRepository = new BookRepository();
         Order order = new Order();
 
-        // Create users
-        User customer = UserFactory.createUser("Customer", "Alice", "alice@example.com");
-        User admin = UserFactory.createUser("Admin", "Bob", "bob@example.com");
+        BookStoreController controller = new BookStoreController(userRepository,bookRepository,order);
 
-        // Save users to repository
-        userRepository.saveUser(customer);
-        userRepository.saveUser(admin);
+        // Create users
+        System.out.println(controller.createUser("Customer", "Alice", "alice@example.com"));
+        System.out.println(controller.createUser("Admin", "Bob", "bob@example.com"));
 
         // Display user info
-        customer.displayInfo();
-        admin.displayInfo();
+        controller.displayUserInfo("alice@example.com");
+        controller.displayUserInfo("bob@example.com");
 
-        // Create books
-        Book book1 = new Book.BookBuilder("Effective Java", "Joshua Bloch")
-                .setPrice(45.99)
-                .setISBN("978-0134685991")
-                .build();
-        Book book2 = new Book.BookBuilder("Clean Code", "Robert C. Martin")
-                .setPrice(37.99)
-                .setISBN("978-0132350884")
-                .build();
+        // Add books to the repository
+        System.out.println(controller.addBook("Effective Java", "Joshua Bloch", 45.99, "978-0134685991"));
+        System.out.println(controller.addBook("Clean Code", "Robert C. Martin", 37.99, "978-0132350884"));
 
-        // Save books to repository
-        bookRepository.saveBook(book1);
-        bookRepository.saveBook(book2);
+        // Display all books
+        controller.displayBooks();
 
-        // Display books
-        System.out.println(book1);
-        System.out.println(book2);
+        // Add books to the order
+        System.out.println(controller.addBookToOrder("978-0134685991"));
+        System.out.println(controller.addBookToOrder("978-0132350884"));
 
-        // Add book to order
-        order.addBook(book1);
-        order.addBook(book2);
-
-        // Add observer to order
-        order.addObserver((OrderObserver) customer);
+        // Add observer to the order
+        User alice = UserFactory.createUser("Customer", "Alice", "alice@example.com");
+        controller.addOrderObserver(alice);
 
         // Set order status
-        order.setStatus("Processing");
-        order.setStatus("Shipped");
+        controller.setOrderStatus("Processing");
+        controller.setOrderStatus("Shipped");
 
-        // Payment using Strategy Pattern
-        PaymentStrategy creditCardPayment = new CreditCardPayment("1234567890123456");
-        PaymentStrategy paypalPayment = new PayPalPayment("alice@example.com");
-
-        // Pay for the order
-        creditCardPayment.pay(order.getTotalPrice());
-        paypalPayment.pay(order.getTotalPrice());
-
-        // Apply discount using Decorator Pattern
-//        Book discountedBook1 = new DiscountedBook(book1, 5.0);
-//        System.out.println(discountedBook1.getTitle() + ": " + discountedBook1.getPrice());
-
-        // Edge cases
-        // Try adding a book with null details
-        try {
-            Book invalidBook = new Book.BookBuilder(null, null).build();
-            bookRepository.saveBook(invalidBook);
-        } catch (Exception e) {
-            System.out.println("Error adding invalid book: " + e.getMessage());
-        }
-
-        // Try adding a user with null details
-        try {
-            User invalidUser = UserFactory.createUser(null, null, null);
-            userRepository.saveUser(invalidUser);
-        } catch (Exception e) {
-            System.out.println("Error adding invalid user: " + e.getMessage());
-        }
+        // Process payment
+        System.out.println(controller.processPayment("CreditCard", 83.98));
+        System.out.println(controller.processPayment("PayPal", 83.98));
     }
 }
+

@@ -1,5 +1,14 @@
 package vendingmachine;
 
+import vendingmachine.model.Product;
+import vendingmachine.model.VendingMachineObserver;
+import vendingmachine.repository.ProductInventory;
+import vendingmachine.service.PaymentHandler;
+import vendingmachine.state.CoinInsertedState;
+import vendingmachine.state.NoCoinInsertedState;
+import vendingmachine.state.ProductSelectedState;
+import vendingmachine.state.VendingMachineState;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,9 +28,9 @@ public class VendingMachine {
 
 
     private VendingMachine() {
-        this.noCoinInsertedState = new NoCoinInsertedState(this);
-        this.coinInsertedState = new CoinInsertedState(this);
-        this.productSelectedState = new ProductSelectedState(this);
+        this.noCoinInsertedState = new NoCoinInsertedState(this,"NoCoinInserted");
+        this.coinInsertedState = new CoinInsertedState(this,"CoinInserted");
+        this.productSelectedState = new ProductSelectedState(this,"ProductSelected");
         this.currentState = noCoinInsertedState;
         this.balance = 0;
         this.selectedProduct = null;
@@ -36,6 +45,10 @@ public class VendingMachine {
 
     public void setPaymentHandler(PaymentHandler paymentHandler) {
         this.paymentHandler = paymentHandler;
+    }
+
+    public PaymentHandler getPaymentHandler() {
+        return paymentHandler;
     }
 
     public int getTotalSales() {

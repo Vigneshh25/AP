@@ -1,5 +1,10 @@
 package vendingmachine;
 
+import vendingmachine.factory.ProductFactory;
+import vendingmachine.model.*;
+import vendingmachine.repository.ProductInventory;
+import vendingmachine.service.*;
+
 import java.util.Scanner;
 
 public class Main {
@@ -33,6 +38,9 @@ public class Main {
                         " | Price: " + product.getPrice() + " cents | Quantity: " + product.getQuantity());
             }
 
+            System.out.println("Current Status :- "+vendingMachine.getCurrentState().getState());
+            System.out.println("Payment Method :- "+(vendingMachine.getPaymentHandler() == null?"Select Payment Method":vendingMachine.getPaymentHandler().getName()));
+            System.out.println("Current Balance :- "+vendingMachine.getBalance());
             System.out.println("\n1. Insert Coin");
             System.out.println("2. Select Product");
             System.out.println("3. Select Payment Method");
