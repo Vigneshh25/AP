@@ -46,5 +46,15 @@ public class Movie {
     }
 
     // Constructor, getters, and setters
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "movieId='" + movieId + '\'' +
+                ", title='" + title + '\'' +
+                ", genre='" + genre + '\'' +
+                ", duration=" + duration +
+                '}';
+    }
 }
 

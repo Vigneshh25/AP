@@ -4,7 +4,7 @@ import atm.version1.repository.Account;
 import atm.version1.repository.AccountRepository;
 
 public class AccountService {
-    private AccountRepository accountRepository;
+    private final AccountRepository accountRepository;
 
     public AccountService(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;

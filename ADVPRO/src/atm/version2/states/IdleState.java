@@ -11,24 +11,24 @@ public class IdleState implements ATMState {
 
     @Override
     public void insertCard() {
-        String cardNumber = atm.getCardReader().readCard();
+        String cardNumber = atm.getScanner().next();
         atm.setCurrentCardNumber(cardNumber);
         atm.setState(atm.getCardInsertedState());
-        atm.getScreen().displayMessage("Card inserted. Please enter your PIN.");
+        System.out.println("Card inserted. Please enter your PIN.");
     }
 
     @Override
     public void ejectCard() {
-        atm.getScreen().displayMessage("No card inserted.");
+        System.out.println("No card inserted.");
     }
 
     @Override
     public void enterPIN(String pin) {
-        atm.getScreen().displayMessage("Please insert card first.");
+        System.out.println("Please insert card first.");
     }
 
     @Override
     public void requestOperation() {
-        atm.getScreen().displayMessage("Please insert card first.");
+        System.out.println("Please insert card first.");
     }
 }

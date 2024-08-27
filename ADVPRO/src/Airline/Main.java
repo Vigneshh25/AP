@@ -1,5 +1,15 @@
 package Airline;
 
+import Airline.model.*;
+import Airline.factory.ConcreteFlightFactory;
+import Airline.factory.FlightFactory;
+import Airline.service.*;
+import Airline.model.SeatType;
+import Airline.model.Customer;
+import Airline.model.Observer;
+import Airline.strategy.*;
+import Airline.strategy.PaymentStrategy;
+
 import java.util.Arrays;
 import java.util.Date;
 
@@ -9,8 +19,8 @@ public class Main {
             // Initialize Notification Service
             NotificationService notificationService = new NotificationService();
 
-            // Create Admin
-            Admin admin = new Admin(notificationService);
+            // Create Admin Service
+            AdminService adminService = new AdminService(notificationService);
 
             // Create Aircraft
             Aircraft aircraft = new Aircraft("Boeing 737", 180);
@@ -24,8 +34,8 @@ public class Main {
             // Create Pricing Strategy
             PricingStrategy pricingStrategy = new DynamicPricingStrategy();
 
-            // Create Flight using Admin
-            Flight flight = admin.createFlight("AI123", aircraft, schedule, flightFactory, pricingStrategy);
+            // Create Flight using Admin Service
+            Flight flight = adminService.createFlight("AI123", aircraft, schedule, flightFactory, pricingStrategy);
 
             // Add Flight to Reservation Service
             ReservationService reservationService = new ReservationService();
@@ -55,7 +65,7 @@ public class Main {
 
             // Cancel Reservation Example (Handling Exception)
             try {
-                reservationService.cancelReservation("AI123", passenger1, "Q1");
+                reservationService.cancelReservation("AI123", passenger1, "C1");
                 System.out.println("\nAfter cancellation, passengers on flight:");
                 for (Seat seat : flight.getSeatMap().getAllSeats()) {
                     if (!seat.isAvailable()) {
@@ -87,23 +97,20 @@ public class Main {
             flight.addBaggage(passenger2, 15.0); // Passenger 2 with 15kg baggage
 
             // Admin Cancels Flight
-            admin.cancelFlight(flight);
+            adminService.cancelFlight(flight);
 
             // Add Observer
-            Customer customerObserver = new Customer("customer@example.com");
+            Observer customerObserver = new Customer("customer@example.com");
             notificationService.addObserver(customerObserver);
             notificationService.notifyAllObservers("Test Notification");
 
             // Test Security (Authentication and Authorization would typically be more complex)
-            // Here is a simple example for demonstration:
-            System.out.println("\nTesting Security...");
-            // Ideally, you'd have a SecurityService class to handle this
-            System.out.println("Admin authenticated and authorized.");
+            SecurityService securityService = new SecurityService();
+            securityService.authenticateAdmin("admin", "password");
+
         } catch (Exception e) {
             System.err.println("Error occurred: " + e.getMessage());
             e.printStackTrace();
         }
     }
 }
-
-

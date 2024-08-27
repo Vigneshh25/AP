@@ -2,10 +2,21 @@ package BookMyshow.repositories;
 
 import BookMyshow.entities.Booking;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-public interface BookingRepository {
-    void save(Booking booking);
-    Booking findById(String bookingId);
-    void delete(String bookingId);
+public class BookingRepository {
+    private final Map<String, Booking> bookings = new HashMap<>();
+
+    public void save(Booking booking) {
+        bookings.put(booking.getBookingId(), booking);
+    }
+
+    public Booking findById(String bookingId) {
+        return bookings.get(bookingId);
+    }
+
+    public void delete(String bookingId) {
+        bookings.remove(bookingId);
+    }
 }

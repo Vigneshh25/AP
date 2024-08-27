@@ -1,0 +1,98 @@
+CREATE TABLE users (
+    id VARCHAR(255) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    user_type ENUM('driver', 'passenger', 'rider') NOT NULL
+);
+CREATE TABLE drivers (
+    id VARCHAR(255) PRIMARY KEY REFERENCES users(id),
+    vehicle_details VARCHAR(255) NOT NULL,
+    location_lat DOUBLE NOT NULL,
+    location_lon DOUBLE NOT NULL,
+    available BOOLEAN DEFAULT TRUE,
+    availability_locked BOOLEAN DEFAULT FALSE,
+    availability_lock_until DATETIME
+);
+CREATE TABLE passengers (
+    id VARCHAR(255) PRIMARY KEY REFERENCES users(id)
+);
+CREATE TABLE rides (
+    id VARCHAR(255) PRIMARY KEY,
+    passenger_id VARCHAR(255) REFERENCES passengers(id),
+    driver_id VARCHAR(255) REFERENCES drivers(id),
+    origin_lat DOUBLE NOT NULL,
+    origin_lon DOUBLE NOT NULL,
+    destination_lat DOUBLE NOT NULL,
+    destination_lon DOUBLE NOT NULL,
+    fare DOUBLE NOT NULL,
+    status ENUM('REQUESTED', 'ACCEPTED', 'STARTED', 'COMPLETED', 'CANCELED') NOT NULL,
+    driver_rating DOUBLE,
+    passenger_rating DOUBLE,
+    driver_feedback TEXT,
+    passenger_feedback TEXT
+);
+CREATE TABLE feedbacks (
+    id VARCHAR(255) PRIMARY KEY,
+    user_id VARCHAR(255) REFERENCES users(id),
+    rating DOUBLE NOT NULL,
+    comment TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE payments (
+    id VARCHAR(255) PRIMARY KEY,
+    user_id VARCHAR(255) REFERENCES users(id),
+    ride_id VARCHAR(255) REFERENCES rides(id),
+    amount DOUBLE NOT NULL,
+    payment_date DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE INDEX idx_user_email ON users(email);
+CREATE INDEX idx_ride_status ON rides(status);
+CREATE INDEX idx_feedback_user_id ON feedbacks(user_id);
+CREATE INDEX idx_payment_user_id ON payments(user_id);
+CREATE INDEX idx_location_lat_lng ON locations(latitude, longitude);
+
+
+
+AFTER Normalization
+
+Instead of storing latitude and longitude in multiple tables, create a locations table:
+CREATE TABLE locations (
+    id VARCHAR(255) PRIMARY KEY,
+    latitude DOUBLE NOT NULL,
+    longitude DOUBLE NOT NULL
+);
+
+CREATE TABLE driver_locations (
+    driver_id VARCHAR(255) PRIMARY KEY REFERENCES drivers(id),
+    location_id VARCHAR(255) REFERENCES locations(id)
+);
+
+CREATE TABLE ride_locations (
+    ride_id VARCHAR(255) PRIMARY KEY REFERENCES rides(id),
+    origin_location_id VARCHAR(255) REFERENCES locations(id),
+    destination_location_id VARCHAR(255) REFERENCES locations(id)
+);
+
+
+CREATE TABLE drivers (
+    id VARCHAR(255) PRIMARY KEY REFERENCES users(id),
+    vehicle_details VARCHAR(255) NOT NULL,
+    location_id VARCHAR(255) REFERENCES locations(id),
+    available BOOLEAN DEFAULT TRUE,
+    availability_locked BOOLEAN DEFAULT FALSE,
+    availability_lock_until DATETIME
+);
+
+CREATE TABLE rides (
+    id VARCHAR(255) PRIMARY KEY,
+    passenger_id VARCHAR(255) REFERENCES passengers(id),
+    driver_id VARCHAR(255) REFERENCES drivers(id),
+    origin_location_id VARCHAR(255) REFERENCES locations(id),
+    destination_location_id VARCHAR(255) REFERENCES locations(id),
+    fare DOUBLE NOT NULL,
+    status ENUM('REQUESTED', 'ACCEPTED', 'STARTED', 'COMPLETED', 'CANCELED') NOT NULL,
+    driver_feedback_id VARCHAR(255) REFERENCES feedbacks(id),
+    passenger_feedback_id VARCHAR(255) REFERENCES feedbacks(id)
+);

@@ -4,10 +4,7 @@ import BookMyshow.entities.*;
 import BookMyshow.gateways.PaymentGateway;
 import BookMyshow.gateways.StripePaymentGateway;
 import BookMyshow.repositories.*;
-import BookMyshow.repositoriesimpl.*;
-import BookMyshow.services.BookingService;
 import BookMyshow.services.*;
-import BookMyshow.servicesimpl.*;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -15,28 +12,27 @@ import java.util.List;
 import java.util.Map;
 
 public class BookingController {
-    private BookingService bookingService;
-    private MovieService movieService;
-    private UserService userService;
-    private ShowService showService;
+    private final BookingService bookingService;
+    private final MovieService movieService;
+    private final UserService userService;
+    private final ShowService showService;
 
     public BookingController() {
         // Repositories
-        UserRepository userRepository = new InMemoryUserRepository();
-        ShowRepository showRepository = new InMemoryShowRepository();
-        BookingRepository bookingRepository = new InMemoryBookingRepository();
-        PaymentRepository paymentRepository = new InMemoryPaymentRepository();
-        MovieRepository movieRepository = new InMemoryMovieRepository();
+        UserRepository userRepository = new UserRepository();
+        ShowRepository showRepository = new ShowRepository();
+        BookingRepository bookingRepository = new BookingRepository();
+        PaymentRepository paymentRepository = new PaymentRepository();
+        MovieRepository movieRepository = new MovieRepository();
 
         // Services
         PaymentGateway paymentGateway = new StripePaymentGateway();
-        PaymentService paymentService = new PaymentServiceImpl(paymentGateway, paymentRepository);
-        ShowService showService = new ShowServiceImpl(showRepository);
-        this.bookingService = new BookingServiceImpl(bookingRepository, paymentService, showService);
-        this.movieService = new MovieServiceImpl(movieRepository);;
-        this.userService = new UserServiceImpl(userRepository);
+        PaymentService paymentService = new PaymentService(paymentGateway, paymentRepository);
+        ShowService showService = new ShowService(showRepository);
+        this.bookingService = new BookingService(bookingRepository, paymentService, showService);
+        this.movieService = new MovieService(movieRepository);
+        this.userService = new UserService(userRepository);
         this.showService = showService;
-
 
 
         // Add movies
@@ -100,5 +96,9 @@ public class BookingController {
 
     public boolean checkSeatAvailability(String showId, List<Seat> seats) {
         return showService.checkAvailability(showId, seats);
+    }
+    public List<Movie> getAllMovies()
+    {
+        return movieService.getAllMovies();
     }
 }

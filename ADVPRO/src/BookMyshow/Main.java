@@ -1,7 +1,9 @@
 package BookMyshow;
 
-import BookMyshow.entities.*;
-import BookMyshow.services.*;
+import BookMyshow.entities.Booking;
+import BookMyshow.entities.Movie;
+import BookMyshow.entities.Seat;
+import BookMyshow.entities.User;
 
 import java.util.*;
 
@@ -79,22 +81,23 @@ public class Main {
         }
     }
 
-    private static void handleUserActions(User currentUser,BookingController bookingController, Scanner scanner) {
+    private static void handleUserActions(User currentUser, BookingController bookingController, Scanner scanner) {
         while (true) {
             displayUserMenu();
             int choice = getUserChoice(scanner);
-
             switch (choice) {
                 case 1:
+                    viewEvents(bookingController);
+                case 2:
                     bookTickets(currentUser, bookingController, scanner);
                     break;
-                case 2:
+                case 3:
                     viewBookings(currentUser, bookingController);
                     break;
-                case 3:
+                case 4:
                     updateProfile(currentUser, bookingController, scanner);
                     break;
-                case 4:
+                case 5:
                     System.out.println("Logging out...");
                     return;
                 default:
@@ -103,11 +106,16 @@ public class Main {
         }
     }
 
+    private static void viewEvents(BookingController bookingController) {
+        bookingController.getAllMovies().forEach(System.out::println);
+    }
+
     private static void displayUserMenu() {
-        System.out.println("1. Book Tickets");
-        System.out.println("2. View Bookings");
-        System.out.println("3. Update Profile");
-        System.out.println("4. Logout");
+        System.out.println("1. View Events");
+        System.out.println("2. Book Tickets");
+        System.out.println("3. View Bookings");
+        System.out.println("4. Update Profile");
+        System.out.println("5. Logout");
     }
 
     private static void bookTickets(User currentUser, BookingController bookingController, Scanner scanner) {

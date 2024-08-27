@@ -1,6 +1,6 @@
 package atm.version1.devices;
 
-import atm.version1.dispenser.CashDispenser;
+import atm.version2.dispenser.CashDispenser;
 import atm.version1.repository.AccountService;
 
 public class ATM {

@@ -1,0 +1,170 @@
+Here's a neatly formatted version of the API endpoints and their details for a better reading experience:
+
+---
+
+Register Passenger
+POST `/api/passengers`  
+Request Body:
+json
+{
+  "name": "Jane Doe",
+  "email": "jane@example.com"
+}
+
+Response:  
+201 Created with Passenger ID.
+
+---
+
+Get Passenger by ID
+GET `/api/passengers/{id}`  
+Response:  
+Passenger details.
+
+---
+
+Register Driver
+POST `/api/drivers`  
+Request Body:
+json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "vehicleDetails": "Car Model XYZ",
+  "location": {
+    "latitude": 10.0,
+    "longitude": 20.0
+  }
+}
+
+Response:  
+201 Created with Driver ID.
+
+---
+
+Get Driver by ID
+GET `/api/drivers/{id}`  
+Response:  
+Driver details.
+
+---
+
+Update Driver Location
+PATCH `/api/drivers/{id}/location`  
+Request Body:
+json
+{
+  "latitude": 15.0,
+  "longitude": 25.0
+}
+
+Response:  
+200 OK
+
+---
+
+Lock/Unlock Driver Availability
+PATCH `/api/drivers/{id}/availability`  
+Request Body:
+json
+{
+  "available": true,
+  "lockDuration": 30
+}
+
+Response:  
+200 OK
+
+---
+
+Book a Ride
+POST `/api/rides`  
+Request Body:
+json
+{
+  "passengerId": "p1",
+  "origin": {
+    "latitude": 15.0,
+    "longitude": 25.0
+  },
+  "destination": {
+    "latitude": 20.0,
+    "longitude": 30.0
+  }
+}
+
+Response:  
+201 Created with Ride details.
+
+---
+
+Complete a Ride
+PATCH `/api/rides/{rideId}/complete`  
+Response:  
+200 OK
+
+---
+
+Cancel a Ride
+PATCH `/api/rides/{rideId}/cancel`  
+Response:  
+200 OK
+
+---
+
+Get Matching Drivers
+GET `/api/rides/matching-drivers`  
+Query Parameters:
+- `originLat`
+- `originLon`
+- `destinationLat`
+- `destinationLon`  
+
+Response:  
+List of matching drivers.
+
+---
+
+Make a Payment
+POST `/api/payments`  
+Request Body:
+json
+{
+  "userId": "p1",
+  "rideId": "r1",
+  "amount": 100.0
+}
+
+Response:  
+200 OK
+
+---
+
+Notify Ride Booked
+POST `/api/notifications/ride-booked`  
+Request Body:
+json
+{
+  "rideId": "r1",
+  "passengerId": "p1",
+  "driverId": "d1"
+}
+
+Response:  
+200 OK
+
+---
+
+Notify Ride Completed
+POST `/api/notifications/ride-completed`  
+Request Body:
+json
+{
+  "rideId": "r1",
+  "passengerId": "p1"
+}
+
+Response:  
+200 OK
+
+---

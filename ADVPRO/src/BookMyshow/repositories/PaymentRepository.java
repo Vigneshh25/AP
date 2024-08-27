@@ -2,8 +2,21 @@ package BookMyshow.repositories;
 
 import BookMyshow.entities.Payment;
 
-public interface PaymentRepository {
-    void save(Payment payment);
-    void update(Payment payment);
-    Payment findByBookingId(String bookingId);
+import java.util.HashMap;
+import java.util.Map;
+
+public class PaymentRepository {
+    private final Map<String, Payment> payments = new HashMap<>();
+
+    public void save(Payment payment) {
+        payments.put(payment.getPaymentId(), payment);
+    }
+
+    public void update(Payment payment) {
+        payments.put(payment.getPaymentId(), payment);
+    }
+
+    public Payment findByBookingId(String bookingId) {
+        return payments.values().stream().filter(payment -> payment.getBookingId().equals(bookingId)).findFirst().orElse(null);
+    }
 }

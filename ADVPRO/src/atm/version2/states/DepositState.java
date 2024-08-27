@@ -3,7 +3,7 @@ package atm.version2.states;
 import atm.version2.hardware.ATM;
 
 public class DepositState implements ATMState {
-    private ATM atm;
+    private final ATM atm;
 
     public DepositState(ATM atm) {
         this.atm = atm;
@@ -11,28 +11,27 @@ public class DepositState implements ATMState {
 
     @Override
     public void insertCard() {
-        atm.getScreen().displayMessage("Card already inserted.");
+        System.out.println("Card already inserted.");
     }
 
     @Override
     public void ejectCard() {
         atm.setCurrentCardNumber(null);
         atm.setState(atm.getIdleState());
-        atm.getScreen().displayMessage("Card ejected.");
+        System.out.println("Card ejected.");
     }
 
     @Override
     public void enterPIN(String pin) {
-        atm.getScreen().displayMessage("PIN already entered.");
+        System.out.println("PIN already entered.");
     }
 
     @Override
     public void requestOperation() {
-        atm.getScreen().displayMessage("Enter amount to deposit:");
-        double depositAmount = atm.getKeypad().enterAmount();
+        System.out.println("Enter amount to deposit:");
+        double depositAmount = atm.getScanner().nextDouble();
         atm.getAccountService().deposit(atm.getCurrentCardNumber(), depositAmount);
-        atm.getDepositSlot().acceptDeposit(depositAmount);
-        atm.getScreen().displayMessage("Deposit successful.");
+        System.out.println("Accepted deposit of " + depositAmount + " rupees.");
         atm.setState(atm.getAuthenticatedState());
     }
 }

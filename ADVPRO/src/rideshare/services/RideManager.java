@@ -8,12 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import java.util.List;
+import java.util.UUID;
+
 public class RideManager {
     private static RideManager instance;
     private PathService pathService;
 
     private RideManager() {
-        this.pathService = new PathService(); // Instantiate PathService if necessary
+        this.pathService = new PathService();
     }
 
     public static synchronized RideManager getInstance() {
@@ -32,20 +35,25 @@ public class RideManager {
         if (driver.isAvailabilityLocked()) {
             throw new RuntimeException("Driver's availability is locked");
         }
-        driver.lockAvailabilityForDuration(1); // Lock availability for 30 minutes after booking
+        driver.lockAvailabilityForDuration(30); // Lock availability for 30 minutes after booking
         double fare = FareCalculator.calculateFare(origin, destination);
         Ride ride = new Ride(UUID.randomUUID().toString(), passenger, driver, origin, destination, fare);
         ride.setStatus(Ride.RideStatus.ACCEPTED);
         DatabaseManager.getInstance().saveRide(ride);
+        driver.addRideToHistory(ride);
+        passenger.addRideToHistory(ride);
         NotificationService.notifyRideBooked(passenger, driver, ride);
         return ride;
     }
 
-    public void completeRide(Ride ride) {
+    public void completeRide(Ride ride, Feedback driverFeedback, Feedback passengerFeedback) {
         ride.setStatus(Ride.RideStatus.COMPLETED);
         ride.getDriver().setAvailable(true);
+        ride.getDriver().addFeedback(driverFeedback);
+        ride.getPassenger().addFeedback(passengerFeedback);
         DatabaseManager.getInstance().updateRide(ride);
         DatabaseManager.getInstance().updateDriver(ride.getDriver());
+        DatabaseManager.getInstance().updatePassenger(ride.getPassenger());
         NotificationService.notifyRideCompleted(ride.getPassenger(), ride);
     }
 

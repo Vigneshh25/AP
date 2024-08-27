@@ -1,44 +1,27 @@
 package atm.version2.hardware;
 
-import atm.version1.dispenser.CashDispenser;
-import atm.version1.devices.CardReader;
-import atm.version1.devices.DepositSlot;
-import atm.version1.devices.Keypad;
-import atm.version1.devices.Screen;
+import atm.version2.dispenser.CashDispenser;
 import atm.version2.states.*;
 import atm.version2.utils.AccountService;
 
-public class ATM {
-    private CardReader cardReader;
-    private Keypad keypad;
-    private Screen screen;
-    private CashDispenser cashDispenser;
-    private DepositSlot depositSlot;
-    private Printer printer;
-    private NetworkInfrastructure networkInfrastructure;
-    private AccountService accountService;
+import java.util.Scanner;
 
+public class ATM {
+    private final CashDispenser cashDispenser;
+    private final AccountService accountService;
+    private final ATMState idleState;
+    private final ATMState cardInsertedState;
+    private final ATMState authenticatedState;
+    private final ATMState checkBalanceState;
+    private final ATMState withdrawState;
+    private final ATMState depositState;
+    private final ATMState transferState;
+    private final Scanner scanner = new Scanner(System.in);
     private ATMState currentState;
     private String currentCardNumber;
 
-    private ATMState idleState;
-    private ATMState cardInsertedState;
-    private ATMState authenticatedState;
-    private ATMState checkBalanceState;
-    private ATMState withdrawState;
-    private ATMState depositState;
-    private ATMState transferState;
-
-    public ATM(CardReader cardReader, Keypad keypad, Screen screen, CashDispenser cashDispenser,
-               DepositSlot depositSlot, Printer printer, NetworkInfrastructure networkInfrastructure,
-               AccountService accountService) {
-        this.cardReader = cardReader;
-        this.keypad = keypad;
-        this.screen = screen;
+    public ATM(CashDispenser cashDispenser, AccountService accountService) {
         this.cashDispenser = cashDispenser;
-        this.depositSlot = depositSlot;
-        this.printer = printer;
-        this.networkInfrastructure = networkInfrastructure;
         this.accountService = accountService;
 
         idleState = new IdleState(this);
@@ -51,13 +34,14 @@ public class ATM {
         setState(idleState);
     }
 
-    public void run() {
+    public void run1() {
         while (true) {
 
             if (currentState == idleState) {
                 currentState.insertCard();
             } else if (currentState == cardInsertedState) {
-                String pin = keypad.enterPIN();
+                System.out.print("Enter PIN: ");
+                String pin = scanner.next();
                 currentState.enterPIN(pin);
             } else if (currentState == authenticatedState) {
                 currentState.requestOperation();
@@ -65,11 +49,60 @@ public class ATM {
         }
     }
 
-    public void setState(ATMState state) {
-        this.currentState = state;
+    public void run() {
+        while (true) {
+            System.out.print("Enter Account Number :: ");
+            String cardNumber = scanner.next();
+            System.out.print("Enter Pin :: ");
+            String pin = scanner.next();
+
+            // For simplicity, assume authentication is successful
+            boolean exit = false;
+            while (!exit) {
+                System.out.println("1. Check Balance\n2. Deposit\n3. Withdraw\n4. Transfer\n5. Exit");
+                int choice = scanner.nextInt();
+                switch (choice) {
+                    case 1:
+                        double balance = accountService.checkBalance(cardNumber);
+                        System.out.println("Balance: " + balance);
+                        break;
+                    case 2:
+                        System.out.println("Enter amount to deposit:");
+                        double depositAmount = scanner.nextDouble();
+                        accountService.deposit(cardNumber, depositAmount);
+                        System.out.println("Amount " + depositAmount + " Deposit successful.");
+                        break;
+                    case 3:
+                        System.out.println("Enter amount to withdraw:");
+                        double withdrawAmount = scanner.nextDouble();
+                        accountService.withdraw(cardNumber, withdrawAmount);
+                        cashDispenser.dispense((int) withdrawAmount);
+                        System.out.println("Withdrawal successful.");
+                        break;
+                    case 4:
+                        System.out.println("Enter target account number:");
+                        String targetAccount = scanner.next();  // Assuming scanner is used for entering the account number too
+                        System.out.println("Enter amount to transfer:");
+                        double transferAmount = scanner.nextDouble();
+                        accountService.transfer(cardNumber, targetAccount, transferAmount);
+                        System.out.println("Transfer successful.");
+                        break;
+                    case 5:
+                        exit = true;
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Please try again.");
+                }
+            }
+        }
     }
+
     public ATMState getState() {
         return currentState;
+    }
+
+    public void setState(ATMState state) {
+        this.currentState = state;
     }
 
     public ATMState getIdleState() {
@@ -100,60 +133,8 @@ public class ATM {
         return transferState;
     }
 
-    public void setIdleState(ATMState idleState) {
-        this.idleState = idleState;
-    }
-
-    public void setCardInsertedState(ATMState cardInsertedState) {
-        this.cardInsertedState = cardInsertedState;
-    }
-
-    public void setAuthenticatedState(ATMState authenticatedState) {
-        this.authenticatedState = authenticatedState;
-    }
-
-    public void setCheckBalanceState(ATMState checkBalanceState) {
-        this.checkBalanceState = checkBalanceState;
-    }
-
-    public void setWithdrawState(ATMState withdrawState) {
-        this.withdrawState = withdrawState;
-    }
-
-    public void setDepositState(ATMState depositState) {
-        this.depositState = depositState;
-    }
-
-    public void setTransferState(ATMState transferState) {
-        this.transferState = transferState;
-    }
-
-    public CardReader getCardReader() {
-        return cardReader;
-    }
-
-    public Keypad getKeypad() {
-        return keypad;
-    }
-
-    public Screen getScreen() {
-        return screen;
-    }
-
     public CashDispenser getCashDispenser() {
         return cashDispenser;
-    }
-
-    public DepositSlot getDepositSlot() {
-        return depositSlot;
-    }
-
-    public Printer getPrinter() {
-        return printer;
-    }
-
-    public NetworkInfrastructure getNetworkInfrastructure() {
-        return networkInfrastructure;
     }
 
     public AccountService getAccountService() {
@@ -166,6 +147,10 @@ public class ATM {
 
     public void setCurrentCardNumber(String currentCardNumber) {
         this.currentCardNumber = currentCardNumber;
+    }
+
+    public Scanner getScanner() {
+        return scanner;
     }
 }
 

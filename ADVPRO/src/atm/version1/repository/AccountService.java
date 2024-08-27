@@ -1,10 +1,7 @@
 package atm.version1.repository;
 
-import atm.version1.dispenser.CashDispenser;
-
 public class AccountService {
     private AccountRepository accountRepository;
-    private CashDispenser cashDispenser;
 
     public AccountService(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;

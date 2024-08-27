@@ -1,5 +1,11 @@
 package rideshare.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Ride {
     private String rideId;
     private Passenger passenger;
@@ -8,6 +14,7 @@ public class Ride {
     private Location destination;
     private double fare;
     private RideStatus status;
+    private List<Ride> rideHistory;
 
     public enum RideStatus {
         REQUESTED, ACCEPTED, STARTED, COMPLETED, CANCELED
@@ -21,8 +28,14 @@ public class Ride {
         this.destination = destination;
         this.fare = fare;
         this.status = RideStatus.REQUESTED;
+        this.rideHistory = new ArrayList<>();
     }
 
+    public void addToHistory(Ride ride) {
+        this.rideHistory.add(ride);
+    }
+
+    // Getters and setters
     public String getRideId() {
         return rideId;
     }
@@ -57,5 +70,9 @@ public class Ride {
 
     public void setStatus(RideStatus status) {
         this.status = status;
+    }
+
+    public List<Ride> getRideHistory() {
+        return rideHistory;
     }
 }

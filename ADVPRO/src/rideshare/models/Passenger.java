@@ -5,3 +5,4 @@ public class Passenger extends User {
         super(id, name, email);
     }
 }
+

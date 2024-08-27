@@ -1,10 +1,10 @@
 package atm.version1;
 
 import atm.version1.devices.*;
-import atm.version1.dispenser.CashDispenser;
-import atm.version1.dispenser.FiveHundredNotesDispenser;
-import atm.version1.dispenser.OneHundredNotesDispenser;
-import atm.version1.dispenser.TwoHundredNotesDispenser;
+import atm.version2.dispenser.CashDispenser;
+import atm.version2.dispenser.FiveHundredNotesDispenser;
+import atm.version2.dispenser.OneHundredNotesDispenser;
+import atm.version2.dispenser.TwoHundredNotesDispenser;
 import atm.version1.repository.Account;
 import atm.version1.repository.AccountService;
 import atm.version1.repository.InMemoryAccountRepository;

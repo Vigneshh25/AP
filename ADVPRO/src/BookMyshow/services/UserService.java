@@ -1,11 +1,30 @@
 package BookMyshow.services;
 
 import BookMyshow.entities.User;
+import BookMyshow.repositories.UserRepository;
 
-public interface UserService {
-    boolean register(User user);
-    boolean login(String email, String password);
-    void updateProfile(User user);
-    User getUserByEmail(String email); // Add this method
+public class UserService {
+    private final UserRepository userRepository;
+
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    public boolean register(User user) {
+        return userRepository.save(user);
+    }
+
+    public boolean login(String email, String password) {
+        User user = userRepository.findByEmail(email);
+        return user != null && user.getPassword().equals(password);
+    }
+
+    public void updateProfile(User user) {
+        userRepository.update(user);
+    }
+
+    public User getUserByEmail(String email) { // Implement this method
+        return userRepository.findByEmail(email);
+    }
 }
 

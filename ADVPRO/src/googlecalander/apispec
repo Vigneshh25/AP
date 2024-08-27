@@ -1,0 +1,96 @@
+### Compact API Design for Event Management System
+
+1. User Authentication
+
+- Register User
+  - Endpoint: POST /api/users/register
+  - Request Body: { "username": "string", "password": "string" }
+  - Response: { "username": "string", "message": "User registered successfully" }
+  - Errors: 400 Bad Request (invalid input, user exists)
+
+- Login User
+  - Endpoint: POST /api/users/login
+  - Request Body: { "username": "string", "password": "string" }
+  - Response: { "username": "string", "token": "string" }
+  - Errors: 401 Unauthorized (invalid credentials)
+
+2. Event Management
+
+- Create Event
+  - Endpoint: POST /api/events
+  - Request Body: { "title": "string", "startTime": "ISO 8601", "endTime": "ISO 8601", "attendees": ["userID"] }
+  - Response: { "id": "string", "title": "string", "startTime": "ISO 8601", "endTime": "ISO 8601", "attendees": ["userID"], "message": "Event created successfully" }
+  - Errors: 400 Bad Request (invalid input)
+
+- Update Event
+  - Endpoint: PUT /api/events/{eventId}
+  - Request Body: { "title": "string", "startTime": "ISO 8601", "endTime": "ISO 8601", "attendees": ["userID"] }
+  - Response: { "id": "string", "title": "string", "startTime": "ISO 8601", "endTime": "ISO 8601", "attendees": ["userID"], "message": "Event updated successfully" }
+  - Errors: 400 Bad Request (invalid input), 404 Not Found (event not found)
+
+- Delete Event
+  - Endpoint: DELETE /api/events/{eventId}
+  - Response: { "message": "Event deleted successfully" }
+  - Errors: 404 Not Found (event not found)
+
+3. Recurring Events
+
+- Generate Recurring Events
+  - Endpoint: POST /api/events/{eventId}/recurring
+  - Request Body: { "recurrenceType": "DAILY|WEEKLY", "occurrences": 10 }
+  - Response: { "recurringEvents": [{ "id": "string", "title": "string", "startTime": "ISO 8601", "endTime": "ISO 8601", "attendees": ["userID"] }], "message": "Recurring events generated successfully" }
+  - Errors: 404 Not Found (event not found), 400 Bad Request (invalid recurrence type)
+
+4. Invitations
+
+- Send Invitation
+  - Endpoint: POST /api/events/{eventId}/invite
+  - Request Body: { "users": ["userID"] }
+  - Response: { "message": "Invitations sent successfully" }
+  - Errors: 404 Not Found (event not found), 400 Bad Request (invalid input)
+
+5. Reminders
+
+- Set Reminder
+  - Endpoint: POST /api/events/{eventId}/reminder
+  - Request Body: { "remindAt": "ISO 8601" }
+  - Response: { "message": "Reminder set successfully" }
+  - Errors: 404 Not Found (event not found), 400 Bad Request (invalid input)
+
+6. Multiple Calendars
+
+- Create Calendar
+  - Endpoint: POST /api/calendars
+  - Request Body: { "name": "string" }
+  - Response: { "id": "string", "name": "string", "message": "Calendar created successfully" }
+  - Errors: 400 Bad Request (invalid input)
+
+- Add Event to Calendar
+  - Endpoint: POST /api/calendars/{calendarId}/events
+  - Request Body: { "eventId": "string" }
+  - Response: { "message": "Event added to calendar successfully" }
+  - Errors: 404 Not Found (calendar or event not found), 400 Bad Request (invalid input)
+
+7. Sharing and Permissions
+
+- Share Calendar
+  - Endpoint: POST /api/calendars/{calendarId}/share
+  - Request Body: { "userId": "string", "permission": "READ_ONLY|EDIT|FULL_ACCESS" }
+  - Response: { "message": "Calendar shared successfully" }
+  - Errors: 404 Not Found (calendar or user not found), 400 Bad Request (invalid input)
+
+8. Time Zone Support
+
+- Convert Time
+  - Endpoint: POST /api/timezones/convert
+  - Request Body: { "localDateTime": "ISO 8601", "timeZone": "string (e.g., America/New_York)" }
+  - Response: { "zonedDateTime": "ISO 8601" }
+  - Errors: 400 Bad Request (invalid input)
+
+9. Notifications
+
+- Send Notification
+  - Endpoint: POST /api/notifications
+  - Request Body: { "type": "EMAIL|SMS", "recipient": "string", "message": "string" }
+  - Response: { "message": "Notification sent successfully" }
+  - Errors: 400 Bad Request (invalid input)
