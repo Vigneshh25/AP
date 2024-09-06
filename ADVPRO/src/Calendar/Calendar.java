@@ -1,14 +1,15 @@
 package Calendar;
 
 import java.time.Duration;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Calendar {
     private static Calendar instance;
     private final Map<String, List<Event>> userEvents;
+    Scanner scanner = new Scanner(System.in);
+
 
     private Calendar() {
         this.userEvents = new HashMap<>();
@@ -95,8 +96,7 @@ public class Calendar {
         for (int i = 1; i < busySlots.size(); i++) {
             TimeSlot next = busySlots.get(i);
             if (!current.getEnd().isBefore(next.getStart())) {
-                current = new TimeSlot(current.getStart(),
-                        current.getEnd().isAfter(next.getEnd()) ? current.getEnd() : next.getEnd());
+                current = new TimeSlot(current.getStart(), current.getEnd().isAfter(next.getEnd()) ? current.getEnd() : next.getEnd());
             } else {
                 merged.add(current);
                 current = next;
@@ -109,8 +109,13 @@ public class Calendar {
 
     private List<TimeSlot> findFreeSlots(List<TimeSlot> busySlots, int durationInMinutes) {
         List<TimeSlot> freeSlots = new ArrayList<>();
-        LocalDateTime dayStart = LocalDateTime.of(LocalDate.now(), LocalTime.MIDNIGHT);
-        LocalDateTime dayEnd = dayStart.plusDays(1);
+        System.out.println("Enter Day Start Time in YYYY-MM-DD HH:mm");
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        String startDateInput = scanner.nextLine();
+        LocalDateTime dayStart = LocalDateTime.parse(startDateInput, dateTimeFormatter);
+        System.out.println("Enter Day End Time in YYYY-MM-DD HH:mm");
+        String endDateInput = scanner.nextLine();
+        LocalDateTime dayEnd = LocalDateTime.parse(endDateInput, dateTimeFormatter);
 
         LocalDateTime previousEnd = dayStart;
         for (TimeSlot busySlot : busySlots) {

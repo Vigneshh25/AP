@@ -62,7 +62,7 @@ public class CalendarAPI {
         System.out.println("Event 1 Details: " + api.getEventDetails("1"));
         System.out.println("Event 2 Details: " + api.getEventDetails("2"));
 
-        List<TimeSlot> commonSlots = api.findCommonFreeSlot(Arrays.asList("Alice", "Charlie"), 260);
+        List<TimeSlot> commonSlots = api.findCommonFreeSlot(Arrays.asList("Alice", "Charlie"), 230);
         System.out.println("Common Free Slots for Alice and Bob: " + commonSlots);
     }
 }

@@ -17,9 +17,9 @@ public class BookingController {
         String bookingId = UUID.randomUUID().toString();
         Booking booking = BookingFactory.createBooking(bookingId, roomId, startTime, endTime, participants);
         repository.addBooking(booking);
+        MeetingRoom meetingRoom = getMeetingRoomById(roomId);
 
         for (String participant : participants) {
-            MeetingRoom meetingRoom = getMeetingRoomById(roomId);
             if (meetingRoom != null) {
                 meetingRoom.addObserver(new EmailNotification(participant));
                 calendarInvite.sendInvite(participant, startTime, endTime);
