@@ -2,10 +2,8 @@ package Design_Datastructure.streams;
 
 import cricbuzz.player.Person;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -50,6 +48,57 @@ public class StreamPractice {
     private static Map<String,Long> findFreqOfWords(String[] fruits) {
         return Arrays.stream(fruits).collect(Collectors.groupingBy(word -> word,Collectors.counting()));
     }
+
+    public static void sortByKeyStreamAPI(HashMap<Integer, String> map) {
+        // Using streams to sort and collect the result into a LinkedHashMap
+        Map<Integer, String> sortedMap = map.entrySet().stream()
+                .sorted(Map.Entry.comparingByKey()) // Sort by key
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, // Merge function in case of duplicate keys
+                        LinkedHashMap::new // Preserve insertion order
+                ));
+
+        sortedMap.forEach((key, value) -> System.out.println(key + " -> " + value));
+
+        String input = "java streams are powerful and flexible";
+
+        // Convert the string to a character stream and count frequencies
+        Character mostFrequent = input.chars()
+                .mapToObj(c -> (char) c)
+                .filter(c -> c != ' ') // Ignore spaces
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .map(Map.Entry::getKey)
+                .orElse(null);
+
+    }
+
+    public static void findNonFirstNonRepeatedChar()
+    {
+        String input = "wsdsfqdawas";
+        Character result = input.chars() // Convert to IntStream
+                .mapToObj(c -> (char) c) // Convert each int to Character
+                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting())) // Count frequency
+                .entrySet().stream()
+                .filter(entry -> entry.getValue() == 1) // Filter non-repeated
+                .map(Map.Entry::getKey) // Get the key (character)
+                .findFirst() // Get the first one
+                .orElse(null);
+
+        List<String> sentences = Arrays.asList(
+                "The quick brown fox jumps over the lazy dog",
+                "A journey of a thousand miles begins with a single step",
+                "To be or not to be that is the question"
+        );
+        String longestWord = sentences.stream()
+                .flatMap(sentence -> Arrays.stream(sentence.split("\\s+")))
+                .max(Comparator.comparingInt(String::length))
+                .orElse("");
+    }
+
     private static Map<Character, Long> findFreqOfCharacters(String[] fruits) {
         return Arrays.stream(fruits)
                 .flatMapToInt(String::chars)            // Convert each word to a stream of characters
