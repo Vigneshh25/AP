@@ -1,6 +1,16 @@
 package designpatterns.behavioral.observer;
 
 public class OrderStatus {
+
+/*
+    In observer design pattern multiple observer objects registers with a subject for any change
+    in notification. When the state of subject changes, it notifies the observers.
+    Objects that listen or watch for change are called observers and the object that is being
+    watched is called a subject.
+
+    We use Strategy Pattern when we have multiple algorithms for a specific task and client
+    decides the actual implementation to be used at runtime.
+*/
    public static void main(String[] args) {
        // Create an order
        Order order1 = new Order(123);

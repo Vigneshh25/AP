@@ -5,138 +5,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/apisepc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/dbschema.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/factory/ConcreteFlightFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/factory/FlightFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/model/Aircraft.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/model/Airport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/model/CrewMember.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/model/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/model/Flight.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/model/Itinerary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/model/ItineraryBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/model/Observer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/model/Passenger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/model/Pilot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/model/Schedule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/model/Seat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/model/SeatMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/model/SeatType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/model/Ticket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/service/AdminService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/service/BookingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/service/NotificationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/service/PaymentStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/service/ReservationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/service/SecurityService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/strategy/CreditCardPayment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/strategy/DynamicPricingStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/strategy/PaymentStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/strategy/PricingStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/bikerental/API" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/UserFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/api/InvitationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/api/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/apispec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/dbschema" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/model/Calendar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/model/CalendarComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/model/CompositeCalendar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/model/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/model/InvitationObserver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/model/Permission.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/model/ShareableCalendar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/model/SharedCalendar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/notification/EmailNotification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/notification/Notification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/notification/SMSNotification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/recurrence/DailyRecurrenceStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/recurrence/RecurrenceStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/recurrence/WeeklyRecurrenceStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/reminder/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/reminder/Reminder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/reminder/SetReminderCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/repository/EventRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/repository/InMemoryEventRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googlecalander/util/TimeZoneAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/rideshare/api" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/rideshare/dbschema" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/rideshare/models/Feedback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/out/production/AP/BankingApplication/h.txt" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/creational/abstractfactory/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/creational/abstractfactory/Button.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/creational/abstractfactory/GUIFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/creational/abstractfactory/WindowsButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/creational/abstractfactory/WindowsFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/isp/correct/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/isp/violates/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/lsp/correct/BankAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/lsp/correct/MinimumBalanceAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/lsp/correct/SavingsAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/lsp/violates/BankAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/lsp/violates/SavingsAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/openclosed/correct/OCPExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/openclosed/violates/Shape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/srp/correct/SRPExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/srp/violates/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Aircraft.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Baggage.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/model/Baggage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Flight.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/FlightFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Itinerary.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/ItineraryBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Airline/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Observer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Passenger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/PaymentStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/PricingStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/ReservationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Schedule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Seat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/SeatMap.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Airline/Ticket.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BankingApplication/h.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/BookingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/BookingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/entities/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/entities/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositories/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositories/BookingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositories/MovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositories/MovieRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositories/PaymentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositories/PaymentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositories/ShowRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositories/ShowRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositoriesimpl/InMemoryBookingRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositoriesimpl/InMemoryMovieRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositoriesimpl/InMemoryPaymentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositoriesimpl/InMemoryShowRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/repositoriesimpl/InMemoryUserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/services/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/services/BookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/services/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/services/MovieService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/services/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/services/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/services/ShowService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/services/ShowService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/servicesimpl/BookingServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/servicesimpl/MovieServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/servicesimpl/PaymentServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/servicesimpl/ShowServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/BookMyshow/servicesimpl/UserServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version1/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version1/devices/ATM.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version1/devices/ATM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version1/dispenser/CashDispenser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version2/dispenser/CashDispenser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version1/dispenser/FiveHundredNotesDispenser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version2/dispenser/FiveHundredNotesDispenser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version1/dispenser/OneHundredNotesDispenser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version2/dispenser/OneHundredNotesDispenser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version1/dispenser/TwoHundredNotesDispenser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version2/dispenser/TwoHundredNotesDispenser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version1/repository/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version1/repository/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version2/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/hardware/ATM.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version2/hardware/ATM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/hardware/NetworkInfrastructure.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/hardware/NetworkInfrastructureImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/hardware/Printer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/hardware/PrinterImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/states/AuthenticatedState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version2/states/AuthenticatedState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/states/CardInsertedState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version2/states/CardInsertedState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/states/CheckBalanceState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version2/states/CheckBalanceState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/states/DepositState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version2/states/DepositState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/states/IdleState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version2/states/IdleState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/states/TransferState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version2/states/TransferState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/states/WithdrawState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version2/states/WithdrawState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/utils/AccountCreationFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version2/utils/AccountCreationFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/atm/version2/utils/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/atm/version2/utils/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/rideshare/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/rideshare/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/rideshare/models/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/rideshare/models/Passenger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/rideshare/models/Ride.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/rideshare/models/Ride.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/rideshare/models/Rider.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/rideshare/models/Rider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/rideshare/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/rideshare/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/rideshare/services/RideManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/rideshare/services/RideManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/rideshare/utils/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/rideshare/utils/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/creational/abstractfactory/AbstractFactoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/creational/abstractfactory/IMobileFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/creational/abstractfactory/MobileFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/creational/abstractfactory/PocoMobileFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/creational/abstractfactory/SamsungMobileFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/dip/correct/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/dip/correct/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/dip/violates/Shelf.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/dip/violates/Shelf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/isp/correct/FlatbedScanner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/isp/correct/LaserPrinter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/isp/correct/OnlineCustomerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/isp/correct/OrderInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/isp/correct/PaymentInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/isp/correct/Printer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/isp/correct/TelephoneCustomerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/isp/correct/WalkInCustomerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/isp/violates/OfficeEquipment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/isp/violates/OnlineCustomerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/isp/violates/RestaurantInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/lsp/correct/BookDelivery.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/lsp/correct/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/lsp/correct/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/lsp/violates/AudioBookDelivery.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/lsp/violates/BookDelivery.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/lsp/violates/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/lsp/violates/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/lsp/violates/PosterMapDelivery.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/openclosed/correct/AreaCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/openclosed/correct/Circle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/openclosed/correct/Rectangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/openclosed/correct/Shape.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/openclosed/violates/AreaCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/openclosed/violates/Circle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/openclosed/violates/Rectangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/srp/correct/EmployeePayment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/srp/correct/EmployeeReport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/srp/correct/EmployeeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/srp/correct/RepositoryView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/srp/correct/Resume.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/srp/violates/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/srp/violates/Resume.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/adapter/XmlToJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/adapter/XmlToJson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/bridge/BridgePatternTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/bridge/BridgePatternTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/composite/CompositePatternTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/composite/CompositePatternTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/decorator/DecoratorPatternTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/decorator/DecoratorPatternTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/facade/ComputerDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/facade/ComputerDemo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,80 +119,84 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.AdvancedOptionalExamples.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Application.executor&quot;: &quot;Run&quot;,
-    &quot;Application.AsynchronousRateLimiter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.AtomicIntegerDemo.executor&quot;: &quot;Run&quot;,
-    &quot;Application.AutocompleteSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BitTorrentLikeSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BlockingQueueExample.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BrowserHistory.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CalendarAPI.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Chess.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.CircuitBreakerService.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CollaborativeEditingSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ConcurrentCollectionsDemo.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ControlledInitialization.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CouponManagementSystemApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CustomThreadPool.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DecoratorPatternTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DistributedCacheSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.EagerInitialization.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ElementStore.executor&quot;: &quot;Run&quot;,
-    &quot;Application.EventCalendarApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ExamHallApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.FileSys.executor&quot;: &quot;Run&quot;,
-    &quot;Application.FileSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GoogleAuthenticatorApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HitCounter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LFU.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LFUCache.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoadBalancerApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Logger.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MultiThreadedCustomKafkaExample.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MyPriorityQueue.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Node.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ParkingLotSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.PaymentGatewaySystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.PriorityQueue.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ProducerConsumerMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Queue.executor&quot;: &quot;Run&quot;,
-    &quot;Application.QueueUsingSingleStack.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RateLimiter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RateLimiterService.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RealTimeChatSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SnakeGame.executor&quot;: &quot;Run&quot;,
-    &quot;Application.StreamPractice.executor&quot;: &quot;Run&quot;,
-    &quot;Application.StreamProblems.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TaskScheduler.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TaskSchedulerConsole.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TaskSchedulerMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TokenManager.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TollPaymentProcessing.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Twitter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.UsingAtomics.executor&quot;: &quot;Run&quot;,
-    &quot;Application.VotingMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.VotingSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.WebCrawler.executor&quot;: &quot;Run&quot;,
-    &quot;Application.WebCrawlerMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.WebCrawlerWithSameHostnameMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.WhatsAppMessenger.executor&quot;: &quot;Run&quot;,
-    &quot;Application.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/admin/a/vicky/AP/ADVPRO/src&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.AdvancedOptionalExamples.executor": "Run",
+    "Application.Application.executor": "Run",
+    "Application.AsynchronousRateLimiter.executor": "Run",
+    "Application.AtomicIntegerDemo.executor": "Run",
+    "Application.AutocompleteSystem.executor": "Run",
+    "Application.BitTorrentLikeSystem.executor": "Run",
+    "Application.BlockingQueueExample.executor": "Run",
+    "Application.BrowserHistory.executor": "Run",
+    "Application.CalendarAPI.executor": "Run",
+    "Application.Chess.executor": "Run",
+    "Application.CircuitBreakerService.executor": "Run",
+    "Application.CollaborativeEditingSystem.executor": "Run",
+    "Application.ComputerDemo.executor": "Run",
+    "Application.ConcurrentCollectionsDemo.executor": "Run",
+    "Application.ControlledInitialization.executor": "Run",
+    "Application.CouponManagementSystemApp.executor": "Run",
+    "Application.CourseRegistrationDemo.executor": "Run",
+    "Application.CustomThreadPool.executor": "Run",
+    "Application.DistributedCacheSystem.executor": "Run",
+    "Application.ElementStore.executor": "Run",
+    "Application.EventCalendarApp.executor": "Run",
+    "Application.ExamHallApplication.executor": "Run",
+    "Application.FileSys.executor": "Run",
+    "Application.FileSystem.executor": "Run",
+    "Application.FoodOrderingSystemDemo.executor": "Run",
+    "Application.GoogleAuthenticatorApp.executor": "Run",
+    "Application.HitCounter.executor": "Run",
+    "Application.InteractiveEmployeeManagementSystem.executor": "Run",
+    "Application.LFU.executor": "Run",
+    "Application.LFUCache.executor": "Run",
+    "Application.LoadBalancerApp.executor": "Run",
+    "Application.Logger.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.MainApplication.executor": "Run",
+    "Application.MultiThreadedCustomKafkaExample.executor": "Run",
+    "Application.MyPriorityQueue.executor": "Run",
+    "Application.Node.executor": "Run",
+    "Application.ParkingLotSystem.executor": "Run",
+    "Application.PaymentGatewaySystem.executor": "Run",
+    "Application.PriorityQueue.executor": "Run",
+    "Application.ProducerConsumerMain.executor": "Run",
+    "Application.Queue.executor": "Run",
+    "Application.QueueUsingSingleStack.executor": "Run",
+    "Application.RateLimiter.executor": "Run",
+    "Application.RateLimiterService.executor": "Run",
+    "Application.RealTimeChatSystem.executor": "Run",
+    "Application.Rotate.executor": "Run",
+    "Application.SnakeGame.executor": "Run",
+    "Application.StreamPractice.executor": "Run",
+    "Application.StreamProblems.executor": "Run",
+    "Application.Sum.executor": "Run",
+    "Application.TaskScheduler.executor": "Run",
+    "Application.TaskSchedulerConsole.executor": "Run",
+    "Application.TaskSchedulerMain.executor": "Run",
+    "Application.Test.executor": "Run",
+    "Application.TokenManager.executor": "Run",
+    "Application.TollPaymentProcessing.executor": "Run",
+    "Application.Twitter.executor": "Run",
+    "Application.UsingAtomics.executor": "Run",
+    "Application.VotingMain.executor": "Run",
+    "Application.VotingSystem.executor": "Run",
+    "Application.WebCrawler.executor": "Run",
+    "Application.WebCrawlerMain.executor": "Run",
+    "Application.WebCrawlerWithSameHostnameMain.executor": "Run",
+    "Application.WhatsAppMessenger.executor": "Run",
+    "Application.main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/admin/a/vicky/AP",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Design_Datastructure.streams" />
@@ -272,6 +204,7 @@
       <recent name="bikerental" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/ADVPRO/src" />
       <recent name="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/circuitbreaker" />
       <recent name="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/ratelimter/combined" />
@@ -509,7 +442,31 @@
       <option name="project" value="LOCAL" />
       <updated>1723478844396</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1725617315545</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1725617315545</updated>
+    </task>
+    <task id="LOCAL-00031" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1725879099015</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1725879099015</updated>
+    </task>
+    <task id="LOCAL-00032" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1726140447756</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1726140447756</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
