@@ -3,6 +3,7 @@ package designpatterns.creational.singleton;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+//Thread-Safe with Double-Checked Locking
 public class LazyInitialization {
     private static volatile LazyInitialization instance;
 

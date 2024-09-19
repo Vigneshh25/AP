@@ -1,7 +1,5 @@
 package designpatterns.behavioral.mediator;
 
-public class MediatorPatternTest {
-
 /*
     We use the Mediator Design Pattern to provide a centralized communication medium between different
     objects in a system.
@@ -18,14 +16,24 @@ public class MediatorPatternTest {
     airport control room works as a mediator for communication between different flights.
     The mediator works as a router between objects and it can have its own logic to provide
     way of communication.
+
+    Use the Mediator pattern in event-driven systems, where components need to react to events
+    triggered by other components but shouldn't have direct dependencies on each other.
+
+    In distributed systems, the Mediator pattern can be used to manage communication and
+    coordination between distributed components or services, providing a centralized point for
+    handling interactions.
 */
-      public static void main(String[] args) {
-         IMediator mediator = new ConcreteMediator();
+public class Client {
+    public static void main(String[] args) {
+        ChatRoomMediator chatRoom = new ChatRoom();
 
-         ColleagueA talkColleague= new ColleagueA(mediator);
-         talkColleague.doSomething();
+        User alice = new User("Alice", chatRoom);
+        User bob = new User("Bob", chatRoom);
+        ((ChatRoom) chatRoom).addUser(alice);
+        ((ChatRoom) chatRoom).addUser(bob);
 
-         ColleagueB fightColleague = new ColleagueB(mediator);
-         fightColleague.doSomething();
-      }
+        alice.sendMessage("Hi Bob!");
+        bob.sendMessage("Hello Alice!");
+    }
 }

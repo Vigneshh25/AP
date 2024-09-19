@@ -1,19 +1,7 @@
 package votingsystem;
 
-public class Candidate {
-    private String id;
-    private String name;
-
+public class Candidate extends User {
     public Candidate(String id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
+        super(id, name, null);
     }
 }

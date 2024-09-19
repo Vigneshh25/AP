@@ -6,12 +6,10 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Election {
-    private final List<Candidate> candidates;
     private final ConcurrentMap<String, AtomicInteger> voteCounts;
     private final Set<String> voters;
 
     public Election(List<Candidate> candidates) {
-        this.candidates = candidates;
         this.voteCounts = new ConcurrentHashMap<>();
         this.voters = Collections.newSetFromMap(new ConcurrentHashMap<>());
 

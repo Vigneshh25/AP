@@ -1,5 +1,10 @@
 package designpatterns.creational.abstractfactory;
 
+/*
+    * Normal factory can be used to create set of related objects, An abstract factory returns factories.
+    * Hence an abstract factory is used to return factories that can be use to create set of related object
+
+* */
 // Client that uses the abstract factory
 public class Application {
     private Button button;

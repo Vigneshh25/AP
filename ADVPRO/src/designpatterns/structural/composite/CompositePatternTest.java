@@ -1,13 +1,22 @@
 package designpatterns.structural.composite;
 
 public class CompositePatternTest {
+
 /*
 *
 * The Composite Pattern allows you to compose objects into a tree structure to represent
 * the part-whole hierarchy. It means you can create a tree of objects that is made of different parts,
-* but that can be treated as a whole one big thing. Composite lets clients treat individual objects
-* and compositions of objects uniformly, that’s the intent of the Composite Pattern.
+* but that can be treated as a whole one big thing.
 *
+* It allows the client to treat individual objects and composites (objects made up of other objects)
+* uniformly.
+*
+* Operations on a composite object (e.g., add, remove, display) propagate through the entire hierarchy,
+* making it easy to manage the whole structure.
+*
+* When you need to treat individual and composite objects uniformly: A common use case is when you
+* have a collection of objects and want to perform the same operations on both individual and
+* grouped objects.
 *
 * Base Component – Base component is the interface for all objects in the composition.
 * Client program uses base component to work with the objects in the composition.

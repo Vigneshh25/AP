@@ -103,7 +103,7 @@ public class StreamPractice {
         return Arrays.stream(fruits)
                 .flatMapToInt(String::chars)            // Convert each word to a stream of characters
                 .mapToObj(c -> (char) c)                // Convert int to char
-                .collect(Collectors.groupingBy(c -> c,  // Group by character
+                .collect(Collectors.groupingBy(Function.identity(),  // Group by character
                         Collectors.counting()));        // Count occurrences
     }
 

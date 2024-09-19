@@ -4,12 +4,17 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Objects;
 
+/*
+    * Ensure a class has only one instance and provide a global point of access it
+    * Use to avoid creating multiple instance of the class
+    * Example : Database Connection Pool,Configuration Manager
+*/
+
 public class EagerInitialization {
 
     /* Eager Initialization
-    Below instance is guaranteed to be thread safe.
-    Eager Initialization
-    Below instance is guaranteed to be thread safe.*/
+       Below instance is guaranteed to be thread safe.
+    */
 
     private static final EagerInitialization instance = new EagerInitialization();
 

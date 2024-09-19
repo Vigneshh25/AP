@@ -1,7 +1,7 @@
 package designpatterns.solid.lsp.correct;
 
 /*
-that objects of a superclass should be able to be replaced with objects of a subclass without affecting
+the objects of a superclass should be able to be replaced with objects of a subclass without affecting
 the correctness of the program
 
 Can you provide an example of LSP violation and its consequences in a real-world scenario?

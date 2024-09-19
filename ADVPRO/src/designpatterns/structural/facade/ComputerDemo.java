@@ -11,13 +11,15 @@ public class ComputerDemo {
 
 /*
 
-Provide a unified interface to a set of interfaces in a subsystem.
-Facade Pattern defines a higher-level interface that makes the subsystem easier to use
 
     In the facade pattern, facade classes are used to provide a single interface to set of classes.
     The facade simplifies a client’s interaction with a complex system by localizing the interactions into a single interface
     As a result, the client can interact with a single object rather than being required to
     interact directly in complicated ways with the objects that make up the subsystem.
+
+    Facades are commonly used in libraries or frameworks to provide a simplified interface for
+    common tasks or functionalities.
+
 */
     public static void main(String[] args) {
         ComputerSystemFacade computer = new ComputerSystemFacade();

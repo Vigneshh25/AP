@@ -1,5 +1,8 @@
 package designpatterns.creational.prototype;
 
+/*
+    * It allows you to create a new object by copying or cloning existing objects
+*/
 public class ProductDemo {
    public static void main(String[] args) {
        ProductPrototype product1 = new Product("Laptop", 999.99);

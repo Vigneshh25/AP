@@ -3,8 +3,10 @@ package designpatterns.behavioral.observer;
 public class OrderStatus {
 
 /*
-    In observer design pattern multiple observer objects registers with a subject for any change
-    in notification. When the state of subject changes, it notifies the observers.
+    The Observer pattern is a behavioral design pattern that establishes a one-to-many dependency
+    between objects so that when one object changes state, all its dependents (observers) are
+    notified and updated automatically
+
     Objects that listen or watch for change are called observers and the object that is being
     watched is called a subject.
 

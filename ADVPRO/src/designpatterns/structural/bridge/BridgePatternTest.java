@@ -2,12 +2,16 @@ package designpatterns.structural.bridge;
 
 public class BridgePatternTest {
 /*
-* A Bridge Pattern says that just "decouple the functional abstraction from the implementation so that
+* A Bridge Pattern says that just "decouple the abstraction from the implementation so that
 * the two can vary independently".
 *
-* The Adapter Design Pattern helps it two incompatible classes to work together.
+* The Adapter Design Pattern helps it two unrelated classes to work together.
 * But the Bridge Design Pattern decouples the abstraction and implementation by creating
 * two different hierarchies.
+*
+* This pattern is particularly helpful in systems where the number of possible combinations between
+* abstractions and their implementations is large. By bridging them, you reduce complexity and
+*    improve flexibility.
 * */
       public static void main(String[] args) {
 
