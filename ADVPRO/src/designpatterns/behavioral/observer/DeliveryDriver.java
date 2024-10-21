@@ -1,7 +1,7 @@
 package designpatterns.behavioral.observer;
 
 class DeliveryDriver implements Observer {
-    private String driverName;
+    private final String driverName;
 
     public DeliveryDriver(String name) {
         this.driverName = name;

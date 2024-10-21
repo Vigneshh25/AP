@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /*
+it computes shortest paths from a single source vertex to all of the other vertices in a weighted digraph
 works on directed weighted graph
 
-relax distance to n-1 iteration but why n-1 since graph has n nodes in worst case you will take n-1 edgest to reach from the
+relax distance to n-1 iteration but why n-1 since graph has n nodes in worst case you will take n-1 edges to reach from the
 first to the last so we need n-1 iteration
 
 if the node has minimum distance after n-1 traverse that means graph has negative cycle

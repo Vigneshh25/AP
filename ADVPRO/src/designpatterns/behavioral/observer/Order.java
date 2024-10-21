@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Order {
-    private int id;
+    private final int id;
     private String status;
-    private List<Observer> observers = new ArrayList<>();
+    private final List<Observer> observers = new ArrayList<>();
 
     public Order(int id) {
         this.id = id;

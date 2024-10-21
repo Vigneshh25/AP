@@ -1,7 +1,7 @@
 package designpatterns.behavioral.observer;
 
 class Restaurant implements Observer {
-    private String restaurantName;
+    private final String restaurantName;
 
     public Restaurant(String name) {
         this.restaurantName = name;

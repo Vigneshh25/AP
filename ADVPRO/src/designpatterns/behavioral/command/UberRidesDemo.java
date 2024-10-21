@@ -1,6 +1,12 @@
 package designpatterns.behavioral.command;
 
 /*
+
+    The Command Pattern encapsulates a request as an object, allowing for parameterization of clients
+    with different requests, queuing of requests, and support for undoable operations.
+    This pattern turns requests into stand-alone objects with their own behavior, facilitating the
+    decoupling of senders and receivers.
+
     The Command Pattern is a behavioral design pattern.that converts a request into an
     object with all the required information such as what method to call, arguments, etc.
 
