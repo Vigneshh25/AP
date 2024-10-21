@@ -5,46 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/Iterator/Aggregate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/Iterator/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/Iterator/BookCollection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/Iterator/BookIterator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/Iterator/Iterator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/Iterator/IteratorPatternExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/templete/OnlinePurchaseOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/templete/PurchaseOrderTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/templete/StorePurchaseOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/templete/TemplateMethodPatternTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/visitor/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/visitor/Fruit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/visitor/ShoppingCartElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/visitor/ShoppingCartVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/visitor/ShoppingCartVisitorImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/visitor/VisitorPatternTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googledrive/CreateFileOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googledrive/CreateFolderOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googledrive/File.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googledrive/FileOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googledrive/FileSystemComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googledrive/FileSystemManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googledrive/FileSystemProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googledrive/FileSystemSearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googledrive/FileVersion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googledrive/Folder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googledrive/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googledrive/Observer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googledrive/PermissionsDecorator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googledrive/StorageStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/googledrive/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/AP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AP.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/adapter/type/ClassAdapterExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/adapter/type/ObjectAdapterExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/graph/Bellmanford.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/Design_Datastructure/graph/Bellmanford.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/command/UberRidesDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/command/UberRidesDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/observer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/observer/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/observer/DeliveryDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/observer/DeliveryDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/observer/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/observer/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/observer/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/observer/OrderStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/observer/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/behavioral/observer/Restaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/facade/ComputerDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/facade/ComputerDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/proxy/ProxyPatternTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/proxy/ProxyPatternTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Problems/set1/MapToJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/Problems/set1/MapToJson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Problems/set14/RomanTODecimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/Problems/set14/RomanTODecimal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Problems/set42/IntToRoman.java" beforeDir="false" afterPath="$PROJECT_DIR$/Problems/set42/IntToRoman.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,84 +67,85 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.AdvancedOptionalExamples.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Application.executor&quot;: &quot;Run&quot;,
-    &quot;Application.AsynchronousRateLimiter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.AtomicIntegerDemo.executor&quot;: &quot;Run&quot;,
-    &quot;Application.AutocompleteSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BitTorrentLikeSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BlockingQueueExample.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BrowserHistory.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CalendarAPI.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Chess.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CircuitBreakerService.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CollaborativeEditingSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ComputerDemo.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ConcurrentCollectionsDemo.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ControlledInitialization.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CouponManagementSystemApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CourseRegistrationDemo.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CustomThreadPool.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DistributedCacheSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ElementStore.executor&quot;: &quot;Run&quot;,
-    &quot;Application.EventCalendarApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ExamHallApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.FileSys.executor&quot;: &quot;Run&quot;,
-    &quot;Application.FileSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.FoodOrderingSystemDemo.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GoogleAuthenticatorApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HitCounter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.InteractiveEmployeeManagementSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LFU.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LFUCache.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoadBalancerApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Logger.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MultiThreadedCustomKafkaExample.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MyPriorityQueue.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Node.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ParkingLotSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.PaymentGatewaySystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.PriorityQueue.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ProducerConsumerMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Queue.executor&quot;: &quot;Run&quot;,
-    &quot;Application.QueueUsingSingleStack.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RateLimiter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RateLimiterService.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RealTimeChatSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Rotate.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SnakeGame.executor&quot;: &quot;Run&quot;,
-    &quot;Application.StreamPractice.executor&quot;: &quot;Run&quot;,
-    &quot;Application.StreamProblems.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Sum.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TaskScheduler.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TaskSchedulerConsole.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TaskSchedulerMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TokenManager.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TollPaymentProcessing.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Twitter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.UsingAtomics.executor&quot;: &quot;Run&quot;,
-    &quot;Application.VotingMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.VotingSystem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.WebCrawler.executor&quot;: &quot;Run&quot;,
-    &quot;Application.WebCrawlerMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.WebCrawlerWithSameHostnameMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.WhatsAppMessenger.executor&quot;: &quot;Run&quot;,
-    &quot;Application.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/admin/Git/resource-domain/resource-performance-mgmt/resource-performance-reporting/telecom/optical&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.AdvancedOptionalExamples.executor": "Run",
+    "Application.Application.executor": "Run",
+    "Application.AsynchronousRateLimiter.executor": "Run",
+    "Application.AtomicIntegerDemo.executor": "Run",
+    "Application.AutocompleteSystem.executor": "Run",
+    "Application.BitTorrentLikeSystem.executor": "Run",
+    "Application.BlockingQueueExample.executor": "Run",
+    "Application.BrowserHistory.executor": "Run",
+    "Application.CalendarAPI.executor": "Run",
+    "Application.Chess.executor": "Run",
+    "Application.CircuitBreakerService.executor": "Run",
+    "Application.CollaborativeEditingSystem.executor": "Run",
+    "Application.ComputerDemo.executor": "Run",
+    "Application.ConcurrentCollectionsDemo.executor": "Run",
+    "Application.ControlledInitialization.executor": "Run",
+    "Application.CouponManagementSystemApp.executor": "Run",
+    "Application.CourseRegistrationDemo.executor": "Run",
+    "Application.CustomThreadPool.executor": "Run",
+    "Application.DistributedCacheSystem.executor": "Run",
+    "Application.ElementStore.executor": "Run",
+    "Application.EventCalendarApp.executor": "Run",
+    "Application.ExamHallApplication.executor": "Run",
+    "Application.FileSys.executor": "Run",
+    "Application.FileSystem.executor": "Run",
+    "Application.FoodOrderingSystemDemo.executor": "Run",
+    "Application.GoogleAuthenticatorApp.executor": "Run",
+    "Application.HitCounter.executor": "Run",
+    "Application.InteractiveEmployeeManagementSystem.executor": "Run",
+    "Application.LFU.executor": "Run",
+    "Application.LFUCache.executor": "Run",
+    "Application.LoadBalancerApp.executor": "Run",
+    "Application.Logger.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.MainApplication.executor": "Run",
+    "Application.MultiThreadedCustomKafkaExample.executor": "Run",
+    "Application.MyPriorityQueue.executor": "Run",
+    "Application.Node.executor": "Run",
+    "Application.ParkingLotSystem.executor": "Run",
+    "Application.PaymentGatewaySystem.executor": "Run",
+    "Application.PriorityQueue.executor": "Run",
+    "Application.ProducerConsumerMain.executor": "Run",
+    "Application.Queue.executor": "Run",
+    "Application.QueueUsingSingleStack.executor": "Run",
+    "Application.RateLimiter.executor": "Run",
+    "Application.RateLimiterService.executor": "Run",
+    "Application.RealTimeChatSystem.executor": "Run",
+    "Application.ReflectionDemo.executor": "Run",
+    "Application.Rotate.executor": "Run",
+    "Application.SnakeGame.executor": "Run",
+    "Application.StreamPractice.executor": "Run",
+    "Application.StreamProblems.executor": "Run",
+    "Application.Sum.executor": "Run",
+    "Application.TaskScheduler.executor": "Run",
+    "Application.TaskSchedulerConsole.executor": "Run",
+    "Application.TaskSchedulerMain.executor": "Run",
+    "Application.Test.executor": "Run",
+    "Application.TokenManager.executor": "Run",
+    "Application.TollPaymentProcessing.executor": "Run",
+    "Application.Twitter.executor": "Run",
+    "Application.UsingAtomics.executor": "Run",
+    "Application.VotingMain.executor": "Run",
+    "Application.VotingSystem.executor": "Run",
+    "Application.WebCrawler.executor": "Run",
+    "Application.WebCrawlerMain.executor": "Run",
+    "Application.WebCrawlerWithSameHostnameMain.executor": "Run",
+    "Application.WhatsAppMessenger.executor": "Run",
+    "Application.main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/admin/Git/resource-domain/resource-performance-mgmt/resource-performance-reporting/telecom/optical",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Design_Datastructure.streams" />
@@ -462,7 +431,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726735621951</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1729504038495</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1729504038495</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

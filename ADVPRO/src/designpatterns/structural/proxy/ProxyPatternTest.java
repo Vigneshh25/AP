@@ -2,9 +2,13 @@ package designpatterns.structural.proxy;
 
 public class ProxyPatternTest {
 /*
-      The Proxy Design Pattern provides a placeholder for another object to control access to it.
-      the Proxy Pattern is used to create a representative object that controls access to another object.
-      It may be remote, expensive to create or in need of being secured.
+   Intent:
+
+       Control access to an object by providing a placeholder object.
+       The proxy object provides the same interface as the real object and delegates the work to it, often adding additional behavior.
+
+       When lazy initialization is needed for resource-heavy objects.
+      When the object resides in a remote location (e.g., a different server) and you want to represent it locally.
 
       In the Proxy Design Pattern, a client does not directly talk to the original object,
       it delegates calls to the proxy object which calls the methods of the original object.

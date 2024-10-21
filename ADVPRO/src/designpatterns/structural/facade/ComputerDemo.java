@@ -8,17 +8,16 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 
 public class ComputerDemo {
-
 /*
 
+    The goal of the Facade Pattern is to make complex systems easier to use by providing a single,
+    high-level interface to perform tasks.
 
-    In the facade pattern, facade classes are used to provide a single interface to set of classes.
-    The facade simplifies a client’s interaction with a complex system by localizing the interactions into a single interface
-    As a result, the client can interact with a single object rather than being required to
-    interact directly in complicated ways with the objects that make up the subsystem.
+    Clients interact with the facade rather than interacting with individual classes of the subsystem directly.
+    The facade coordinates and delegates the requests to the appropriate subsystem classes.
 
-    Facades are commonly used in libraries or frameworks to provide a simplified interface for
-    common tasks or functionalities.
+    Simplifies Usage: It simplifies the client’s interaction with a complex system by exposing only the necessary functionality.
+    Decoupling: It decouples clients from the implementation details of the subsystem. Clients don’t need to know how the system works internally.
 
 */
     public static void main(String[] args) {
