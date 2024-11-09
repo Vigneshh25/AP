@@ -6,7 +6,7 @@ class CPU {
    }
 
 
-   public void executeInstructions() {
+   public void  executeInstructions() {
        System.out.println("CPU is executing instructions.");
    }
 }

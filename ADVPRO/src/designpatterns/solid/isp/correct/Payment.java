@@ -1,65 +1,60 @@
 package designpatterns.solid.isp.correct;
 
-import java.util.List;
 
 /*
  * interface segregation simply means that we should break larger interfaces into smaller ones.
  * Clients should not be forced to depend upon interfaces that they do not use
  *
- * Clients should not be forced to depend upon interfaces that they do not use.
- * it would be bad for you to force the client to depend on a certain thing, which they don’t need.
+ * By applying ISP, you reduce the impact of changes, enhance code maintainability, and improve the
+ * overall design of the system.
  * */
-public interface Payment {
-    Object status();
-    List<Object> getPayments();
+// Specific notification interfaces
+interface EmailNotificationService {
+    void sendEmail(String message);
 }
 
-interface Bank extends Payment {
-    void initiatePayments();
+interface SMSNotificationService {
+    void sendSMS(String message);
 }
 
-interface Loan extends Payment {
-    void intiateLoanSettlement();
-    void initiateRePayment();
+interface PushNotificationService {
+    void sendPushNotification(String message);
 }
 
-class BankPayment implements Bank {
-
+// Email notification class implements only what it needs
+class EmailNotification implements EmailNotificationService {
     @Override
-    public void initiatePayments() {
-        // ...
-    }
-
-    @Override
-    public Object status() {
-        return null;
-    }
-
-    @Override
-    public List<Object> getPayments() {
-        return null;
+    public void sendEmail(String message) {
+        System.out.println("Email sent: " + message);
     }
 }
 
-class LoanPayment implements Loan {
-
+// SMS notification class implements only what it needs
+class SMSNotification implements SMSNotificationService {
     @Override
-    public void intiateLoanSettlement() {
-        //           return null;
+    public void sendSMS(String message) {
+        System.out.println("SMS sent: " + message);
     }
+}
 
+// Push notification class implements only what it needs
+class PushNotification implements PushNotificationService {
     @Override
-    public void initiateRePayment() {
-        // ...
+    public void sendPushNotification(String message) {
+        System.out.println("Push notification sent: " + message);
     }
+}
 
-    @Override
-    public Object status() {
-        return null;
-    }
+// Main method to demonstrate usage
+class Main {
+    public static void main(String[] args) {
+        EmailNotificationService emailNotification = new EmailNotification();
+        emailNotification.sendEmail("Hello via Email!");
 
-    @Override
-    public List<Object> getPayments() {
-        return null;
+        SMSNotificationService smsNotification = new SMSNotification();
+        smsNotification.sendSMS("Hello via SMS!");
+
+        PushNotificationService pushNotification = new PushNotification();
+        pushNotification.sendPushNotification("Hello via Push Notification!");
     }
 }

@@ -5,14 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04bad3-e81d-4d75-8423-0624c37d5968" name="Changes" comment="ryt">
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/adapter/type/ClassAdapterExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/adapter/type/ObjectAdapterExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/dip/correct/Notification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/dip/violates/EmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/lsp/correct/Bird.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/lsp/violates/LspViolationExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/facade/ComputerDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/facade/ComputerDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/proxy/ProxyPatternTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/proxy/ProxyPatternTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Problems/set1/MapToJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/Problems/set1/MapToJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Problems/set14/RomanTODecimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/Problems/set14/RomanTODecimal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Problems/set42/IntToRoman.java" beforeDir="false" afterPath="$PROJECT_DIR$/Problems/set42/IntToRoman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/dip/correct/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/dip/correct/DVD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/dip/correct/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/dip/correct/Shelf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/dip/violates/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/dip/violates/DVD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/dip/violates/Shelf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/isp/correct/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/isp/correct/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/isp/violates/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/solid/isp/violates/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/facade/CPU.java" beforeDir="false" afterPath="$PROJECT_DIR$/ADVPRO/src/designpatterns/structural/facade/CPU.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +88,7 @@
     "Application.CalendarAPI.executor": "Run",
     "Application.Chess.executor": "Run",
     "Application.CircuitBreakerService.executor": "Run",
+    "Application.Client.executor": "Run",
     "Application.CollaborativeEditingSystem.executor": "Run",
     "Application.ComputerDemo.executor": "Run",
     "Application.ConcurrentCollectionsDemo.executor": "Run",
@@ -439,7 +447,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729504038495</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="ryt">
+      <option name="closed" value="true" />
+      <created>1729512576595</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1729512576595</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

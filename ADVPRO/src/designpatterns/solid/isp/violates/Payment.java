@@ -1,26 +1,28 @@
 package designpatterns.solid.isp.violates;
 
-import java.util.List;
-
-public interface Payment {
-    void initiatePayments();
-    Object status();
-    List<Object> getPayments();
+// General notification interface
+interface NotificationService {
+    void sendEmail(String message);
+    void sendSMS(String message);
+    void sendPushNotification(String message);
 }
-class BankPayment implements Payment {
 
+// A class that only needs to send emails
+class EmailNotification implements NotificationService {
     @Override
-    public void initiatePayments() {
-        // ...
+    public void sendEmail(String message) {
+        System.out.println("Email sent: " + message);
     }
 
     @Override
-    public Object status() {
-        return null;
+    public void sendSMS(String message) {
+        // Not applicable
+        throw new UnsupportedOperationException("SMS not supported");
     }
 
     @Override
-    public List<Object> getPayments() {
-        return null;
+    public void sendPushNotification(String message) {
+        // Not applicable
+        throw new UnsupportedOperationException("Push notification not supported");
     }
 }
