@@ -1,6 +1,6 @@
 package Design_Datastructure.streams;
 
-import cricbuzz.player.Person;
+import Cricbuzz.player.Person;
 
 import java.util.*;
 import java.util.function.Function;
